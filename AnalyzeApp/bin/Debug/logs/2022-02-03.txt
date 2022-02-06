@@ -1,0 +1,22 @@
+ -------------- Error (2022-02-03 20:52:04.3163) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	AuthResponse:Exchange: The remote server returned an error: (400) Bad Request. The remote server returned an error: (400) Bad Request.
+   at System.Net.HttpWebRequest.GetResponse()
+   at AnalyzeApp.Common.AuthResponse.Exchange(String authCode, String clientid, String secret, String redirectURI) in D:\Data\AnalyzeApp\AnalyzeApp.Common\AuthResponse.cs:line 85 Line: 0
+
+ -------------- Error (2022-02-03 23:47:18.2059) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	AuthResponse:Exchange: The remote server returned an error: (400) Bad Request. The remote server returned an error: (400) Bad Request.
+   at System.Net.HttpWebRequest.GetResponse()
+   at AnalyzeApp.Common.AuthResponse.Exchange(String authCode, String clientid, String secret, String redirectURI) in D:\Data\AnalyzeApp\AnalyzeApp.Common\AuthResponse.cs:line 85 Line: 0
+
