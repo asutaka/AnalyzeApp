@@ -58,5 +58,7 @@ namespace AnalyzeApp
         public static List<SendNotifyModel> lstNotiTrade = new List<SendNotifyModel>();
         //Client
         public static HttpClient client = new HttpClient();
+        //
+        public static IEnumerable<Binance.Net.Interfaces.IBinanceTick> source;
     }
 }

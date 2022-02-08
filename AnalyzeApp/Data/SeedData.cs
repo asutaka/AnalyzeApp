@@ -1,6 +1,7 @@
 ﻿using AnalyzeApp.Common;
 using AnalyzeApp.Model.ENTITY;
 using AnalyzeApp.Model.ENUM;
+using Binance.Net;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,24 @@ namespace AnalyzeApp.Data
 {
     public class SeedData
     {
+        public static void SubcribeData()
+        {
+            try
+            {
+                var socketClient = new BinanceSocketClient();
+                var subscribeResult = socketClient.Spot.SubscribeToAllSymbolTickerUpdatesAsync(data =>
+                {
+                    if (data != null)
+                    {
+                        StaticVal.source = data.Data;
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                NLogLogger.PublishException(ex, $"SeedData|SubcribeData: {ex.Message}");
+            }
+        }
         public static List<CryptonDetailDataModel> GetCryptonList()
         {
             var cryptonModel = CommonMethod.DownloadJsonFile<CryptonDataModel>(ConstVal.COIN_LIST);

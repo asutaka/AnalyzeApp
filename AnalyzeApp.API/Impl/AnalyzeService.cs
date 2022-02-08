@@ -1,5 +1,8 @@
 ﻿using AnalyzeApp.API.Interface;
 using AnalyzeApp.API.Model;
+using Binance.Net;
+using Binance.Net.Objects.Spot.MarketStream;
+using Newtonsoft.Json;
 
 namespace AnalyzeApp.API.Impl
 {
@@ -9,7 +12,27 @@ namespace AnalyzeApp.API.Impl
         public AnalyzeService(IAnalyzeRepo repo)
         {
             _repo = repo;
+            SubcribeData();
         }
+        private void SubcribeData()
+        {
+            try
+            {
+                var socketClient = new BinanceSocketClient();
+                var subscribeResult = socketClient.Spot.SubscribeToAllSymbolTickerUpdatesAsync(data =>
+                {
+                    if(data != null)
+                    {
+                        StaticVal.source = data.Data;
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                NLogLogger.PublishException(ex, $"AnalyzeService|SubcribeData: {ex.Message}");
+            }
+        }
+       
         public async Task<int> CreateTableCoin(string coin)
         {
             return await _repo.CreateTableCoin(coin);

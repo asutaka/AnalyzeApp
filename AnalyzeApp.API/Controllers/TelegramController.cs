@@ -26,7 +26,7 @@ namespace AnalyzeApp.API.Controllers
         [HttpPost(Name = "Verify")]
         public async Task<IActionResult> Verify([FromBody] VerifyModel model)
         {
-            var result = _service.Verify(model);
+            var result = await _service.Verify(model);
             return Ok(result);
         }
     }

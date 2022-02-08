@@ -42,6 +42,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Binance.Net": {
+              "target": "Package",
+              "version": "[7.2.7, )"
+            },
             "Dapper": {
               "target": "Package",
               "version": "[2.0.123, )"

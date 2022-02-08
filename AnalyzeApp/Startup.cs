@@ -22,6 +22,8 @@ namespace AnalyzeApp
         }
         private void InitData()
         {
+            //subcribe
+            SeedData.SubcribeData();
             //Load JSonFile
             StaticVal.basicModel = new BasicSettingModel().LoadJsonFile("basic_setting.json");
             var obj = new AdvanceSettingModel();
