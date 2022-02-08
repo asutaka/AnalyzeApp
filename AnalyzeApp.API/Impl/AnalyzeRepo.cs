@@ -252,7 +252,7 @@ namespace AnalyzeApp.API.Impl
                     await conn.OpenAsync();
                     var parameter = new DynamicParameters();
                     parameter.Add(name: "@Top", dbType: DbType.Int32, direction: ParameterDirection.Input, value: top);
-                    var list = await conn.QueryAsync<NotifyModel>($"select * from NotifyTable order by timecreate desc limit @Top", param: parameter, commandTimeout: 5, commandType: CommandType.Text);
+                    var list = await conn.QueryAsync<NotifyModel>($"select * from NotifyTable order by timecreate asc limit @Top", param: parameter, commandTimeout: 5, commandType: CommandType.Text);
                     return list.ToList();
                 }
             }
@@ -294,8 +294,8 @@ namespace AnalyzeApp.API.Impl
                 {
                     await conn.OpenAsync();
                     var parameter = new DynamicParameters();
-                    parameter.Add(name: "@T", dbType: DbType.Double, direction: ParameterDirection.Input, value: time);
-                    var result = await conn.ExecuteAsync($"DELETE from NotifyTable WHERE T = @T", param: parameter, commandTimeout: 5, commandType: CommandType.Text);
+                    parameter.Add(name: "@TimeCreate", dbType: DbType.Double, direction: ParameterDirection.Input, value: time);
+                    var result = await conn.ExecuteAsync($"DELETE from NotifyTable WHERE TimeCreate = @TimeCreate", param: parameter, commandTimeout: 5, commandType: CommandType.Text);
                     return result;
                 }
             }

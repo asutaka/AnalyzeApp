@@ -27,6 +27,8 @@ namespace AnalyzeApp.API
             {
                 if (isService)
                 {
+                    if (_clientService != null)
+                        return true;
                     _api_id = ConstVal.apiIdService;
                     _api_hash = ConstVal.apiHashService;
                     _phone_number = ConstVal.phoneService;
@@ -37,6 +39,8 @@ namespace AnalyzeApp.API
                 }
                 else
                 {
+                    if (_clientSupport != null)
+                        return true;
                     _api_id = ConstVal.apiIdSupport;
                     _api_hash = ConstVal.apiHashSupport;
                     _phone_number = ConstVal.phoneSupport;
@@ -60,8 +64,6 @@ namespace AnalyzeApp.API
             {
                 if (!await InitTelegram(isService))
                     return (int)enumTelegramSendMessage.UnknownError;
-                _clientSupport = new Client(Config);
-                await _clientSupport.ConnectAsync();
                 var phoneUser = phone.PhoneFormat();
                 if (string.IsNullOrWhiteSpace(phoneUser))
                     return (int)enumTelegramSendMessage.PhoneInValid;
@@ -121,18 +123,6 @@ namespace AnalyzeApp.API
                 NLogLogger.PublishException(ex, $"TeleClient|GenerateSession: {ex.Message}");
                 return false;
             }
-        }
-
-        private enum enumTelegramSendMessage
-        {
-            [Display(Name = "Thành công")]
-            Success = 0,
-            [Display(Name = "SĐT không hợp lệ")]
-            PhoneInValid = -1,
-            [Display(Name = "Telegram không sẵn sàng")]
-            TelegramNotReady = -2,
-            [Display(Name = "Lỗi không xác định")]
-            UnknownError = -99
         }
     }
 }

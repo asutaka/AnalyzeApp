@@ -163,3 +163,4 @@ D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\ref\AnalyzeApp.API.dll
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.pdb
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.genruntimeconfig.cache
+D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.csproj.AssemblyReference.cache

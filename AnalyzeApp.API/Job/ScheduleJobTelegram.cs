@@ -18,11 +18,12 @@ namespace AnalyzeApp.API.Job
             {
                 foreach (var item in lData)
                 {
-                    var result = TeleClient.SendMessage(item.Phone, item.Content, item.IsService);
+                    var result = await TeleClient.SendMessage(item.Phone, item.Content, item.IsService);
+                    if ((enumTelegramSendMessage)result == enumTelegramSendMessage.Success)
+                        await _service.DeleteNotify(item.TimeCreate);
                     Thread.Sleep(1000);
                 }
             }
-            Console.WriteLine("deo hieu kieu gi");
         }
     }
 }
