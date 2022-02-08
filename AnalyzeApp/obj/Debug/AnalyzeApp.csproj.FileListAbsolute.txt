@@ -334,3 +334,7 @@ D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.csproj.CoreComp
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.csproj.CopyComplete
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.exe
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.pdb
+D:\Data\AnalyzeApp\AnalyzeApp\bin\Debug\Binance.Net.dll
+D:\Data\AnalyzeApp\AnalyzeApp\bin\Debug\CryptoExchange.Net.dll
+D:\Data\AnalyzeApp\AnalyzeApp\bin\Debug\Binance.Net.xml
+D:\Data\AnalyzeApp\AnalyzeApp\bin\Debug\CryptoExchange.Net.xml

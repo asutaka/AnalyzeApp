@@ -123,7 +123,7 @@ namespace AnalyzeApp.API.Impl
                     parameter.Add(name: "@Id", dbType: DbType.Int32, direction: ParameterDirection.Input, value: model.Id);
                     parameter.Add(name: "@Setting", dbType: DbType.String, direction: ParameterDirection.Input, value: model.Setting);
 
-                    var result = await conn.ExecuteAsync($"update from SettingTable set Setting = @Setting where Id = @Id", param: parameter, commandTimeout: 5, commandType: CommandType.Text);
+                    var result = await conn.ExecuteAsync($"update SettingTable set Setting = @Setting where Id = @Id", param: parameter, commandTimeout: 5, commandType: CommandType.Text);
                     return result;
                 }
             }
@@ -152,95 +152,6 @@ namespace AnalyzeApp.API.Impl
                 NLogLogger.PublishException(ex, $"AnalyzeRepo:DeleteSetting: {ex.Message}");
             }
             return -1;
-        }
-
-        public async Task<int> CreateTableCoin(string coin)
-        {
-            try
-            {
-                using (var conn = new SqliteConnection(_connString))
-                {
-                    await conn.OpenAsync();
-                    var parameter = new DynamicParameters();
-                    parameter.Add(name: "@Tbl", dbType: DbType.String, direction: ParameterDirection.Input, value: coin);
-                    var result = await conn.ExecuteAsync($"CREATE TABLE @Tbl (T real, O real, H real, L real, C real, V real,ValType integer)", param: parameter, commandTimeout: 5, commandType: CommandType.Text);
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                NLogLogger.PublishException(ex, $"AnalyzeRepo:CreateTableCoin: {ex.Message}");
-            }
-            return -1;
-        }
-
-        public async Task<int> InsertCoin(DataModel model)
-        {
-            try
-            {
-                using (var conn = new SqliteConnection(_connString))
-                {
-                    await conn.OpenAsync();
-                    var parameter = new DynamicParameters();
-                    parameter.Add(name: "@Tbl", dbType: DbType.String, direction: ParameterDirection.Input, value: model.Coin);
-                    parameter.Add(name: "@T", dbType: DbType.Double, direction: ParameterDirection.Input, value: model.T);
-                    parameter.Add(name: "@O", dbType: DbType.Double, direction: ParameterDirection.Input, value: model.O);
-                    parameter.Add(name: "@H", dbType: DbType.Double, direction: ParameterDirection.Input, value: model.H);
-                    parameter.Add(name: "@L", dbType: DbType.Double, direction: ParameterDirection.Input, value: model.L);
-                    parameter.Add(name: "@C", dbType: DbType.Double, direction: ParameterDirection.Input, value: model.C);
-                    parameter.Add(name: "@V", dbType: DbType.Double, direction: ParameterDirection.Input, value: model.V);
-                    parameter.Add(name: "@ValType", dbType: DbType.Int32, direction: ParameterDirection.Input, value: model.ValType);
-                    var result = await conn.ExecuteAsync($"INSERT INTO @Tbl(T, O, H, L, C, V, ValType) VALUES (@T,@O,@H,@L,@C,@V,@ValType)", param: parameter, commandTimeout: 5, commandType: CommandType.Text);
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                NLogLogger.PublishException(ex, $"AnalyzeRepo:InsertCoin: {ex.Message}");
-            }
-            return -1;
-        }
-
-        public async Task<int> DeleteCoin(string coin, double time)
-        {
-            try
-            {
-                using (var conn = new SqliteConnection(_connString))
-                {
-                    await conn.OpenAsync();
-                    var parameter = new DynamicParameters();
-                    parameter.Add(name: "@Tbl", dbType: DbType.String, direction: ParameterDirection.Input, value: coin);
-                    parameter.Add(name: "@T", dbType: DbType.Double, direction: ParameterDirection.Input, value: time);
-                    var result = await conn.ExecuteAsync($"DELETE from @Tbl WHERE T < @T", param: parameter, commandTimeout: 5, commandType: CommandType.Text);
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                NLogLogger.PublishException(ex, $"AnalyzeRepo:DeleteCoin: {ex.Message}");
-            }
-            return -1;
-        }
-
-        public async Task<List<DataModel>> GetData(string coin, int top)
-        {
-            try
-            {
-                using (var conn = new SqliteConnection(_connString))
-                {
-                    await conn.OpenAsync();
-                    var parameter = new DynamicParameters();
-                    parameter.Add(name: "@Tbl", dbType: DbType.String, direction: ParameterDirection.Input, value: coin);
-                    parameter.Add(name: "@Top", dbType: DbType.Int32, direction: ParameterDirection.Input, value: top);
-                    var list = await conn.QueryAsync<DataModel>($"select * from @Tbl order by T desc LIMIT @Top", param: parameter, commandTimeout: 5, commandType: CommandType.Text);
-                    return list.ToList();
-                }
-            }
-            catch (Exception ex)
-            {
-                NLogLogger.PublishException(ex, $"AnalyzeRepo:GetData: {ex.Message}");
-            }
-            return new List<DataModel>();
         }
 
         public async Task<List<NotifyModel>> GetNotify(int top)
@@ -302,6 +213,87 @@ namespace AnalyzeApp.API.Impl
             catch (Exception ex)
             {
                 NLogLogger.PublishException(ex, $"AnalyzeRepo:DeleteNotify: {ex.Message}");
+            }
+            return -1;
+        }
+
+        public async Task<List<DataSettingModel>> GetDataSettings()
+        {
+            try
+            {
+                using (var conn = new SqliteConnection(_connString))
+                {
+                    await conn.OpenAsync();
+                    var result = await conn.QueryAsync<DataSettingModel>("select * from DataTable", commandTimeout: 5, commandType: CommandType.Text);
+                    return result.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                NLogLogger.PublishException(ex, $"AnalyzeRepo:GetDataSettings: {ex.Message}");
+            }
+            return new List<DataSettingModel>();
+        }
+
+        public async Task<int> InsertDataSettings(DataSettingModel model)
+        {
+            try
+            {
+                using (var conn = new SqliteConnection(_connString))
+                {
+                    await conn.OpenAsync();
+                    var parameter = new DynamicParameters();
+                    parameter.Add(name: "@Interval", dbType: DbType.Int32, direction: ParameterDirection.Input, value: model.Interval);
+                    parameter.Add(name: "@UpdatedTime", dbType: DbType.Int32, direction: ParameterDirection.Input, value: model.UpdatedTime);
+                    var result = await conn.ExecuteAsync($"INSERT INTO DataTable(Interval, UpdatedTime) VALUES (@Interval, @UpdatedTime)", param: parameter, commandTimeout: 5, commandType: CommandType.Text);
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                NLogLogger.PublishException(ex, $"AnalyzeRepo:InsertDataSettings: {ex.Message}");
+            }
+            return -1;
+        }
+
+        public async Task<int> UpdateDataSettings(DataSettingModel model)
+        {
+            try
+            {
+                using (var conn = new SqliteConnection(_connString))
+                {
+                    await conn.OpenAsync();
+                    var parameter = new DynamicParameters();
+                    parameter.Add(name: "@Interval", dbType: DbType.Int32, direction: ParameterDirection.Input, value: model.Interval);
+                    parameter.Add(name: "@UpdatedTime", dbType: DbType.Int32, direction: ParameterDirection.Input, value: model.UpdatedTime);
+
+                    var result = await conn.ExecuteAsync($"update DataTable set UpdatedTime = @UpdatedTime where Interval = @Interval", param: parameter, commandTimeout: 5, commandType: CommandType.Text);
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                NLogLogger.PublishException(ex, $"AnalyzeRepo:UpdateDataSettings: {ex.Message}");
+            }
+            return -1;
+        }
+
+        public async Task<int> DeleteDataSettings(int interval)
+        {
+            try
+            {
+                using (var conn = new SqliteConnection(_connString))
+                {
+                    await conn.OpenAsync();
+                    var parameter = new DynamicParameters();
+                    parameter.Add(name: "@Interval", dbType: DbType.Int32, direction: ParameterDirection.Input, value: interval);
+                    var result = await conn.ExecuteAsync($"delete from DataTable where Inteval = @Interval", param: parameter, commandTimeout: 5, commandType: CommandType.Text);
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                NLogLogger.PublishException(ex, $"AnalyzeRepo:DeleteDataSettings: {ex.Message}");
             }
             return -1;
         }

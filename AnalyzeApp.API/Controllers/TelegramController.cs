@@ -29,5 +29,12 @@ namespace AnalyzeApp.API.Controllers
             var result = await _service.Verify(model);
             return Ok(result);
         }
+
+        [HttpPost(Name = "GetNotify")]
+        public async Task<IActionResult> GetNotify(int top)
+        {
+            var result = await _service.GetNotify(top);
+            return Ok(result);
+        }
     }
 }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SourceCode\\Analyze\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj": {}
+    "D:\\Data\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj": {}
   },
   "projects": {
-    "D:\\SourceCode\\Analyze\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj": {
+    "D:\\Data\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SourceCode\\Analyze\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj",
+        "projectUniqueName": "D:\\Data\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj",
         "projectName": "AnalyzeApp.API",
-        "projectPath": "D:\\SourceCode\\Analyze\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj",
-        "packagesPath": "C:\\Users\\asuta\\.nuget\\packages\\",
-        "outputPath": "D:\\SourceCode\\Analyze\\AnalyzeApp\\AnalyzeApp.API\\obj\\",
+        "projectPath": "D:\\Data\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj",
+        "packagesPath": "C:\\Users\\asutaka\\.nuget\\packages\\",
+        "outputPath": "D:\\Data\\AnalyzeApp\\AnalyzeApp.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\asuta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\asutaka\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -42,10 +42,6 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Binance.Net": {
-              "target": "Package",
-              "version": "[7.2.7, )"
-            },
             "Dapper": {
               "target": "Package",
               "version": "[2.0.123, )"

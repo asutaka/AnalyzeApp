@@ -3,8 +3,11 @@ using AnalyzeApp.Data;
 using AnalyzeApp.Job;
 using AnalyzeApp.Job.ScheduleJob;
 using AnalyzeApp.Model.ENTITY;
+using Newtonsoft.Json;
 using Quartz;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
 
 namespace AnalyzeApp
 {
@@ -22,8 +25,8 @@ namespace AnalyzeApp
         }
         private void InitData()
         {
-            //subcribe
-            SeedData.SubcribeData();
+            ////subcribe
+            //SeedData.SubcribeData();
             //Load JSonFile
             StaticVal.basicModel = new BasicSettingModel().LoadJsonFile("basic_setting.json");
             var obj = new AdvanceSettingModel();

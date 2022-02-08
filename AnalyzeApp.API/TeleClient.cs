@@ -17,7 +17,7 @@ namespace AnalyzeApp.API
                 case "phone_number": return _phone_number;
                 case "session_pathname": return _session_pathname;
                 case "verification_code": return _verification_code;
-                default: return string.Empty;
+                default: return null;
             }
         }
 

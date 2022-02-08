@@ -54,6 +54,7 @@
     <Compile Include="ENTITY\CoinTradeModel.cs" />
     <Compile Include="ENTITY\CryptonDataModel.cs" />
     <Compile Include="ENTITY\CryptonRankModel.cs" />
+    <Compile Include="ENTITY\DataSettingModel.cs" />
     <Compile Include="ENTITY\ElementModel.cs" />
     <Compile Include="ENTITY\FollowModel.cs" />
     <Compile Include="ENTITY\GenCodeModel.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="ENTITY\ProfileModel.cs" />
     <Compile Include="ENTITY\ScronModel.cs" />
     <Compile Include="ENTITY\SendNotifyModel.cs" />
+    <Compile Include="ENTITY\SettingModel.cs" />
     <Compile Include="ENTITY\SpecialSettingModel.cs" />
     <Compile Include="ENTITY\TimeModel.cs" />
     <Compile Include="ENTITY\Top30Model.cs" />

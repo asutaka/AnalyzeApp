@@ -1,8 +1,5 @@
 ﻿using AnalyzeApp.API.Interface;
 using AnalyzeApp.API.Model;
-using Binance.Net;
-using Binance.Net.Objects.Spot.MarketStream;
-using Newtonsoft.Json;
 
 namespace AnalyzeApp.API.Impl
 {
@@ -12,40 +9,6 @@ namespace AnalyzeApp.API.Impl
         public AnalyzeService(IAnalyzeRepo repo)
         {
             _repo = repo;
-            SubcribeData();
-        }
-        private void SubcribeData()
-        {
-            try
-            {
-                var socketClient = new BinanceSocketClient();
-                var subscribeResult = socketClient.Spot.SubscribeToAllSymbolTickerUpdatesAsync(data =>
-                {
-                    if(data != null)
-                    {
-                        StaticVal.source = data.Data;
-                    }
-                });
-            }
-            catch (Exception ex)
-            {
-                NLogLogger.PublishException(ex, $"AnalyzeService|SubcribeData: {ex.Message}");
-            }
-        }
-       
-        public async Task<int> CreateTableCoin(string coin)
-        {
-            return await _repo.CreateTableCoin(coin);
-        }
-
-        public async Task<int> DeleteCoin(string coin, double time)
-        {
-            return await _repo.DeleteCoin(coin, time);
-        }
-
-        public async Task<List<DataModel>> GetData(string coin, int top)
-        {
-            return await _repo.GetData(coin, top);
         }
 
         public async Task<List<SettingModel>> GetSettings()
@@ -58,24 +21,13 @@ namespace AnalyzeApp.API.Impl
             return await _repo.GetUser();
         }
 
-        public async Task<int> InsertCoin(DataModel model)
-        {
-            return await _repo.InsertCoin(model);
-        }
-
-        public async Task<List<NotifyModel>> GetNotify(int top)
-        {
-            return await _repo.GetNotify(top);
-        }
-
         public async Task<int> InsertNotify(NotifyModel model)
         {
             return await _repo.InsertNotify(model);    
         }
-
-        public async Task<int> DeleteNotify(double time)
+        public async Task<List<NotifyModel>> GetNotify(int top)
         {
-            return await _repo.DeleteNotify(time);
+            return await _repo.GetNotify(top);
         }
 
         public async Task<bool> Verify(VerifyModel model)
@@ -94,6 +46,51 @@ namespace AnalyzeApp.API.Impl
                 apiHash = ConstVal.apiHashSupport;
             }
             return await TeleClient.GenerateSession(phone, apiId, apiHash, model.VerifyCode, model.IsService);
+        }
+
+        public async Task<int> InsertUser(UserModel model)
+        {
+            return await _repo.InsertUser(model);
+        }
+
+        public async Task<int> DeleteUser()
+        {
+            return await _repo.DeleteUser();
+        }
+
+        public async Task<int> InsertSetting(SettingModel model)
+        {
+            return await _repo.InsertSetting(model);
+        }
+
+        public async Task<int> UpdateSetting(SettingModel model)
+        {
+            return await _repo.UpdateSetting(model);
+        }
+
+        public async Task<int> DeleteSetting(int id)
+        {
+            return await _repo.DeleteSetting(id);
+        }
+
+        public async Task<List<DataSettingModel>> GetDataSettings()
+        {
+            return await _repo.GetDataSettings();
+        }
+
+        public async Task<int> InsertDataSettings(DataSettingModel model)
+        {
+            return await _repo.InsertDataSettings(model);
+        }
+
+        public async Task<int> UpdateDataSettings(DataSettingModel model)
+        {
+            return await _repo.UpdateDataSettings(model);
+        }
+
+        public async Task<int> DeleteDataSettings(int interval)
+        {
+            return await _repo.DeleteDataSettings(interval);
         }
     }
 }
