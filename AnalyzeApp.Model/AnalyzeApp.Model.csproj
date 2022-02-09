@@ -52,6 +52,7 @@
     <Compile Include="ENTITY\CoinAggTradeModel.cs" />
     <Compile Include="ENTITY\CoinDeptModel.cs" />
     <Compile Include="ENTITY\CoinTradeModel.cs" />
+    <Compile Include="ENTITY\ConfigTableModel.cs" />
     <Compile Include="ENTITY\CryptonDataModel.cs" />
     <Compile Include="ENTITY\CryptonRankModel.cs" />
     <Compile Include="ENTITY\DataSettingModel.cs" />

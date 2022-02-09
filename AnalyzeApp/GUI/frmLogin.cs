@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading;
@@ -19,6 +20,7 @@ namespace AnalyzeApp.GUI
         private frmLogin()
         {
             InitializeComponent();
+
             var bkgr = new BackgroundWorker();
             bkgr.DoWork += (object sender, DoWorkEventArgs e) =>
             {

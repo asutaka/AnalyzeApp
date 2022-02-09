@@ -160,6 +160,7 @@ namespace AnalyzeApp.Data
         {
             // Put the following code where you want to initialize the class
             // It can be the static constructor or a one-time initializer
+            //public static HttpClient client = new HttpClient();
             StaticVal.client.BaseAddress = new Uri("");
             StaticVal.client.DefaultRequestHeaders.Accept.Clear();
             StaticVal.client.DefaultRequestHeaders.Accept.Add(

@@ -18,5 +18,7 @@ namespace AnalyzeApp.API.Interface
         Task<List<NotifyModel>> GetNotify(int top);
         Task<int> InsertNotify(NotifyModel model);
         Task<int> DeleteNotify(double time);
+        Task<ConfigTableModel> GetConfigTable();
+        Task<int> UpdateConfigTable(ConfigTableModel model);
     }
 }

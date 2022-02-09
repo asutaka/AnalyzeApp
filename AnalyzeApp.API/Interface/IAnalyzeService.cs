@@ -21,5 +21,7 @@ namespace AnalyzeApp.API.Interface
         Task<int> InsertNotify(NotifyModel model);
         Task<List<NotifyModel>> GetNotify(int top);
         Task<bool> Verify(VerifyModel model);
+        Task<ConfigTableModel> GetConfigTable();
+        Task<int> UpdateConfigTable(ConfigTableModel model);
     }
 }

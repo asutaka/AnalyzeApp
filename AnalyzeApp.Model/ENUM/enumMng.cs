@@ -165,4 +165,12 @@ namespace AnalyzeApp.Model.ENUM
         [Display(Name = "Lỗi không xác định")]
         UnknownError = -99
     }
+
+    public enum enumStatusLoadData
+    {
+        None = 0,
+        Loading = 1,
+        Endload = 2,
+        MainLoad = 3,
+    }
 }

@@ -19,7 +19,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "netcore", "netcore", "{7F1A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "netframework", "netframework", "{AA07A065-30B8-4B8C-9847-7A89EC3B4058}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalyzeApp.API", "AnalyzeApp.API\AnalyzeApp.API.csproj", "{C20A2ED2-2101-4A3A-9377-3867119D6E4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnalyzeApp.API", "AnalyzeApp.API\AnalyzeApp.API.csproj", "{C20A2ED2-2101-4A3A-9377-3867119D6E4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalyzeApp.DataService", "AnalyzeApp.DataService\AnalyzeApp.DataService.csproj", "{6DE601CA-84FF-43C3-9E99-05808C1FC45B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{C20A2ED2-2101-4A3A-9377-3867119D6E4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C20A2ED2-2101-4A3A-9377-3867119D6E4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C20A2ED2-2101-4A3A-9377-3867119D6E4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DE601CA-84FF-43C3-9E99-05808C1FC45B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DE601CA-84FF-43C3-9E99-05808C1FC45B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DE601CA-84FF-43C3-9E99-05808C1FC45B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DE601CA-84FF-43C3-9E99-05808C1FC45B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{EAF68189-B6A0-4EB9-B020-EACB60E4AA9B} = {AA07A065-30B8-4B8C-9847-7A89EC3B4058}
 		{A8358901-92F7-440F-B900-8730446F9929} = {AA07A065-30B8-4B8C-9847-7A89EC3B4058}
 		{C20A2ED2-2101-4A3A-9377-3867119D6E4B} = {7F1AE01D-030D-467F-BC15-4AE30F4C7AC7}
+		{6DE601CA-84FF-43C3-9E99-05808C1FC45B} = {AA07A065-30B8-4B8C-9847-7A89EC3B4058}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2A2A98C6-4BB1-4233-AEF7-5C7DC292E643}

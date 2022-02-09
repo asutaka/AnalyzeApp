@@ -92,5 +92,15 @@ namespace AnalyzeApp.API.Impl
         {
             return await _repo.DeleteDataSettings(interval);
         }
+
+        public async Task<ConfigTableModel> GetConfigTable()
+        {
+            return await _repo.GetConfigTable();
+        }
+
+        public async Task<int> UpdateConfigTable(ConfigTableModel model)
+        {
+            return await _repo.UpdateConfigTable(model);
+        }
     }
 }

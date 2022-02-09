@@ -90,5 +90,19 @@ namespace AnalyzeApp.API.Controllers
             var result = await _service.DeleteDataSettings(id);
             return Ok(result);
         }
+
+        [HttpGet(Name = "GetConfigTable")]
+        public async Task<IActionResult> GetConfigTable()
+        {
+            var result = await _service.GetConfigTable();
+            return Ok(result);
+        }
+
+        [HttpPost(Name = "UpdateConfigTable")]
+        public async Task<IActionResult> UpdateConfigTable([FromBody] ConfigTableModel model)
+        {
+            var result = await _service.UpdateConfigTable(model);
+            return Ok(result);
+        }
     }
 }

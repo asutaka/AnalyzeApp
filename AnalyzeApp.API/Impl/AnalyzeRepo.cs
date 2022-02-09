@@ -297,5 +297,45 @@ namespace AnalyzeApp.API.Impl
             }
             return -1;
         }
+
+        public async Task<ConfigTableModel> GetConfigTable()
+        {
+            try
+            {
+                using (var conn = new SqliteConnection(_connString))
+                {
+                    await conn.OpenAsync();
+                    var result = await conn.QueryAsync<ConfigTableModel>("select * from ConfigTable", commandTimeout: 5, commandType: CommandType.Text);
+                    if (result != null && result.Any())
+                        return result.First();
+                }
+            }
+            catch (Exception ex)
+            {
+                NLogLogger.PublishException(ex, $"AnalyzeRepo:GetConfigTable: {ex.Message}");
+            }
+            return null;
+        }
+
+        public async Task<int> UpdateConfigTable(ConfigTableModel model)
+        {
+            try
+            {
+                using (var conn = new SqliteConnection(_connString))
+                {
+                    await conn.OpenAsync();
+                    var parameter = new DynamicParameters();
+                    parameter.Add(name: "@StatusLoadData", dbType: DbType.Int32, direction: ParameterDirection.Input, value: model.StatusLoadData);
+
+                    var result = await conn.ExecuteAsync($"update ConfigTable set StatusLoadData = @StatusLoadData", param: parameter, commandTimeout: 5, commandType: CommandType.Text);
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                NLogLogger.PublishException(ex, $"AnalyzeRepo:UpdateConfigTable: {ex.Message}");
+            }
+            return -1;
+        }
     }
 }
