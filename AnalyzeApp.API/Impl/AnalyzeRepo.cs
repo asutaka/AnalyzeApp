@@ -244,7 +244,7 @@ namespace AnalyzeApp.API.Impl
                     await conn.OpenAsync();
                     var parameter = new DynamicParameters();
                     parameter.Add(name: "@Interval", dbType: DbType.Int32, direction: ParameterDirection.Input, value: model.Interval);
-                    parameter.Add(name: "@UpdatedTime", dbType: DbType.Int32, direction: ParameterDirection.Input, value: model.UpdatedTime);
+                    parameter.Add(name: "@UpdatedTime", dbType: DbType.Double, direction: ParameterDirection.Input, value: model.UpdatedTime);
                     var result = await conn.ExecuteAsync($"INSERT INTO DataTable(Interval, UpdatedTime) VALUES (@Interval, @UpdatedTime)", param: parameter, commandTimeout: 5, commandType: CommandType.Text);
                     return result;
                 }
@@ -265,7 +265,7 @@ namespace AnalyzeApp.API.Impl
                     await conn.OpenAsync();
                     var parameter = new DynamicParameters();
                     parameter.Add(name: "@Interval", dbType: DbType.Int32, direction: ParameterDirection.Input, value: model.Interval);
-                    parameter.Add(name: "@UpdatedTime", dbType: DbType.Int32, direction: ParameterDirection.Input, value: model.UpdatedTime);
+                    parameter.Add(name: "@UpdatedTime", dbType: DbType.Double, direction: ParameterDirection.Input, value: model.UpdatedTime);
 
                     var result = await conn.ExecuteAsync($"update DataTable set UpdatedTime = @UpdatedTime where Interval = @Interval", param: parameter, commandTimeout: 5, commandType: CommandType.Text);
                     return result;

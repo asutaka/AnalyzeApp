@@ -1,12 +1,3 @@
-D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\bin\Debug\AnalyzeApp.Model.dll
-D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\bin\Debug\AnalyzeApp.Model.pdb
-D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\bin\Debug\Newtonsoft.Json.dll
-D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\bin\Debug\Newtonsoft.Json.xml
-D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.csproj.AssemblyReference.cache
-D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.csproj.CoreCompileInputs.cache
-D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.csproj.CopyComplete
-D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.dll
-D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.pdb
 D:\Data\AnalyzeApp\AnalyzeApp.Model\bin\Debug\AnalyzeApp.Model.dll
 D:\Data\AnalyzeApp\AnalyzeApp.Model\bin\Debug\AnalyzeApp.Model.pdb
 D:\Data\AnalyzeApp\AnalyzeApp.Model\bin\Debug\Newtonsoft.Json.dll
@@ -16,3 +7,11 @@ D:\Data\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.csproj.CoreCompil
 D:\Data\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.csproj.CopyComplete
 D:\Data\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.dll
 D:\Data\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.pdb
+D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\bin\Debug\AnalyzeApp.Model.dll
+D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\bin\Debug\AnalyzeApp.Model.pdb
+D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\bin\Debug\Newtonsoft.Json.dll
+D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\bin\Debug\Newtonsoft.Json.xml
+D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.csproj.CoreCompileInputs.cache
+D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.csproj.CopyComplete
+D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.dll
+D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.pdb

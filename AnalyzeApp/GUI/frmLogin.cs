@@ -1,5 +1,6 @@
 ﻿using AnalyzeApp.Common;
 using AnalyzeApp.Model.ENTITY;
+using AnalyzeApp.Model.ENUM;
 using DevExpress.XtraEditors;
 using Newtonsoft.Json;
 using System;
@@ -7,6 +8,8 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading;
 using System.Windows.Automation;
@@ -20,13 +23,7 @@ namespace AnalyzeApp.GUI
         private frmLogin()
         {
             InitializeComponent();
-
-            var bkgr = new BackgroundWorker();
-            bkgr.DoWork += (object sender, DoWorkEventArgs e) =>
-            {
-                Startup.Instance();
-            };
-            bkgr.RunWorkerAsync();
+            Init();
         }
 
         private static frmLogin _instance = null;
@@ -34,6 +31,26 @@ namespace AnalyzeApp.GUI
         {
             _instance = _instance ?? new frmLogin();
             return _instance;
+        }
+
+        private void Init()
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+            client.BaseAddress = new Uri(ConstVal.api);
+            var model = new ConfigTableModel { StatusLoadData = (int)enumStatusLoadData.None };
+            HttpContent c = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, "application/json");
+            client.PostAsync("Setting/UpdateConfigTable", c).GetAwaiter().GetResult();
+            //
+            Process.Start($"{Directory.GetCurrentDirectory()}\\dataservice\\{ConstVal.dataServiceName}.exe");
+            var bkgr = new BackgroundWorker();
+            bkgr.DoWork += (object sender, DoWorkEventArgs e) =>
+            {
+                Startup.Instance();
+            };
+            bkgr.RunWorkerAsync();
         }
 
         private void picGoogleSignIn_Click(object sender, EventArgs e)

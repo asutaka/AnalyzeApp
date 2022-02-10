@@ -3,6 +3,6 @@
     public class DataSettingModel
     {
         public int Interval { get; set; }
-        public int UpdatedTime { get; set; }
+        public double UpdatedTime { get; set; }
     }
 }

@@ -45,6 +45,9 @@
         public const string strBotBuyCode = "https://drive.google.com/file/d/1hakAvnesXwXbr4WsHx4ilZhfJPa4PjFi/view?usp=sharing";
         public const string strBotSupport = "https://drive.google.com/file/d/1hakAvnesXwXbr4WsHx4ilZhfJPa4PjFi/view?usp=sharing";
         //
+        public const string api = "http://localhost:12399";
+        public const string appName = "AnalyzeApp";
         public const string serviceName = "AnalyzeApp.TelegramService";
+        public const string dataServiceName = "AnalyzeApp.DataService";
     }
 }

@@ -200,6 +200,18 @@ namespace AnalyzeApp.Common
             return table;
         }
 
+        public static List<KeyValueModel> EnumToList(this Type type)
+        {
+            var convertedList = (from rw in EnumToData(type).AsEnumerable()
+                                 select new KeyValueModel()
+                                 {
+                                     Id = int.Parse(rw["ID"].ToString()),
+                                     Name = rw["Name"].ToString()
+                                 }).ToList();
+
+            return convertedList;
+        }
+
         public static T To<T>(this ElementModel model)
         {
             if (model == null)

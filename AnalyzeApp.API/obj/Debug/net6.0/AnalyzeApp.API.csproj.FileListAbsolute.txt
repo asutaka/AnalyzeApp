@@ -81,9 +81,6 @@ D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\ref\AnalyzeApp.
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.pdb
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.genruntimeconfig.cache
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.csproj.AssemblyReference.cache
-D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\bin\Debug\net6.0\Binance.Net.dll
-D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\bin\Debug\net6.0\CryptoExchange.Net.dll
-D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\bin\Debug\net6.0\Newtonsoft.Json.dll
 D:\Data\AnalyzeApp\AnalyzeApp.API\bin\Debug\net6.0\NLog.config
 D:\Data\AnalyzeApp\AnalyzeApp.API\bin\Debug\net6.0\appsettings.Development.json
 D:\Data\AnalyzeApp\AnalyzeApp.API\bin\Debug\net6.0\appsettings.json
