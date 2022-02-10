@@ -2627,19 +2627,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\asuta\\.nuget\\packages\\": {}
+    "C:\\Users\\asutaka\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SourceCode\\Analyze\\AnalyzeApp\\AnalyzeApp.DataService\\AnalyzeApp.DataService.csproj",
+      "projectUniqueName": "D:\\Data\\AnalyzeApp\\AnalyzeApp.DataService\\AnalyzeApp.DataService.csproj",
       "projectName": "AnalyzeApp.DataService",
-      "projectPath": "D:\\SourceCode\\Analyze\\AnalyzeApp\\AnalyzeApp.DataService\\AnalyzeApp.DataService.csproj",
-      "packagesPath": "C:\\Users\\asuta\\.nuget\\packages\\",
-      "outputPath": "D:\\SourceCode\\Analyze\\AnalyzeApp\\AnalyzeApp.DataService\\obj\\",
+      "projectPath": "D:\\Data\\AnalyzeApp\\AnalyzeApp.DataService\\AnalyzeApp.DataService.csproj",
+      "packagesPath": "C:\\Users\\asutaka\\.nuget\\packages\\",
+      "outputPath": "D:\\Data\\AnalyzeApp\\AnalyzeApp.DataService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\asuta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\asutaka\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2655,11 +2655,11 @@
         "net48": {
           "targetAlias": "net48",
           "projectReferences": {
-            "D:\\SourceCode\\Analyze\\AnalyzeApp\\AnalyzeApp.Common\\AnalyzeApp.Common.csproj": {
-              "projectPath": "D:\\SourceCode\\Analyze\\AnalyzeApp\\AnalyzeApp.Common\\AnalyzeApp.Common.csproj"
+            "D:\\Data\\AnalyzeApp\\AnalyzeApp.Common\\AnalyzeApp.Common.csproj": {
+              "projectPath": "D:\\Data\\AnalyzeApp\\AnalyzeApp.Common\\AnalyzeApp.Common.csproj"
             },
-            "D:\\SourceCode\\Analyze\\AnalyzeApp\\AnalyzeApp.Model\\AnalyzeApp.Model.csproj": {
-              "projectPath": "D:\\SourceCode\\Analyze\\AnalyzeApp\\AnalyzeApp.Model\\AnalyzeApp.Model.csproj"
+            "D:\\Data\\AnalyzeApp\\AnalyzeApp.Model\\AnalyzeApp.Model.csproj": {
+              "projectPath": "D:\\Data\\AnalyzeApp\\AnalyzeApp.Model\\AnalyzeApp.Model.csproj"
             }
           }
         }

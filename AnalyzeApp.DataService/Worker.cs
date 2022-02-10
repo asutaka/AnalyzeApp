@@ -20,12 +20,6 @@ namespace AnalyzeApp.DataService
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            var appCheck = Process.GetProcessesByName(ConstVal.appName);
-            if (appCheck == null)
-            {
-                await StopAsync(stoppingToken);
-            }
-
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
@@ -35,6 +29,11 @@ namespace AnalyzeApp.DataService
             {
                 try
                 {
+                    //var appCheck = Process.GetProcessesByName(ConstVal.appName);
+                    //if (appCheck == null || !appCheck.Any())
+                    //{
+                    //    await StopAsync(stoppingToken);
+                    //}
                     var response = await client.GetAsync("Setting/GetConfigTable");
                     var data = JsonConvert.DeserializeObject<ConfigTableModel>(await response.Content.ReadAsStringAsync());
                     if (data != null)
@@ -114,8 +113,8 @@ namespace AnalyzeApp.DataService
                                         client.PostAsync("Setting/UpdateDataSettings", content).GetAwaiter().GetResult();
                                     });
                                     lstTask.Add(task);
-                                    //phunv
-                                    break;
+                                    ////phunv
+                                    //break;
                                 }
                                 Task.WaitAll(lstTask.ToArray());
                                 //update flag
@@ -148,8 +147,8 @@ namespace AnalyzeApp.DataService
                         SyncDataValue(item.S, interval, startTime);
                     });
                     lstTask.Add(task);
-                    //phunv
-                    break;
+                    ////phunv
+                    //break;
                 }
                 Task.WaitAll(lstTask.ToArray());
             }

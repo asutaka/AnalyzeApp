@@ -1,0 +1,2688 @@
+ -------------- Info (2022-02-11 00:15:29.8080) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:29 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:30.6356) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:30 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:31.5738) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:31 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:32.5114) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:32 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:33.3256) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:33 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:34.1387) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:34 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:35.0932) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:35 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:36.0433) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:36 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:36.9817) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:36 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:37.9355) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:37 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:38.8888) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:38 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:39.8113) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:39 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:40.9056) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:40 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:41.7185) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:41 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:42.6564) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:42 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:43.5950) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:43 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:44.5327) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:44 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:45.4711) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:45 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:46.4249) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:46 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:47.3783) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:47 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:48.3487) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:48 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:49.3180) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:49 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:50.2557) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:50 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:51.1938) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:51 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:52.0068) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:52 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:52.9446) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:52 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:53.7663) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:53 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:54.7203) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:54 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:55.6793) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:55 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:56.6172) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:56 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:57.5705) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:57 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:58.5239) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:58 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:15:59.4774) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:15:59 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:00.4313) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:00 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:01.3686) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:01 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:02.3223) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:02 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:03.2612) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:03 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:04.3871) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:04 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:05.3538) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:05 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:06.3072) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:06 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:07.1202) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:07 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:08.0427) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:08 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:08.9806) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:08 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:09.9193) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:09 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:10.7137) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:10 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:11.6673) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:11 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:12.6211) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:12 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:13.5621) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:13 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:14.5156) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:14 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:15.4736) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:15 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:16.4239) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:16 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:17.5341) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:17 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:18.4883) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:18 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:19.4513) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:19 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:20.7115) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:20 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:21.6498) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:21 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:22.6084) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:22 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:23.5703) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:23 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:24.6854) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:24 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:25.6368) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:25 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:26.7465) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:26 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:27.6844) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:27 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:28.6225) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:28 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:29.5914) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:29 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:30.5449) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:30 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:31.3510) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:31 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:32.1640) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:32 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:33.1347) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:33 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:34.0568) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:34 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:35.0259) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:35 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:35.9831) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:35 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:36.9452) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:36 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:37.8833) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:37 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:38.6956) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:38 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:39.5085) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:39 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:40.4461) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:40 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:41.3993) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:41 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:42.3373) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:42 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:43.1576) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:43 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:44.1112) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:44 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:45.0489) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:45 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:46.0104) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:46 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:46.9641) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:46 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:47.9189) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:47 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:48.8724) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:48 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:49.6922) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:49 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:50.6503) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:50 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:51.5882) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:51 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:52.5260) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:52 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:53.5266) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:53 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:54.3235) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:54 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:55.4321) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:55 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:56.3859) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:56 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:57.1839) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:57 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:58.1225) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:58 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:59.0750) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:59 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:16:59.8719) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:16:59 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:00.8081) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:00 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:01.7466) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:01 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:02.8266) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:02 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:03.7648) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:03 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:04.5772) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:04 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:05.3749) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:05 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:06.1724) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:06 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:07.1413) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:07 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:08.0791) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:08 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:08.8920) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:08 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:09.8452) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:09 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:10.6423) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:10 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:11.5653) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:11 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:12.5349) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:12 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:13.3509) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:13 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:14.1639) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:14 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:15.0865) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:15 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:16.1962) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:16 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:17.0089) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:17 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:17.9644) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:17 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:18.9178) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:18 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:19.8872) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:19 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:20.8382) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:20 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:21.6361) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:21 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:22.5745) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:22 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:23.5292) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:23 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:24.3265) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:24 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:25.1397) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:25 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:26.1206) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:26 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:26.9330) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:26 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:27.8863) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:27 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:28.8408) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:28 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:29.7942) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:29 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:30.7617) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:30 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:31.6993) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:31 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:32.4967) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:32 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:33.4676) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:33 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:34.4054) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:34 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:35.3589) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:35 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:36.1873) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:36 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:37.1406) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:37 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:38.2345) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:38 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:39.1878) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:39 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:40.0004) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:40 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:40.9226) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:40 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:41.9078) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:41 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:42.8617) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:42 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:43.8311) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:43 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:44.6441) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:44 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:45.5822) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:45 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:46.5514) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:46 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:47.3515) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:47 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:48.3014) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:48 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:49.2554) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:49 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:50.1931) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:50 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:51.1623) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:51 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:52.0844) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:52 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:53.0220) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:53 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:53.8349) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:53 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:54.7733) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:54 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:55.5858) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:55 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:56.5557) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:56 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:57.3685) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:57 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:58.3069) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:58 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:17:59.4166) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:17:59 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:00.2331) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:00 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:01.1806) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:01 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:02.1179) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:02 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:03.0649) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:03 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:04.0338) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:04 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:04.9718) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:04 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:05.9305) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:05 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:06.8681) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:06 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:07.8214) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:07 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:08.6342) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:08 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:09.5572) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:09 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:10.5245) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:10 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:11.4618) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:11 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:12.4005) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:12 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:13.3725) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:13 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:14.3438) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:14 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:15.1570) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:15 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:16.1029) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:16 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:17.0568) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:17 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:17.8703) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:17 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:18.8263) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:18 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:19.7798) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:19 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:20.7443) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:20 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:21.5575) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:21 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:22.4961) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:22 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:23.4495) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:23 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:24.3876) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:24 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:25.3380) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:25 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:26.3075) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:26 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:27.1049) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:27 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:28.0681) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:28 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:28.8804) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:28 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:29.8337) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:29 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:30.7769) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:30 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:31.8710) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:31 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:32.8100) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:32 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:33.7636) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:33 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:34.7169) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:34 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:35.8111) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:35 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:36.7488) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:36 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:37.5583) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:37 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:38.3809) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:38 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:39.3412) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:39 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:40.3041) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:40 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:41.2405) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:41 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:42.1589) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:42 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:43.1231) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:43 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:44.0844) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:44 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:45.2099) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:45 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:46.1787) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:46 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:46.9936) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:46 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:47.9589) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:47 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:48.7649) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:48 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:49.6917) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:49 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:50.6491) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:50 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:51.6135) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:51 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:52.4490) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:52 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:53.4244) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:53 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:54.2466) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:54 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:55.1912) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:55 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:56.1540) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:56 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:56.9512) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:56 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:57.9198) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:57 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:58.7325) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:58 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:18:59.6780) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:18:59 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:00.6334) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:00 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:01.4511) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:01 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:02.4012) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:02 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:03.3487) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:03 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:04.3025) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:04 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:05.3840) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:05 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:06.3225) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:06 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:07.2757) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:07 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:08.2453) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:08 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:09.1830) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:09 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:10.2912) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:10 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:11.2290) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:11 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:12.1671) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:12 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:13.2771) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:13 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:14.2151) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:14 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:15.1539) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:15 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:16.0893) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:16 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:17.0433) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:17 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:17.9820) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:17 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:18.9044) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:18 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:19.7355) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:19 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:20.6797) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:20 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:21.6341) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:21 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:22.5962) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:22 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:23.5491) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:23 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:24.4965) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:24 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:25.4587) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:25 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:26.2669) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:26 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:27.0842) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:27 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:28.0429) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:28 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:29.0111) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:29 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:29.9606) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:29 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:30.7699) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:30 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:31.7392) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:31 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:32.6909) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:32 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:33.5039) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:33 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:34.4462) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:34 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:35.2513) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:35 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:36.1991) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:36 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:37.0333) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:37 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:37.8247) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:37 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:38.7941) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:38 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:39.6077) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:39 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:40.5655) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:40 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:41.5039) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:41 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:42.4421) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:42 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:43.4114) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:43 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:44.3655) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:44 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:45.4438) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:45 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:46.4136) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:46 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:47.3516) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:47 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:48.1666) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:48 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:49.1051) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:49 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:50.0738) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:50 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:51.0239) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:51 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:51.9776) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:51 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:52.7908) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:52 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:53.7445) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:53 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:54.8391) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:54 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:55.9309) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:55 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:56.9156) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:56 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:57.8852) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:57 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:58.8257) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:58 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:19:59.7820) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:19:59 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:20:00.7426) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:20:00 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:20:01.7168) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:20:01 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:20:02.6751) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:20:02 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:20:03.6307) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:20:03 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:20:04.7377) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:20:04 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:20:05.6896) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:20:05 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:20:06.6527) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:20:06 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:20:07.6230) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:20:07 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:20:08.5486) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:20:08 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:20:48.0801) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:20:48 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:20:49.0213) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:20:49 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:20:49.8401) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:20:49 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:20:50.7953) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:20:50 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:20:51.7643) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:20:51 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:20:52.7056) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:20:52 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:20:53.8079) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:20:53 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:20:54.7751) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:20:54 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:20:55.5929) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:20:55 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:20:56.4156) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:20:56 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:20:57.3699) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:20:57 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:20:58.3228) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:20:58 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:20:59.2762) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:20:59 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:21:00.2141) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:21:00 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:21:01.1633) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:21:01 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:21:02.1165) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:21:02 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:21:03.0539) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:21:03 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:21:04.0073) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:21:04 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:21:04.8202) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:21:04 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:21:05.8054) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:21:05 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:21:06.8992) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:21:06 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:21:07.8681) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:21:07 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:21:08.8375) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:21:08 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:21:09.7911) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:21:09 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:21:10.7136) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:21:10 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:21:11.6511) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:21:11 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:21:12.4481) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:21:12 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:21:13.4016) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:21:13 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:21:14.3244) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:21:14 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:21:15.2779) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:21:15 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:21:16.2091) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:21:16 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:21:17.1629) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:21:17 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:21:18.1017) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:21:18 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:21:18.8989) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:21:18 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:21:19.8524) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:21:19 AM:DataService is running!
+
+ -------------- Info (2022-02-11 00:21:20.6498) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/11/2022 12:21:20 AM:DataService is running!
+
