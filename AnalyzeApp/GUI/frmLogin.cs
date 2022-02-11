@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading;
@@ -22,7 +23,10 @@ namespace AnalyzeApp.GUI
             var bkgr = new BackgroundWorker();
             bkgr.DoWork += (object sender, DoWorkEventArgs e) =>
             {
-                Startup.Instance();
+                Config.LoadConfig().GetAwaiter().GetResult();
+                //Load ListCoin
+                StaticVal.lstCoin = DataMng.GetCoin();
+                StaticVal.lstCoinFilter = StaticVal.lstCoin.Where(x => !Config.BlackLists.Any(y => y.S == x.S)).ToList();
                 DataMng.StoredData().GetAwaiter().GetResult();
             };
             bkgr.RunWorkerAsync();

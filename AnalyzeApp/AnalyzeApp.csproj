@@ -292,7 +292,6 @@
     <Compile Include="Job\TradeListNotifyJob.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Startup.cs" />
     <Compile Include="StaticVal.cs" />
     <EmbeddedResource Include="GUI\Child\frmAdvanceSetting.resx">
       <DependentUpon>frmAdvanceSetting.cs</DependentUpon>
