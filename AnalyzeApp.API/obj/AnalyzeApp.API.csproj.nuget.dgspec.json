@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Data\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj": {}
+    "D:\\SourceCode\\Analyze\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj": {}
   },
   "projects": {
-    "D:\\Data\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj": {
+    "D:\\SourceCode\\Analyze\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Data\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj",
+        "projectUniqueName": "D:\\SourceCode\\Analyze\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj",
         "projectName": "AnalyzeApp.API",
-        "projectPath": "D:\\Data\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj",
-        "packagesPath": "C:\\Users\\asutaka\\.nuget\\packages\\",
-        "outputPath": "D:\\Data\\AnalyzeApp\\AnalyzeApp.API\\obj\\",
+        "projectPath": "D:\\SourceCode\\Analyze\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj",
+        "packagesPath": "C:\\Users\\asuta\\.nuget\\packages\\",
+        "outputPath": "D:\\SourceCode\\Analyze\\AnalyzeApp\\AnalyzeApp.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\asutaka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\asuta\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

@@ -2,7 +2,6 @@ D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\bin\Release\AnalyzeApp.Model.d
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\bin\Release\AnalyzeApp.Model.pdb
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\bin\Release\Newtonsoft.Json.dll
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\bin\Release\Newtonsoft.Json.xml
-D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\obj\Release\AnalyzeApp.Model.csproj.AssemblyReference.cache
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\obj\Release\AnalyzeApp.Model.csproj.CoreCompileInputs.cache
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\obj\Release\AnalyzeApp.Model.csproj.CopyComplete
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\obj\Release\AnalyzeApp.Model.dll

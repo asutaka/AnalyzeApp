@@ -1,7 +1,0 @@
-D:\Data\AnalyzeApp\AnalyzeApp.DataService\obj\Debug\net472\AnalyzeApp.DataService.csproj.AssemblyReference.cache
-D:\Data\AnalyzeApp\AnalyzeApp.DataService\obj\Debug\net472\AnalyzeApp.DataService.csproj.SuggestedBindingRedirects.cache
-D:\Data\AnalyzeApp\AnalyzeApp.DataService\obj\Debug\net472\AnalyzeApp.DataService.exe.config
-D:\Data\AnalyzeApp\AnalyzeApp.DataService\obj\Debug\net472\AnalyzeApp.DataService.GeneratedMSBuildEditorConfig.editorconfig
-D:\Data\AnalyzeApp\AnalyzeApp.DataService\obj\Debug\net472\AnalyzeApp.DataService.AssemblyInfoInputs.cache
-D:\Data\AnalyzeApp\AnalyzeApp.DataService\obj\Debug\net472\AnalyzeApp.DataService.AssemblyInfo.cs
-D:\Data\AnalyzeApp\AnalyzeApp.DataService\obj\Debug\net472\AnalyzeApp.DataService.csproj.CoreCompileInputs.cache
