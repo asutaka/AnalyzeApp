@@ -2,10 +2,7 @@
 using AnalyzeApp.Model.ENTITY;
 using AnalyzeApp.Model.ENUM;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace AnalyzeApp
@@ -14,70 +11,61 @@ namespace AnalyzeApp
     {
         public static async Task LoadConfig()
         {
-            HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/json"));
-            client.BaseAddress = new Uri(ConstVal.api);
-            var response = await client.GetAsync("Setting/GetSettings");
-            if(response != null)
+            var lConfig = await APIService.Instance().GetSettings();
+            foreach (var item in lConfig)
             {
-                var lConfig = JsonConvert.DeserializeObject<IEnumerable<SettingModel>>(await response.Content.ReadAsStringAsync());
-                foreach(var item in lConfig)
+                switch (item.Id)
                 {
-                    switch (item.Id)
-                    {
-                        case (int)enumSetting.TradeList:
-                            {
-                                TradeList = JsonConvert.DeserializeObject<TradeListModel>(item.Setting);
-                                break;
-                            }
-                        case (int)enumSetting.FollowList:
-                            {
-                                Follow = JsonConvert.DeserializeObject<FollowModel>(item.Setting);
-                                break;
-                            }
-                        case (int)enumSetting.BlackList:
-                            {
-                                BlackLists = JsonConvert.DeserializeObject<List<CryptonDetailDataModel>>(item.Setting);
-                                break;
-                            }
-                        case (int)enumSetting.RealtimeList:
-                            {
-                                RealTimes = JsonConvert.DeserializeObject<List<CryptonDetailDataModel>>(item.Setting);
-                                break;
-                            }
-                        case (int)enumSetting.BasicSetting:
-                            {
-                                BasicSetting = JsonConvert.DeserializeObject<BasicSettingModel>(item.Setting);
-                                break;
-                            }
-                        case (int)enumSetting.SpecialSetting:
-                            {
-                                SpecialSetting = JsonConvert.DeserializeObject<SpecialSettingModel>(item.Setting);
-                                break;
-                            }
-                        case (int)enumSetting.AdvanceSetting1:
-                            {
-                                AdvanceSetting1 = JsonConvert.DeserializeObject<AdvanceSettingModel>(item.Setting);
-                                break;
-                            }
-                        case (int)enumSetting.AdvanceSetting2:
-                            {
-                                AdvanceSetting2 = JsonConvert.DeserializeObject<AdvanceSettingModel>(item.Setting);
-                                break;
-                            }
-                        case (int)enumSetting.AdvanceSetting3:
-                            {
-                                AdvanceSetting3 = JsonConvert.DeserializeObject<AdvanceSettingModel>(item.Setting);
-                                break;
-                            }
-                        case (int)enumSetting.AdvanceSetting4:
-                            {
-                                AdvanceSetting4 = JsonConvert.DeserializeObject<AdvanceSettingModel>(item.Setting);
-                                break;
-                            }
-                    }
+                    case (int)enumSetting.TradeList:
+                        {
+                            TradeList = JsonConvert.DeserializeObject<TradeListModel>(item.Setting);
+                            break;
+                        }
+                    case (int)enumSetting.FollowList:
+                        {
+                            Follow = JsonConvert.DeserializeObject<FollowModel>(item.Setting);
+                            break;
+                        }
+                    case (int)enumSetting.BlackList:
+                        {
+                            BlackLists = JsonConvert.DeserializeObject<List<CryptonDetailDataModel>>(item.Setting);
+                            break;
+                        }
+                    case (int)enumSetting.RealtimeList:
+                        {
+                            RealTimes = JsonConvert.DeserializeObject<List<CryptonDetailDataModel>>(item.Setting);
+                            break;
+                        }
+                    case (int)enumSetting.BasicSetting:
+                        {
+                            BasicSetting = JsonConvert.DeserializeObject<BasicSettingModel>(item.Setting);
+                            break;
+                        }
+                    case (int)enumSetting.SpecialSetting:
+                        {
+                            SpecialSetting = JsonConvert.DeserializeObject<SpecialSettingModel>(item.Setting);
+                            break;
+                        }
+                    case (int)enumSetting.AdvanceSetting1:
+                        {
+                            AdvanceSetting1 = JsonConvert.DeserializeObject<AdvanceSettingModel>(item.Setting);
+                            break;
+                        }
+                    case (int)enumSetting.AdvanceSetting2:
+                        {
+                            AdvanceSetting2 = JsonConvert.DeserializeObject<AdvanceSettingModel>(item.Setting);
+                            break;
+                        }
+                    case (int)enumSetting.AdvanceSetting3:
+                        {
+                            AdvanceSetting3 = JsonConvert.DeserializeObject<AdvanceSettingModel>(item.Setting);
+                            break;
+                        }
+                    case (int)enumSetting.AdvanceSetting4:
+                        {
+                            AdvanceSetting4 = JsonConvert.DeserializeObject<AdvanceSettingModel>(item.Setting);
+                            break;
+                        }
                 }
             }
         }
