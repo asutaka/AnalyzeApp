@@ -91,10 +91,10 @@ namespace AnalyzeApp.GUI
         private void bkgrPrepareRealTime_DoWork(object sender1, DoWorkEventArgs e1)
         {
             //15M
-            if (StaticVal.advanceModel1.LstInterval.Contains((int)enumTimeZone.ThirteenMinute)
-                || StaticVal.advanceModel2.LstInterval.Contains((int)enumTimeZone.ThirteenMinute)
-                || StaticVal.advanceModel3.LstInterval.Contains((int)enumTimeZone.ThirteenMinute)
-                || StaticVal.advanceModel4.LstInterval.Contains((int)enumTimeZone.ThirteenMinute))
+            if (Config.AdvanceSetting1.LstInterval.Contains((int)enumTimeZone.ThirteenMinute)
+                || Config.AdvanceSetting2.LstInterval.Contains((int)enumTimeZone.ThirteenMinute)
+                || Config.AdvanceSetting3.LstInterval.Contains((int)enumTimeZone.ThirteenMinute)
+                || Config.AdvanceSetting4.LstInterval.Contains((int)enumTimeZone.ThirteenMinute))
             {
                 var wrkr = new BackgroundWorker();
                 wrkr.DoWork += (object sender, DoWorkEventArgs e) => {
@@ -112,10 +112,10 @@ namespace AnalyzeApp.GUI
                 wrkr.RunWorkerAsync();
             }
             //4H
-            if (StaticVal.advanceModel1.LstInterval.Contains((int)enumTimeZone.FourHour)
-              || StaticVal.advanceModel2.LstInterval.Contains((int)enumTimeZone.FourHour)
-              || StaticVal.advanceModel3.LstInterval.Contains((int)enumTimeZone.FourHour)
-              || StaticVal.advanceModel4.LstInterval.Contains((int)enumTimeZone.FourHour))
+            if (Config.AdvanceSetting1.LstInterval.Contains((int)enumTimeZone.FourHour)
+              || Config.AdvanceSetting2.LstInterval.Contains((int)enumTimeZone.FourHour)
+              || Config.AdvanceSetting3.LstInterval.Contains((int)enumTimeZone.FourHour)
+              || Config.AdvanceSetting4.LstInterval.Contains((int)enumTimeZone.FourHour))
             {
                 var wrkr = new BackgroundWorker();
                 wrkr.DoWork += (object sender, DoWorkEventArgs e) => {
@@ -133,10 +133,10 @@ namespace AnalyzeApp.GUI
                 wrkr.RunWorkerAsync();
             }
             //1D
-            if (StaticVal.advanceModel1.LstInterval.Contains((int)enumTimeZone.OneDay)
-              || StaticVal.advanceModel2.LstInterval.Contains((int)enumTimeZone.OneDay)
-              || StaticVal.advanceModel3.LstInterval.Contains((int)enumTimeZone.OneDay)
-              || StaticVal.advanceModel4.LstInterval.Contains((int)enumTimeZone.OneDay))
+            if (Config.AdvanceSetting1.LstInterval.Contains((int)enumTimeZone.OneDay)
+              || Config.AdvanceSetting2.LstInterval.Contains((int)enumTimeZone.OneDay)
+              || Config.AdvanceSetting3.LstInterval.Contains((int)enumTimeZone.OneDay)
+              || Config.AdvanceSetting4.LstInterval.Contains((int)enumTimeZone.OneDay))
             {
                 var wrkr = new BackgroundWorker();
                 wrkr.DoWork += (object sender, DoWorkEventArgs e) => {
@@ -154,10 +154,10 @@ namespace AnalyzeApp.GUI
                 wrkr.RunWorkerAsync();
             }
             //1W
-            if (StaticVal.advanceModel1.LstInterval.Contains((int)enumTimeZone.OneWeek)
-              || StaticVal.advanceModel2.LstInterval.Contains((int)enumTimeZone.OneWeek)
-              || StaticVal.advanceModel3.LstInterval.Contains((int)enumTimeZone.OneWeek)
-              || StaticVal.advanceModel4.LstInterval.Contains((int)enumTimeZone.OneWeek))
+            if (Config.AdvanceSetting1.LstInterval.Contains((int)enumTimeZone.OneWeek)
+              || Config.AdvanceSetting2.LstInterval.Contains((int)enumTimeZone.OneWeek)
+              || Config.AdvanceSetting3.LstInterval.Contains((int)enumTimeZone.OneWeek)
+              || Config.AdvanceSetting4.LstInterval.Contains((int)enumTimeZone.OneWeek))
             {
                 var wrkr = new BackgroundWorker();
                 wrkr.DoWork += (object sender, DoWorkEventArgs e) => {
@@ -175,10 +175,10 @@ namespace AnalyzeApp.GUI
                 wrkr.RunWorkerAsync();
             }
             //1Month
-            if (StaticVal.advanceModel1.LstInterval.Contains((int)enumTimeZone.OneMonth)
-              || StaticVal.advanceModel2.LstInterval.Contains((int)enumTimeZone.OneMonth)
-              || StaticVal.advanceModel3.LstInterval.Contains((int)enumTimeZone.OneMonth)
-              || StaticVal.advanceModel4.LstInterval.Contains((int)enumTimeZone.OneMonth))
+            if (Config.AdvanceSetting1.LstInterval.Contains((int)enumTimeZone.OneMonth)
+              || Config.AdvanceSetting2.LstInterval.Contains((int)enumTimeZone.OneMonth)
+              || Config.AdvanceSetting3.LstInterval.Contains((int)enumTimeZone.OneMonth)
+              || Config.AdvanceSetting4.LstInterval.Contains((int)enumTimeZone.OneMonth))
             {
                 var wrkr = new BackgroundWorker();
                 wrkr.DoWork += (object sender, DoWorkEventArgs e) => {

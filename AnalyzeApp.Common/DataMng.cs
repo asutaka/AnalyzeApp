@@ -1,14 +1,10 @@
 ﻿using AnalyzeApp.Model.ENTITY;
 using AnalyzeApp.Model.ENUM;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace AnalyzeApp.Common
@@ -43,94 +39,79 @@ namespace AnalyzeApp.Common
         #region StoredData
         public static async Task StoredData()
         {
-            HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/json"));
-            client.BaseAddress = new Uri(ConstVal.api);
             try
             {
                 //update flag
-                var model = new ConfigTableModel { StatusLoadData = (int)enumStatusLoadData.Loading };
-                HttpContent c = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, "application/json");
-                await client.PostAsync("Setting/UpdateConfigTable", c);
+                await APIService.Instance().UpdateConfigTable(new ConfigTableModel { StatusLoadData = (int)enumStatusLoadData.Loading });
                 //
-                var responseDataSetting = await client.GetAsync("Setting/GetDataSettings");
-                if (responseDataSetting != null)
+                var lDataSetting = await APIService.Instance().GetDataSettings();
+                if (lDataSetting != null)
                 {
-                    var lDataSetting = JsonConvert.DeserializeObject<IEnumerable<DataSettingModel>>(await responseDataSetting.Content.ReadAsStringAsync());
-                    if (lDataSetting != null)
+                    var lstTask = new List<Task>();
+                    long curTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+                    foreach (var item in lDataSetting)
                     {
-                        var lstTask = new List<Task>();
-                        long curTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
-                        foreach (var item in lDataSetting)
+                        var task = Task.Run(() =>
                         {
-                            var task = Task.Run(() =>
+                            var div = curTime - item.UpdatedTime;
+                            switch (item.Interval)
                             {
-                                var div = curTime - item.UpdatedTime;
-                                switch (item.Interval)
-                                {
-                                    case (int)enumInterval.ThirteenMinute:
+                                case (int)enumInterval.ThirteenMinute:
+                                    {
+                                        if (div > 900000)
                                         {
-                                            if (div > 900000)
-                                            {
-                                                SyncDataInterval(enumInterval.ThirteenMinute);
-                                            }
-                                            break;
+                                            SyncDataInterval(enumInterval.ThirteenMinute);
                                         }
-                                    case (int)enumInterval.OneHour:
+                                        break;
+                                    }
+                                case (int)enumInterval.OneHour:
+                                    {
+                                        if (div > 3600000)
                                         {
-                                            if (div > 3600000)
-                                            {
-                                                SyncDataInterval(enumInterval.OneHour);
-                                            }
-                                            break;
+                                            SyncDataInterval(enumInterval.OneHour);
                                         }
-                                    case (int)enumInterval.FourHour:
+                                        break;
+                                    }
+                                case (int)enumInterval.FourHour:
+                                    {
+                                        if (div > 14400000)
                                         {
-                                            if (div > 14400000)
-                                            {
-                                                SyncDataInterval(enumInterval.FourHour);
-                                            }
-                                            break;
+                                            SyncDataInterval(enumInterval.FourHour);
                                         }
-                                    case (int)enumInterval.OneDay:
+                                        break;
+                                    }
+                                case (int)enumInterval.OneDay:
+                                    {
+                                        if (div > 86400000)
                                         {
-                                            if (div > 86400000)
-                                            {
-                                                SyncDataInterval(enumInterval.OneDay);
-                                            }
-                                            break;
+                                            SyncDataInterval(enumInterval.OneDay);
                                         }
-                                    case (int)enumInterval.OneWeek:
+                                        break;
+                                    }
+                                case (int)enumInterval.OneWeek:
+                                    {
+                                        if (div > 604800000)
                                         {
-                                            if (div > 604800000)
-                                            {
-                                                SyncDataInterval(enumInterval.OneWeek);
-                                            }
-                                            break;
+                                            SyncDataInterval(enumInterval.OneWeek);
                                         }
-                                    case (int)enumInterval.OneMonth:
+                                        break;
+                                    }
+                                case (int)enumInterval.OneMonth:
+                                    {
+                                        if (div > 2419200000)
                                         {
-                                            if (div > 2419200000)
-                                            {
-                                                SyncDataInterval(enumInterval.OneMonth);
-                                            }
-                                            break;
+                                            SyncDataInterval(enumInterval.OneMonth);
                                         }
-                                }
-                                var modelTime = new DataSettingModel { Interval = item.Interval, UpdatedTime = curTime };
-                                HttpContent content = new StringContent(JsonConvert.SerializeObject(modelTime), Encoding.UTF8, "application/json");
-                                client.PostAsync("Setting/UpdateDataSettings", content).GetAwaiter().GetResult();
-                            });
-                            lstTask.Add(task);
-                        }
-                        Task.WaitAll(lstTask.ToArray());
-                        //update flag
-                        model.StatusLoadData = (int)enumStatusLoadData.Endload;
-                        c = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, "application/json");
-                        await client.PostAsync("Setting/UpdateConfigTable", c);
+                                        break;
+                                    }
+                            }
+                            APIService.Instance().UpdateDataSettings(new DataSettingModel { Interval = item.Interval, UpdatedTime = curTime }).GetAwaiter().GetResult();
+                        });
+                        lstTask.Add(task);
                     }
+                    Task.WaitAll(lstTask.ToArray());
+                    //update flag
+                    await APIService.Instance().UpdateConfigTable(new ConfigTableModel { StatusLoadData = (int)enumStatusLoadData.Endload });
                 }
             }
             catch (Exception ex)

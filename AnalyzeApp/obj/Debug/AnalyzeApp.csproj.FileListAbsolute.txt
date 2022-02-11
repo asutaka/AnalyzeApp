@@ -164,6 +164,10 @@ D:\Data\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.csproj.CoreCompileInputs.cach
 D:\Data\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.csproj.CopyComplete
 D:\Data\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.exe
 D:\Data\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.pdb
+D:\Data\AnalyzeApp\AnalyzeApp\bin\Debug\Binance.Net.dll
+D:\Data\AnalyzeApp\AnalyzeApp\bin\Debug\CryptoExchange.Net.dll
+D:\Data\AnalyzeApp\AnalyzeApp\bin\Debug\Binance.Net.xml
+D:\Data\AnalyzeApp\AnalyzeApp\bin\Debug\CryptoExchange.Net.xml
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\bin\Debug\NLog.config
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\bin\Debug\AnalyzeApp.exe.config
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\bin\Debug\AnalyzeApp.exe
@@ -334,7 +338,3 @@ D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.csproj.CoreComp
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.csproj.CopyComplete
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.exe
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.pdb
-D:\Data\AnalyzeApp\AnalyzeApp\bin\Debug\Binance.Net.dll
-D:\Data\AnalyzeApp\AnalyzeApp\bin\Debug\CryptoExchange.Net.dll
-D:\Data\AnalyzeApp\AnalyzeApp\bin\Debug\Binance.Net.xml
-D:\Data\AnalyzeApp\AnalyzeApp\bin\Debug\CryptoExchange.Net.xml

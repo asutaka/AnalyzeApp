@@ -77,7 +77,7 @@ namespace AnalyzeApp.Analyze
                 banker_rsi = 20;
             if (banker_rsi < 0)
                 banker_rsi = 0;
-            var signal = StaticVal.basicModel.ListModel.First(x => x.Indicator == (int)enumChooseData.MCDX).Signal;
+            var signal = Config.BasicSetting.ListModel.First(x => x.Indicator == (int)enumChooseData.MCDX).Signal;
             return (banker_rsi >= signal, banker_rsi);
         }
 
@@ -86,7 +86,7 @@ namespace AnalyzeApp.Analyze
             return (true, 0);
         }
 
-        public static (bool, double) Config(string coin, AdvanceSettingModel model)
+        public static (bool, double) ConfigData(string coin, AdvanceSettingModel model)
         {
             double result = 0;
             var lstTask = new List<Task>();

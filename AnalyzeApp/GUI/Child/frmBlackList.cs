@@ -6,13 +6,14 @@ using System.Windows.Forms;
 using AnalyzeApp.Model.ENTITY;
 using AnalyzeApp.Common;
 using AnalyzeApp.GUI.Usr;
+using AnalyzeApp.Model.ENUM;
+using Newtonsoft.Json;
 
 namespace AnalyzeApp.GUI.Child
 {
     public partial class frmBlackList : XtraForm
     {
-        private const string _fileName = "blacklist.json";
-        private readonly List<CryptonDetailDataModel> _lstCoin = StaticVal.lstBlackList;
+        private readonly List<CryptonDetailDataModel> _lstCoin = Config.BlackLists;
         private frmBlackList()
         {
             InitializeComponent();
@@ -90,7 +91,8 @@ namespace AnalyzeApp.GUI.Child
                     }
                 }
             }
-            _lstCoin.UpdateJson(_fileName);
+            Config.BlackLists = _lstCoin;
+            APIService.Instance().UpdateSetting(new SettingModel { Id = (int)enumSetting.BlackList, Setting = JsonConvert.SerializeObject(_lstCoin) }).GetAwaiter().GetResult();
             MessageBox.Show("Đã lưu dữ liệu!");
         }
     }

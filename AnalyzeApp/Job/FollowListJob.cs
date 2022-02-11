@@ -12,7 +12,7 @@ namespace AnalyzeApp.Job
     [DisallowConcurrentExecution]
     public class FollowListJob : IJob
     {
-        private FollowModel followList = StaticVal.followList;
+        private FollowModel followList = Config.Follow;
         public void Execute(IJobExecutionContext context)
         {
             try
@@ -53,7 +53,7 @@ namespace AnalyzeApp.Job
                             var isConfig2 = false;
                             if (item.IsConfig2)
                             {
-                                isConfig2 = CalculateMng.Config(coin, StaticVal.advanceModel1).Item1;
+                                isConfig2 = CalculateMng.ConfigData(coin, Config.AdvanceSetting1).Item1;
                             }
                             else
                             {
@@ -63,7 +63,7 @@ namespace AnalyzeApp.Job
                             var isConfig3 = false;
                             if (item.IsConfig3)
                             {
-                                isConfig3 = CalculateMng.Config(coin, StaticVal.advanceModel2).Item1;
+                                isConfig3 = CalculateMng.ConfigData(coin, Config.AdvanceSetting2).Item1;
                             }
                             else
                             {
@@ -73,7 +73,7 @@ namespace AnalyzeApp.Job
                             var isConfig4 = false;
                             if (item.IsConfig4)
                             {
-                                isConfig4 = CalculateMng.Config(coin, StaticVal.advanceModel3).Item1;
+                                isConfig4 = CalculateMng.ConfigData(coin, Config.AdvanceSetting3).Item1;
                             }
                             else
                             {
@@ -83,7 +83,7 @@ namespace AnalyzeApp.Job
                             var isConfig5 = false;
                             if (item.IsConfig5)
                             {
-                                isConfig5 = CalculateMng.Config(coin, StaticVal.advanceModel4).Item1;
+                                isConfig5 = CalculateMng.ConfigData(coin, Config.AdvanceSetting4).Item1;
                             }
                             else
                             {

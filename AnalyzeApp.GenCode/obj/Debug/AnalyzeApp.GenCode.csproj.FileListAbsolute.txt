@@ -85,3 +85,11 @@ D:\Data\AnalyzeApp\AnalyzeApp.GenCode\obj\Debug\AnalyzeApp.GenCode.csproj.CoreCo
 D:\Data\AnalyzeApp\AnalyzeApp.GenCode\obj\Debug\AnalyzeApp.GenCode.csproj.CopyComplete
 D:\Data\AnalyzeApp\AnalyzeApp.GenCode\obj\Debug\AnalyzeApp.GenCode.exe
 D:\Data\AnalyzeApp\AnalyzeApp.GenCode\obj\Debug\AnalyzeApp.GenCode.pdb
+D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.GenCode\obj\Debug\AnalyzeApp.GenCode.csproj.AssemblyReference.cache
+D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.GenCode\obj\Debug\AnalyzeApp.GenCode.csproj.SuggestedBindingRedirects.cache
+D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.GenCode\obj\Debug\AnalyzeApp.GenCode.frmMain.resources
+D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.GenCode\obj\Debug\AnalyzeApp.GenCode.Properties.Resources.resources
+D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.GenCode\obj\Debug\AnalyzeApp.GenCode.csproj.GenerateResource.cache
+D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.GenCode\obj\Debug\AnalyzeApp.GenCode.csproj.CoreCompileInputs.cache
+D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.GenCode\obj\Debug\AnalyzeApp.GenCode.exe
+D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.GenCode\obj\Debug\AnalyzeApp.GenCode.pdb

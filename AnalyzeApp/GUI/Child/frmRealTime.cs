@@ -80,10 +80,10 @@ namespace AnalyzeApp.GUI.Child
         private void bkgrInitData_DoWork(object sender, DoWorkEventArgs e)
         {
             _frmWaitForm.Show("Đang xử lý dữ liệu");
-            if (StaticVal.lstRealTime.Count() > MAXIMUM)
-                StaticVal.lstRealTime = StaticVal.lstRealTime.Take(MAXIMUM).ToList();
+            if (Config.RealTimes.Count() > MAXIMUM)
+                Config.RealTimes = Config.RealTimes.Take(MAXIMUM).ToList();
 
-            foreach (var item in StaticVal.lstRealTime)
+            foreach (var item in Config.RealTimes)
             {
                 AddNewRow(item.S, item.AN);
             }
@@ -104,14 +104,14 @@ namespace AnalyzeApp.GUI.Child
                 || string.IsNullOrWhiteSpace(cmbCoin.EditValue.ToString()))
                 return;
 
-            if (StaticVal.lstRealTime.Any(x => x.S == cmbCoin.EditValue.ToString()))
+            if (Config.RealTimes.Any(x => x.S == cmbCoin.EditValue.ToString()))
             {
                 MessageBox.Show($"Coin {cmbCoin.EditValue} đã tồn tại trên danh sách", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cmbCoin.EditValue = null;
                 return;
             }
 
-            if (StaticVal.lstRealTime.Count() >= MAXIMUM)
+            if (Config.RealTimes.Count() >= MAXIMUM)
             {
                 MessageBox.Show($"Số lượng phần tử đã vượt quá chỉ định!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cmbCoin.EditValue = null;
@@ -119,12 +119,12 @@ namespace AnalyzeApp.GUI.Child
             }
             var coin = cmbCoin.EditValue.ToString();
             var coinName = cmbCoin.Text;
-            StaticVal.lstRealTime.Add(new CryptonDetailDataModel
+            Config.RealTimes.Add(new CryptonDetailDataModel
             {
                 S = coin,
                 AN = coinName
             });
-            StaticVal.lstRealTime.UpdateJson(_fileName);
+            Config.RealTimes.UpdateJson(_fileName);
             AddNewRow(coin, coinName);
             cmbCoin.EditValue = null;
         }
@@ -174,12 +174,12 @@ namespace AnalyzeApp.GUI.Child
                         grid.Enabled = false;
                         Thread.Sleep(1000);
                         var cellValue = gridView1.GetRowCellValue(rows[0], "Coin").ToString();
-                        var entity = StaticVal.lstRealTime.FirstOrDefault(x => x.S == cellValue);
+                        var entity = Config.RealTimes.FirstOrDefault(x => x.S == cellValue);
                         if (entity != null)
                         {
-                            StaticVal.lstRealTime.Remove(entity);
+                            Config.RealTimes.Remove(entity);
                         }
-                        StaticVal.lstRealTime.UpdateJson(_fileName);
+                        Config.RealTimes.UpdateJson(_fileName);
                         var entityShow = StaticVal.lstRealTimeShow.FirstOrDefault(x => x.Coin == cellValue);
                         if (entityShow != null)
                         {

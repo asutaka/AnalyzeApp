@@ -28,7 +28,7 @@ namespace AnalyzeApp.Job
                     {
                         var model = new RealTimeModel();
                         //MCDX
-                        if (StaticVal.specialModel.IsActiveMCDX)
+                        if (Config.SpecialSetting.IsActiveMCDX)
                         {
                             item.MCDX.Value = CalculateMng.MCDX(item.Coin).Item2;
                             if (item.MCDX.Value == 20)
@@ -48,7 +48,7 @@ namespace AnalyzeApp.Job
                             item.MCDX.Level = -1;
                         }
                         //Special
-                        if (StaticVal.specialModel.IsActiveSpecial)
+                        if (Config.SpecialSetting.IsActiveSpecial)
                         {
                             item.Special.Value = CalculateMng.SPecial(item.Coin).Item2;
                             if (item.Special.Value > 0)
@@ -60,9 +60,9 @@ namespace AnalyzeApp.Job
                             item.Special.Level = -1;
                         }
                         //Thiết lập 2
-                        if (StaticVal.advanceModel1.IsActive)
+                        if (Config.AdvanceSetting1.IsActive)
                         {
-                            item.Config2.Value = CalculateMng.Config(item.Coin, StaticVal.advanceModel1).Item2;
+                            item.Config2.Value = CalculateMng.ConfigData(item.Coin, Config.AdvanceSetting1).Item2;
                             item.Config2.Level = 1;
                         }
                         else
@@ -70,9 +70,9 @@ namespace AnalyzeApp.Job
                             item.Config2.Level = -1;
                         }
                         //Thiết lập 3
-                        if (StaticVal.advanceModel1.IsActive)
+                        if (Config.AdvanceSetting2.IsActive)
                         {
-                            item.Config3.Value = CalculateMng.Config(item.Coin, StaticVal.advanceModel2).Item2;
+                            item.Config3.Value = CalculateMng.ConfigData(item.Coin, Config.AdvanceSetting2).Item2;
                             item.Config3.Level = 1;
                         }
                         else
@@ -80,9 +80,9 @@ namespace AnalyzeApp.Job
                             item.Config3.Level = -1;
                         }
                         //Thiết lập 4
-                        if (StaticVal.advanceModel1.IsActive)
+                        if (Config.AdvanceSetting3.IsActive)
                         {
-                            item.Config4.Value = CalculateMng.Config(item.Coin, StaticVal.advanceModel3).Item2;
+                            item.Config4.Value = CalculateMng.ConfigData(item.Coin, Config.AdvanceSetting3).Item2;
                             item.Config4.Level = 1;
                         }
                         else
@@ -90,9 +90,9 @@ namespace AnalyzeApp.Job
                             item.Config4.Level = -1;
                         }
                         //Thiết lập 5
-                        if (StaticVal.advanceModel1.IsActive)
+                        if (Config.AdvanceSetting4.IsActive)
                         {
-                            item.Config5.Value = CalculateMng.Config(item.Coin, StaticVal.advanceModel4).Item2;
+                            item.Config5.Value = CalculateMng.ConfigData(item.Coin, Config.AdvanceSetting4).Item2;
                             item.Config5.Level = 1;
                         }
                         else
@@ -111,7 +111,7 @@ namespace AnalyzeApp.Job
         } 
         private void Prepare()
         {
-            if (StaticVal.specialModel.IsActiveTop30)
+            if (Config.SpecialSetting.IsActiveTop30)
             {
                 lstResult.AddRange(StaticVal.lstCryptonRank.Take(3).Select(x => new RealTimeModel
                 {

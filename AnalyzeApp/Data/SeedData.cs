@@ -45,7 +45,7 @@ namespace AnalyzeApp.Data
         public static List<CryptonDetailDataModel> GetCryptonListWithFilter()
         {
             var cryptonModel = CommonMethod.DownloadJsonFile<CryptonDataModel>(ConstVal.COIN_LIST);
-            var output = cryptonModel.Data.Where(x => !StaticVal.lstBlackList.Any(y => y.S == x.S)
+            var output = cryptonModel.Data.Where(x => !Config.BlackLists.Any(y => y.S == x.S)
                                             && x.S.Substring(x.S.Length - 4) == "USDT"
                                             && !x.S.Substring(0, x.S.Length - 4).Contains("USD")
                                             && !x.AN.Contains("Fan Token")

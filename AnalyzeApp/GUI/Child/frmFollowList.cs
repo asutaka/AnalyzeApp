@@ -6,13 +6,14 @@ using System.Windows.Forms;
 using AnalyzeApp.Model.ENTITY;
 using AnalyzeApp.Common;
 using AnalyzeApp.GUI.Usr;
+using AnalyzeApp.Model.ENUM;
+using Newtonsoft.Json;
 
 namespace AnalyzeApp.GUI.Child
 {
     public partial class frmFollowList : XtraForm
     {
-        private const string _fileName = "followlist.json";
-        public FollowModel _model = StaticVal.followList;
+        public FollowModel _model = Config.Follow;
         private frmFollowList()
         {
             InitializeComponent();
@@ -114,7 +115,8 @@ namespace AnalyzeApp.GUI.Child
                 _model.Cron = "0 * * * * ?"; ;
             }
 
-            _model.UpdateJson(_fileName);
+            Config.Follow = _model;
+            APIService.Instance().UpdateSetting(new SettingModel { Id = (int)enumSetting.FollowList, Setting = JsonConvert.SerializeObject(_model)}).GetAwaiter().GetResult();
             MessageBox.Show("Đã lưu dữ liệu!");
         }
 

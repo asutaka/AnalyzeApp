@@ -8,16 +8,17 @@ using AnalyzeApp.GUI.Usr;
 using AnalyzeApp.Model.ENTITY;
 using AnalyzeApp.Model.ENUM;
 using DevExpress.XtraEditors;
+using Newtonsoft.Json;
 
 namespace AnalyzeApp.GUI.Child
 {
     public partial class frmAdvanceSetting : XtraForm
     {
-        private readonly string _fileName;
+        private readonly int _numConfig;
         public frmAdvanceSetting(int numConfig)
         {
             InitializeComponent();
-            _fileName = $"advance_setting{ numConfig }.json";
+            _numConfig = numConfig;
             this.Text = $"Thiết lập nâng cao {numConfig}";
             InitData(numConfig);
         }
@@ -30,8 +31,18 @@ namespace AnalyzeApp.GUI.Child
 
         private void SetupData()
         {
-            var model = new AdvanceSettingModel().LoadJsonFile(_fileName);
-            if (model.LstInterval == null
+            AdvanceSettingModel model = null;
+            if (_numConfig == (int)enumSetting.AdvanceSetting1)
+                model = Config.AdvanceSetting1;
+            else if (_numConfig == (int)enumSetting.AdvanceSetting2)
+                model = Config.AdvanceSetting2;
+            else if (_numConfig == (int)enumSetting.AdvanceSetting3)
+                model = Config.AdvanceSetting3;
+            else if (_numConfig == (int)enumSetting.AdvanceSetting4)
+                model = Config.AdvanceSetting4;
+
+            if (model == null
+                || model.LstInterval == null
                 || model.LstInterval.Count == 0)
                 return;
             chkState.IsOn = model.IsActive;
@@ -89,7 +100,7 @@ namespace AnalyzeApp.GUI.Child
         }
         private void StandardizedData(ElementModel model)
         {
-            GeneralModel objBasicModel = StaticVal.basicModel.ListModel.First(x => x.Indicator == model.Id);
+            GeneralModel objBasicModel = Config.BasicSetting.ListModel.First(x => x.Indicator == model.Id);
             if (model.Id == (int)enumChooseData.MACD)
             {
                 model.Value = int.Parse($"{objBasicModel.High.To2Digit()}{objBasicModel.Low.To2Digit()}{objBasicModel.Signal.To2Digit()}");
@@ -203,7 +214,16 @@ namespace AnalyzeApp.GUI.Child
             if (!IsValidData())
                 return;
             var model = BuildModel();
-            model.UpdateJson(_fileName);
+
+            if (_numConfig == (int)enumSetting.AdvanceSetting1)
+                Config.AdvanceSetting1 = model;
+            else if (_numConfig == (int)enumSetting.AdvanceSetting2)
+                Config.AdvanceSetting2 = model;
+            else if (_numConfig == (int)enumSetting.AdvanceSetting3)
+                Config.AdvanceSetting3 = model;
+            else if (_numConfig == (int)enumSetting.AdvanceSetting4)
+                Config.AdvanceSetting4 = model;
+            APIService.Instance().UpdateSetting(new SettingModel { Id = _numConfig, Setting = JsonConvert.SerializeObject(model) }).GetAwaiter().GetResult();
             MessageBox.Show("Đã lưu dữ liệu!");
         }
 

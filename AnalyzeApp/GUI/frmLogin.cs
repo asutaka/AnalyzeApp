@@ -23,7 +23,7 @@ namespace AnalyzeApp.GUI
             bkgr.DoWork += (object sender, DoWorkEventArgs e) =>
             {
                 Startup.Instance();
-                DataMng.StoredData().GetAwaiter().GetResult();
+                //DataMng.StoredData().GetAwaiter().GetResult();
             };
             bkgr.RunWorkerAsync();
         }

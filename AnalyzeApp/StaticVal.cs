@@ -41,19 +41,8 @@ namespace AnalyzeApp
         public static Dictionary<string, List<CandleStickDataModel>> dicDatasource1D = new Dictionary<string, List<CandleStickDataModel>>();
         public static Dictionary<string, List<CandleStickDataModel>> dicDatasource1W = new Dictionary<string, List<CandleStickDataModel>>();
         public static Dictionary<string, List<CandleStickDataModel>> dicDatasource1Month = new Dictionary<string, List<CandleStickDataModel>>();
-        //Setting Model
-        public static BasicSettingModel basicModel;
-        public static SpecialSettingModel specialModel;
-        public static AdvanceSettingModel advanceModel1;
-        public static AdvanceSettingModel advanceModel2;
-        public static AdvanceSettingModel advanceModel3;
-        public static AdvanceSettingModel advanceModel4;
 
-        public static List<CryptonDetailDataModel> lstBlackList;
-        public static List<CryptonDetailDataModel> lstRealTime;
         public static List<Top30Model> lstRealTimeShow = new List<Top30Model>();
-        public static TradeListModel tradeList;
-        public static FollowModel followList;
         //Local 
         public static List<SendNotifyModel> lstNotiTrade = new List<SendNotifyModel>();
         //Client

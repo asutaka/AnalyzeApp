@@ -12,7 +12,7 @@ namespace AnalyzeApp.Job
     [DisallowConcurrentExecution] /*impt: no multiple instances executed concurrently*/
     public class RealtimeValueScheduleJob : IJob
     {
-        private int FLAG = CommonMethod.GetFlag(StaticVal.basicModel);
+        private int FLAG = CommonMethod.GetFlag(Config.BasicSetting);
         public void Execute(IJobExecutionContext context)
         {
             try

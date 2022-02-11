@@ -16,7 +16,7 @@ namespace AnalyzeApp.Job
         {
             try
             {
-                var model = StaticVal.tradeList;
+                var model = Config.TradeList;
                 if (!model.IsNotify || StaticVal.IsTradeListChange)
                     return;
 

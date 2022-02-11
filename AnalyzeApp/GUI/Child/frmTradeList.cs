@@ -5,13 +5,14 @@ using System.Windows.Forms;
 using AnalyzeApp.Model.ENTITY;
 using AnalyzeApp.Common;
 using AnalyzeApp.GUI.Usr;
+using Newtonsoft.Json;
+using AnalyzeApp.Model.ENUM;
 
 namespace AnalyzeApp.GUI.Child
 {
     public partial class frmTradeList : XtraForm
     {
-        private const string _fileName = "tradelist.json";
-        private readonly TradeListModel _tradeList = StaticVal.tradeList;
+        private readonly TradeListModel _model = Config.TradeList;
         private frmTradeList()
         {
             InitializeComponent();
@@ -36,11 +37,11 @@ namespace AnalyzeApp.GUI.Child
         private void SetupData()
         {
             pnl.Controls.Clear();
-            foreach (var item in _tradeList.lData)
+            foreach (var item in _model.lData)
             {
                 pnl.Controls.Add(new userCoinTrade(item));
             }
-            chkState.IsOn = _tradeList.IsNotify;
+            chkState.IsOn = _model.IsNotify;
         }
 
         private void cmbCoin_EditValueChanged(object sender, EventArgs e)
@@ -49,7 +50,7 @@ namespace AnalyzeApp.GUI.Child
                 || string.IsNullOrWhiteSpace(cmbCoin.EditValue.ToString()))
                 return;
 
-            if(_tradeList.lData.Any(x => x.Coin == cmbCoin.EditValue.ToString()))
+            if(_model.lData.Any(x => x.Coin == cmbCoin.EditValue.ToString()))
             {
                 MessageBox.Show($"Coin {cmbCoin.EditValue} đã tồn tại trên danh sách", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cmbCoin.EditValue = null;
@@ -57,7 +58,7 @@ namespace AnalyzeApp.GUI.Child
             }
 
             var model = new TradeModel { Coin = cmbCoin.EditValue.ToString() };
-            _tradeList.lData.Add(model);
+            _model.lData.Add(model);
             pnl.Controls.Add(new userCoinTrade(model));
             cmbCoin.EditValue = null;
         }
@@ -70,18 +71,19 @@ namespace AnalyzeApp.GUI.Child
         private void btnOkAndSave_Click(object sender, EventArgs e)
         {
             StaticVal.IsTradeListChange = true;
-            _tradeList.lData.Clear();
+            _model.lData.Clear();
             if (pnl.Controls.Count > 0)
             {
                 foreach (var item in pnl.Controls)
                 {
                     var user = item as userCoinTrade;
 
-                    _tradeList.lData.Add(user.tradeModel);
+                    _model.lData.Add(user.tradeModel);
                 }
             }
-            _tradeList.IsNotify = chkState.IsOn;
-            _tradeList.UpdateJson(_fileName);
+            _model.IsNotify = chkState.IsOn;
+            Config.TradeList = _model;
+            APIService.Instance().UpdateSetting(new SettingModel { Id = (int)enumSetting.TradeList, Setting = JsonConvert.SerializeObject(_model) }).GetAwaiter().GetResult();
             StaticVal.IsTradeListChange = false;
             MessageBox.Show("Đã lưu dữ liệu!");
         }

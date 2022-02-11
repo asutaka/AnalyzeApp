@@ -23,8 +23,8 @@ namespace AnalyzeApp.GUI.Usr
             LoadDataUnit();
             cmbOptionFirst.SelectedIndex = 0;
             cmbOptionLast.SelectedIndex = -1;
-            cmbResultFirst.SelectedIndex = StaticVal.basicModel.ListModel.First(x => x.Indicator == (int)enumCandleStick.C).Period;
-            cmbResultLast.SelectedIndex = StaticVal.basicModel.ListModel.First(x => x.Indicator == (int)enumCandleStick.C).Period;
+            cmbResultFirst.SelectedIndex = Config.BasicSetting.ListModel.First(x => x.Indicator == (int)enumCandleStick.C).Period;
+            cmbResultLast.SelectedIndex = Config.BasicSetting.ListModel.First(x => x.Indicator == (int)enumCandleStick.C).Period;
             cmbOperator.SelectedIndex = 3;
             cmbUnit.SelectedIndex = 0;
         }
@@ -68,10 +68,10 @@ namespace AnalyzeApp.GUI.Usr
             var index = cmb.SelectedIndex;
             if (index == -1)
                 return;
-            nm.Value = StaticVal.basicModel.ListModel.First(x => x.Indicator == index).Period;
+            nm.Value = Config.BasicSetting.ListModel.First(x => x.Indicator == index).Period;
             if (index == (int)enumChooseData.CandleStick_1 || index == (int)enumChooseData.CandleStick_2)
             {
-                cmbResult.SelectedIndex = StaticVal.basicModel.ListModel.First(x => x.Indicator == index).Period;
+                cmbResult.SelectedIndex = Config.BasicSetting.ListModel.First(x => x.Indicator == index).Period;
                 cmbResult.Visible = true;
             }
             else if (index == (int)enumChooseData.MA || index == (int)enumChooseData.EMA)
