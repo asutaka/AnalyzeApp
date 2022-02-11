@@ -30,30 +30,6 @@ namespace AnalyzeApp.Data
                 NLogLogger.PublishException(ex, $"SeedData|SubcribeData: {ex.Message}");
             }
         }
-        public static List<CryptonDetailDataModel> GetCryptonList()
-        {
-            var cryptonModel = CommonMethod.DownloadJsonFile<CryptonDataModel>(ConstVal.COIN_LIST);
-            var output = cryptonModel.Data.Where(x => x.S.Substring(x.S.Length - 4) == "USDT"
-                                            && !x.S.Substring(0, x.S.Length - 4).Contains("USD")
-                                            && !x.AN.Contains("Fan Token")
-                                            && !x.S.Contains("UP")
-                                            && !x.S.Contains("DOWN"))
-                                    .OrderBy(x => x.S).ToList();
-            return output;
-        }
-
-        public static List<CryptonDetailDataModel> GetCryptonListWithFilter()
-        {
-            var cryptonModel = CommonMethod.DownloadJsonFile<CryptonDataModel>(ConstVal.COIN_LIST);
-            var output = cryptonModel.Data.Where(x => !Config.BlackLists.Any(y => y.S == x.S)
-                                            && x.S.Substring(x.S.Length - 4) == "USDT"
-                                            && !x.S.Substring(0, x.S.Length - 4).Contains("USD")
-                                            && !x.AN.Contains("Fan Token")
-                                            && !x.S.Contains("UP")
-                                            && !x.S.Contains("DOWN"))
-                                    .OrderBy(x => x.S).ToList();
-            return output;
-        }
 
         public static List<CandleStickDataModel> LoadDatasource(string code, enumInterval interval)
         {
