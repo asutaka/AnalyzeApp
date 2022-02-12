@@ -33,8 +33,19 @@ namespace AnalyzeApp.GUI
             _bkgr.DoWork += bkgrConfig_DoWork;
             _bkgr.RunWorkerCompleted += bkgrConfig_RunWorkerCompleted;
             _bkgr.RunWorkerAsync();
-            StaticVal.ScheduleMngObj.AddSchedule(new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<CheckStatusJob>(), StaticVal.Scron_CheckStatus, nameof(CheckStatusJob)));
-            StaticVal.ScheduleMngObj.AddSchedule(new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<TradeListNotifyJob>(), StaticVal.Scron_TradeList_Noti, nameof(TradeListNotifyJob)));
+            //StaticVal.ScheduleMngObj.AddSchedule(new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<CheckStatusJob>(), StaticVal.Scron_CheckStatus, nameof(CheckStatusJob)));
+            //StaticVal.ScheduleMngObj.AddSchedule(new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<TradeListNotifyJob>(), StaticVal.Scron_TradeList_Noti, nameof(TradeListNotifyJob)));
+
+
+            //StaticVal.ScheduleMngObj.AddSchedule(new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<CurrentDataJob>(), "* * * * * ?", nameof(CurrentDataJob)));
+            //StaticVal.ScheduleMngObj.AddSchedule(new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<Data15MJob>(), "0 0/15 * * * ?", nameof(Data15MJob)));
+            //StaticVal.ScheduleMngObj.AddSchedule(new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<Data1HJob>(), "0 0 0/1 * * ?", nameof(Data1HJob)));
+            //StaticVal.ScheduleMngObj.AddSchedule(new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<Data4HJob>(), "0 0 0/4 * * ?", nameof(Data4HJob)));
+            //StaticVal.ScheduleMngObj.AddSchedule(new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<Data1DJob>(), "0 0 0 * * ?", nameof(Data1DJob)));
+            //StaticVal.ScheduleMngObj.AddSchedule(new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<Data1WJob>(), "0 0 0 1/7 * ?", nameof(Data1WJob)));
+            //StaticVal.ScheduleMngObj.AddSchedule(new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<Data1WJob>(), "0 0 0 1 * ?", nameof(Data1WJob)));
+            //StaticVal.ScheduleMngObj.StartAllJob();
+
             //StaticValues.ScheduleMngObj.AddSchedule(new ScheduleMember(StaticValues.ScheduleMngObj.GetScheduler(), JobBuilder.Create<FollowListJob>(), StaticValues.followList.Cron, nameof(FollowListJob)));
         }
 

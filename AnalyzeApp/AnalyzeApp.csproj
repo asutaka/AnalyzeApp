@@ -281,6 +281,13 @@
     </Compile>
     <Compile Include="GUI\WaitFunc.cs" />
     <Compile Include="Job\CheckStatusJob.cs" />
+    <Compile Include="Job\CurrentDataJob.cs" />
+    <Compile Include="Job\Data15MJob.cs" />
+    <Compile Include="Job\Data1DJob.cs" />
+    <Compile Include="Job\Data1HJob.cs" />
+    <Compile Include="Job\Data1MJob.cs" />
+    <Compile Include="Job\Data1WJob.cs" />
+    <Compile Include="Job\Data4HJob.cs" />
     <Compile Include="Job\FollowListJob.cs" />
     <Compile Include="Job\MCDXCalculateJob.cs" />
     <Compile Include="Job\MCDXValueScheduleJob.cs" />
@@ -365,6 +372,7 @@
     <EmbeddedResource Include="GUI\Usr\userSetting.resx">
       <DependentUpon>userSetting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

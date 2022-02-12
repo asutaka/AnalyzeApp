@@ -15,3 +15,4 @@ D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.csp
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.csproj.CopyComplete
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.dll
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.pdb
+D:\Data\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.csproj.AssemblyReference.cache

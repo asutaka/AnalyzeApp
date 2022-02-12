@@ -338,3 +338,4 @@ D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.csproj.CoreComp
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.csproj.CopyComplete
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.exe
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.pdb
+D:\Data\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.exe.licenses

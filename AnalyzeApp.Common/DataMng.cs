@@ -116,6 +116,14 @@ namespace AnalyzeApp.Common
             }
             catch (Exception ex)
             {
+                try
+                {
+                    await APIService.Instance().UpdateConfigTable(new ConfigTableModel { StatusLoadData = (int)enumStatusLoadData.ErrorLoad });
+                }
+                catch (Exception ex2)
+                {
+                    NLogLogger.PublishException(ex2, $"DataMng|LoadData|ErrorLoad:{ex2.Message}");
+                }
                 NLogLogger.PublishException(ex, $"DataMng|LoadData:{ex.Message}");
             }
         }

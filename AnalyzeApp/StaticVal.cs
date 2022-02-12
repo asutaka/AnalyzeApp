@@ -1,6 +1,10 @@
 ﻿using AnalyzeApp.GUI;
 using AnalyzeApp.Job.ScheduleJob;
 using AnalyzeApp.Model.ENTITY;
+using Binance.Net;
+using Binance.Net.Interfaces;
+using Binance.Net.Objects;
+using Binance.Net.Objects.Spot.MarketData;
 using System.Collections.Generic;
 using System.Net.Http;
 
@@ -42,12 +46,23 @@ namespace AnalyzeApp
         public static Dictionary<string, List<CandleStickDataModel>> dicDatasource1W = new Dictionary<string, List<CandleStickDataModel>>();
         public static Dictionary<string, List<CandleStickDataModel>> dicDatasource1Month = new Dictionary<string, List<CandleStickDataModel>>();
 
+        public static Dictionary<string, IEnumerable<BinanceKline>> dic15M = new Dictionary<string, IEnumerable<BinanceKline>>();
+        public static Dictionary<string, IEnumerable<BinanceKline>> dic1H = new Dictionary<string, IEnumerable<BinanceKline>>();
+        public static Dictionary<string, IEnumerable<BinanceKline>> dic4H = new Dictionary<string, IEnumerable<BinanceKline>>();
+        public static Dictionary<string, IEnumerable<BinanceKline>> dic1D = new Dictionary<string, IEnumerable<BinanceKline>>();
+        public static Dictionary<string, IEnumerable<BinanceKline>> dic1W = new Dictionary<string, IEnumerable<BinanceKline>>();
+        public static Dictionary<string, IEnumerable<BinanceKline>> dic1Month = new Dictionary<string, IEnumerable<BinanceKline>>();
+
         public static List<Top30Model> lstRealTimeShow = new List<Top30Model>();
         //Local 
         public static List<SendNotifyModel> lstNotiTrade = new List<SendNotifyModel>();
         //Client
         public static HttpClient client = new HttpClient();
+        public static BinanceClient binanceClient = new BinanceClient(new BinanceClientOptions() { });
         //
-        public static IEnumerable<Binance.Net.Interfaces.IBinanceTick> source;
+        public static IEnumerable<IBinanceTick> binanceTicks = new List<IBinanceTick>();
+
+        //
+        public static IEnumerable<IBinanceTick> source;
     }
 }

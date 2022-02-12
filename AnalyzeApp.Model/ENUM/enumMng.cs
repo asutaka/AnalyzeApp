@@ -168,10 +168,9 @@ namespace AnalyzeApp.Model.ENUM
 
     public enum enumStatusLoadData
     {
-        None = 0,
         Loading = 1,
         Endload = 2,
-        MainLoad = 3,
+        ErrorLoad = 3,
     }
 
     public enum enumSetting

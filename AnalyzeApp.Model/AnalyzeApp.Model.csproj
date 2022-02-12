@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="ENTITY\AdvanceSettingModel.cs" />
     <Compile Include="ENTITY\BasicSettingModel.cs" />
+    <Compile Include="ENTITY\BinanceKline.cs" />
     <Compile Include="ENTITY\CandleStickDataModel.cs" />
     <Compile Include="ENTITY\Coin24hModel.cs" />
     <Compile Include="ENTITY\CoinAggTradeModel.cs" />
