@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using AnalyzeApp.Common;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace AnalyzeApp.GUI.Usr

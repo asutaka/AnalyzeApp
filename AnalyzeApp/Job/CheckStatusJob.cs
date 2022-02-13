@@ -13,38 +13,38 @@ namespace AnalyzeApp.Job
         private const string _fileName = "user.json";
         public void Execute(IJobExecutionContext context)
         {
-            if (StaticVal.IsExecCheckCodeActive)
+            if (StaticValtmp.IsExecCheckCodeActive)
                 return;
-            StaticVal.IsExecCheckCodeActive = true;
+            StaticValtmp.IsExecCheckCodeActive = true;
             var time = CommonMethod.GetTimeAsync().GetAwaiter().GetResult();
 
             var objUser = new UserModel().LoadJsonFile(_fileName);
             var jsonModel = Security.Decrypt(objUser.Code);
             if (string.IsNullOrWhiteSpace(jsonModel))
             {
-                StaticVal.IsCodeActive = false;
+                StaticValtmp.IsCodeActive = false;
             }
             else
             {
                 var model = JsonConvert.DeserializeObject<GenCodeModel>(jsonModel);
-                if (!StaticVal.profile.Email.Contains(model.Email) || model.Expired <= time)
+                if (!StaticValtmp.profile.Email.Contains(model.Email) || model.Expired <= time)
                 {
-                    StaticVal.IsCodeActive = false;
+                    StaticValtmp.IsCodeActive = false;
                 }
                 else
                 {
-                    StaticVal.IsCodeActive = true;
+                    StaticValtmp.IsCodeActive = true;
                 }
             }
 
-            if (!StaticVal.IsCodeActive)
+            if (!StaticValtmp.IsCodeActive)
             {
-                StaticVal.IsAccessMain = false;
+                StaticValtmp.IsAccessMain = false;
                 try
                 {
-                    if (StaticVal.ScheduleMngObj != null)
+                    if (StaticVal.scheduleMng != null)
                     {
-                        foreach (var item in StaticVal.ScheduleMngObj.GetSchedules())
+                        foreach (var item in StaticVal.scheduleMng.GetSchedules())
                         {
                             item.Pause();
                         }
@@ -56,13 +56,13 @@ namespace AnalyzeApp.Job
                 }
 
                 //về màn hình đăng nhập
-                StaticVal.frmMainObj.BeginInvoke((MethodInvoker)delegate
+                StaticValtmp.frmMainObj.BeginInvoke((MethodInvoker)delegate
                 {
-                    StaticVal.frmMainObj.Hide();
+                    StaticValtmp.frmMainObj.Hide();
                     frmLogin.Instance().Show();
                 });
             }
-            StaticVal.IsExecCheckCodeActive = false;
+            StaticValtmp.IsExecCheckCodeActive = false;
         }
     }
 }

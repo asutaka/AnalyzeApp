@@ -24,15 +24,19 @@ namespace AnalyzeApp.Job
                     var task = Task.Run(() =>
                     {
                         var lData = StaticVal.binanceClient.Spot.Market.GetKlinesAsync(item.S, KlineInterval.FourHour).GetAwaiter().GetResult().Data;
+                        if (lData == null)
+                        {
+                            return;
+                        }
                         var lResult = lData.Select(x => new BinanceKline
                         {
                             BaseVolume = x.BaseVolume,
                             Close = x.Close,
-                            CloseTime = x.CloseTime,
+                            CloseTime = ((DateTimeOffset)x.CloseTime).ToUnixTimeMilliseconds(),
                             High = x.High,
                             Low = x.Low,
                             Open = x.Open,
-                            OpenTime = x.OpenTime,
+                            OpenTime = ((DateTimeOffset)x.OpenTime).ToUnixTimeMilliseconds(),
                             QuoteVolume = x.QuoteVolume,
                             TakerBuyBaseVolume = x.TakerBuyBaseVolume,
                             TakerBuyQuoteVolume = x.TakerBuyQuoteVolume

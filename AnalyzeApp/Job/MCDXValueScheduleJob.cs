@@ -1,5 +1,4 @@
 ﻿using AnalyzeApp.Common;
-using AnalyzeApp.Data;
 using AnalyzeApp.GUI.Child;
 using Quartz;
 using System;
@@ -16,16 +15,16 @@ namespace AnalyzeApp.Job
         {
             try
             {
-                if (StaticVal.IsExecMCDX)
+                if (StaticValtmp.IsExecMCDX)
                     return;
-                var lstResult = StaticVal.lstMCDX;
+                var lstResult = StaticValtmp.lstMCDX;
                 var lstTask = new List<Task>();
                 foreach (var item in lstResult)
                 {
                     var task = Task.Run(() =>
                     {
                         var coin = item.Coin;
-                        var curValue = SeedData.GetCurrentVal(coin);
+                        var curValue = (double)DataMng.GetCurrentVal(coin);
                         if (curValue <= 0)
                             return;
                         if (item.RefValue <= 0)
@@ -35,7 +34,7 @@ namespace AnalyzeApp.Job
 
                         if (item.CountTime <= 0)
                         {
-                            item.BottomRecent = SeedData.GetBottomVal(coin);
+                            item.BottomRecent = (double)DataMng.GetBottomVal(coin, Model.ENUM.enumInterval.OneHour);
                             item.RefValue = curValue;
                         }
 
@@ -53,9 +52,9 @@ namespace AnalyzeApp.Job
                     lstTask.Add(task);
                 }
                 Task.WaitAll(lstTask.ToArray());
-                if (StaticVal.IsExecMCDX)
+                if (StaticValtmp.IsExecMCDX)
                     return;
-                StaticVal.lstMCDX = lstResult;
+                StaticValtmp.lstMCDX = lstResult;
                 frmMCDX.Instance().InitData();
             }
             catch (Exception ex)

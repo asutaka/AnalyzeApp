@@ -16,8 +16,8 @@ namespace AnalyzeApp.GUI.Child
     public partial class frmMCDX : XtraForm
     {
         private WaitFunc _frmWaitForm = new WaitFunc();
-        private ScheduleMember jobCalculate = new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<MCDXCalculateJob>(), StaticVal.Scron_MCDX_Calculate, nameof(MCDXCalculateJob));
-        private ScheduleMember jobValue = new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<MCDXValueScheduleJob>(), StaticVal.Scron_MCDX_Value, nameof(MCDXValueScheduleJob));
+        private ScheduleMember jobCalculate = new ScheduleMember(StaticVal.scheduleMng.GetScheduler(), JobBuilder.Create<MCDXCalculateJob>(), StaticValtmp.Scron_MCDX_Calculate, nameof(MCDXCalculateJob));
+        private ScheduleMember jobValue = new ScheduleMember(StaticVal.scheduleMng.GetScheduler(), JobBuilder.Create<MCDXValueScheduleJob>(), StaticValtmp.Scron_MCDX_Value, nameof(MCDXValueScheduleJob));
         private frmMCDX()
         {
             InitializeComponent();
@@ -33,12 +33,12 @@ namespace AnalyzeApp.GUI.Child
         {
             try
             {
-                if (StaticVal.IsExecMCDX)
+                if (StaticValtmp.IsExecMCDX)
                     return;
-                StaticVal.IsExecMCDX = true;
-                StaticVal.lstMCDX = CalculateMng.MCDX();
+                StaticValtmp.IsExecMCDX = true;
+                StaticValtmp.lstMCDX = CalculateMng.MCDX();
                 InitData();
-                StaticVal.IsExecMCDX = false;
+                StaticValtmp.IsExecMCDX = false;
             }
             catch (Exception ex)
             {
@@ -57,7 +57,7 @@ namespace AnalyzeApp.GUI.Child
             this.Invoke((MethodInvoker)delegate
             {
                 grid.BeginUpdate();
-                grid.DataSource = StaticVal.lstMCDX;
+                grid.DataSource = StaticValtmp.lstMCDX;
                 grid.EndUpdate();
             });
         }

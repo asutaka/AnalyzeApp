@@ -13,8 +13,7 @@ namespace AnalyzeApp.GUI.Child
 {
     public partial class frmTop30 : XtraForm
     {
-        private ScheduleMember jobCalculate = new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<Top30CalculateJob>(), StaticVal.Scron_Top30_Calculate, nameof(Top30CalculateJob));
-        private ScheduleMember jobValue = new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<Top30ValueScheduleJob>(), StaticVal.Scron_Top30_Value, nameof(Top30ValueScheduleJob));
+        private ScheduleMember jobValue = new ScheduleMember(StaticVal.scheduleMng.GetScheduler(), JobBuilder.Create<Top30ValueScheduleJob>(), StaticValtmp.Scron_Top30_Value, nameof(Top30ValueScheduleJob));
         private frmTop30()
         {
             InitializeComponent();
@@ -32,7 +31,6 @@ namespace AnalyzeApp.GUI.Child
         {
             if (!this.Visible)
             {
-                jobCalculate.Pause();
                 jobValue.Pause();
             }
             if (!this.IsHandleCreated)
@@ -49,20 +47,10 @@ namespace AnalyzeApp.GUI.Child
         {
             if (!this.Visible)
             {
-                jobCalculate.Pause();
                 jobValue.Pause();
             }
             else
             {
-                if (!jobCalculate.IsStarted())
-                {
-                    jobCalculate.Start();
-                }
-                else
-                {
-                    jobCalculate.Resume();
-                }
-                
                 if (!jobValue.IsStarted())
                 {
                     jobValue.Start();

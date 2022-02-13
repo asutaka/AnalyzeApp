@@ -70,7 +70,7 @@ namespace AnalyzeApp.GUI.Child
 
         private void btnOkAndSave_Click(object sender, EventArgs e)
         {
-            StaticVal.IsTradeListChange = true;
+            StaticValtmp.IsTradeListChange = true;
             _model.lData.Clear();
             if (pnl.Controls.Count > 0)
             {
@@ -84,7 +84,7 @@ namespace AnalyzeApp.GUI.Child
             _model.IsNotify = chkState.IsOn;
             Config.TradeList = _model;
             APIService.Instance().UpdateSetting(new SettingModel { Id = (int)enumSetting.TradeList, Setting = JsonConvert.SerializeObject(_model) }).GetAwaiter().GetResult();
-            StaticVal.IsTradeListChange = false;
+            StaticValtmp.IsTradeListChange = false;
             MessageBox.Show("Đã lưu dữ liệu!");
         }
     }

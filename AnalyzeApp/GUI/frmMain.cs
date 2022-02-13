@@ -1,9 +1,9 @@
 ﻿using AnalyzeApp.Analyze;
 using AnalyzeApp.Common;
-using AnalyzeApp.Data;
 using AnalyzeApp.GUI.Child;
 using AnalyzeApp.Job;
 using AnalyzeApp.Job.ScheduleJob;
+using AnalyzeApp.Model.ENTITY;
 using AnalyzeApp.Model.ENUM;
 using DevExpress.XtraTab;
 using Quartz;
@@ -11,7 +11,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,13 +21,14 @@ namespace AnalyzeApp.GUI
     {
         private WaitFunc _frmWaitForm = new WaitFunc();
         private BackgroundWorker _bkgr;
+
         //private bool _checkConnection;
         private frmMain()
         {
             InitializeComponent();
             DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("McSkin");
             ribbon.Enabled = false;
-            StaticVal.IsAccessMain = true;
+            StaticValtmp.IsAccessMain = true;
             _bkgr = new BackgroundWorker();
             _bkgr.DoWork += bkgrConfig_DoWork;
             _bkgr.RunWorkerCompleted += bkgrConfig_RunWorkerCompleted;
@@ -36,15 +36,6 @@ namespace AnalyzeApp.GUI
             //StaticVal.ScheduleMngObj.AddSchedule(new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<CheckStatusJob>(), StaticVal.Scron_CheckStatus, nameof(CheckStatusJob)));
             //StaticVal.ScheduleMngObj.AddSchedule(new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<TradeListNotifyJob>(), StaticVal.Scron_TradeList_Noti, nameof(TradeListNotifyJob)));
 
-
-            //StaticVal.ScheduleMngObj.AddSchedule(new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<CurrentDataJob>(), "* * * * * ?", nameof(CurrentDataJob)));
-            //StaticVal.ScheduleMngObj.AddSchedule(new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<Data15MJob>(), "0 0/15 * * * ?", nameof(Data15MJob)));
-            //StaticVal.ScheduleMngObj.AddSchedule(new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<Data1HJob>(), "0 0 0/1 * * ?", nameof(Data1HJob)));
-            //StaticVal.ScheduleMngObj.AddSchedule(new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<Data4HJob>(), "0 0 0/4 * * ?", nameof(Data4HJob)));
-            //StaticVal.ScheduleMngObj.AddSchedule(new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<Data1DJob>(), "0 0 0 * * ?", nameof(Data1DJob)));
-            //StaticVal.ScheduleMngObj.AddSchedule(new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<Data1WJob>(), "0 0 0 1/7 * ?", nameof(Data1WJob)));
-            //StaticVal.ScheduleMngObj.AddSchedule(new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<Data1WJob>(), "0 0 0 1 * ?", nameof(Data1WJob)));
-            //StaticVal.ScheduleMngObj.StartAllJob();
 
             //StaticValues.ScheduleMngObj.AddSchedule(new ScheduleMember(StaticValues.ScheduleMngObj.GetScheduler(), JobBuilder.Create<FollowListJob>(), StaticValues.followList.Cron, nameof(FollowListJob)));
         }
@@ -58,19 +49,47 @@ namespace AnalyzeApp.GUI
 
         private void bkgrConfig_DoWork(object sender, DoWorkEventArgs e)
         {
-            //dtStartConfig = DateTime.Now;
             _frmWaitForm.Show("Thiết lập ban đầu");
-            var lstTask = new List<Task>();
-            foreach (var item in StaticVal.lstCoinFilter)
+            while (true)
             {
-                var task = Task.Run(() =>
+                var config = APIService.Instance().GetConfigTable().GetAwaiter().GetResult();
+                if(config != null && config.StatusLoadData != (int)enumStatusLoadData.Loading)
                 {
-                    StaticVal.dicDatasource1H.Add(item.S, SeedData.LoadDatasource(item.S, enumInterval.OneHour));
-                });
-                lstTask.Add(task);
+                    Dictionary<string, IEnumerable<BinanceKline>> dic15M = new Dictionary<string, IEnumerable<BinanceKline>>();
+                    Dictionary<string, IEnumerable<BinanceKline>> dic1H = new Dictionary<string, IEnumerable<BinanceKline>>();
+                    Dictionary<string, IEnumerable<BinanceKline>> dic4H = new Dictionary<string, IEnumerable<BinanceKline>>();
+                    Dictionary<string, IEnumerable<BinanceKline>> dic1D = new Dictionary<string, IEnumerable<BinanceKline>>();
+                    Dictionary<string, IEnumerable<BinanceKline>> dic1W = new Dictionary<string, IEnumerable<BinanceKline>>();
+                    Dictionary<string, IEnumerable<BinanceKline>> dic1Month = new Dictionary<string, IEnumerable<BinanceKline>>();
+
+                    var lstTask = new List<Task>();
+                    foreach (var item in StaticVal.lstCoinFilter)
+                    {
+                        var task = Task.Run(() =>
+                        {
+                            dic15M.Add(item.S, DataMng.LoadSource(item.S, enumInterval.ThirteenMinute));
+                            dic1H.Add(item.S, DataMng.LoadSource(item.S, enumInterval.OneHour));
+                            dic4H.Add(item.S, DataMng.LoadSource(item.S, enumInterval.FourHour));
+                            dic1D.Add(item.S, DataMng.LoadSource(item.S, enumInterval.OneDay));
+                            dic1W.Add(item.S, DataMng.LoadSource(item.S, enumInterval.OneWeek));
+                            dic1Month.Add(item.S, DataMng.LoadSource(item.S, enumInterval.OneMonth));
+                        });
+                        lstTask.Add(task);
+                    }
+                    Task.WaitAll(lstTask.ToArray());
+                    StaticVal.dic15M = dic15M;
+                    StaticVal.dic1H = dic1H;
+                    StaticVal.dic4H = dic4H;
+                    StaticVal.dic1D = dic1D;
+                    StaticVal.dic1W = dic1W;
+                    StaticVal.dic1Month = dic1Month;
+
+                    Thread.Sleep(200);
+                    break;
+                }
+                Thread.Sleep(1000);
             }
-            Task.WaitAll(lstTask.ToArray());
-            Thread.Sleep(200);
+
             _frmWaitForm.Close();
         }
         private void bkgrConfig_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -84,7 +103,6 @@ namespace AnalyzeApp.GUI
 
         private void bkgrAnalyze_DoWork(object sender, DoWorkEventArgs e)
         {
-            //dtStartCalculate = DateTime.Now;
             _frmWaitForm.Show("Phân tích dữ liệu");
             StaticVal.lstCryptonRank = CalculateMng.Top30();
             Thread.Sleep(200);
@@ -95,138 +113,9 @@ namespace AnalyzeApp.GUI
             ribbon.Enabled = true;
             _bkgr.DoWork -= bkgrAnalyze_DoWork;
             _bkgr.RunWorkerCompleted -= bkgrAnalyze_RunWorkerCompleted;
-            _bkgr.DoWork += bkgrPrepareRealTime_DoWork;
-            _bkgr.RunWorkerCompleted += bkgrPrepareRealTime_RunWorkerCompleted;
-            _bkgr.RunWorkerAsync();
-        }
 
-        private void bkgrPrepareRealTime_DoWork(object sender1, DoWorkEventArgs e1)
-        {
-            //15M
-            if (Config.AdvanceSetting1.LstInterval.Contains((int)enumTimeZone.ThirteenMinute)
-                || Config.AdvanceSetting2.LstInterval.Contains((int)enumTimeZone.ThirteenMinute)
-                || Config.AdvanceSetting3.LstInterval.Contains((int)enumTimeZone.ThirteenMinute)
-                || Config.AdvanceSetting4.LstInterval.Contains((int)enumTimeZone.ThirteenMinute))
-            {
-                var wrkr = new BackgroundWorker();
-                wrkr.DoWork += (object sender, DoWorkEventArgs e) => {
-                    var lstTask = new List<Task>();
-                    foreach (var item in StaticVal.lstCoinFilter)
-                    {
-                        var task = Task.Run(() =>
-                        {
-                            StaticVal.dicDatasource15M.Add(item.S, SeedData.LoadDatasource(item.S, (int)enumInterval.ThirteenMinute));
-                        });
-                        lstTask.Add(task);
-                    }
-                    Task.WaitAll(lstTask.ToArray());
-                };
-                wrkr.RunWorkerAsync();
-            }
-            //4H
-            if (Config.AdvanceSetting1.LstInterval.Contains((int)enumTimeZone.FourHour)
-              || Config.AdvanceSetting2.LstInterval.Contains((int)enumTimeZone.FourHour)
-              || Config.AdvanceSetting3.LstInterval.Contains((int)enumTimeZone.FourHour)
-              || Config.AdvanceSetting4.LstInterval.Contains((int)enumTimeZone.FourHour))
-            {
-                var wrkr = new BackgroundWorker();
-                wrkr.DoWork += (object sender, DoWorkEventArgs e) => {
-                    var lstTask = new List<Task>();
-                    foreach (var item in StaticVal.lstCoinFilter)
-                    {
-                        var task = Task.Run(() =>
-                        {
-                            StaticVal.dicDatasource4H.Add(item.S, SeedData.LoadDatasource(item.S, enumInterval.FourHour));
-                        });
-                        lstTask.Add(task);
-                    }
-                    Task.WaitAll(lstTask.ToArray());
-                };
-                wrkr.RunWorkerAsync();
-            }
-            //1D
-            if (Config.AdvanceSetting1.LstInterval.Contains((int)enumTimeZone.OneDay)
-              || Config.AdvanceSetting2.LstInterval.Contains((int)enumTimeZone.OneDay)
-              || Config.AdvanceSetting3.LstInterval.Contains((int)enumTimeZone.OneDay)
-              || Config.AdvanceSetting4.LstInterval.Contains((int)enumTimeZone.OneDay))
-            {
-                var wrkr = new BackgroundWorker();
-                wrkr.DoWork += (object sender, DoWorkEventArgs e) => {
-                    var lstTask = new List<Task>();
-                    foreach (var item in StaticVal.lstCoinFilter)
-                    {
-                        var task = Task.Run(() =>
-                        {
-                            StaticVal.dicDatasource1D.Add(item.S, SeedData.LoadDatasource(item.S, enumInterval.OneDay));
-                        });
-                        lstTask.Add(task);
-                    }
-                    Task.WaitAll(lstTask.ToArray());
-                };
-                wrkr.RunWorkerAsync();
-            }
-            //1W
-            if (Config.AdvanceSetting1.LstInterval.Contains((int)enumTimeZone.OneWeek)
-              || Config.AdvanceSetting2.LstInterval.Contains((int)enumTimeZone.OneWeek)
-              || Config.AdvanceSetting3.LstInterval.Contains((int)enumTimeZone.OneWeek)
-              || Config.AdvanceSetting4.LstInterval.Contains((int)enumTimeZone.OneWeek))
-            {
-                var wrkr = new BackgroundWorker();
-                wrkr.DoWork += (object sender, DoWorkEventArgs e) => {
-                    var lstTask = new List<Task>();
-                    foreach (var item in StaticVal.lstCoinFilter)
-                    {
-                        var task = Task.Run(() =>
-                        {
-                            StaticVal.dicDatasource1W.Add(item.S, SeedData.LoadDatasource(item.S, enumInterval.OneWeek));
-                        });
-                        lstTask.Add(task);
-                    }
-                    Task.WaitAll(lstTask.ToArray());
-                };
-                wrkr.RunWorkerAsync();
-            }
-            //1Month
-            if (Config.AdvanceSetting1.LstInterval.Contains((int)enumTimeZone.OneMonth)
-              || Config.AdvanceSetting2.LstInterval.Contains((int)enumTimeZone.OneMonth)
-              || Config.AdvanceSetting3.LstInterval.Contains((int)enumTimeZone.OneMonth)
-              || Config.AdvanceSetting4.LstInterval.Contains((int)enumTimeZone.OneMonth))
-            {
-                var wrkr = new BackgroundWorker();
-                wrkr.DoWork += (object sender, DoWorkEventArgs e) => {
-                    var lstTask = new List<Task>();
-                    foreach (var item in StaticVal.lstCoinFilter)
-                    {
-                        var task = Task.Run(() =>
-                        {
-                            StaticVal.dicDatasource1Month.Add(item.S, SeedData.LoadDatasource(item.S, enumInterval.OneMonth));
-                        });
-                        lstTask.Add(task);
-                    }
-                    Task.WaitAll(lstTask.ToArray());
-                };
-                wrkr.RunWorkerAsync();
-            }
-        }
-
-        private void bkgrPrepareRealTime_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            this.Invoke((MethodInvoker)delegate
-            {
-                tabControl.AddTab(frmTop30.Instance());
-            });
-            try
-            {
-                foreach (var process in Process.GetProcessesByName(ConstVal.serviceName))
-                {
-                    process.Kill();
-                }
-                Process.Start($"{Directory.GetCurrentDirectory()}\\service\\{ConstVal.serviceName}.exe");
-            }
-            catch(Exception ex)
-            {
-                NLogLogger.PublishException(ex, $"frmMain: {ex.Message}");
-            }
+            tabControl.AddTab(frmTop30.Instance());
+            StartUp.Load();
         }
 
         private void barBtnInfo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -334,7 +223,7 @@ namespace AnalyzeApp.GUI
             barBtnStart.Enabled = false;
             barBtnStop.Enabled = true;
 
-            StaticVal.ScheduleMngObj.StartAllJob();
+            StaticVal.scheduleMng.StartAllJob();
         }
 
         private void barBtnStop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -342,7 +231,7 @@ namespace AnalyzeApp.GUI
             barBtnStart.Enabled = true;
             barBtnStop.Enabled = false;
 
-            StaticVal.ScheduleMngObj.StopAllJob();
+            StaticVal.scheduleMng.StopAllJob();
         }
 
         private void barBtnMCDX_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

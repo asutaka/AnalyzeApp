@@ -1,11 +1,9 @@
-﻿using System;
-
-namespace AnalyzeApp.Model.ENTITY
+﻿namespace AnalyzeApp.Model.ENTITY
 {
     public class BinanceKline
     {
-        public DateTime OpenTime { get; set; }
-        public DateTime CloseTime { get; set; }
+        public long OpenTime { get; set; }
+        public long CloseTime { get; set; }
         public decimal Open { get; set; }
         public decimal Close { get; set; }
         public decimal High { get; set; }

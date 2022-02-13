@@ -93,3 +93,7 @@ D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.GenCode\obj\Debug\AnalyzeApp.GenCode
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.GenCode\obj\Debug\AnalyzeApp.GenCode.csproj.CoreCompileInputs.cache
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.GenCode\obj\Debug\AnalyzeApp.GenCode.exe
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.GenCode\obj\Debug\AnalyzeApp.GenCode.pdb
+D:\Data\AnalyzeApp\AnalyzeApp.GenCode\bin\Debug\Binance.Net.dll
+D:\Data\AnalyzeApp\AnalyzeApp.GenCode\bin\Debug\CryptoExchange.Net.dll
+D:\Data\AnalyzeApp\AnalyzeApp.GenCode\bin\Debug\Binance.Net.xml
+D:\Data\AnalyzeApp\AnalyzeApp.GenCode\bin\Debug\CryptoExchange.Net.xml

@@ -1,5 +1,4 @@
 ﻿using AnalyzeApp.Common;
-using AnalyzeApp.Data;
 using AnalyzeApp.Model.ENTITY;
 using Quartz;
 using System;
@@ -17,7 +16,7 @@ namespace AnalyzeApp.Job
             try
             {
                 var model = Config.TradeList;
-                if (!model.IsNotify || StaticVal.IsTradeListChange)
+                if (!model.IsNotify || StaticValtmp.IsTradeListChange)
                     return;
 
                 var lstTask = new List<Task>();
@@ -26,12 +25,12 @@ namespace AnalyzeApp.Job
                 {
                     var task = Task.Run(() =>
                     {
-                        var currentVal = SeedData.GetCurrentVal(item.Coin);
-                        var entity = StaticVal.lstNotiTrade.FirstOrDefault(x => x.Coin == item.Coin);
+                        var currentVal = (double)DataMng.GetCurrentVal(item.Coin);
+                        var entity = StaticValtmp.lstNotiTrade.FirstOrDefault(x => x.Coin == item.Coin);
                         if(entity == null)
                         {
                             entity = new SendNotifyModel { Coin = item.Coin, Value = 0 };
-                            StaticVal.lstNotiTrade.Add(entity);
+                            StaticValtmp.lstNotiTrade.Add(entity);
                         }
 
                         var lAbove = item.Config.Where(x => x.IsAbove && currentVal > (double)x.Value && (x.Value > entity.Value || entity.Value == 0)).OrderBy(x => x.Value);

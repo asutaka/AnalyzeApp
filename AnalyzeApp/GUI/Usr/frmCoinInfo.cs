@@ -1,4 +1,4 @@
-﻿using AnalyzeApp.Data;
+﻿using AnalyzeApp.Common;
 using AnalyzeApp.Model.ENTITY;
 using DevExpress.XtraEditors;
 using System;
@@ -35,7 +35,7 @@ namespace AnalyzeApp.GUI.Usr
             var entity = StaticVal.lstCoinFilter.FirstOrDefault(x => x.S == _frm.tradeModel.Coin);
             if (entity != null)
             {
-                _currentValue = SeedData.GetCurrentVal(entity.S);
+                _currentValue = (double)DataMng.GetCurrentVal(entity.S); 
 
                 txtCoin.Text = entity.S;
                 txtDescription.Text = entity.AN;

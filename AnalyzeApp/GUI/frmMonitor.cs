@@ -42,7 +42,7 @@ namespace AnalyzeApp.GUI
         public void KillAllSchedule()
         {
             /*stop shedule*/
-            StaticVal.ScheduleMngObj.Stop();
+            StaticVal.scheduleMng.Stop();
 
             /*close backgraound worker
              *https://stackoverflow.com/questions/4732737/how-to-stop-backgroundworker-correctly
@@ -67,7 +67,7 @@ namespace AnalyzeApp.GUI
                 return;
             }
             int tabCount = 1;
-            foreach (var item in StaticVal.ScheduleMngObj.GetSchedules())
+            foreach (var item in StaticVal.scheduleMng.GetSchedules())
             {
                 var user = new userMonitorSchedule();
                 new ScheduleUiContainer(this, user, item).Initialize();

@@ -24,7 +24,7 @@ namespace AnalyzeApp.GUI.Child
         private int count = 1;
 
         #region Job
-        private ScheduleMember job = new ScheduleMember(StaticVal.ScheduleMngObj.GetScheduler(), JobBuilder.Create<RealtimeValueScheduleJob>(), StaticVal.Scron_Top30_Calculate, nameof(RealtimeValueScheduleJob));
+        private ScheduleMember job = new ScheduleMember(StaticVal.scheduleMng.GetScheduler(), JobBuilder.Create<RealtimeValueScheduleJob>(), StaticValtmp.Scron_Top30_Value, nameof(RealtimeValueScheduleJob));
         #endregion
         #region Contructor
         private frmRealTime()
@@ -55,13 +55,13 @@ namespace AnalyzeApp.GUI.Child
             this.Invoke((MethodInvoker)delegate
             {
                 grid.BeginUpdate();
-                grid.DataSource = StaticVal.lstRealTimeShow;
+                grid.DataSource = StaticValtmp.lstRealTimeShow;
                 grid.EndUpdate();
             });
         }
         private void AddNewRow(string coin, string coinName)
         {
-            StaticVal.lstRealTimeShow.Add(new Top30Model { 
+            StaticValtmp.lstRealTimeShow.Add(new Top30Model { 
                 STT = count++,
                 Coin = coin,
                 CoinName = coinName,
@@ -164,7 +164,7 @@ namespace AnalyzeApp.GUI.Child
         {
             if (e.KeyCode == Keys.Delete)
             {
-                StaticVal.IsRealTimeDeleted = true;
+                StaticValtmp.IsRealTimeDeleted = true;
                 int[] rows = gridView1.GetSelectedRows();
                 if (rows != null && rows.Length > 0)
                 {
@@ -180,13 +180,13 @@ namespace AnalyzeApp.GUI.Child
                             Config.RealTimes.Remove(entity);
                         }
                         Config.RealTimes.UpdateJson(_fileName);
-                        var entityShow = StaticVal.lstRealTimeShow.FirstOrDefault(x => x.Coin == cellValue);
+                        var entityShow = StaticValtmp.lstRealTimeShow.FirstOrDefault(x => x.Coin == cellValue);
                         if (entityShow != null)
                         {
-                            StaticVal.lstRealTimeShow.Remove(entityShow);
+                            StaticValtmp.lstRealTimeShow.Remove(entityShow);
                         }
                         InitData();
-                        StaticVal.IsRealTimeDeleted = false;
+                        StaticValtmp.IsRealTimeDeleted = false;
                         grid.Enabled = true;
                         _frmWaitForm.Close();
                     }

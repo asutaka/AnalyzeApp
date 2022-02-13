@@ -1,10 +1,11 @@
 ﻿using AnalyzeApp.Model.ENTITY;
 using AnalyzeApp.Model.ENUM;
-using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AnalyzeApp.Common
@@ -17,25 +18,78 @@ namespace AnalyzeApp.Common
             var output = cryptonModel.Data.Where(x => x.S.Substring(x.S.Length - 4) == "USDT").OrderBy(x => x.S).ToList();
             return output;
         }
-        public static JArray GetSource(string coin, enumInterval interval, long startTime = 0, long endTime = 0)
+
+        public static IEnumerable<BinanceKline> LoadSource(string coin, enumInterval interval)
         {
             try
             {
-                string strTime = string.Empty;
-                if (startTime > 0)
-                    strTime += $"&startTime={startTime}";
-                if (endTime > 0)  
-                    strTime += $"&endTime={endTime}";
-                var url = $"{ConstVal.COIN_DETAIL}symbol={coin}&interval={interval.GetDisplayName()}{strTime}";
-                var arrData = CommonMethod.DownloadJsonArray(url);
-                return arrData;
+                string path = $"{Directory.GetCurrentDirectory()}\\data\\{interval.GetDisplayName()}\\{coin}.txt";
+                using (StreamReader r = new StreamReader(path))
+                {
+                    string json = r.ReadToEnd();
+                    var result = JsonConvert.DeserializeObject<IEnumerable<BinanceKline>>(json);
+                    return result;
+                }
             }
             catch(Exception ex)
             {
-                NLogLogger.PublishException(ex, $"DataMng|GetSource:{ex.Message}");
-                return null;
+                NLogLogger.PublishException(ex, $"DataMng|LoadSource: {ex.Message}");
+                return new List<BinanceKline>();
             }
         }
+
+        public static decimal GetBottomVal(string coin, enumInterval interval)
+        {
+            IEnumerable<BinanceKline> lData = null;
+            switch (interval)
+            {
+                case enumInterval.ThirteenMinute:
+                    lData = StaticVal.dic15M[coin]; break;
+                case enumInterval.OneHour:
+                    lData = StaticVal.dic1H[coin]; break;
+                case enumInterval.FourHour:
+                    lData = StaticVal.dic4H[coin]; break;
+                case enumInterval.OneDay:
+                    lData = StaticVal.dic1D[coin]; break;
+                case enumInterval.OneWeek:
+                    lData = StaticVal.dic1W[coin]; break;
+                case enumInterval.OneMonth:
+                    lData = StaticVal.dic1Month[coin]; break;
+            }
+            if (lData == null || lData.Count() < 15)
+                return 0;
+            var count = lData.Count();
+            decimal min = lData.ElementAt(count - 1).Close;
+            var countConfirm = 0;
+            for (int i = count - 2; i > count - 15; i--)
+            {
+                var val = lData.ElementAt(i - 1).Close;
+                if (min <= val)
+                {
+                    if (++countConfirm == 3)
+                    {
+                        return min;
+                    }
+                }
+                else
+                {
+                    countConfirm = 0;
+                    min = val;
+                }
+            }
+            return min;
+        }
+
+        public static decimal GetCurrentVal(string coin)
+        {
+            if (StaticVal.binanceTicks == null)
+                Thread.Sleep(100);
+            var entity = StaticVal.binanceTicks.FirstOrDefault(x => x.Symbol == coin);
+            if (entity == null)
+                return 0;
+            return entity.LastPrice;
+        }
+
         #region StoredData
         public static async Task StoredData()
         {
@@ -153,31 +207,57 @@ namespace AnalyzeApp.Common
             try
             {
                 var pathFile = $"{Directory.GetCurrentDirectory()}\\data\\{interval.GetDisplayName()}\\{coin}.txt";
-                JArray arrSource;
+                IEnumerable<BinanceKline> arrSource;
                 var index = 0;
                 do
                 {
                     arrSource = GetSource(coin, interval);
                 }
                 while (index < 3 && arrSource == null);
-                if (arrSource == null)
+                if (arrSource == null || !arrSource.Any())
                 {
                     return;
                 }
                 //
                 File.Create(pathFile).Close();
-                //
-                using (StreamWriter stream = new StreamWriter(pathFile, true))
-                {
-                    foreach (var line in arrSource)
-                    {
-                        stream.WriteLine(line);
-                    }
-                }
+                string json = JsonConvert.SerializeObject(arrSource);
+                //write string to file
+                File.WriteAllText(pathFile, json);
             }
             catch (Exception ex)
             {
                 NLogLogger.PublishException(ex, $"DataMng|SyncDataValue: {ex.Message}");
+            }
+        }
+        private static IEnumerable<BinanceKline> GetSource(string coin, enumInterval interval, long startTime = 0, long endTime = 0)
+        {
+            try
+            {
+                string strTime = string.Empty;
+                if (startTime > 0)
+                    strTime += $"&startTime={startTime}";
+                if (endTime > 0)
+                    strTime += $"&endTime={endTime}";
+                var url = $"{ConstVal.COIN_DETAIL}symbol={coin}&interval={interval.GetDisplayName()}{strTime}";
+                var arrData = CommonMethod.DownloadJsonArray(url);
+                return arrData.Select(x => new BinanceKline
+                {
+                    OpenTime = (long)x[0],
+                    Open = decimal.Parse(x[1].ToString()),
+                    High = decimal.Parse(x[2].ToString()),
+                    Low = decimal.Parse(x[3].ToString()),
+                    Close = decimal.Parse(x[4].ToString()),
+                    BaseVolume = decimal.Parse(x[5].ToString()),
+                    CloseTime = (long)x[6],
+                    QuoteVolume = decimal.Parse(x[7].ToString()),
+                    TakerBuyBaseVolume = decimal.Parse(x[9].ToString()),
+                    TakerBuyQuoteVolume = decimal.Parse(x[10].ToString())
+                });
+            }
+            catch (Exception ex)
+            {
+                NLogLogger.PublishException(ex, $"DataMng|GetSource:{ex.Message}");
+                return null;
             }
         }
         #endregion

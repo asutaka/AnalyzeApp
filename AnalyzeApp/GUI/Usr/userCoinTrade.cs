@@ -1,4 +1,5 @@
-﻿using AnalyzeApp.Model.ENTITY;
+﻿using AnalyzeApp.Common;
+using AnalyzeApp.Model.ENTITY;
 using System;
 using System.Linq;
 using System.Windows.Forms;

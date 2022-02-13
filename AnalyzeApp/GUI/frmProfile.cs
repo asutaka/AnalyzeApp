@@ -12,7 +12,7 @@ namespace AnalyzeApp.GUI
 {
     public partial class frmProfile : XtraForm
     {
-        private ProfileModel _profile = StaticVal.profile;
+        private ProfileModel _profile = StaticValtmp.profile;
         private const string _fileName = "user.json";
         private const string _folderName = "settings";
         private BackgroundWorker _bkgr = new BackgroundWorker();
@@ -38,12 +38,12 @@ namespace AnalyzeApp.GUI
             {
                 var objUser = new UserModel().LoadJsonFile(_fileName);
 
-                StaticVal.profile.Phone = objUser.Phone;
+                StaticValtmp.profile.Phone = objUser.Phone;
                 txtPhone.Text = objUser.Phone;
 
                 if (!string.IsNullOrWhiteSpace(objUser.Code))
                 {
-                    StaticVal.profile.Code = objUser.Code;
+                    StaticValtmp.profile.Code = objUser.Code;
                     txtCode.Text = objUser.Code;
                 }
             }
@@ -76,15 +76,15 @@ namespace AnalyzeApp.GUI
             var isUpdate = model.UpdateJson(_fileName);
             if (isUpdate)
             {
-                StaticVal.profile.Phone = model.Phone;
-                StaticVal.profile.Code = model.Code;
+                StaticValtmp.profile.Phone = model.Phone;
+                StaticValtmp.profile.Code = model.Code;
             }
             return isUpdate;
         }
 
         private void CloseAppCheck()
         {
-            if (!StaticVal.IsAccessMain)
+            if (!StaticValtmp.IsAccessMain)
             {
                 /*kill all running process
                 * https://stackoverflow.com/questions/8507978/exiting-a-c-sharp-winforms-application
@@ -140,7 +140,7 @@ namespace AnalyzeApp.GUI
             {
                 MessageBox.Show("Cập nhật không thành công!");
             }
-            txtPhone.Text = StaticVal.profile.Phone;
+            txtPhone.Text = StaticValtmp.profile.Phone;
         }
 
         private void txtCode_EditValueChanged(object sender, System.EventArgs e)
@@ -149,9 +149,9 @@ namespace AnalyzeApp.GUI
             {
                 return;
             }
-            if (StaticVal.IsExecCheckCodeActive)
+            if (StaticValtmp.IsExecCheckCodeActive)
                 return;
-            StaticVal.IsExecCheckCodeActive = true;
+            StaticValtmp.IsExecCheckCodeActive = true;
             picStatus.Image = Properties.Resources.yellow;
             _bkgr.RunWorkerAsync();
         }
@@ -159,25 +159,25 @@ namespace AnalyzeApp.GUI
         private void bkgrCheckStatus_DoWork(object sender, DoWorkEventArgs e)
         {
             _frmWaitForm.Show("Kiểm tra trạng thái");
-            btnPaste.Enabled = false;
+            //btnPaste.Enabled = false;
 
             var time = CommonMethod.GetTimeAsync().GetAwaiter().GetResult();
             var jsonModel = Security.Decrypt(txtCode.Text.Trim());
             if (string.IsNullOrWhiteSpace(jsonModel))
             {
-                StaticVal.IsCodeActive = false;
+                StaticValtmp.IsCodeActive = false;
             }
             else
             {
                 var model = JsonConvert.DeserializeObject<GenCodeModel>(jsonModel);
                 if(!_profile.Email.Contains(model.Email) || model.Expired <= time)
                 {
-                    StaticVal.IsCodeActive = false;
+                    StaticValtmp.IsCodeActive = false;
                 }
                 else
                 {
-                    StaticVal.IsCodeActive = true;
-                    StaticVal.Level = model.Level;
+                    StaticValtmp.IsCodeActive = true;
+                    StaticValtmp.Level = model.Level;
                 }
             }
             Thread.Sleep(200);
@@ -186,24 +186,24 @@ namespace AnalyzeApp.GUI
 
         private void bkgrCheckStatus_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            picStatus.Image = StaticVal.IsCodeActive ? Properties.Resources.green : Properties.Resources.red;
-            btnPaste.Enabled = true;
+            picStatus.Image = StaticValtmp.IsCodeActive ? Properties.Resources.green : Properties.Resources.red;
+            //btnPaste.Enabled = true;
 
-            if (!StaticVal.IsCodeActive)
+            if (!StaticValtmp.IsCodeActive)
             {
                 txtCode.Text = string.Empty;
             }
             else
             {
                 UpdateUserModel();
-                if (!StaticVal.IsAccessMain)
+                if (!StaticValtmp.IsAccessMain)
                 {
                     Hide();
-                    StaticVal.frmMainObj = frmMain.Instance();
-                    StaticVal.frmMainObj.Show();
+                    StaticValtmp.frmMainObj = frmMain.Instance();
+                    StaticValtmp.frmMainObj.Show();
                 }
             }
-            StaticVal.IsExecCheckCodeActive = false;
+            StaticValtmp.IsExecCheckCodeActive = false;
         }
 
         private void frmProfile_FormClosing(object sender, FormClosingEventArgs e)

@@ -1,5 +1,4 @@
 ﻿using AnalyzeApp.Common;
-using AnalyzeApp.Data;
 using AnalyzeApp.Model.ENTITY;
 using AnalyzeApp.Model.ENUM;
 using System;
@@ -254,7 +253,7 @@ namespace AnalyzeApp.Analyze
             }
             else if (model.Indicator == (int)enumChooseData.CurrentValue)
             {
-                outputModel.Value = SeedData.GetCurrentVal(coin);
+                outputModel.Value = (double)DataMng.GetCurrentVal(coin);
             }
             return outputModel;
         }
@@ -282,7 +281,7 @@ namespace AnalyzeApp.Analyze
 
             if (indicator.Unit == (int)enumUnit.Ratio)
             {
-                var currentValue = SeedData.GetCurrentVal(coin);
+                var currentValue = (double)DataMng.GetCurrentVal(coin);
                 result = (double)indicator.Result * currentValue / 100;
             }
             double firstValue = lstModel.FirstOrDefault(x => x.Indicator == indicator1.Indicator && x.Period == indicator1.Period).Value;
@@ -325,7 +324,7 @@ namespace AnalyzeApp.Analyze
             {
                 int count = 1;
                 double sum = 0;
-                var lSource = StaticVal.dicDatasource1H.First(x => x.Key == code).Value;
+                var lSource = StaticValtmp.dicDatasource1H.First(x => x.Key == code).Value;
                 if (lSource == null)
                     return new Top30Model { Coin = code, Count = count, Rate = Math.Round(sum / count, 2) };
 
@@ -401,7 +400,7 @@ namespace AnalyzeApp.Analyze
                     }
                 }
 
-                return new Top30Model { Coin = code, CoinName = coinName, Count = count, Rate = Math.Round(sum / count, 2), RefValue = SeedData.GetCurrentVal(code) };
+                return new Top30Model { Coin = code, CoinName = coinName, Count = count, Rate = Math.Round(sum / count, 2), RefValue = (double)DataMng.GetCurrentVal(code) };
             }
             catch (Exception ex)
             {
@@ -441,10 +440,6 @@ namespace AnalyzeApp.Analyze
                 });
             }
             return lstResult;
-        }
-        private static double CurrentValue(string code)
-        {
-            return SeedData.GetCurrentVal(code);
         }
         private static double MA(double[] arrInput, Core.MAType type, int period, int count)
         {
@@ -520,12 +515,12 @@ namespace AnalyzeApp.Analyze
         {
             switch (interval)
             {
-                case (int)enumInterval.ThirteenMinute: return StaticVal.dicDatasource15M[coin];
-                case (int)enumInterval.OneHour: return StaticVal.dicDatasource1H[coin];
-                case (int)enumInterval.FourHour: return StaticVal.dicDatasource4H[coin];
-                case (int)enumInterval.OneDay: return StaticVal.dicDatasource1D[coin];
-                case (int)enumInterval.OneWeek: return StaticVal.dicDatasource1W[coin];
-                case (int)enumInterval.OneMonth: return StaticVal.dicDatasource1Month[coin];
+                case (int)enumInterval.ThirteenMinute: return StaticValtmp.dicDatasource15M[coin];
+                case (int)enumInterval.OneHour: return StaticValtmp.dicDatasource1H[coin];
+                case (int)enumInterval.FourHour: return StaticValtmp.dicDatasource4H[coin];
+                case (int)enumInterval.OneDay: return StaticValtmp.dicDatasource1D[coin];
+                case (int)enumInterval.OneWeek: return StaticValtmp.dicDatasource1W[coin];
+                case (int)enumInterval.OneMonth: return StaticValtmp.dicDatasource1Month[coin];
                 default: return new List<CandleStickDataModel>();
             }
         }
