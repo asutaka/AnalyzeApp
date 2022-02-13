@@ -169,6 +169,3 @@ F:\DATA\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.AssemblyInfo.c
 F:\DATA\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.csproj.CoreCompileInputs.cache
 F:\DATA\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.MvcApplicationPartsAssemblyInfo.cs
 F:\DATA\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.MvcApplicationPartsAssemblyInfo.cache
-F:\DATA\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.dll
-F:\DATA\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\ref\AnalyzeApp.API.dll
-F:\DATA\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.pdb
