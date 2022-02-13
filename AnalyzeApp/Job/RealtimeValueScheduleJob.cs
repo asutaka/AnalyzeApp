@@ -25,7 +25,16 @@ namespace AnalyzeApp.Job
                     var task = Task.Run(() =>
                     {
                         var coin = item.Coin;
-                        var curValue = (double)DataMng.GetCurrentVal(coin);
+                        var entityBinanceTick = DataMng.GetCoinBinanceTick(coin);
+                        if (entityBinanceTick == null)
+                        {
+                            return;
+                        }
+                        item.PrevDayClosePrice = entityBinanceTick.PrevDayClosePrice;
+                        item.PriceChangePercent = entityBinanceTick.PriceChangePercent;
+                        item.WeightedAveragePrice = entityBinanceTick.WeightedAveragePrice;
+
+                        var curValue = (double)entityBinanceTick.LastPrice;
                         if (curValue <= 0)
                             return;
                         if (item.RefValue <= 0)

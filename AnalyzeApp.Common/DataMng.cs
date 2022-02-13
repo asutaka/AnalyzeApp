@@ -1,5 +1,6 @@
 ﻿using AnalyzeApp.Model.ENTITY;
 using AnalyzeApp.Model.ENUM;
+using Binance.Net.Interfaces;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -88,6 +89,14 @@ namespace AnalyzeApp.Common
             if (entity == null)
                 return 0;
             return entity.LastPrice;
+        }
+
+        public static IBinanceTick GetCoinBinanceTick(string coin)
+        {
+            if (StaticVal.binanceTicks == null)
+                Thread.Sleep(100);
+            var entity = StaticVal.binanceTicks.FirstOrDefault(x => x.Symbol == coin);
+            return entity;
         }
 
         #region StoredData

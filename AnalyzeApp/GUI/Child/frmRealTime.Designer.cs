@@ -42,6 +42,8 @@
             DevExpress.XtraEditors.FormatConditionIconSetIcon formatConditionIconSetIcon4 = new DevExpress.XtraEditors.FormatConditionIconSetIcon();
             DevExpress.XtraEditors.FormatConditionIconSetIcon formatConditionIconSetIcon5 = new DevExpress.XtraEditors.FormatConditionIconSetIcon();
             DevExpress.XtraEditors.FormatConditionIconSetIcon formatConditionIconSetIcon6 = new DevExpress.XtraEditors.FormatConditionIconSetIcon();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule4 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRule3ColorScale formatConditionRule3ColorScale2 = new DevExpress.XtraEditors.FormatConditionRule3ColorScale();
             this.RateValue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CoinName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.WaveRecent = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -58,6 +60,8 @@
             this.BottomRecent = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Count = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Rate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.WeightedAveragePrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PriceChangePercent = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCoin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -180,7 +184,9 @@
             this.RateValue,
             this.WaveRecent,
             this.Count,
-            this.Rate});
+            this.Rate,
+            this.WeightedAveragePrice,
+            this.PriceChangePercent});
             gridFormatRule1.Column = this.RateValue;
             gridFormatRule1.ColumnApplyTo = this.RateValue;
             gridFormatRule1.Name = "FormatRate";
@@ -262,9 +268,32 @@
             formatConditionIconSet2.ValueType = DevExpress.XtraEditors.FormatConditionValueType.Number;
             formatConditionRuleIconSet2.IconSet = formatConditionIconSet2;
             gridFormatRule3.Rule = formatConditionRuleIconSet2;
+            gridFormatRule4.Column = this.PriceChangePercent;
+            gridFormatRule4.ColumnApplyTo = this.PriceChangePercent;
+            gridFormatRule4.Name = "Format0";
+            formatConditionRule3ColorScale2.AllowAnimation = DevExpress.Utils.DefaultBoolean.True;
+            formatConditionRule3ColorScale2.AutomaticType = DevExpress.XtraEditors.FormatConditionAutomaticType.ZeroBased;
+            formatConditionRule3ColorScale2.Maximum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            formatConditionRule3ColorScale2.MaximumColor = System.Drawing.Color.Green;
+            formatConditionRule3ColorScale2.MaximumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            formatConditionRule3ColorScale2.MiddleColor = System.Drawing.Color.White;
+            formatConditionRule3ColorScale2.MiddleType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            formatConditionRule3ColorScale2.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            formatConditionRule3ColorScale2.MinimumColor = System.Drawing.Color.Red;
+            formatConditionRule3ColorScale2.MinimumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            gridFormatRule4.Rule = formatConditionRule3ColorScale2;
             this.gridView1.FormatRules.Add(gridFormatRule1);
             this.gridView1.FormatRules.Add(gridFormatRule2);
             this.gridView1.FormatRules.Add(gridFormatRule3);
+            this.gridView1.FormatRules.Add(gridFormatRule4);
             this.gridView1.GridControl = this.grid;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -405,6 +434,42 @@
             this.Rate.Visible = true;
             this.Rate.VisibleIndex = 9;
             // 
+            // WeightedAveragePrice
+            // 
+            this.WeightedAveragePrice.AppearanceCell.Options.UseTextOptions = true;
+            this.WeightedAveragePrice.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.WeightedAveragePrice.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.WeightedAveragePrice.AppearanceHeader.Options.UseTextOptions = true;
+            this.WeightedAveragePrice.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.WeightedAveragePrice.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.WeightedAveragePrice.Caption = "Giá TB";
+            this.WeightedAveragePrice.DisplayFormat.FormatString = "\"#,##0.0\"";
+            this.WeightedAveragePrice.FieldName = "WeightedAveragePrice";
+            this.WeightedAveragePrice.MaxWidth = 75;
+            this.WeightedAveragePrice.MinWidth = 75;
+            this.WeightedAveragePrice.Name = "WeightedAveragePrice";
+            this.WeightedAveragePrice.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.WeightedAveragePrice.Visible = true;
+            this.WeightedAveragePrice.VisibleIndex = 10;
+            // 
+            // PriceChangePercent
+            // 
+            this.PriceChangePercent.AppearanceCell.Options.UseTextOptions = true;
+            this.PriceChangePercent.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.PriceChangePercent.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.PriceChangePercent.AppearanceHeader.Options.UseTextOptions = true;
+            this.PriceChangePercent.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.PriceChangePercent.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.PriceChangePercent.Caption = "Biến động(%)";
+            this.PriceChangePercent.DisplayFormat.FormatString = "\"#,##0.0\"";
+            this.PriceChangePercent.FieldName = "PriceChangePercent";
+            this.PriceChangePercent.MaxWidth = 75;
+            this.PriceChangePercent.MinWidth = 75;
+            this.PriceChangePercent.Name = "PriceChangePercent";
+            this.PriceChangePercent.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.PriceChangePercent.Visible = true;
+            this.PriceChangePercent.VisibleIndex = 11;
+            // 
             // frmRealTime
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -447,5 +512,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn WaveRecent;
         private DevExpress.XtraGrid.Columns.GridColumn Count;
         private DevExpress.XtraGrid.Columns.GridColumn Rate;
+        private DevExpress.XtraGrid.Columns.GridColumn WeightedAveragePrice;
+        private DevExpress.XtraGrid.Columns.GridColumn PriceChangePercent;
     }
 }

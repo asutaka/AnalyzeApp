@@ -25,8 +25,8 @@ namespace AnalyzeApp.Analyze
                 lstTask.Add(task);
             }
             Task.WaitAll(lstTask.ToArray());
-            lstResult = lstResult.Where(x => x != null).OrderByDescending(x => x.Count).ThenByDescending(x => x.Rate).Take(30)
-                                            .Select(x => new Top30Model { STT = count++, Coin = x.Coin, CoinName = x.CoinName, Count = x.Count, Rate = x.Rate, RefValue = x.RefValue, CountTime = 0 }).ToList();
+            lstResult = lstResult.Where(x => x != null).OrderByDescending(x => x.Count).ThenByDescending(x => x.Rate).Take(30).ToList();
+            lstResult.ForEach(x => x.STT = count++);
             return lstResult;
         }
 
@@ -318,19 +318,19 @@ namespace AnalyzeApp.Analyze
             }
             return point;
         }
-        public static Top30Model CalculateCryptonRank(string code, string coinName)
+        public static Top30Model CalculateCryptonRank(string coin, string coinName)
         {
             try
             {
                 int count = 1;
-                double sum = 0;
-                var lSource = StaticValtmp.dicDatasource1H.First(x => x.Key == code).Value;
-                if (lSource == null)
-                    return new Top30Model { Coin = code, Count = count, Rate = Math.Round(sum / count, 2) };
+                decimal sum = 0;
+                var lSource = StaticVal.dic1H.First(x => x.Key == coin).Value;
+                if (lSource == null || !lSource.Any())
+                    return new Top30Model { Coin = coin, Count = count, Rate = (double)Math.Round(sum / count, 2) };
 
-                DateTime dtMin = DateTime.MinValue, dtMax = DateTime.MinValue, dtMin_Temp = DateTime.MinValue;
+                long dtMin = 0, dtMax = 0, dtMin_Temp = 0;
                 int leftMax = 0, rightMin = 0, rightMax = 0;
-                double min = 0, max = 0, min_Temp = 0;
+                decimal min = 0, max = 0, min_Temp = 0;
                 foreach (var item in lSource)
                 {
                     CheckMinMax();
@@ -345,18 +345,18 @@ namespace AnalyzeApp.Analyze
                         min = min_Temp;
                         dtMin = dtMin_Temp;
                         min_Temp = 0;
-                        dtMin_Temp = DateTime.MinValue;
+                        dtMin_Temp = 0;
                         rightMin = 0;
                         rightMax = 0;
                         leftMax = 0;
                         max = 0;
-                        dtMax = DateTime.MinValue;
+                        dtMax = 0;
                         CheckMinMax();
                     }
                     else if (rightMax > 0)
                     {
                         min_Temp = item.Low;
-                        dtMin_Temp = item.Time;
+                        dtMin_Temp = item.OpenTime;
                     }
 
                     void CheckMinMax()
@@ -364,13 +364,13 @@ namespace AnalyzeApp.Analyze
                         if (min == 0)
                         {
                             min = item.Low;
-                            dtMin = item.Time;
+                            dtMin = item.OpenTime;
                         }
                         if (item.Low < min)
                         {
                             rightMin = 0;
                             min = item.Low;
-                            dtMin = item.Time;
+                            dtMin = item.OpenTime;
                         }
                         else
                         {
@@ -390,7 +390,7 @@ namespace AnalyzeApp.Analyze
                                 rightMax = 0;
                                 leftMax++;
                                 max = item.High;
-                                dtMax = item.Time;
+                                dtMax = item.OpenTime;
                             }
                             else
                             {
@@ -399,13 +399,21 @@ namespace AnalyzeApp.Analyze
                         }
                     }
                 }
-
-                return new Top30Model { Coin = code, CoinName = coinName, Count = count, Rate = Math.Round(sum / count, 2), RefValue = (double)DataMng.GetCurrentVal(code) };
+                var outputModel = new Top30Model { Coin = coin, CoinName = coinName, Count = count, Rate = (double)Math.Round(sum / count, 2) };
+                var entityBinanceTick = DataMng.GetCoinBinanceTick(coin);
+                if(entityBinanceTick != null)
+                {
+                    outputModel.RefValue = (double)entityBinanceTick.LastPrice;
+                    outputModel.PrevDayClosePrice = entityBinanceTick.PrevDayClosePrice;
+                    outputModel.PriceChangePercent = entityBinanceTick.PriceChangePercent;
+                    outputModel.WeightedAveragePrice = entityBinanceTick.WeightedAveragePrice;
+                }
+                return outputModel;
             }
             catch (Exception ex)
             {
-                NLogLogger.PublishException(ex, $"CalculateMng|CalculateCryptonRank|{code}: {ex.Message}");
-                return new Top30Model { Coin = code, CoinName = coinName, Count = 1, Rate = 0 };
+                NLogLogger.PublishException(ex, $"CalculateMng|CalculateCryptonRank|{coin}: {ex.Message}");
+                return new Top30Model { Coin = coin, CoinName = coinName, Count = 1, Rate = 0 };
             }
         }
         private static double ADX(double[] arrHigh, double[] arrLow, double[] arrClose, int period, int count)

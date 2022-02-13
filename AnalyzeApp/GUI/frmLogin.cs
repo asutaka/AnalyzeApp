@@ -20,7 +20,6 @@ namespace AnalyzeApp.GUI
         private frmLogin()
         {
             InitializeComponent();
-
             var bkgr = new BackgroundWorker();
             bkgr.DoWork += (object sender, DoWorkEventArgs e) =>
             {

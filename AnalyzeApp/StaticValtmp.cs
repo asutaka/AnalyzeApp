@@ -30,7 +30,7 @@ namespace AnalyzeApp
         public static string Scron_CheckStatus = "0 0 0/5 * * ?";
         public static string Scron_MCDX_Calculate = "0 0/5 * * * ?";
         public static string Scron_MCDX_Value = "0/1 * * * * ?";
-        public static string Scron_Top30_Value = "0/1 * * * * ?";
+        public static string Scron_Top30_Value = "* * * * * ?";
         public static string Scron_TradeList_Noti = "0/1 * * * * ?";
         //Coin
         

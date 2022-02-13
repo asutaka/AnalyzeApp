@@ -12,6 +12,8 @@ using AnalyzeApp.Job;
 using DevExpress.Utils;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using System.Diagnostics;
+using AnalyzeApp.Model.ENUM;
+using Newtonsoft.Json;
 
 namespace AnalyzeApp.GUI.Child
 {
@@ -20,7 +22,6 @@ namespace AnalyzeApp.GUI.Child
         private WaitFunc _frmWaitForm = new WaitFunc();
         private BackgroundWorker _bkgr;
         private const int MAXIMUM = 30;
-        private const string _fileName = "realtimelist.json";
         private int count = 1;
 
         #region Job
@@ -124,7 +125,7 @@ namespace AnalyzeApp.GUI.Child
                 S = coin,
                 AN = coinName
             });
-            Config.RealTimes.UpdateJson(_fileName);
+            APIService.Instance().UpdateSetting(new SettingModel { Id = (int)enumSetting.RealtimeList, Setting = JsonConvert.SerializeObject(Config.RealTimes) }).GetAwaiter().GetResult();
             AddNewRow(coin, coinName);
             cmbCoin.EditValue = null;
         }
@@ -179,7 +180,7 @@ namespace AnalyzeApp.GUI.Child
                         {
                             Config.RealTimes.Remove(entity);
                         }
-                        Config.RealTimes.UpdateJson(_fileName);
+                        APIService.Instance().UpdateSetting(new SettingModel { Id = (int)enumSetting.RealtimeList, Setting = JsonConvert.SerializeObject(Config.RealTimes)}).GetAwaiter().GetResult();
                         var entityShow = StaticValtmp.lstRealTimeShow.FirstOrDefault(x => x.Coin == cellValue);
                         if (entityShow != null)
                         {
