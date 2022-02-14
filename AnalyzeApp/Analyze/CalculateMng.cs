@@ -91,9 +91,9 @@ namespace AnalyzeApp.Analyze
             var lstTask = new List<Task>();
             foreach (var item in model.LstInterval)
             {
-                if (item == (int)enumInterval.ThirteenMinute)
+                if (item == (int)enumInterval.FifteenMinute)
                 {
-                    var interval = (int)enumInterval.ThirteenMinute;
+                    var interval = (int)enumInterval.FifteenMinute;
                     var task = Task.Run(() =>
                     {
                         result += (double)CalculateFromInterval(coin, model.LstElement15M, model.LstIndicator15M, interval);
@@ -324,7 +324,29 @@ namespace AnalyzeApp.Analyze
             {
                 int count = 1;
                 decimal sum = 0;
-                var lSource = StaticVal.dic1H.First(x => x.Key == coin).Value;
+                IEnumerable<BinanceKline> lSource = null;
+                switch ((enumInterval)Config.PrivateSetting.PrivateTop30.Interval)
+                {
+                    case enumInterval.FifteenMinute: 
+                        lSource = StaticVal.dic15M.First(x => x.Key == coin).Value;
+                        break;
+                    case enumInterval.OneHour:
+                        lSource = StaticVal.dic1H.First(x => x.Key == coin).Value;
+                        break;
+                    case enumInterval.FourHour:
+                        lSource = StaticVal.dic4H.First(x => x.Key == coin).Value;
+                        break;
+                    case enumInterval.OneDay:
+                        lSource = StaticVal.dic1D.First(x => x.Key == coin).Value;
+                        break;
+                    case enumInterval.OneWeek:
+                        lSource = StaticVal.dic1W.First(x => x.Key == coin).Value;
+                        break;
+                    case enumInterval.OneMonth:
+                        lSource = StaticVal.dic1Month.First(x => x.Key == coin).Value;
+                        break;
+                    default:break;
+                }
                 if (lSource == null || !lSource.Any())
                     return new Top30Model { Coin = coin, Count = count, Rate = (double)Math.Round(sum / count, 2) };
 
@@ -523,7 +545,7 @@ namespace AnalyzeApp.Analyze
         {
             switch (interval)
             {
-                case (int)enumInterval.ThirteenMinute: return StaticValtmp.dicDatasource15M[coin];
+                case (int)enumInterval.FifteenMinute: return StaticValtmp.dicDatasource15M[coin];
                 case (int)enumInterval.OneHour: return StaticValtmp.dicDatasource1H[coin];
                 case (int)enumInterval.FourHour: return StaticValtmp.dicDatasource4H[coin];
                 case (int)enumInterval.OneDay: return StaticValtmp.dicDatasource1D[coin];

@@ -165,7 +165,7 @@ namespace AnalyzeApp.GUI.Child
                 model.LstElement15M = model.LstIndicator15M.Select(x => x.Element1)
                                         .Union(model.LstIndicator15M.Where(x => x.Element2 != null).Select(x => x.Element2))
                                         .Distinct().ToList();
-                model.LstInterval.Add((int)enumTimeZone.ThirteenMinute);
+                model.LstInterval.Add((int)enumTimeZone.FifteenMinute);
             }
             if (pnl2.Controls.Count > 0)
             {

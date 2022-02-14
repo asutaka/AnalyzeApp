@@ -5,7 +5,7 @@ namespace AnalyzeApp.Model.ENUM
     public enum enumTimeZone
     {
         [Display(Name = "15 Phút")]
-        ThirteenMinute = 0,
+        FifteenMinute = 0,
         [Display(Name = "1 Giờ")]
         OneHour = 1,
         [Display(Name = "4 Giờ")]
@@ -20,7 +20,7 @@ namespace AnalyzeApp.Model.ENUM
     public enum enumInterval
     {
         [Display(Name = "15m")]
-        ThirteenMinute = 0,
+        FifteenMinute = 0,
         [Display(Name = "1h")]
         OneHour = 1,
         [Display(Name = "4h")]
@@ -195,5 +195,7 @@ namespace AnalyzeApp.Model.ENUM
         AdvanceSetting3 = 9,
         [Display(Name = "Advance Setting 4")]
         AdvanceSetting4 = 10,
+        [Display(Name = "Private Setting")]
+        PrivateSetting = 11,
     }
 }

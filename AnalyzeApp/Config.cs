@@ -66,6 +66,11 @@ namespace AnalyzeApp
                             AdvanceSetting4 = JsonConvert.DeserializeObject<AdvanceSettingModel>(item.Setting);
                             break;
                         }
+                    case (int)enumSetting.PrivateSetting:
+                        {
+                            PrivateSetting = JsonConvert.DeserializeObject<PrivateSettingModel>(item.Setting);
+                            break;
+                        }
                 }
             }
         }
@@ -79,6 +84,7 @@ namespace AnalyzeApp
         public static List<CryptonDetailDataModel> BlackLists { get; set; }
         public static TradeListModel TradeList { get; set; }
         public static FollowModel Follow { get; set; }
+        public static PrivateSettingModel PrivateSetting { get; set; }
     }
 }
 

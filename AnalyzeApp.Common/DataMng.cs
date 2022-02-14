@@ -44,7 +44,7 @@ namespace AnalyzeApp.Common
             IEnumerable<BinanceKline> lData = null;
             switch (interval)
             {
-                case enumInterval.ThirteenMinute:
+                case enumInterval.FifteenMinute:
                     lData = StaticVal.dic15M[coin]; break;
                 case enumInterval.OneHour:
                     lData = StaticVal.dic1H[coin]; break;
@@ -119,11 +119,11 @@ namespace AnalyzeApp.Common
                             var div = curTime - item.UpdatedTime;
                             switch (item.Interval)
                             {
-                                case (int)enumInterval.ThirteenMinute:
+                                case (int)enumInterval.FifteenMinute:
                                     {
                                         if (div > 900000)
                                         {
-                                            SyncDataInterval(enumInterval.ThirteenMinute);
+                                            SyncDataInterval(enumInterval.FifteenMinute);
                                         }
                                         break;
                                     }

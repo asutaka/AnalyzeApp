@@ -67,7 +67,7 @@ namespace AnalyzeApp.GUI
                     {
                         var task = Task.Run(() =>
                         {
-                            dic15M.Add(item.S, DataMng.LoadSource(item.S, enumInterval.ThirteenMinute));
+                            dic15M.Add(item.S, DataMng.LoadSource(item.S, enumInterval.FifteenMinute));
                             dic1H.Add(item.S, DataMng.LoadSource(item.S, enumInterval.OneHour));
                             dic4H.Add(item.S, DataMng.LoadSource(item.S, enumInterval.FourHour));
                             dic1D.Add(item.S, DataMng.LoadSource(item.S, enumInterval.OneDay));
