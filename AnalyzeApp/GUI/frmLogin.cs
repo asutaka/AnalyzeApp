@@ -107,7 +107,7 @@ namespace AnalyzeApp.GUI
                                         if (profile != null)
                                         {
                                             this.Hide();
-                                            StaticValtmp.profile = profile;
+                                            StaticVal.profile = profile;
                                             frmProfile.Instance().Show();
                                         }
                                     }));

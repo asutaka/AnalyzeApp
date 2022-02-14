@@ -13,12 +13,12 @@ namespace AnalyzeApp.Job
         {
             try
             {
-                if (StaticValtmp.IsExecMCDX)
+                if (StaticVal.IsExecMCDX)
                     return;
-                StaticValtmp.IsExecMCDX = true;
-                StaticValtmp.lstMCDX = CalculateMng.MCDX();
+                StaticVal.IsExecMCDX = true;
+                StaticVal.lstMCDX = CalculateMng.MCDX();
                 frmMCDX.Instance().InitData();
-                StaticValtmp.IsExecMCDX = false;
+                StaticVal.IsExecMCDX = false;
             }
             catch(Exception ex)
             {

@@ -15,16 +15,25 @@ namespace AnalyzeApp.Job
         {
             try
             {
-                if (StaticValtmp.IsExecMCDX)
+                if (StaticVal.IsExecMCDX)
                     return;
-                var lstResult = StaticValtmp.lstMCDX;
+                var lstResult = StaticVal.lstMCDX;
                 var lstTask = new List<Task>();
                 foreach (var item in lstResult)
                 {
                     var task = Task.Run(() =>
                     {
                         var coin = item.Coin;
-                        var curValue = (double)DataMng.GetCurrentVal(coin);
+                        var entityBinanceTick = DataMng.GetCoinBinanceTick(coin);
+                        if (entityBinanceTick == null)
+                        {
+                            return;
+                        }
+                        item.PrevDayClosePrice = entityBinanceTick.PrevDayClosePrice;
+                        item.PriceChangePercent = entityBinanceTick.PriceChangePercent;
+                        item.WeightedAveragePrice = entityBinanceTick.WeightedAveragePrice;
+
+                        var curValue = (double)entityBinanceTick.LastPrice;
                         if (curValue <= 0)
                             return;
                         if (item.RefValue <= 0)
@@ -52,9 +61,9 @@ namespace AnalyzeApp.Job
                     lstTask.Add(task);
                 }
                 Task.WaitAll(lstTask.ToArray());
-                if (StaticValtmp.IsExecMCDX)
+                if (StaticVal.IsExecMCDX)
                     return;
-                StaticValtmp.lstMCDX = lstResult;
+                StaticVal.lstMCDX = lstResult;
                 frmMCDX.Instance().InitData();
             }
             catch (Exception ex)

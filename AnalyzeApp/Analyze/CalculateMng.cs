@@ -26,7 +26,10 @@ namespace AnalyzeApp.Analyze
             }
             Task.WaitAll(lstTask.ToArray());
             lstResult = lstResult.Where(x => x != null).OrderByDescending(x => x.Count).ThenByDescending(x => x.Rate).Take(30).ToList();
-            lstResult.ForEach(x => x.STT = count++);
+            if(lstResult != null)
+            {
+                lstResult.ForEach(x => x.STT = count++);
+            }
             return lstResult;
         }
 
@@ -53,16 +56,20 @@ namespace AnalyzeApp.Analyze
                 lstTask.Add(task);
             }
             Task.WaitAll(lstTask.ToArray());
-            lstResult = lstResult.OrderByDescending(x => x.MCDXValue).Take(30).Select(x => new MCDXModel { STT = count++, Coin = x.Coin, CoinName = x.CoinName, MCDXValue = x.MCDXValue }).ToList();
+            lstResult = lstResult.OrderByDescending(x => x.MCDXValue).Take(30).ToList();
+            if (lstResult != null)
+            {
+                lstResult.ForEach(x => x.STT = count++);
+            }
             return lstResult;
         }
 
         public static (bool, double) MCDX(string coin)
         {
-            var data = GetData(coin, (int)enumInterval.OneHour);
+            var data = DataMng.GetCurrentData(coin, (enumInterval)Config.PrivateSetting.PrivateMCDX.Interval);
             if (data == null || !data.Any())
                 return (false, 0);
-            var arrClose = data.Select(x => x.Close).ToArray();
+            var arrClose = data.Select(x => (double)x.Close).ToArray();
             var count = arrClose.Count();
 
             double[] output1 = new double[1000];
@@ -153,14 +160,14 @@ namespace AnalyzeApp.Analyze
         private static decimal CalculateFromInterval(string coin, List<ElementModel> elementModels, List<IndicatorModel> indicatorModels, int interval)
         {
             var lstOutputIndicator = new List<OutputIndicatorModel>();
-            var data = GetData(coin, (int)enumInterval.OneHour);
+            var data = DataMng.GetCurrentData(coin, enumInterval.OneHour);
             if (data == null || !data.Any())
                 return 0;
-            var arrOpen = data.Select(x => x.Open).ToArray();
-            var arrClose = data.Select(x => x.Close).ToArray();
-            var arrHigh = data.Select(x => x.High).ToArray();
-            var arrLow = data.Select(x => x.Low).ToArray();
-            var arrVolumne = data.Select(x => x.Volumne).ToArray();
+            var arrOpen = data.Select(x => (double)x.Open).ToArray();
+            var arrClose = data.Select(x => (double)x.Close).ToArray();
+            var arrHigh = data.Select(x => (double)x.High).ToArray();
+            var arrLow = data.Select(x => (double)x.Low).ToArray();
+            var arrVolumne = data.Select(x => (double)x.BaseVolume).ToArray();
             var count = arrClose.Count();
 
             var lstTask = new List<Task>();
@@ -452,25 +459,6 @@ namespace AnalyzeApp.Analyze
             }
             return 0;
         }
-        private static List<CandleStickDataModel> CandleSticks(string code, int interval, int num)
-        {
-            var lstResult = new List<CandleStickDataModel>();
-            var url = $"{ConstVal.COIN_DETAIL}symbol={code}&interval={((enumInterval)interval).GetDisplayName()}&limit={num}";
-            var arrData = CommonMethod.DownloadJsonArray(url);
-            if (arrData == null)
-                return lstResult;
-            foreach (var item in arrData)
-            {
-                lstResult.Add(new CandleStickDataModel
-                {
-                    Open = double.Parse(arrData[0][1].ToString()),
-                    High = double.Parse(arrData[0][2].ToString()),
-                    Low = double.Parse(arrData[0][3].ToString()),
-                    Close = double.Parse(arrData[0][4].ToString()),
-                });
-            }
-            return lstResult;
-        }
         private static double MA(double[] arrInput, Core.MAType type, int period, int count)
         {
             try
@@ -541,50 +529,7 @@ namespace AnalyzeApp.Analyze
             }
             return 0;
         }
-        private static List<CandleStickDataModel> GetLocalData(string coin, int interval)
-        {
-            switch (interval)
-            {
-                case (int)enumInterval.FifteenMinute: return StaticValtmp.dicDatasource15M[coin];
-                case (int)enumInterval.OneHour: return StaticValtmp.dicDatasource1H[coin];
-                case (int)enumInterval.FourHour: return StaticValtmp.dicDatasource4H[coin];
-                case (int)enumInterval.OneDay: return StaticValtmp.dicDatasource1D[coin];
-                case (int)enumInterval.OneWeek: return StaticValtmp.dicDatasource1W[coin];
-                case (int)enumInterval.OneMonth: return StaticValtmp.dicDatasource1Month[coin];
-                default: return new List<CandleStickDataModel>();
-            }
-        }
-        private static List<CandleStickDataModel> GetData(string coin, int interval)
-        {
-            var data = GetLocalData(coin, interval);
-            var lstLatest = CandleSticks(coin, interval, 2);
-            if (lstLatest == null || lstLatest.Count() < 2)
-                return null;
-            if (data.ElementAt(0).Time == lstLatest.ElementAt(1).Time)
-            {
-                var modelUpdate = lstLatest.ElementAt(1);
-                data.ElementAt(0).High = modelUpdate.High;
-                data.ElementAt(0).Low = modelUpdate.Low;
-                data.ElementAt(0).Open = modelUpdate.Open;
-                data.ElementAt(0).Close = modelUpdate.Close;
-                data.ElementAt(0).Time = modelUpdate.Time;
-                data.ElementAt(0).Volumne = modelUpdate.Volumne;
 
-                var model = lstLatest.ElementAt(0);
-                data.Insert(0, model);
-            }
-            else
-            {
-                var modelUpdate = lstLatest.ElementAt(0);
-                data.ElementAt(0).High = modelUpdate.High;
-                data.ElementAt(0).Low = modelUpdate.Low;
-                data.ElementAt(0).Open = modelUpdate.Open;
-                data.ElementAt(0).Close = modelUpdate.Close;
-                data.ElementAt(0).Time = modelUpdate.Time;
-                data.ElementAt(0).Volumne = modelUpdate.Volumne;
-            }
-            return data;
-        }
         private class OutputIndicatorModel
         {
             public int Indicator { get; set; }

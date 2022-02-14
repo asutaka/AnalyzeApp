@@ -297,7 +297,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StartUp.cs" />
-    <Compile Include="StaticValtmp.cs" />
     <EmbeddedResource Include="GUI\Child\frmAdvanceSetting.resx">
       <DependentUpon>frmAdvanceSetting.cs</DependentUpon>
     </EmbeddedResource>

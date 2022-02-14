@@ -45,17 +45,21 @@ namespace AnalyzeApp.GUI.Child
             DevExpress.XtraEditors.FormatConditionIconSetIcon formatConditionIconSetIcon4 = new DevExpress.XtraEditors.FormatConditionIconSetIcon();
             DevExpress.XtraEditors.FormatConditionIconSetIcon formatConditionIconSetIcon5 = new DevExpress.XtraEditors.FormatConditionIconSetIcon();
             DevExpress.XtraEditors.FormatConditionIconSetIcon formatConditionIconSetIcon6 = new DevExpress.XtraEditors.FormatConditionIconSetIcon();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule5 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRule3ColorScale formatConditionRule3ColorScale2 = new DevExpress.XtraEditors.FormatConditionRule3ColorScale();
             this.RateValue = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.RefValue = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MCDXValue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CoinName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.WaveRecent = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PriceChangePercent = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.RefValue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grid = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Coin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Value = new DevExpress.XtraGrid.Columns.GridColumn();
             this.BottomRecent = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MCDXValue = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.WeightedAveragePrice = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
@@ -78,24 +82,24 @@ namespace AnalyzeApp.GUI.Child
             this.RateValue.VisibleIndex = 6;
             this.RateValue.Width = 85;
             // 
-            // RefValue
+            // MCDXValue
             // 
-            this.RefValue.AppearanceCell.Options.UseTextOptions = true;
-            this.RefValue.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.RefValue.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.RefValue.AppearanceHeader.Options.UseTextOptions = true;
-            this.RefValue.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.RefValue.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.RefValue.Caption = "Giá tham chiếu";
-            this.RefValue.DisplayFormat.FormatString = "\"#,##0.0\"";
-            this.RefValue.FieldName = "RefValue";
-            this.RefValue.MaxWidth = 80;
-            this.RefValue.MinWidth = 80;
-            this.RefValue.Name = "RefValue";
-            this.RefValue.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.RefValue.Visible = true;
-            this.RefValue.VisibleIndex = 3;
-            this.RefValue.Width = 80;
+            this.MCDXValue.AppearanceCell.Options.UseTextOptions = true;
+            this.MCDXValue.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.MCDXValue.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.MCDXValue.AppearanceHeader.Options.UseTextOptions = true;
+            this.MCDXValue.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.MCDXValue.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.MCDXValue.Caption = "MCDX";
+            this.MCDXValue.DisplayFormat.FormatString = "#,##0.##";
+            this.MCDXValue.FieldName = "MCDXValue";
+            this.MCDXValue.MaxWidth = 75;
+            this.MCDXValue.MinWidth = 75;
+            this.MCDXValue.Name = "MCDXValue";
+            this.MCDXValue.OptionsColumn.AllowEdit = false;
+            this.MCDXValue.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.MCDXValue.Visible = true;
+            this.MCDXValue.VisibleIndex = 8;
             // 
             // CoinName
             // 
@@ -130,6 +134,41 @@ namespace AnalyzeApp.GUI.Child
             this.WaveRecent.VisibleIndex = 7;
             this.WaveRecent.Width = 100;
             // 
+            // PriceChangePercent
+            // 
+            this.PriceChangePercent.AppearanceCell.Options.UseTextOptions = true;
+            this.PriceChangePercent.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.PriceChangePercent.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.PriceChangePercent.AppearanceHeader.Options.UseTextOptions = true;
+            this.PriceChangePercent.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.PriceChangePercent.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.PriceChangePercent.Caption = "Biến động(%)";
+            this.PriceChangePercent.FieldName = "PriceChangePercent";
+            this.PriceChangePercent.MaxWidth = 75;
+            this.PriceChangePercent.MinWidth = 75;
+            this.PriceChangePercent.Name = "PriceChangePercent";
+            this.PriceChangePercent.Visible = true;
+            this.PriceChangePercent.VisibleIndex = 10;
+            // 
+            // RefValue
+            // 
+            this.RefValue.AppearanceCell.Options.UseTextOptions = true;
+            this.RefValue.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.RefValue.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.RefValue.AppearanceHeader.Options.UseTextOptions = true;
+            this.RefValue.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.RefValue.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.RefValue.Caption = "Giá tham chiếu";
+            this.RefValue.DisplayFormat.FormatString = "\"#,##0.0\"";
+            this.RefValue.FieldName = "RefValue";
+            this.RefValue.MaxWidth = 80;
+            this.RefValue.MinWidth = 80;
+            this.RefValue.Name = "RefValue";
+            this.RefValue.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.RefValue.Visible = true;
+            this.RefValue.VisibleIndex = 3;
+            this.RefValue.Width = 80;
+            // 
             // grid
             // 
             this.grid.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -152,7 +191,9 @@ namespace AnalyzeApp.GUI.Child
             this.BottomRecent,
             this.RateValue,
             this.WaveRecent,
-            this.MCDXValue});
+            this.MCDXValue,
+            this.WeightedAveragePrice,
+            this.PriceChangePercent});
             gridFormatRule1.Column = this.RateValue;
             gridFormatRule1.ColumnApplyTo = this.RateValue;
             gridFormatRule1.Name = "FormatRate";
@@ -190,7 +231,14 @@ namespace AnalyzeApp.GUI.Child
             gridFormatRule2.ColumnApplyTo = this.MCDXValue;
             gridFormatRule2.Name = "Format0";
             formatConditionRule2ColorScale1.AllowAnimation = DevExpress.Utils.DefaultBoolean.True;
-            formatConditionRule2ColorScale1.PredefinedName = "White, Red";
+            formatConditionRule2ColorScale1.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            formatConditionRule2ColorScale1.MaximumColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            formatConditionRule2ColorScale1.MinimumColor = System.Drawing.Color.White;
+            formatConditionRule2ColorScale1.PredefinedName = "White, Green";
             gridFormatRule2.Rule = formatConditionRule2ColorScale1;
             gridFormatRule3.Column = this.RateValue;
             gridFormatRule3.ColumnApplyTo = this.CoinName;
@@ -240,10 +288,33 @@ namespace AnalyzeApp.GUI.Child
             formatConditionIconSet2.ValueType = DevExpress.XtraEditors.FormatConditionValueType.Number;
             formatConditionRuleIconSet2.IconSet = formatConditionIconSet2;
             gridFormatRule4.Rule = formatConditionRuleIconSet2;
+            gridFormatRule5.Column = this.PriceChangePercent;
+            gridFormatRule5.ColumnApplyTo = this.PriceChangePercent;
+            gridFormatRule5.Name = "Format3";
+            formatConditionRule3ColorScale2.AllowAnimation = DevExpress.Utils.DefaultBoolean.True;
+            formatConditionRule3ColorScale2.AutomaticType = DevExpress.XtraEditors.FormatConditionAutomaticType.ZeroBased;
+            formatConditionRule3ColorScale2.Maximum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            formatConditionRule3ColorScale2.MaximumColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            formatConditionRule3ColorScale2.MaximumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            formatConditionRule3ColorScale2.MiddleColor = System.Drawing.Color.White;
+            formatConditionRule3ColorScale2.MiddleType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            formatConditionRule3ColorScale2.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            formatConditionRule3ColorScale2.MinimumColor = System.Drawing.Color.Red;
+            formatConditionRule3ColorScale2.MinimumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            gridFormatRule5.Rule = formatConditionRule3ColorScale2;
             this.gridView1.FormatRules.Add(gridFormatRule1);
             this.gridView1.FormatRules.Add(gridFormatRule2);
             this.gridView1.FormatRules.Add(gridFormatRule3);
             this.gridView1.FormatRules.Add(gridFormatRule4);
+            this.gridView1.FormatRules.Add(gridFormatRule5);
             this.gridView1.GridControl = this.grid;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -326,24 +397,23 @@ namespace AnalyzeApp.GUI.Child
             this.BottomRecent.VisibleIndex = 5;
             this.BottomRecent.Width = 80;
             // 
-            // MCDXValue
+            // WeightedAveragePrice
             // 
-            this.MCDXValue.AppearanceCell.Options.UseTextOptions = true;
-            this.MCDXValue.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.MCDXValue.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.MCDXValue.AppearanceHeader.Options.UseTextOptions = true;
-            this.MCDXValue.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.MCDXValue.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.MCDXValue.Caption = "MCDX";
-            this.MCDXValue.DisplayFormat.FormatString = "#,##0.##";
-            this.MCDXValue.FieldName = "MCDXValue";
-            this.MCDXValue.MaxWidth = 75;
-            this.MCDXValue.MinWidth = 75;
-            this.MCDXValue.Name = "MCDXValue";
-            this.MCDXValue.OptionsColumn.AllowEdit = false;
-            this.MCDXValue.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.MCDXValue.Visible = true;
-            this.MCDXValue.VisibleIndex = 8;
+            this.WeightedAveragePrice.AppearanceCell.Options.UseTextOptions = true;
+            this.WeightedAveragePrice.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.WeightedAveragePrice.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.WeightedAveragePrice.AppearanceHeader.Options.UseTextOptions = true;
+            this.WeightedAveragePrice.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.WeightedAveragePrice.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.WeightedAveragePrice.Caption = "Giá TB";
+            this.WeightedAveragePrice.DisplayFormat.FormatString = "\"#,##0.0\"";
+            this.WeightedAveragePrice.FieldName = "WeightedAveragePrice";
+            this.WeightedAveragePrice.MaxWidth = 75;
+            this.WeightedAveragePrice.MinWidth = 75;
+            this.WeightedAveragePrice.Name = "WeightedAveragePrice";
+            this.WeightedAveragePrice.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.WeightedAveragePrice.Visible = true;
+            this.WeightedAveragePrice.VisibleIndex = 9;
             // 
             // frmMCDX
             // 
@@ -376,5 +446,7 @@ namespace AnalyzeApp.GUI.Child
         private DevExpress.XtraGrid.Columns.GridColumn RefValue;
         private DevExpress.XtraGrid.Columns.GridColumn BottomRecent;
         private DevExpress.XtraGrid.Columns.GridColumn WaveRecent;
+        private DevExpress.XtraGrid.Columns.GridColumn WeightedAveragePrice;
+        private DevExpress.XtraGrid.Columns.GridColumn PriceChangePercent;
     }
 }

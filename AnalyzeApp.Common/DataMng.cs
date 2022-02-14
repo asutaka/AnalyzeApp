@@ -29,6 +29,8 @@ namespace AnalyzeApp.Common
                 {
                     string json = r.ReadToEnd();
                     var result = JsonConvert.DeserializeObject<IEnumerable<BinanceKline>>(json);
+                    if(result == null)
+                        return new List<BinanceKline>();
                     return result;
                 }
             }
@@ -89,6 +91,27 @@ namespace AnalyzeApp.Common
             if (entity == null)
                 return 0;
             return entity.LastPrice;
+        }
+
+        public static List<BinanceKline> GetCurrentData(string coin, enumInterval interval)
+        {
+            IEnumerable<BinanceKline> data = null;
+            switch (interval)
+            {
+                case enumInterval.FifteenMinute: data = StaticVal.dic15M[coin];break;
+                case enumInterval.OneHour: data = StaticVal.dic1H[coin]; break;
+                case enumInterval.FourHour: data = StaticVal.dic4H[coin]; break;
+                case enumInterval.OneDay: data = StaticVal.dic1D[coin]; break;
+                case enumInterval.OneWeek: data = StaticVal.dic1W[coin]; break;
+                case enumInterval.OneMonth: data = StaticVal.dic1Month[coin]; break;
+                default: break; 
+            }
+            if (data == null || !data.Any())
+                return new List<BinanceKline>();
+            var curVal = GetCurrentVal(coin);
+            var lData = data.ToList();
+            lData.Last().Close = curVal;
+            return lData;
         }
 
         public static IBinanceTick GetCoinBinanceTick(string coin)

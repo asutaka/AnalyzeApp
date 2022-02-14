@@ -478,7 +478,6 @@ D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\bin\Debug\es\DevExpress.Office.v20.1
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\bin\Debug\ja\DevExpress.Office.v20.1.Core.resources.dll
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\bin\Debug\ru\DevExpress.Office.v20.1.Core.resources.dll
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.csproj.AssemblyReference.cache
-D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.csproj.SuggestedBindingRedirects.cache
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Child.frmAdvanceSetting.resources
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Child.frmBasicSetting.resources
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Child.frmBlackList.resources

@@ -28,7 +28,7 @@ namespace AnalyzeApp.GUI
             InitializeComponent();
             DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("McSkin");
             ribbon.Enabled = false;
-            StaticValtmp.IsAccessMain = true;
+            StaticVal.IsAccessMain = true;
             _bkgr = new BackgroundWorker();
             _bkgr.DoWork += bkgrConfig_DoWork;
             _bkgr.RunWorkerCompleted += bkgrConfig_RunWorkerCompleted;

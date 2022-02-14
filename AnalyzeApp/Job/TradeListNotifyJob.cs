@@ -16,7 +16,7 @@ namespace AnalyzeApp.Job
             try
             {
                 var model = Config.TradeList;
-                if (!model.IsNotify || StaticValtmp.IsTradeListChange)
+                if (!model.IsNotify || StaticVal.IsTradeListChange)
                     return;
 
                 var lstTask = new List<Task>();
@@ -26,11 +26,11 @@ namespace AnalyzeApp.Job
                     var task = Task.Run(() =>
                     {
                         var currentVal = (double)DataMng.GetCurrentVal(item.Coin);
-                        var entity = StaticValtmp.lstNotiTrade.FirstOrDefault(x => x.Coin == item.Coin);
+                        var entity = StaticVal.lstNotiTrade.FirstOrDefault(x => x.Coin == item.Coin);
                         if(entity == null)
                         {
                             entity = new SendNotifyModel { Coin = item.Coin, Value = 0 };
-                            StaticValtmp.lstNotiTrade.Add(entity);
+                            StaticVal.lstNotiTrade.Add(entity);
                         }
 
                         var lAbove = item.Config.Where(x => x.IsAbove && currentVal > (double)x.Value && (x.Value > entity.Value || entity.Value == 0)).OrderBy(x => x.Value);

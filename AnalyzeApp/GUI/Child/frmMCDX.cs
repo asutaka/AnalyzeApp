@@ -15,9 +15,8 @@ namespace AnalyzeApp.GUI.Child
 {
     public partial class frmMCDX : XtraForm
     {
-        private WaitFunc _frmWaitForm = new WaitFunc();
-        private ScheduleMember jobCalculate = new ScheduleMember(StaticVal.scheduleMng.GetScheduler(), JobBuilder.Create<MCDXCalculateJob>(), StaticValtmp.Scron_MCDX_Calculate, nameof(MCDXCalculateJob));
-        private ScheduleMember jobValue = new ScheduleMember(StaticVal.scheduleMng.GetScheduler(), JobBuilder.Create<MCDXValueScheduleJob>(), StaticValtmp.Scron_MCDX_Value, nameof(MCDXValueScheduleJob));
+        private ScheduleMember jobCalculate = new ScheduleMember(StaticVal.scheduleMng.GetScheduler(), JobBuilder.Create<MCDXCalculateJob>(), StaticVal.Scron_MCDX_Calculate, nameof(MCDXCalculateJob));
+        private ScheduleMember jobValue = new ScheduleMember(StaticVal.scheduleMng.GetScheduler(), JobBuilder.Create<MCDXValueScheduleJob>(), StaticVal.Scron_MCDX_Value, nameof(MCDXValueScheduleJob));
         private frmMCDX()
         {
             InitializeComponent();
@@ -33,12 +32,12 @@ namespace AnalyzeApp.GUI.Child
         {
             try
             {
-                if (StaticValtmp.IsExecMCDX)
+                if (StaticVal.IsExecMCDX)
                     return;
-                StaticValtmp.IsExecMCDX = true;
-                StaticValtmp.lstMCDX = CalculateMng.MCDX();
+                StaticVal.IsExecMCDX = true;
+                StaticVal.lstMCDX = CalculateMng.MCDX();
                 InitData();
-                StaticValtmp.IsExecMCDX = false;
+                StaticVal.IsExecMCDX = false;
             }
             catch (Exception ex)
             {
@@ -57,7 +56,7 @@ namespace AnalyzeApp.GUI.Child
             this.Invoke((MethodInvoker)delegate
             {
                 grid.BeginUpdate();
-                grid.DataSource = StaticValtmp.lstMCDX;
+                grid.DataSource = StaticVal.lstMCDX;
                 grid.EndUpdate();
             });
         }
@@ -106,11 +105,9 @@ namespace AnalyzeApp.GUI.Child
         {
             try
             {
-                _frmWaitForm.Show("Đang xử lý...");
                 var wrkr = new BackgroundWorker();
                 wrkr.DoWork += (object sender, DoWorkEventArgs e) => {
                     Init();
-                    _frmWaitForm.Close();
                     wrkr.Dispose();
                 };
                 wrkr.RunWorkerAsync();

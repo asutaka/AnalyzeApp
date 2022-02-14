@@ -13,33 +13,33 @@ namespace AnalyzeApp.Job
         private const string _fileName = "user.json";
         public void Execute(IJobExecutionContext context)
         {
-            if (StaticValtmp.IsExecCheckCodeActive)
+            if (StaticVal.IsExecCheckCodeActive)
                 return;
-            StaticValtmp.IsExecCheckCodeActive = true;
+            StaticVal.IsExecCheckCodeActive = true;
             var time = CommonMethod.GetTimeAsync().GetAwaiter().GetResult();
 
             var objUser = new UserModel().LoadJsonFile(_fileName);
             var jsonModel = Security.Decrypt(objUser.Code);
             if (string.IsNullOrWhiteSpace(jsonModel))
             {
-                StaticValtmp.IsCodeActive = false;
+                StaticVal.IsCodeActive = false;
             }
             else
             {
                 var model = JsonConvert.DeserializeObject<GenCodeModel>(jsonModel);
-                if (!StaticValtmp.profile.Email.Contains(model.Email) || model.Expired <= time)
+                if (!StaticVal.profile.Email.Contains(model.Email) || model.Expired <= time)
                 {
-                    StaticValtmp.IsCodeActive = false;
+                    StaticVal.IsCodeActive = false;
                 }
                 else
                 {
-                    StaticValtmp.IsCodeActive = true;
+                    StaticVal.IsCodeActive = true;
                 }
             }
 
-            if (!StaticValtmp.IsCodeActive)
+            if (!StaticVal.IsCodeActive)
             {
-                StaticValtmp.IsAccessMain = false;
+                StaticVal.IsAccessMain = false;
                 try
                 {
                     if (StaticVal.scheduleMng != null)
@@ -56,13 +56,13 @@ namespace AnalyzeApp.Job
                 }
 
                 //về màn hình đăng nhập
-                StaticValtmp.frmMainObj.BeginInvoke((MethodInvoker)delegate
+                frmMain.Instance().BeginInvoke((MethodInvoker)delegate
                 {
-                    StaticValtmp.frmMainObj.Hide();
+                    frmMain.Instance().Hide();
                     frmLogin.Instance().Show();
                 });
             }
-            StaticValtmp.IsExecCheckCodeActive = false;
+            StaticVal.IsExecCheckCodeActive = false;
         }
     }
 }

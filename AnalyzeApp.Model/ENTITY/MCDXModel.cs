@@ -12,5 +12,8 @@
         public double RateValue { get; set; }
         public double WaveRecent { get; set; }
         public int CountTime { get; set; }
+        public decimal PrevDayClosePrice { get; set; }
+        public decimal PriceChangePercent { get; set; }
+        public decimal WeightedAveragePrice { get; set; }
     }
 }
