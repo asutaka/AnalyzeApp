@@ -6,7 +6,6 @@ using PhoneNumbers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -36,51 +35,6 @@ namespace AnalyzeApp.Common
             catch (Exception ex)
             {
                 NLogLogger.PublishException(ex, $"ExtensionMethod|LoadJsonFile: {ex.Message}");
-                return default(T);
-            }
-        }
-
-        public static void CreateFileSendNoti(this string input, string code)
-        {
-            try
-            {
-                string path = $"{Directory.GetCurrentDirectory()}\\service\\SendNoti\\{DateTimeOffset.Now.ToUnixTimeSeconds()}_{code}.txt";
-                File.WriteAllText(path, input);
-            }
-            catch (Exception ex)
-            {
-                NLogLogger.PublishException(ex, $"ExtensionMethod|CreateFileSendNoti: {ex.Message}");
-            }
-        }
-
-        public static void CreateFile(this string input, string code)
-        {
-            try
-            {
-                string path = $"{Directory.GetCurrentDirectory()}\\service\\SendNoti\\{DateTimeOffset.Now.ToUnixTimeSeconds()}_{code}.txt";
-                File.WriteAllText(path, input);
-            }
-            catch (Exception ex)
-            {
-                NLogLogger.PublishException(ex, $"ExtensionMethod:SaveFile: {ex.Message}");
-            }
-        }
-
-        public static T LoadJsonFileService<T>(this T val, string fileName)
-        {
-            try
-            {
-                string path = $"{Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName)}\\settings\\{fileName}";
-                using (StreamReader r = new StreamReader(path))
-                {
-                    string json = r.ReadToEnd();
-                    var result = JsonConvert.DeserializeObject<T>(json);
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                NLogLogger.PublishException(ex, $"ExtensionMethod|LoadJsonFileService: {ex.Message}");
                 return default(T);
             }
         }
@@ -154,13 +108,6 @@ namespace AnalyzeApp.Common
             box.AppendText(line);
         }
 
-        public static DateTime UnixTimeStampToDateTime(this int unixTimeStamp)
-        {
-            DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
-            dtDateTime = dtDateTime.AddSeconds(unixTimeStamp).ToLocalTime();
-            return dtDateTime;
-        }
-
         public static string GetDisplayName(this Enum enumValue)
         {
             try
@@ -225,6 +172,7 @@ namespace AnalyzeApp.Common
                 return default(T);
             return MapperConfig.Map<T>(model);
         }
+
         public static string To2Digit(this int val)
         {
             if (val > 9)
@@ -264,19 +212,6 @@ namespace AnalyzeApp.Common
 
             pnl.Controls.Add(form);
             form.Dock = DockStyle.Fill;
-        }
-
-        /// <summary>
-        ///     A generic extension method that aids in reflecting 
-        ///     and retrieving any attribute that is applied to an `Enum`.
-        /// </summary>
-        public static TAttribute GetAttribute<TAttribute>(this Enum enumValue)
-                where TAttribute : Attribute
-        {
-            return enumValue.GetType()
-                            .GetMember(enumValue.ToString())
-                            .First()
-                            .GetCustomAttribute<TAttribute>();
         }
     }
     public class MapProfile : Profile

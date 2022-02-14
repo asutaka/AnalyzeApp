@@ -13,8 +13,6 @@ namespace AnalyzeApp.GUI
     public partial class frmProfile : XtraForm
     {
         private ProfileModel _profile = StaticVal.profile;
-        private const string _fileName = "user.json";
-        private const string _folderName = "settings";
         private BackgroundWorker _bkgr = new BackgroundWorker();
         private WaitFunc _frmWaitForm = new WaitFunc();
         private frmProfile()
@@ -34,26 +32,6 @@ namespace AnalyzeApp.GUI
         {
             _bkgr.DoWork += bkgrCheckStatus_DoWork;
             _bkgr.RunWorkerCompleted += bkgrCheckStatus_RunWorkerCompleted;
-            if (CommonMethod.CheckFileExist(_fileName, _folderName))
-            {
-                var objUser = new UserModel().LoadJsonFile(_fileName);
-
-                StaticVal.profile.Phone = objUser.Phone;
-                txtPhone.Text = objUser.Phone;
-
-                if (!string.IsNullOrWhiteSpace(objUser.Code))
-                {
-                    StaticVal.profile.Code = objUser.Code;
-                    txtCode.Text = objUser.Code;
-                }
-            }
-
-            lblUserName.Text = _profile.Name;
-            lblEmail.Text = _profile.Email;
-            lblLocale.Text = _profile.Locale;
-            if(!string.IsNullOrWhiteSpace(_profile.Picture))
-                picAvatar.Load(_profile.Picture);
-            btnOk.Focus();
         }
 
         private void StateEdit(bool isEdit)
@@ -73,13 +51,12 @@ namespace AnalyzeApp.GUI
                 Phone = txtPhone.Text.Trim().PhoneFormat(),
                 Code = txtCode.Text.Trim()
             };
-            var isUpdate = model.UpdateJson(_fileName);
-            if (isUpdate)
-            {
-                StaticVal.profile.Phone = model.Phone;
-                StaticVal.profile.Code = model.Code;
-            }
-            return isUpdate;
+
+            APIService.Instance().DeleteUser();
+            APIService.Instance().InsertUser(model);
+            StaticVal.profile.Phone = model.Phone;
+            StaticVal.profile.Code = model.Code;
+            return true;
         }
 
         private void CloseAppCheck()
@@ -160,7 +137,29 @@ namespace AnalyzeApp.GUI
         {
             _frmWaitForm.Show("Kiểm tra trạng thái");
             //btnPaste.Enabled = false;
+            var objUser = APIService.Instance().GetUser().GetAwaiter().GetResult();
 
+            this.Invoke((MethodInvoker)delegate
+            {
+                if (objUser != null)
+                {
+                    StaticVal.profile.Phone = objUser.Phone;
+                    txtPhone.Text = objUser.Phone;
+                    if (!string.IsNullOrWhiteSpace(objUser.Code))
+                    {
+                        StaticVal.profile.Code = objUser.Code;
+                        txtCode.Text = objUser.Code;
+                    }
+                }
+
+                lblUserName.Text = _profile.Name;
+                lblEmail.Text = _profile.Email;
+                lblLocale.Text = _profile.Locale;
+                if (!string.IsNullOrWhiteSpace(_profile.Picture))
+                    picAvatar.Load(_profile.Picture);
+                btnOk.Focus();
+            });
+           
             var time = CommonMethod.GetTimeAsync().GetAwaiter().GetResult();
             var jsonModel = Security.Decrypt(txtCode.Text.Trim());
             if (string.IsNullOrWhiteSpace(jsonModel))

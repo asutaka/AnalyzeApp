@@ -6,12 +6,12 @@ using AnalyzeApp.Common;
 using AnalyzeApp.Model.ENTITY;
 using AnalyzeApp.Model.ENUM;
 using DevExpress.XtraEditors;
+using Newtonsoft.Json;
 
 namespace AnalyzeApp.GUI.Child
 {
     public partial class frmBasicSetting : XtraForm
     {
-        private const string _fileName = "basic_setting.json";
         public frmBasicSetting()
         {
             InitializeComponent();
@@ -37,7 +37,7 @@ namespace AnalyzeApp.GUI.Child
         }
         private void SetupData()
         {
-            var model = new BasicSettingModel().LoadJsonFile(_fileName);
+            var model = Config.BasicSetting;
             cmbTimeZone.SelectedIndex = model.TimeZone;
             nmDefaultInterval.Value = model.Interval;
             cmbCandleStick.SelectedIndex = model.ListModel.First(x => x.Indicator == (int)enumChooseData.CandleStick_1).Period;
@@ -66,7 +66,7 @@ namespace AnalyzeApp.GUI.Child
         {
             if (!IsValid())
                 return;
-            new BasicSettingModel
+            var model = new BasicSettingModel
             {
                 TimeZone = cmbTimeZone.SelectedIndex,
                 Interval = (int)nmDefaultInterval.Value,
@@ -83,7 +83,8 @@ namespace AnalyzeApp.GUI.Child
                     new GeneralModel{ Indicator = (int)enumChooseData.CurrentValue, Period = 0 },
                     new GeneralModel{ Indicator = (int)enumChooseData.MCDX, Signal = (int)nmMCDX.Value },
                 }
-            }.UpdateJson(_fileName);
+            };
+            APIService.Instance().UpdateSetting(new SettingModel { Id = (int)enumSetting.BasicSetting, Setting = JsonConvert.SerializeObject(model)});
             MessageBox.Show("Đã lưu dữ liệu!");
         }
 

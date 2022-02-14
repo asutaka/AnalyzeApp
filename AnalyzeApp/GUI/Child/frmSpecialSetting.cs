@@ -2,6 +2,7 @@
 using AnalyzeApp.Model.ENTITY;
 using AnalyzeApp.Model.ENUM;
 using DevExpress.XtraEditors;
+using Newtonsoft.Json;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -10,7 +11,6 @@ namespace AnalyzeApp.GUI.Child
 {
     public partial class frmSpecialSetting : XtraForm
     {
-        private readonly string _fileName = $"special_setting.json";
         public frmSpecialSetting()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace AnalyzeApp.GUI.Child
 
         private void SetupData()
         {
-            var model = new SpecialSettingModel().LoadJsonFile(_fileName);
+            var model = Config.SpecialSetting;
             if (model == null)
                 return;
             cmbPriorityTop30.SelectedIndex = model.PriorityTop30;
@@ -59,7 +59,7 @@ namespace AnalyzeApp.GUI.Child
                 IsActiveSpecial = chkStateSpecial.IsOn,
                 PrioritySpecial = cmbPrioritySpecial.SelectedIndex
             };
-            model.UpdateJson(_fileName);
+            APIService.Instance().UpdateSetting(new SettingModel { Id = (int)enumSetting.SpecialSetting, Setting = JsonConvert.SerializeObject(model) });
             MessageBox.Show("Đã lưu dữ liệu!");
         }
 

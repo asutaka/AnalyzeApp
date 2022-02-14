@@ -220,5 +220,27 @@ namespace AnalyzeApp.Common
             }
             return -1;
         }
+
+        public async Task<long> SendMessage(NotifyModel model)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(StaticVal.profile.Phone))
+                {
+                    NLogLogger.LogInfo("Phone is Empty!");
+                    return -1;
+                }
+
+                model.Phone = StaticVal.profile.Phone;
+                HttpContent c = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, "application/json");
+                await client.PostAsync("Telegram/SendMessage", c);
+                return 1;
+            }
+            catch (Exception ex)
+            {
+                NLogLogger.PublishException(ex, $"APIService|SendMessage: {ex.Message}");
+            }
+            return -1;
+        }
     }
 }

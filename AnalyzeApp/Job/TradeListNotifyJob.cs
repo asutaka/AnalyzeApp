@@ -63,7 +63,7 @@ namespace AnalyzeApp.Job
                     var strNotify = string.Join("\n", lstNotify.ToArray());
                     if (strNotify.Length > 500)
                         strNotify = strNotify.Substring(0, 500);
-                    strNotify.CreateFile(nameof(TradeListNotifyJob));
+                    APIService.Instance().SendMessage(new NotifyModel { Content = strNotify, IsService = false });
                 }
             }
             catch(Exception ex)
@@ -73,3 +73,6 @@ namespace AnalyzeApp.Job
         }
     }
 }
+//public string Phone { get; set; }
+//public string Content { get; set; }
+//public bool IsService { get; set; }

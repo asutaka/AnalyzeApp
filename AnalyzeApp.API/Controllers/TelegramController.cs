@@ -1,6 +1,7 @@
 ﻿using AnalyzeApp.API.Interface;
 using AnalyzeApp.API.Model;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace AnalyzeApp.API.Controllers
 {
@@ -30,7 +31,7 @@ namespace AnalyzeApp.API.Controllers
             return Ok(result);
         }
 
-        [HttpPost(Name = "GetNotify")]
+        [HttpGet(Name = "GetNotify")]
         public async Task<IActionResult> GetNotify(int top)
         {
             var result = await _service.GetNotify(top);
