@@ -25,7 +25,7 @@ namespace AnalyzeApp.GUI.Child
         private int count = 1;
 
         #region Job
-        private ScheduleMember job = new ScheduleMember(StaticVal.scheduleMng.GetScheduler(), JobBuilder.Create<RealtimeValueScheduleJob>(), StaticValtmp.Scron_Top30_Value, nameof(RealtimeValueScheduleJob));
+        private ScheduleMember job = new ScheduleMember(StaticVal.scheduleMng.GetScheduler(), JobBuilder.Create<RealtimeValueScheduleJob>(), StaticVal.Scron_Top30, nameof(RealtimeValueScheduleJob));
         #endregion
         #region Contructor
         private frmRealTime()
@@ -56,13 +56,13 @@ namespace AnalyzeApp.GUI.Child
             this.Invoke((MethodInvoker)delegate
             {
                 grid.BeginUpdate();
-                grid.DataSource = StaticValtmp.lstRealTimeShow;
+                grid.DataSource = StaticVal.lstRealTimeDisplay;
                 grid.EndUpdate();
             });
         }
         private void AddNewRow(string coin, string coinName)
         {
-            StaticValtmp.lstRealTimeShow.Add(new Top30Model { 
+            StaticVal.lstRealTimeDisplay.Add(new Top30Model { 
                 STT = count++,
                 Coin = coin,
                 CoinName = coinName,
@@ -75,6 +75,7 @@ namespace AnalyzeApp.GUI.Child
                 WaveRecent = 0,
                 CountTime = 0
             });
+            var tmp = 1;
         }
         #endregion
         #region Event
@@ -118,6 +119,7 @@ namespace AnalyzeApp.GUI.Child
                 cmbCoin.EditValue = null;
                 return;
             }
+            StaticVal.IsRealTimeAction = true;
             var coin = cmbCoin.EditValue.ToString();
             var coinName = cmbCoin.Text;
             Config.RealTimes.Add(new CryptonDetailDataModel
@@ -125,9 +127,10 @@ namespace AnalyzeApp.GUI.Child
                 S = coin,
                 AN = coinName
             });
-            APIService.Instance().UpdateSetting(new SettingModel { Id = (int)enumSetting.RealtimeList, Setting = JsonConvert.SerializeObject(Config.RealTimes) }).GetAwaiter().GetResult();
+            APIService.Instance().UpdateSetting(new SettingModel { Id = (int)enumSetting.RealtimeList, Setting = JsonConvert.SerializeObject(Config.RealTimes) });
             AddNewRow(coin, coinName);
             cmbCoin.EditValue = null;
+            StaticVal.IsRealTimeAction = false;
         }
         private void frmRealTime_VisibleChanged(object sender, EventArgs e)
         {
@@ -165,7 +168,7 @@ namespace AnalyzeApp.GUI.Child
         {
             if (e.KeyCode == Keys.Delete)
             {
-                StaticValtmp.IsRealTimeDeleted = true;
+                StaticVal.IsRealTimeAction = true;
                 int[] rows = gridView1.GetSelectedRows();
                 if (rows != null && rows.Length > 0)
                 {
@@ -180,14 +183,14 @@ namespace AnalyzeApp.GUI.Child
                         {
                             Config.RealTimes.Remove(entity);
                         }
-                        APIService.Instance().UpdateSetting(new SettingModel { Id = (int)enumSetting.RealtimeList, Setting = JsonConvert.SerializeObject(Config.RealTimes)}).GetAwaiter().GetResult();
-                        var entityShow = StaticValtmp.lstRealTimeShow.FirstOrDefault(x => x.Coin == cellValue);
+                        APIService.Instance().UpdateSetting(new SettingModel { Id = (int)enumSetting.RealtimeList, Setting = JsonConvert.SerializeObject(Config.RealTimes)});
+                        var entityShow = StaticVal.lstRealTimeDisplay.FirstOrDefault(x => x.Coin == cellValue);
                         if (entityShow != null)
                         {
-                            StaticValtmp.lstRealTimeShow.Remove(entityShow);
+                            StaticVal.lstRealTimeDisplay.Remove(entityShow);
                         }
                         InitData();
-                        StaticValtmp.IsRealTimeDeleted = false;
+                        StaticVal.IsRealTimeAction = false;
                         grid.Enabled = true;
                         _frmWaitForm.Close();
                     }

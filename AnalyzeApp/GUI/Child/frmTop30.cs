@@ -13,7 +13,7 @@ namespace AnalyzeApp.GUI.Child
 {
     public partial class frmTop30 : XtraForm
     {
-        private ScheduleMember jobValue = new ScheduleMember(StaticVal.scheduleMng.GetScheduler(), JobBuilder.Create<Top30ValueScheduleJob>(), StaticValtmp.Scron_Top30_Value, nameof(Top30ValueScheduleJob));
+        private ScheduleMember jobValue = new ScheduleMember(StaticVal.scheduleMng.GetScheduler(), JobBuilder.Create<Top30ScheduleJob>(), StaticVal.Scron_Top30, nameof(Top30ScheduleJob));
         private frmTop30()
         {
             InitializeComponent();

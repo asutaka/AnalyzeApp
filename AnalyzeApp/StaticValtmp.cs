@@ -1,10 +1,6 @@
 ﻿using AnalyzeApp.GUI;
-using AnalyzeApp.Job.ScheduleJob;
 using AnalyzeApp.Model.ENTITY;
-using Binance.Net;
 using Binance.Net.Interfaces;
-using Binance.Net.Objects;
-using Binance.Net.Objects.Spot.MarketData;
 using System.Collections.Generic;
 using System.Net.Http;
 
@@ -20,17 +16,16 @@ namespace AnalyzeApp
         public static bool IsCodeActive = false;
         public static bool IsExecMCDX = false;
         public static bool IsTradeListChange = false;
-        public static bool IsRealTimeDeleted = false;
         //Level
         public static int Level { get; set; }
         //main
         public static frmMain frmMainObj = null;
         
-        //Scron <second> <minute> <hour> <day-of-month> <month> <day-of-week> <year>
+        
         public static string Scron_CheckStatus = "0 0 0/5 * * ?";
         public static string Scron_MCDX_Calculate = "0 0/5 * * * ?";
         public static string Scron_MCDX_Value = "0/1 * * * * ?";
-        public static string Scron_Top30_Value = "* * * * * ?";
+        
         public static string Scron_TradeList_Noti = "0/1 * * * * ?";
         //Coin
         
@@ -45,7 +40,7 @@ namespace AnalyzeApp
 
         
 
-        public static List<Top30Model> lstRealTimeShow = new List<Top30Model>();
+        
         //Local 
         public static List<SendNotifyModel> lstNotiTrade = new List<SendNotifyModel>();
         //Client

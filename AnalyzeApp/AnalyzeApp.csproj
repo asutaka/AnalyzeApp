@@ -292,7 +292,7 @@
     <Compile Include="Job\RealTimeJob.cs" />
     <Compile Include="Job\RealtimeValueScheduleJob.cs" />
     <Compile Include="Job\ScheduleUiContainer.cs" />
-    <Compile Include="Job\Top30ValueScheduleJob.cs" />
+    <Compile Include="Job\Top30ScheduleJob.cs" />
     <Compile Include="Job\TradeListNotifyJob.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

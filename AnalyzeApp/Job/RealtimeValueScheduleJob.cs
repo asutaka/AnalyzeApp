@@ -16,10 +16,12 @@ namespace AnalyzeApp.Job
         {
             try
             {
-                if (StaticValtmp.IsRealTimeDeleted)
+                if (StaticVal.IsRealTimeAction)
+                {
                     return;
+                }
                 var lstTask = new List<Task>();
-                var lstResult = StaticValtmp.lstRealTimeShow;
+                var lstResult = StaticVal.lstRealTimeDisplay;
                 foreach (var item in lstResult)
                 {
                     var task = Task.Run(() =>
@@ -69,9 +71,12 @@ namespace AnalyzeApp.Job
                     lstTask.Add(task);
                 }
                 Task.WaitAll(lstTask.ToArray());
-                if (StaticValtmp.IsRealTimeDeleted)
+                if (StaticVal.IsRealTimeAction)
+                {
                     return;
-                StaticValtmp.lstRealTimeShow = lstResult;
+                }
+
+                StaticVal.lstRealTimeDisplay = lstResult;
                 frmRealTime.Instance().InitData();
             }
             catch(Exception ex)
