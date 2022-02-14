@@ -43,10 +43,24 @@ namespace AnalyzeApp.GUI
         {
             try
             {
-                var url = AuthResponse.GetAuthenticationURI(ConstVal.clientId, ConstVal.redirectURI).ToString();
-                Process.Start(url);
-                Thread.Sleep(1000);
-                DisplayMemoryUsageInTitleAsync();
+                //PHUNV Start
+                 var profile = new ProfileModel
+                    {
+                        Email = "nguyenphu1312@gmail.com",
+                        Phone = "+84976635946"
+                    };
+                if (profile != null)
+                {
+                    this.Hide();
+                    StaticVal.profile = profile;
+                    frmProfile.Instance().Show();
+                }
+                //PHUNV End
+
+                //var url = AuthResponse.GetAuthenticationURI(ConstVal.clientId, ConstVal.redirectURI).ToString();
+                //Process.Start(url);
+                //Thread.Sleep(1000);
+                //DisplayMemoryUsageInTitleAsync();
             }
             catch (Exception ex)
             {
@@ -97,7 +111,7 @@ namespace AnalyzeApp.GUI
                                     this.BeginInvoke(new Action(() =>
                                     {
                                         var profile = GetProfile(approvalCode);
-                                        //for test
+                                        //PHUNV
                                         if (profile == null)
                                             profile = new ProfileModel
                                             {

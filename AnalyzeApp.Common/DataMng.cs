@@ -25,6 +25,8 @@ namespace AnalyzeApp.Common
             try
             {
                 string path = $"{Directory.GetCurrentDirectory()}\\data\\{interval.GetDisplayName()}\\{coin}.txt";
+                if (!File.Exists(path))
+                    return new List<BinanceKline>();
                 using (StreamReader r = new StreamReader(path))
                 {
                     string json = r.ReadToEnd();

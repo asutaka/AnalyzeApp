@@ -62,3 +62,43 @@
  Stack Trace: 
  Additional Info: Date: 14/02/2022 5:32:27 PM | Copy Code: s+4uaWSqbmkV+HlQ0Iu9lI8ktuA5MNSLwO4iyIeN5a0UUhOCHY2tnRZUSk+chTx24lweVXzMg8PvQKWV1lrUNsHqXtwpT8eUqiOjxXsAGKg=
 
+ -------------- Info (2022-02-14 20:18:19.3956) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: Date: 2/14/2022 8:18:19 PM | Model Info: {"Email":"nguyenphu1312","OptionTime":2,"Level":1,"Expired":1647267499} | Code: s+4uaWSqbmkV+HlQ0Iu9lI8ktuA5MNSLwO4iyIeN5a0UUhOCHY2tnRZUSk+chTx24lweVXzMg8PvQKWV1lrUNvpnnr2lCRcKyzoEOj9TNco=
+
+ -------------- Info (2022-02-14 20:18:20.3528) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: Date: 2/14/2022 8:18:20 PM | Copy Code: s+4uaWSqbmkV+HlQ0Iu9lI8ktuA5MNSLwO4iyIeN5a0UUhOCHY2tnRZUSk+chTx24lweVXzMg8PvQKWV1lrUNvpnnr2lCRcKyzoEOj9TNco=
+
+ -------------- Info (2022-02-14 20:18:22.2977) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: Date: 2/14/2022 8:18:22 PM | Copy Code: s+4uaWSqbmkV+HlQ0Iu9lI8ktuA5MNSLwO4iyIeN5a0UUhOCHY2tnRZUSk+chTx24lweVXzMg8PvQKWV1lrUNvpnnr2lCRcKyzoEOj9TNco=
+
+ -------------- Info (2022-02-14 21:10:18.9694) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: Date: 2/14/2022 9:10:18 PM | Model Info: {"Email":"nguyenphu1312","OptionTime":2,"Level":1,"Expired":1647270618} | Code: s+4uaWSqbmkV+HlQ0Iu9lI8ktuA5MNSLwO4iyIeN5a0UUhOCHY2tnRZUSk+chTx24lweVXzMg8PvQKWV1lrUNiRNWXR1av25Eu+/Ldrx/Jo=
+
+ -------------- Info (2022-02-14 21:10:19.4819) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: Date: 2/14/2022 9:10:19 PM | Copy Code: s+4uaWSqbmkV+HlQ0Iu9lI8ktuA5MNSLwO4iyIeN5a0UUhOCHY2tnRZUSk+chTx24lweVXzMg8PvQKWV1lrUNiRNWXR1av25Eu+/Ldrx/Jo=
+

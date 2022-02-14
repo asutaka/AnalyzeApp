@@ -30,8 +30,36 @@ namespace AnalyzeApp.GUI
 
         private void Init()
         {
-            _bkgr.DoWork += bkgrCheckStatus_DoWork;
-            _bkgr.RunWorkerCompleted += bkgrCheckStatus_RunWorkerCompleted;
+            BackgroundWorker wrkr = new BackgroundWorker();
+            wrkr.WorkerReportsProgress = true;
+
+            wrkr.DoWork += (object sender, DoWorkEventArgs e) => {
+                var objUser = APIService.Instance().GetUser().Result;
+                this.Invoke((MethodInvoker)delegate
+                {
+                    if (objUser != null)
+                    {
+                        StaticVal.profile.Phone = objUser.Phone;
+                        txtPhone.Text = objUser.Phone;
+                        if (!string.IsNullOrWhiteSpace(objUser.Code))
+                        {
+                            StaticVal.profile.Code = objUser.Code;
+                            txtCode.Text = objUser.Code;
+                        }
+                    }
+
+                    lblUserName.Text = _profile.Name;
+                    lblEmail.Text = _profile.Email;
+                    lblLocale.Text = _profile.Locale;
+                    if (!string.IsNullOrWhiteSpace(_profile.Picture))
+                        picAvatar.Load(_profile.Picture);
+                    btnOk.Focus();
+                });
+                _bkgr.DoWork += bkgrCheckStatus_DoWork;
+                _bkgr.RunWorkerCompleted += bkgrCheckStatus_RunWorkerCompleted;
+                wrkr.Dispose();
+            };
+            wrkr.RunWorkerAsync();
         }
 
         private void StateEdit(bool isEdit)
@@ -82,7 +110,11 @@ namespace AnalyzeApp.GUI
 
         private void btnOk_Click(object sender, System.EventArgs e)
         {
-            CloseAppCheck();
+            //PHUNV
+            Hide();
+            frmMain.Instance().Show();
+            //PHUNV
+            //CloseAppCheck();
         }
 
         private void btnPaste_Click(object sender, System.EventArgs e)
@@ -137,28 +169,6 @@ namespace AnalyzeApp.GUI
         {
             _frmWaitForm.Show("Kiểm tra trạng thái");
             //btnPaste.Enabled = false;
-            var objUser = APIService.Instance().GetUser().GetAwaiter().GetResult();
-
-            this.Invoke((MethodInvoker)delegate
-            {
-                if (objUser != null)
-                {
-                    StaticVal.profile.Phone = objUser.Phone;
-                    txtPhone.Text = objUser.Phone;
-                    if (!string.IsNullOrWhiteSpace(objUser.Code))
-                    {
-                        StaticVal.profile.Code = objUser.Code;
-                        txtCode.Text = objUser.Code;
-                    }
-                }
-
-                lblUserName.Text = _profile.Name;
-                lblEmail.Text = _profile.Email;
-                lblLocale.Text = _profile.Locale;
-                if (!string.IsNullOrWhiteSpace(_profile.Picture))
-                    picAvatar.Load(_profile.Picture);
-                btnOk.Focus();
-            });
            
             var time = CommonMethod.GetTimeAsync().GetAwaiter().GetResult();
             var jsonModel = Security.Decrypt(txtCode.Text.Trim());
