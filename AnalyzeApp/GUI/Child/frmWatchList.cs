@@ -17,7 +17,7 @@ using Newtonsoft.Json;
 
 namespace AnalyzeApp.GUI.Child
 {
-    public partial class frmRealTime : XtraForm
+    public partial class frmWatchList : XtraForm
     {
         private WaitFunc _frmWaitForm = new WaitFunc();
         private BackgroundWorker _bkgr;
@@ -25,10 +25,10 @@ namespace AnalyzeApp.GUI.Child
         private int count = 1;
 
         #region Job
-        private ScheduleMember job = new ScheduleMember(StaticVal.scheduleMng.GetScheduler(), JobBuilder.Create<RealtimeValueScheduleJob>(), StaticVal.Scron_Top30, nameof(RealtimeValueScheduleJob));
+        private ScheduleMember job = new ScheduleMember(StaticVal.scheduleMng.GetScheduler(), JobBuilder.Create<WatchListScheduleJob>(), StaticVal.Scron_WatchList, nameof(WatchListScheduleJob));
         #endregion
         #region Contructor
-        private frmRealTime()
+        private frmWatchList()
         {
             InitializeComponent();
             this.Enabled = false;
@@ -37,10 +37,10 @@ namespace AnalyzeApp.GUI.Child
             _bkgr.RunWorkerCompleted += bkgrInitData_RunWorkerCompleted;
             _bkgr.RunWorkerAsync();
         }
-        private static frmRealTime _instance = null;
-        public static frmRealTime Instance()
+        private static frmWatchList _instance = null;
+        public static frmWatchList Instance()
         {
-            _instance = _instance ?? new frmRealTime();
+            _instance = _instance ?? new frmWatchList();
             return _instance;
         }
         #endregion

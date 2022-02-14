@@ -214,7 +214,7 @@ namespace AnalyzeApp.GUI
         {
             this.Invoke((MethodInvoker)delegate
             {
-                tabControl.AddTab(frmRealTime.Instance());
+                tabControl.AddTab(frmWatchList.Instance());
             });
         }
 

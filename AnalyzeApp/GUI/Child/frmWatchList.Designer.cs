@@ -1,6 +1,6 @@
 ﻿namespace AnalyzeApp.GUI.Child
 {
-    partial class frmRealTime
+    partial class frmWatchList
     {
         /// <summary>
         /// Required designer variable.

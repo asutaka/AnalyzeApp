@@ -32,5 +32,6 @@ namespace AnalyzeApp.Common
         //Scron
         //Scron <second> <minute> <hour> <day-of-month> <month> <day-of-week> <year>
         public static string Scron_Top30 = "* * * * * ?";
+        public static string Scron_WatchList = "* * * * * ?";
     }
 }

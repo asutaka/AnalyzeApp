@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace AnalyzeApp.Job
 {
     [DisallowConcurrentExecution] /*impt: no multiple instances executed concurrently*/
-    public class RealtimeValueScheduleJob : IJob
+    public class WatchListScheduleJob : IJob
     {
         private int FLAG = CommonMethod.GetFlag(Config.BasicSetting);
         public void Execute(IJobExecutionContext context)
@@ -77,7 +77,7 @@ namespace AnalyzeApp.Job
                 }
 
                 StaticVal.lstRealTimeDisplay = lstResult;
-                frmRealTime.Instance().InitData();
+                frmWatchList.Instance().InitData();
             }
             catch(Exception ex)
             {

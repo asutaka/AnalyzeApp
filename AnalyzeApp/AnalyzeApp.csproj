@@ -176,11 +176,11 @@
     <Compile Include="GUI\Child\frmMCDX.Designer.cs">
       <DependentUpon>frmMCDX.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Child\frmRealTime.cs">
+    <Compile Include="GUI\Child\frmWatchList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Child\frmRealTime.Designer.cs">
-      <DependentUpon>frmRealTime.cs</DependentUpon>
+    <Compile Include="GUI\Child\frmWatchList.Designer.cs">
+      <DependentUpon>frmWatchList.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Child\frmSpecialSetting.cs">
       <SubType>Form</SubType>
@@ -290,7 +290,7 @@
     <Compile Include="Job\MCDXCalculateJob.cs" />
     <Compile Include="Job\MCDXValueScheduleJob.cs" />
     <Compile Include="Job\RealTimeJob.cs" />
-    <Compile Include="Job\RealtimeValueScheduleJob.cs" />
+    <Compile Include="Job\WatchListScheduleJob.cs" />
     <Compile Include="Job\ScheduleUiContainer.cs" />
     <Compile Include="Job\Top30ScheduleJob.cs" />
     <Compile Include="Job\TradeListNotifyJob.cs" />
@@ -322,8 +322,8 @@
     <EmbeddedResource Include="GUI\Child\frmMCDX.resx">
       <DependentUpon>frmMCDX.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Child\frmRealTime.resx">
-      <DependentUpon>frmRealTime.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Child\frmWatchList.resx">
+      <DependentUpon>frmWatchList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Child\frmSpecialSetting.resx">
       <DependentUpon>frmSpecialSetting.cs</DependentUpon>
