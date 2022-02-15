@@ -84,6 +84,7 @@ namespace AnalyzeApp
         public static List<CryptonDetailDataModel> BlackLists { get; set; }
         public static TradeListModel TradeList { get; set; }
         public static FollowModel Follow { get; set; }
+        public static FollowSettingModel FollowSetting { get; set; }
         public static PrivateSettingModel PrivateSetting { get; set; }
     }
 }

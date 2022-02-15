@@ -1,5 +1,5 @@
 ﻿
-namespace AnalyzeApp.GUI.Usr
+namespace AnalyzeApp.GUI.Usr.UsrFollow
 {
     partial class userFollowChooseCoin
     {
@@ -30,15 +30,15 @@ namespace AnalyzeApp.GUI.Usr
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pnl = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cmbCoin = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pnl = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCoin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -52,11 +52,34 @@ namespace AnalyzeApp.GUI.Usr
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
+            // pnl
+            // 
+            this.pnl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl.AutoScroll = true;
+            this.pnl.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnl.Location = new System.Drawing.Point(1, 46);
+            this.pnl.Name = "pnl";
+            this.pnl.Size = new System.Drawing.Size(649, 351);
+            this.pnl.TabIndex = 19;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.cmbCoin);
+            this.groupBox2.Controls.Add(this.labelControl1);
+            this.groupBox2.Location = new System.Drawing.Point(0, 2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(650, 40);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            // 
             // cmbCoin
             // 
-            this.cmbCoin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbCoin.Location = new System.Drawing.Point(83, 16);
+            this.cmbCoin.Location = new System.Drawing.Point(67, 13);
             this.cmbCoin.Name = "cmbCoin";
             this.cmbCoin.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -64,6 +87,7 @@ namespace AnalyzeApp.GUI.Usr
             this.cmbCoin.Properties.PopupView = this.searchLookUpEdit1View;
             this.cmbCoin.Size = new System.Drawing.Size(539, 20);
             this.cmbCoin.TabIndex = 4;
+            this.cmbCoin.EditValueChanged += new System.EventHandler(this.cmbCoin_EditValueChanged);
             // 
             // searchLookUpEdit1View
             // 
@@ -74,33 +98,11 @@ namespace AnalyzeApp.GUI.Usr
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(29, 19);
+            this.labelControl1.Location = new System.Drawing.Point(7, 16);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(48, 13);
             this.labelControl1.TabIndex = 5;
             this.labelControl1.Text = "Thêm coin";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.cmbCoin);
-            this.groupBox2.Controls.Add(this.labelControl1);
-            this.groupBox2.Location = new System.Drawing.Point(0, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(650, 48);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            // 
-            // pnl
-            // 
-            this.pnl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnl.AutoScroll = true;
-            this.pnl.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnl.Location = new System.Drawing.Point(1, 53);
-            this.pnl.Name = "pnl";
-            this.pnl.Size = new System.Drawing.Size(649, 344);
-            this.pnl.TabIndex = 19;
             // 
             // userFollowChooseCoin
             // 
@@ -110,10 +112,10 @@ namespace AnalyzeApp.GUI.Usr
             this.Name = "userFollowChooseCoin";
             this.Size = new System.Drawing.Size(650, 400);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cmbCoin.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCoin.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
 
         }

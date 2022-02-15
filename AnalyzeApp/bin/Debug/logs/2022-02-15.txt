@@ -1,0 +1,84 @@
+ -------------- Error (2022-02-15 10:49:35.9967) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	CalculateMng|CalculateCryptonRank|MCUSDT: Sequence contains no matching element Sequence contains no matching element
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at AnalyzeApp.Analyze.CalculateMng.CalculateCryptonRank(String coin, String coinName) in D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\Analyze\CalculateMng.cs:line 341 Line: 0
+
+ -------------- Error (2022-02-15 10:56:59.6884) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	CalculateMng|CalculateCryptonRank|AGLDUSDT: Sequence contains no matching element Sequence contains no matching element
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at AnalyzeApp.Analyze.CalculateMng.CalculateCryptonRank(String coin, String coinName) in D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\Analyze\CalculateMng.cs:line 341 Line: 0
+
+ -------------- Error (2022-02-15 10:58:28.1043) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	CalculateMng|CalculateCryptonRank|WINGUSDT: Sequence contains no matching element Sequence contains no matching element
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at AnalyzeApp.Analyze.CalculateMng.CalculateCryptonRank(String coin, String coinName) in D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\Analyze\CalculateMng.cs:line 341 Line: 0
+
+ -------------- Info (2022-02-15 11:00:00.1659) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 15/02/2022 11:00:00 AM: Data1HJob Start!
+
+ -------------- Info (2022-02-15 11:00:00.1659) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 15/02/2022 11:00:00 AM: Data15MJob Start!
+
+ -------------- Error (2022-02-15 11:16:01.8918) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	CalculateMng|CalculateCryptonRank|AVAUSDT: Sequence contains no matching element Sequence contains no matching element
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at AnalyzeApp.Analyze.CalculateMng.CalculateCryptonRank(String coin, String coinName) in D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\Analyze\CalculateMng.cs:line 341 Line: 0
+
+ -------------- Error (2022-02-15 16:07:02.9793) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	Security:Decrypt: The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.  The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters. 
+   at System.Convert.FromBase64_Decode(Char* startInputPtr, Int32 inputLength, Byte* startDestPtr, Int32 destLength)
+   at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at AnalyzeApp.Common.Security.Decrypt(String encryptedText) in D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Common\Security.cs:line 52 Line: 0
+
+ -------------- Error (2022-02-15 16:45:13.3175) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	CalculateMng|CalculateCryptonRank|OXTUSDT: Sequence contains no matching element Sequence contains no matching element
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at AnalyzeApp.Analyze.CalculateMng.CalculateCryptonRank(String coin, String coinName) in D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\Analyze\CalculateMng.cs:line 341 Line: 0
+

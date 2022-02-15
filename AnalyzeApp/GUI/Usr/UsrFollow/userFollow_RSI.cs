@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AnalyzeApp.GUI.Usr
+namespace AnalyzeApp.GUI.Usr.UsrFollow
 {
-    public partial class userFollowSetting : UserControl
+    public partial class userFollow_RSI : UserControl
     {
-        public userFollowSetting()
+        public userFollow_RSI()
         {
             InitializeComponent();
         }

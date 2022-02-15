@@ -218,10 +218,14 @@ namespace AnalyzeApp.GUI
 
         private void barBtnStart_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            barBtnStart.Enabled = false;
-            barBtnStop.Enabled = true;
+            this.Invoke((MethodInvoker)delegate
+            {
+                tabControl.AddTab(frmFollow.Instance());
+            });
+            //barBtnStart.Enabled = false;
+            //barBtnStop.Enabled = true;
 
-            StaticVal.scheduleMng.StartAllJob();
+            //StaticVal.scheduleMng.StartAllJob();
         }
 
         private void barBtnStop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

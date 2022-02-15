@@ -266,16 +266,16 @@
     <Compile Include="GUI\Usr\userCoinValue.Designer.cs">
       <DependentUpon>userCoinValue.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Usr\userFollowChooseCoin.cs">
+    <Compile Include="GUI\Usr\UsrFollow\userFollowChooseCoin.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Usr\userFollowChooseCoin.Designer.cs">
+    <Compile Include="GUI\Usr\UsrFollow\userFollowChooseCoin.Designer.cs">
       <DependentUpon>userFollowChooseCoin.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Usr\userFollowSetting.cs">
+    <Compile Include="GUI\Usr\UsrFollow\userFollowSetting.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Usr\userFollowSetting.Designer.cs">
+    <Compile Include="GUI\Usr\UsrFollow\userFollowSetting.Designer.cs">
       <DependentUpon>userFollowSetting.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Usr\userMonitorSchedule.cs">
@@ -289,6 +289,48 @@
     </Compile>
     <Compile Include="GUI\Usr\userSetting.designer.cs">
       <DependentUpon>userSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Usr\UsrFollow\userFollowSettingDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Usr\UsrFollow\userFollowSettingDetail.Designer.cs">
+      <DependentUpon>userFollowSettingDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Usr\UsrFollow\userFollow_ADX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Usr\UsrFollow\userFollow_ADX.Designer.cs">
+      <DependentUpon>userFollow_ADX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Usr\UsrFollow\userFollow_MA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Usr\UsrFollow\userFollow_MA.Designer.cs">
+      <DependentUpon>userFollow_MA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Usr\UsrFollow\userFollow_MACD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Usr\UsrFollow\userFollow_MACD.Designer.cs">
+      <DependentUpon>userFollow_MACD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Usr\UsrFollow\userFollow_MCDX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Usr\UsrFollow\userFollow_MCDX.Designer.cs">
+      <DependentUpon>userFollow_MCDX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Usr\UsrFollow\userFollow_Price.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Usr\UsrFollow\userFollow_Price.Designer.cs">
+      <DependentUpon>userFollow_Price.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Usr\UsrFollow\userFollow_RSI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Usr\UsrFollow\userFollow_RSI.Designer.cs">
+      <DependentUpon>userFollow_RSI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\WaitFunc.cs" />
     <Compile Include="Job\CheckStatusJob.cs" />
@@ -375,10 +417,10 @@
     <EmbeddedResource Include="GUI\Usr\userCoinValue.resx">
       <DependentUpon>userCoinValue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Usr\userFollowChooseCoin.resx">
+    <EmbeddedResource Include="GUI\Usr\UsrFollow\userFollowChooseCoin.resx">
       <DependentUpon>userFollowChooseCoin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Usr\userFollowSetting.resx">
+    <EmbeddedResource Include="GUI\Usr\UsrFollow\userFollowSetting.resx">
       <DependentUpon>userFollowSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Usr\userMonitorSchedule.resx">
@@ -386,6 +428,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Usr\userSetting.resx">
       <DependentUpon>userSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Usr\UsrFollow\userFollowSettingDetail.resx">
+      <DependentUpon>userFollowSettingDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Usr\UsrFollow\userFollow_ADX.resx">
+      <DependentUpon>userFollow_ADX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Usr\UsrFollow\userFollow_MA.resx">
+      <DependentUpon>userFollow_MA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Usr\UsrFollow\userFollow_MACD.resx">
+      <DependentUpon>userFollow_MACD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Usr\UsrFollow\userFollow_MCDX.resx">
+      <DependentUpon>userFollow_MCDX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Usr\UsrFollow\userFollow_Price.resx">
+      <DependentUpon>userFollow_Price.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Usr\UsrFollow\userFollow_RSI.resx">
+      <DependentUpon>userFollow_RSI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

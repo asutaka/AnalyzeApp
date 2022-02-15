@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AnalyzeApp.GUI.Usr
+namespace AnalyzeApp.GUI.Usr.UsrFollow
 {
-    public partial class userFollowChooseCoin : UserControl
+    public partial class userFollow_MACD : UserControl
     {
-        public userFollowChooseCoin()
+        public userFollow_MACD()
         {
             InitializeComponent();
         }

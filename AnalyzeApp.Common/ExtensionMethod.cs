@@ -202,6 +202,13 @@ namespace AnalyzeApp.Common
             tabControl.SelectedTabPage = TAbAdd;
         }
 
+        public static void AddControl(this XtraTabPage tp, UserControl user)
+        {
+            user.Visible = true;
+            tp.Controls.Add(user);
+            user.Dock = DockStyle.Fill;
+        }
+
         public static void AddControl(this Panel pnl, XtraForm form)
         {
             pnl.Controls.Clear();

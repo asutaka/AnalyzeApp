@@ -59,6 +59,7 @@
     <Compile Include="ENTITY\DataSettingModel.cs" />
     <Compile Include="ENTITY\ElementModel.cs" />
     <Compile Include="ENTITY\FollowModel.cs" />
+    <Compile Include="ENTITY\FollowSettingModel.cs" />
     <Compile Include="ENTITY\GenCodeModel.cs" />
     <Compile Include="ENTITY\GeneralModel.cs" />
     <Compile Include="ENTITY\IndicatorModel.cs" />
