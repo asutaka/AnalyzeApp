@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AnalyzeApp.Model.ENTITY;
 using System.Windows.Forms;
 
 namespace AnalyzeApp.GUI.Usr.UsrFollow
@@ -15,6 +8,25 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         public userFollow_ADX()
         {
             InitializeComponent();
+            InitData();
+        }
+        private void InitData()
+        {
+            cmbOption.SelectedIndex = 0;
+        }
+
+        public FollowSetting_AdxModel GetData()
+        {
+            return new FollowSetting_AdxModel
+            {
+                IsPositive = cmbOption.SelectedIndex == 0,
+                Value = (int)nmValue.Value
+            };
+        }
+
+        private void btnDelete_Click(object sender, System.EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

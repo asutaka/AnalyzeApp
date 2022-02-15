@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AnalyzeApp.Model.ENTITY;
 using System.Windows.Forms;
 
 namespace AnalyzeApp.GUI.Usr.UsrFollow
@@ -15,6 +8,18 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         public userFollow_MCDX()
         {
             InitializeComponent();
+        }
+        public FollowSetting_McdxModel GetData()
+        {
+            return new FollowSetting_McdxModel
+            {
+                IsValid = chkValid.IsOn
+            };
+        }
+
+        private void btnDelete_Click(object sender, System.EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

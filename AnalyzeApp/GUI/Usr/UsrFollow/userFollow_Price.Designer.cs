@@ -41,17 +41,22 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             // 
             // nmValue
             // 
-            this.nmValue.Location = new System.Drawing.Point(286, 9);
+            this.nmValue.Location = new System.Drawing.Point(269, 9);
             this.nmValue.Name = "nmValue";
             this.nmValue.Size = new System.Drawing.Size(70, 20);
             this.nmValue.TabIndex = 5;
             this.nmValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nmValue.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(23, 11);
+            this.labelControl1.Location = new System.Drawing.Point(23, 10);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(27, 19);
             this.labelControl1.TabIndex = 4;
@@ -72,7 +77,7 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             // 
             // cmbMode
             // 
-            this.cmbMode.Location = new System.Drawing.Point(216, 10);
+            this.cmbMode.Location = new System.Drawing.Point(200, 10);
             this.cmbMode.Name = "cmbMode";
             this.cmbMode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -90,6 +95,7 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(25, 23);
             this.btnDelete.TabIndex = 17;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // userFollow_Price
             // 

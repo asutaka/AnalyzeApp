@@ -30,53 +30,56 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         private void InitializeComponent()
         {
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.nmValue1 = new System.Windows.Forms.NumericUpDown();
+            this.nmValue2 = new System.Windows.Forms.NumericUpDown();
             this.cmbOption = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            this.cmbMode = new DevExpress.XtraEditors.ComboBoxEdit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmValue1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmValue2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbOption.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbMode.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(23, 11);
+            this.labelControl1.Location = new System.Drawing.Point(23, 10);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(26, 19);
             this.labelControl1.TabIndex = 4;
             this.labelControl1.Text = "MA";
             // 
-            // comboBoxEdit2
+            // nmValue1
             // 
-            this.comboBoxEdit2.Location = new System.Drawing.Point(84, 10);
-            this.comboBoxEdit2.Name = "comboBoxEdit2";
-            this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit2.Size = new System.Drawing.Size(80, 20);
-            this.comboBoxEdit2.TabIndex = 8;
+            this.nmValue1.Location = new System.Drawing.Point(269, 9);
+            this.nmValue1.Name = "nmValue1";
+            this.nmValue1.Size = new System.Drawing.Size(70, 20);
+            this.nmValue1.TabIndex = 7;
+            this.nmValue1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nmValue1.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
-            // numericUpDown1
+            // nmValue2
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(163, 10);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(70, 20);
-            this.numericUpDown1.TabIndex = 7;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(239, 10);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(70, 20);
-            this.numericUpDown2.TabIndex = 9;
+            this.nmValue2.Location = new System.Drawing.Point(338, 9);
+            this.nmValue2.Name = "nmValue2";
+            this.nmValue2.Size = new System.Drawing.Size(70, 20);
+            this.nmValue2.TabIndex = 9;
+            this.nmValue2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nmValue2.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // cmbOption
             // 
-            this.cmbOption.Location = new System.Drawing.Point(315, 10);
+            this.cmbOption.Location = new System.Drawing.Point(84, 10);
             this.cmbOption.Name = "cmbOption";
             this.cmbOption.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -94,24 +97,38 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(25, 23);
             this.btnDelete.TabIndex = 18;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // cmbMode
+            // 
+            this.cmbMode.Location = new System.Drawing.Point(200, 10);
+            this.cmbMode.Name = "cmbMode";
+            this.cmbMode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbMode.Properties.Items.AddRange(new object[] {
+            "MA",
+            "EMA"});
+            this.cmbMode.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cmbMode.Size = new System.Drawing.Size(70, 20);
+            this.cmbMode.TabIndex = 19;
             // 
             // userFollow_MA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Controls.Add(this.cmbMode);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.cmbOption);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.comboBoxEdit2);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.nmValue2);
+            this.Controls.Add(this.nmValue1);
             this.Controls.Add(this.labelControl1);
             this.Name = "userFollow_MA";
             this.Size = new System.Drawing.Size(460, 42);
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmValue1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmValue2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbOption.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbMode.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,10 +136,10 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
 
         #endregion
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown nmValue1;
+        private System.Windows.Forms.NumericUpDown nmValue2;
         private DevExpress.XtraEditors.ComboBoxEdit cmbOption;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
+        private DevExpress.XtraEditors.ComboBoxEdit cmbMode;
     }
 }

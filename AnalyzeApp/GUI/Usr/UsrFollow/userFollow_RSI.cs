@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace AnalyzeApp.GUI.Usr.UsrFollow
 {
@@ -15,6 +7,16 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         public userFollow_RSI()
         {
             InitializeComponent();
+            InitData();
+        }
+        private void InitData()
+        {
+            cmbOption.SelectedIndex = 0;
+        }
+
+        private void btnDelete_Click(object sender, System.EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

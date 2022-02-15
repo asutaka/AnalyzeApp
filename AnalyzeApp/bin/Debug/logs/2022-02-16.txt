@@ -1,0 +1,56 @@
+ -------------- Info (2022-02-16 00:15:00.5892) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/16/2022 12:15:00 AM: Data15MJob Start!
+
+ -------------- Info (2022-02-16 00:30:00.5460) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/16/2022 12:30:00 AM: Data15MJob Start!
+
+ -------------- Info (2022-02-16 00:35:41.3513) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/16/2022 12:35:41 AM: Data15MJob End!
+
+ -------------- Info (2022-02-16 00:45:00.0642) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/16/2022 12:45:00 AM: Data15MJob Start!
+
+ -------------- Info (2022-02-16 00:50:31.7696) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/16/2022 12:50:31 AM: Data15MJob End!
+
+ -------------- Info (2022-02-16 01:00:00.1861) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/16/2022 1:00:00 AM: Data15MJob Start!
+
+ -------------- Info (2022-02-16 01:00:00.1861) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 2/16/2022 1:00:00 AM: Data1HJob Start!
+
