@@ -5,15 +5,19 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
 {
     public partial class userFollow_Price : UserControl
     {
-        public userFollow_Price()
+        public userFollow_Price(FollowSetting_PriceModel model)
         {
             InitializeComponent();
-            InitData();
+            InitData(model);
         }
-        private void InitData()
+
+        private void InitData(FollowSetting_PriceModel model)
         {
-            cmbOption.SelectedIndex = 0;
-            cmbMode.SelectedIndex = 0;
+            if (model == null)
+                model = new FollowSetting_PriceModel { Value = 5 };
+            cmbOption.SelectedIndex = model.Option;
+            cmbMode.SelectedIndex = model.Mode;
+            nmValue.Value = model.Value;
         }
 
         public FollowSetting_PriceModel GetData()
@@ -21,8 +25,8 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             return new FollowSetting_PriceModel
             {
                 Mode = cmbMode.SelectedIndex,
-                IsPositive = cmbOption.SelectedIndex == 0,
-                Value = (int)nmValue.Value,
+                Option = cmbOption.SelectedIndex,
+                Value = nmValue.Value,
             };
         }
 

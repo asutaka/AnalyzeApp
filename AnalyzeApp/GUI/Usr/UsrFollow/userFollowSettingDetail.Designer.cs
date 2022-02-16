@@ -30,7 +30,7 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         private void InitializeComponent()
         {
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            this.txtTitle = new DevExpress.XtraEditors.TextEdit();
             this.tabMain = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage19 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.pnl1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -44,7 +44,7 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.pnl6 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabNavigationPage24 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.pnl2 = new System.Windows.Forms.FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTitle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
             this.tabMain.SuspendLayout();
             this.tabNavigationPage19.SuspendLayout();
@@ -63,16 +63,16 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.dropDownButton1.TabIndex = 10;
             this.dropDownButton1.Text = "Tín hiệu";
             // 
-            // textEdit5
+            // txtTitle
             // 
-            this.textEdit5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit5.EditValue = "Tín hiệu 5";
-            this.textEdit5.Location = new System.Drawing.Point(144, 6);
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Properties.NullText = "Tín hiệu 5";
-            this.textEdit5.Size = new System.Drawing.Size(472, 20);
-            this.textEdit5.TabIndex = 12;
+            this.txtTitle.EditValue = "Tín hiệu 5";
+            this.txtTitle.Location = new System.Drawing.Point(144, 6);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Properties.NullText = "Tín hiệu 5";
+            this.txtTitle.Size = new System.Drawing.Size(472, 20);
+            this.txtTitle.TabIndex = 12;
             // 
             // tabMain
             // 
@@ -210,11 +210,11 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dropDownButton1);
-            this.Controls.Add(this.textEdit5);
+            this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.tabMain);
             this.Name = "userFollowSettingDetail";
             this.Size = new System.Drawing.Size(621, 353);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTitle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).EndInit();
             this.tabMain.ResumeLayout(false);
             this.tabNavigationPage19.ResumeLayout(false);
@@ -230,7 +230,7 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         #endregion
 
         private DevExpress.XtraEditors.DropDownButton dropDownButton1;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
+        private DevExpress.XtraEditors.TextEdit txtTitle;
         private DevExpress.XtraBars.Navigation.TabPane tabMain;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage19;
         private System.Windows.Forms.FlowLayoutPanel pnl1;

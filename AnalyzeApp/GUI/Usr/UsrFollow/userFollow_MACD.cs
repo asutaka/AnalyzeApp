@@ -5,20 +5,22 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
 {
     public partial class userFollow_MACD : UserControl
     {
-        public userFollow_MACD()
+        public userFollow_MACD(FollowSetting_MacdModel model)
         {
             InitializeComponent();
-            InitData();
+            InitData(model);
         }
-        private void InitData()
+        private void InitData(FollowSetting_MacdModel model)
         {
-            cmbOption.SelectedIndex = 0;
+            if (model == null)
+                model = new FollowSetting_MacdModel();
+            cmbOption.SelectedIndex = model.Option;
         }
         public FollowSetting_MacdModel GetData()
         {
             return new FollowSetting_MacdModel
             {
-                IsPositive = cmbOption.SelectedIndex == 0,
+                Option = cmbOption.SelectedIndex,
             };
         }
 

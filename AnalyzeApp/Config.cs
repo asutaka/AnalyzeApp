@@ -23,7 +23,9 @@ namespace AnalyzeApp
                         }
                     case (int)enumSetting.FollowList:
                         {
-                            Follow = JsonConvert.DeserializeObject<FollowModel>(item.Setting);
+                            FollowSetting = JsonConvert.DeserializeObject<FollowSettingModel>(item.Setting);
+                            if (FollowSetting == null)
+                                FollowSetting = new FollowSettingModel();
                             break;
                         }
                     case (int)enumSetting.BlackList:
@@ -83,7 +85,6 @@ namespace AnalyzeApp
         public static List<CryptonDetailDataModel> RealTimes { get; set; }
         public static List<CryptonDetailDataModel> BlackLists { get; set; }
         public static TradeListModel TradeList { get; set; }
-        public static FollowModel Follow { get; set; }
         public static FollowSettingModel FollowSetting { get; set; }
         public static PrivateSettingModel PrivateSetting { get; set; }
     }

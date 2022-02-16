@@ -139,19 +139,10 @@ namespace AnalyzeApp.GUI
 
         private void barBtnListFollow_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //var tmp = StaticValues.ScheduleMngObj.GetSchedules().ElementAt(0);
-            //if (tmp.IsStarted())
-            //{
-            //    tmp.Pause();
-            //    tmp.Resume();
-            //}
-            //else
-            //{
-            //    tmp.Start();
-            //}
+            
             this.Invoke((MethodInvoker)delegate
             {
-                tabControl.AddTab(frmFollowList.Instance());
+                tabControl.AddTab(frmFollow.Instance());
             });
         }
 
@@ -218,14 +209,20 @@ namespace AnalyzeApp.GUI
 
         private void barBtnStart_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.Invoke((MethodInvoker)delegate
-            {
-                tabControl.AddTab(frmFollow.Instance());
-            });
-            //barBtnStart.Enabled = false;
-            //barBtnStop.Enabled = true;
+            //var tmp = StaticValues.ScheduleMngObj.GetSchedules().ElementAt(0);
+            //if (tmp.IsStarted())
+            //{
+            //    tmp.Pause();
+            //    tmp.Resume();
+            //}
+            //else
+            //{
+            //    tmp.Start();
+            //}
+            barBtnStart.Enabled = false;
+            barBtnStop.Enabled = true;
 
-            //StaticVal.scheduleMng.StartAllJob();
+            StaticVal.scheduleMng.StartAllJob();
         }
 
         private void barBtnStop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

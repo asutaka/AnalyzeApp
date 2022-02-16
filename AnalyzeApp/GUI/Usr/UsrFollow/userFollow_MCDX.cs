@@ -5,10 +5,19 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
 {
     public partial class userFollow_MCDX : UserControl
     {
-        public userFollow_MCDX()
+        public userFollow_MCDX(FollowSetting_McdxModel model)
         {
             InitializeComponent();
+            InitData(model);
         }
+
+        private void InitData(FollowSetting_McdxModel model)
+        {
+            if (model == null)
+                model = new FollowSetting_McdxModel();
+            chkValid.IsOn = model.IsValid;
+        }
+
         public FollowSetting_McdxModel GetData()
         {
             return new FollowSetting_McdxModel

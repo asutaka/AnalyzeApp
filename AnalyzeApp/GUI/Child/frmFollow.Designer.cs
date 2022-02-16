@@ -31,10 +31,10 @@ namespace AnalyzeApp.GUI.Child
         {
             this.chkScreen = new DevExpress.XtraEditors.ToggleSwitch();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.pnlMain = new System.Windows.Forms.Panel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnOkAndSave = new DevExpress.XtraEditors.SimpleButton();
-            this.pnlMain = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.chkScreen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -68,6 +68,16 @@ namespace AnalyzeApp.GUI.Child
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Danh sách theo dõi";
             // 
+            // pnlMain
+            // 
+            this.pnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlMain.Location = new System.Drawing.Point(3, 56);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(673, 340);
+            this.pnlMain.TabIndex = 0;
+            // 
             // groupControl2
             // 
             this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -88,6 +98,7 @@ namespace AnalyzeApp.GUI.Child
             this.btnCancel.Size = new System.Drawing.Size(109, 32);
             this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "Hủy bỏ";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOkAndSave
             // 
@@ -97,16 +108,7 @@ namespace AnalyzeApp.GUI.Child
             this.btnOkAndSave.Size = new System.Drawing.Size(109, 32);
             this.btnOkAndSave.TabIndex = 16;
             this.btnOkAndSave.Text = "Lưu cấu hình";
-            // 
-            // pnlMain
-            // 
-            this.pnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlMain.Location = new System.Drawing.Point(3, 56);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(673, 340);
-            this.pnlMain.TabIndex = 0;
+            this.btnOkAndSave.Click += new System.EventHandler(this.btnOkAndSave_Click);
             // 
             // frmFollow
             // 

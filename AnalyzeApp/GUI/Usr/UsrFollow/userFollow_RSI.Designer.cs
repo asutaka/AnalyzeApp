@@ -29,22 +29,22 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         /// </summary>
         private void InitializeComponent()
         {
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nmValue = new System.Windows.Forms.NumericUpDown();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmbOption = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbOption.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // numericUpDown1
+            // nmValue
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(200, 9);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(70, 20);
-            this.numericUpDown1.TabIndex = 11;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.nmValue.Location = new System.Drawing.Point(200, 9);
+            this.nmValue.Name = "nmValue";
+            this.nmValue.Size = new System.Drawing.Size(70, 20);
+            this.nmValue.TabIndex = 11;
+            this.nmValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nmValue.Value = new decimal(new int[] {
             30,
             0,
             0,
@@ -89,11 +89,11 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.cmbOption);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.nmValue);
             this.Controls.Add(this.labelControl1);
             this.Name = "userFollow_RSI";
             this.Size = new System.Drawing.Size(460, 42);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbOption.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -102,7 +102,7 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
 
         #endregion
 
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nmValue;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.ComboBoxEdit cmbOption;
         private DevExpress.XtraEditors.SimpleButton btnDelete;

@@ -80,6 +80,13 @@ D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.dll
 D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\ref\AnalyzeApp.API.dll
 D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.pdb
 D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.genruntimeconfig.cache
+F:\DATA\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.csproj.AssemblyReference.cache
+F:\DATA\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.GeneratedMSBuildEditorConfig.editorconfig
+F:\DATA\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.AssemblyInfoInputs.cache
+F:\DATA\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.AssemblyInfo.cs
+F:\DATA\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.csproj.CoreCompileInputs.cache
+F:\DATA\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.MvcApplicationPartsAssemblyInfo.cs
+F:\DATA\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.MvcApplicationPartsAssemblyInfo.cache
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\bin\Debug\net6.0\NLog.config
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\bin\Debug\net6.0\appsettings.Development.json
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\bin\Debug\net6.0\appsettings.json
@@ -162,11 +169,3 @@ D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\ref\AnalyzeApp.API.dll
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.pdb
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.genruntimeconfig.cache
-F:\DATA\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.csproj.AssemblyReference.cache
-F:\DATA\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.GeneratedMSBuildEditorConfig.editorconfig
-F:\DATA\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.AssemblyInfoInputs.cache
-F:\DATA\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.AssemblyInfo.cs
-F:\DATA\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.csproj.CoreCompileInputs.cache
-F:\DATA\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.MvcApplicationPartsAssemblyInfo.cs
-F:\DATA\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.MvcApplicationPartsAssemblyInfo.cache
-D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.csproj.AssemblyReference.cache

@@ -17,6 +17,12 @@ namespace AnalyzeApp.GUI.Usr
             _code = code;
             SetData();
         }
+
+        public string GetCoin()
+        {
+            return _code;
+        }
+
         private void SetData()
         {
             var entity = StaticVal.lstCoin.FirstOrDefault(x => x.S == _code);

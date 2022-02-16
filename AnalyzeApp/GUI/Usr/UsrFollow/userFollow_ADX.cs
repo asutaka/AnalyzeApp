@@ -5,22 +5,25 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
 {
     public partial class userFollow_ADX : UserControl
     {
-        public userFollow_ADX()
+        public userFollow_ADX(FollowSetting_AdxModel model)
         {
             InitializeComponent();
-            InitData();
+            InitData(model);
         }
-        private void InitData()
+        private void InitData(FollowSetting_AdxModel model)
         {
-            cmbOption.SelectedIndex = 0;
+            if (model == null)
+                model = new FollowSetting_AdxModel { Value = 20 };
+            cmbOption.SelectedIndex = model.Option;
+            nmValue.Value = model.Value;
         }
 
         public FollowSetting_AdxModel GetData()
         {
             return new FollowSetting_AdxModel
             {
-                IsPositive = cmbOption.SelectedIndex == 0,
-                Value = (int)nmValue.Value
+                Option = cmbOption.SelectedIndex,
+                Value = nmValue.Value
             };
         }
 

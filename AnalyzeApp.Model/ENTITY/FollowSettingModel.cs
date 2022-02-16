@@ -31,20 +31,20 @@ namespace AnalyzeApp.Model.ENTITY
     }
     public class FollowSetting_MacdModel
     {
-        public bool IsPositive { get; set; }
+        public int Option { get; set; }
     }
     public class FollowSetting_MaModel
     {
         public int Mode { get; set; }
-        public bool IsPositive { get; set; }
-        public int Value1 { get; set; }
-        public int Value2 { get; set; }
+        public int Option { get; set; }
+        public decimal Value1 { get; set; }
+        public decimal Value2 { get; set; }
     }
     public class FollowSetting_PriceModel
     {
         public int Mode { get; set; }
-        public bool IsPositive { get; set; }
-        public int Value { get; set; }
+        public int Option { get; set; }
+        public decimal Value { get; set; }
     }
     public class FollowSetting_McdxModel
     {
@@ -52,12 +52,12 @@ namespace AnalyzeApp.Model.ENTITY
     }
     public class FollowSetting_RsiModel
     {
-        public bool IsPositive { get; set; }
-        public int Value { get; set; }
+        public int Option { get; set; }
+        public decimal Value { get; set; }
     }
     public class FollowSetting_AdxModel
     {
-        public bool IsPositive { get; set; }
-        public int Value { get; set; }
+        public int Option { get; set; }
+        public decimal Value { get; set; }
     }
 }

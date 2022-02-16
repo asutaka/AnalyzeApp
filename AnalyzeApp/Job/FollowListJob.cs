@@ -12,7 +12,7 @@ namespace AnalyzeApp.Job
     [DisallowConcurrentExecution]
     public class FollowListJob : IJob
     {
-        private FollowModel followList = Config.Follow;
+        private FollowModel followList = null;//Config.Follow;
         public void Execute(IJobExecutionContext context)
         {
             try
