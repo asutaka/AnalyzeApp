@@ -124,7 +124,7 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.Controls.Add(this.nmValue1);
             this.Controls.Add(this.labelControl1);
             this.Name = "userFollow_MA";
-            this.Size = new System.Drawing.Size(460, 42);
+            this.Size = new System.Drawing.Size(470, 42);
             ((System.ComponentModel.ISupportInitialize)(this.nmValue1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmValue2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbOption.Properties)).EndInit();

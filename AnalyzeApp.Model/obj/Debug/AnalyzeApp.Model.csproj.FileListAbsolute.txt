@@ -7,14 +7,6 @@ D:\Data\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.csproj.CoreCompil
 D:\Data\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.csproj.CopyComplete
 D:\Data\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.dll
 D:\Data\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.pdb
-F:\DATA\AnalyzeApp\AnalyzeApp.Model\bin\Debug\AnalyzeApp.Model.dll
-F:\DATA\AnalyzeApp\AnalyzeApp.Model\bin\Debug\AnalyzeApp.Model.pdb
-F:\DATA\AnalyzeApp\AnalyzeApp.Model\bin\Debug\Newtonsoft.Json.dll
-F:\DATA\AnalyzeApp\AnalyzeApp.Model\bin\Debug\Newtonsoft.Json.xml
-F:\DATA\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.csproj.CoreCompileInputs.cache
-F:\DATA\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.csproj.CopyComplete
-F:\DATA\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.dll
-F:\DATA\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.pdb
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\bin\Debug\AnalyzeApp.Model.dll
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\bin\Debug\AnalyzeApp.Model.pdb
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\bin\Debug\Newtonsoft.Json.dll
@@ -23,3 +15,11 @@ D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.csp
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.csproj.CopyComplete
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.dll
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.pdb
+F:\DATA\AnalyzeApp\AnalyzeApp.Model\bin\Debug\AnalyzeApp.Model.dll
+F:\DATA\AnalyzeApp\AnalyzeApp.Model\bin\Debug\AnalyzeApp.Model.pdb
+F:\DATA\AnalyzeApp\AnalyzeApp.Model\bin\Debug\Newtonsoft.Json.dll
+F:\DATA\AnalyzeApp\AnalyzeApp.Model\bin\Debug\Newtonsoft.Json.xml
+F:\DATA\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.csproj.CoreCompileInputs.cache
+F:\DATA\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.csproj.CopyComplete
+F:\DATA\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.dll
+F:\DATA\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.pdb

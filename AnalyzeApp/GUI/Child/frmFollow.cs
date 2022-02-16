@@ -85,6 +85,7 @@ namespace AnalyzeApp.GUI.Child
                 APIService.Instance().UpdateSetting(new SettingModel { Id = (int)enumSetting.FollowList, Setting = JsonConvert.SerializeObject(model) }).GetAwaiter().GetResult();
                 Config.FollowSetting = model;
                 MessageBox.Show("Đã lưu dữ liệu!");
+                bkgr.Dispose();
             };
             bkgr.RunWorkerAsync();
         }

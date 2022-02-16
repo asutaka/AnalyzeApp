@@ -76,7 +76,7 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.cmbOption);
             this.Name = "userFollow_MACD";
-            this.Size = new System.Drawing.Size(460, 42);
+            this.Size = new System.Drawing.Size(470, 42);
             ((System.ComponentModel.ISupportInitialize)(this.cmbOption.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

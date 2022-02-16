@@ -226,12 +226,12 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             FlowLayoutPanel pnl = null;
             switch (model.Interval)
             {
-                case 1: pnl = pnl1;break;
-                case 2: pnl = pnl2;break;
-                case 3: pnl = pnl3;break;
-                case 4: pnl = pnl4;break;
-                case 5: pnl = pnl5;break;
-                case 6: pnl = pnl6;break;
+                case 0: pnl = pnl1;break;
+                case 1: pnl = pnl2;break;
+                case 2: pnl = pnl3;break;
+                case 3: pnl = pnl4;break;
+                case 4: pnl = pnl5;break;
+                case 5: pnl = pnl6;break;
                 default: break;
             }
             if (pnl == null)
@@ -282,12 +282,12 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             {
                 switch (model.Interval)
                 {
-                    case 1: pnl1.Controls.Add(item);break;
-                    case 2: pnl2.Controls.Add(item);break;
-                    case 3: pnl3.Controls.Add(item);break;
-                    case 4: pnl4.Controls.Add(item);break;
-                    case 5: pnl5.Controls.Add(item);break;
-                    case 6: pnl6.Controls.Add(item);break;
+                    case 0: pnl1.Controls.Add(item);break;
+                    case 1: pnl2.Controls.Add(item);break;
+                    case 2: pnl3.Controls.Add(item);break;
+                    case 3: pnl4.Controls.Add(item);break;
+                    case 4: pnl5.Controls.Add(item);break;
+                    case 5: pnl6.Controls.Add(item);break;
                 }
             }
         }

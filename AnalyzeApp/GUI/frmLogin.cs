@@ -28,6 +28,7 @@ namespace AnalyzeApp.GUI
                 StaticVal.lstCoin = DataMng.GetCoin();
                 StaticVal.lstCoinFilter = StaticVal.lstCoin.Where(x => !Config.BlackLists.Any(y => y.S == x.S)).ToList();
                 DataMng.StoredData().GetAwaiter().GetResult();
+                bkgr.Dispose();
             };
             bkgr.RunWorkerAsync();
         }
