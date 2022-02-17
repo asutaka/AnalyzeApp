@@ -9,6 +9,13 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         {
             InitializeComponent();
             InitData(model);
+            toolTip1.SetToolTip(cmbOption, "tùy chọn");
+            toolTip1.SetToolTip(cmbMode, "chỉ báo");
+            toolTip1.SetToolTip(nmValue1, "giá trị 1");
+            toolTip1.SetToolTip(nmValue2, "giá trị 2");
+            toolTip1.SetToolTip(nmRatioMax, "biên độ tối đa(%)");
+            toolTip1.SetToolTip(nmPoint, "điểm");
+            toolTip1.SetToolTip(btnDelete, "Xóa");
         }
         private void InitData(FollowSetting_MaModel model)
         {
@@ -18,6 +25,8 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             cmbMode.SelectedIndex = model.Mode;
             nmValue1.Value = model.Value1;
             nmValue2.Value = model.Value2;
+            nmRatioMax.Value = model.RatioMax;
+            nmPoint.Value = model.Point;
         }
 
         public FollowSetting_MaModel GetData()
@@ -27,7 +36,9 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
                 Mode = cmbMode.SelectedIndex,
                 Option = cmbOption.SelectedIndex,
                 Value1 = nmValue1.Value,
-                Value2 = nmValue2.Value
+                Value2 = nmValue2.Value,
+                RatioMax = nmRatioMax.Value,
+                Point = nmPoint.Value
             };
         }
 

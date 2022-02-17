@@ -9,6 +9,10 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         {
             InitializeComponent();
             InitData(model);
+            toolTip1.SetToolTip(cmbOption, "tùy chọn");
+            toolTip1.SetToolTip(nmValue, "giá trị");
+            toolTip1.SetToolTip(nmPoint, "điểm");
+            toolTip1.SetToolTip(btnDelete, "Xóa");
         }
 
         private void InitData(FollowSetting_RsiModel model)
@@ -17,6 +21,7 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
                 model = new FollowSetting_RsiModel { Value = 30 };
             cmbOption.SelectedIndex = model.Option;
             nmValue.Value = model.Value;
+            nmPoint.Value = model.Point;
         }
 
         public FollowSetting_RsiModel GetData()
@@ -24,7 +29,8 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             return new FollowSetting_RsiModel
             {
                 Option = cmbOption.SelectedIndex,
-                Value = nmValue.Value
+                Value = nmValue.Value,
+                Point = nmPoint.Value
             };
         }
 

@@ -9,18 +9,26 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         {
             InitializeComponent();
             InitData(model);
+            toolTip1.SetToolTip(cmbOption, "tùy chọn");
+            toolTip1.SetToolTip(nmRatioMax, "biên độ tối đa(%)");
+            toolTip1.SetToolTip(nmPoint, "điểm");
+            toolTip1.SetToolTip(btnDelete, "Xóa");
         }
         private void InitData(FollowSetting_MacdModel model)
         {
             if (model == null)
                 model = new FollowSetting_MacdModel();
             cmbOption.SelectedIndex = model.Option;
+            nmRatioMax.Value = model.RatioMax;
+            nmPoint.Value = model.Point;
         }
         public FollowSetting_MacdModel GetData()
         {
             return new FollowSetting_MacdModel
             {
                 Option = cmbOption.SelectedIndex,
+                RatioMax = nmRatioMax.Value,
+                Point = nmPoint.Value
             };
         }
 

@@ -25,6 +25,7 @@ namespace AnalyzeApp.Model.ENTITY
         public List<FollowSetting_MacdModel> lFollowSetting_Macd { get; set; }
         public List<FollowSetting_MaModel> lFollowSetting_Ma { get; set; }
         public List<FollowSetting_PriceModel> lFollowSetting_Price { get; set; }
+        public List<FollowSetting_VolumeModel> lFollowSetting_Volume { get; set; }
         public List<FollowSetting_McdxModel> lFollowSetting_Mcdx { get; set; }
         public List<FollowSetting_RsiModel> lFollowSetting_Rsi { get; set; }
         public List<FollowSetting_AdxModel> lFollowSetting_Adx { get; set; }
@@ -32,32 +33,57 @@ namespace AnalyzeApp.Model.ENTITY
     public class FollowSetting_MacdModel
     {
         public int Option { get; set; }
+        public decimal RatioMax { get; set; }
+        public decimal Point { get; set; }
     }
     public class FollowSetting_MaModel
     {
         public int Mode { get; set; }
         public int Option { get; set; }
+        public decimal RatioMax { get; set; }
         public decimal Value1 { get; set; }
         public decimal Value2 { get; set; }
+        public decimal Point { get; set; }
     }
     public class FollowSetting_PriceModel
     {
         public int Mode { get; set; }
         public int Option { get; set; }
+        public decimal RatioMax { get; set; }
         public decimal Value { get; set; }
+        public decimal Point { get; set; }
+    }
+    public class FollowSetting_VolumeModel
+    {
+        public int Mode { get; set; }
+        public int Option { get; set; }
+        public decimal RatioMax { get; set; }
+        public decimal Value { get; set; }
+        public decimal Point { get; set; }
+    }
+    public class FollowSetting_Volume2Model
+    {
+        public int Mode { get; set; }
+        public int Option { get; set; }
+        public decimal Value { get; set; }
+        public decimal Point { get; set; }
     }
     public class FollowSetting_McdxModel
     {
-        public bool IsValid { get; set; }
+        public int Option { get; set; }
+        public decimal Value { get; set; }
+        public decimal Point { get; set; }
     }
     public class FollowSetting_RsiModel
     {
         public int Option { get; set; }
         public decimal Value { get; set; }
+        public decimal Point { get; set; }
     }
     public class FollowSetting_AdxModel
     {
         public int Option { get; set; }
         public decimal Value { get; set; }
+        public decimal Point { get; set; }
     }
 }

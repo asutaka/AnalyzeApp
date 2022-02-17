@@ -290,6 +290,12 @@
     <Compile Include="GUI\Usr\UsrFollow\userFollowSettingDetail.Designer.cs">
       <DependentUpon>userFollowSettingDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Usr\UsrFollow\userFollow_Volume2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Usr\UsrFollow\userFollow_Volume2.Designer.cs">
+      <DependentUpon>userFollow_Volume2.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Usr\UsrFollow\userFollow_ADX.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -313,6 +319,12 @@
     </Compile>
     <Compile Include="GUI\Usr\UsrFollow\userFollow_MCDX.Designer.cs">
       <DependentUpon>userFollow_MCDX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Usr\UsrFollow\userFollow_Volume.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Usr\UsrFollow\userFollow_Volume.Designer.cs">
+      <DependentUpon>userFollow_Volume.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Usr\UsrFollow\userFollow_Price.cs">
       <SubType>UserControl</SubType>
@@ -423,6 +435,9 @@
     <EmbeddedResource Include="GUI\Usr\UsrFollow\userFollowSettingDetail.resx">
       <DependentUpon>userFollowSettingDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Usr\UsrFollow\userFollow_Volume2.resx">
+      <DependentUpon>userFollow_Volume2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Usr\UsrFollow\userFollow_ADX.resx">
       <DependentUpon>userFollow_ADX.cs</DependentUpon>
     </EmbeddedResource>
@@ -434,6 +449,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Usr\UsrFollow\userFollow_MCDX.resx">
       <DependentUpon>userFollow_MCDX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Usr\UsrFollow\userFollow_Volume.resx">
+      <DependentUpon>userFollow_Volume.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Usr\UsrFollow\userFollow_Price.resx">
       <DependentUpon>userFollow_Price.cs</DependentUpon>
