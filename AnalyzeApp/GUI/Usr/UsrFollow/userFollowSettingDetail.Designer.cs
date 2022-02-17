@@ -67,7 +67,7 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             // 
             this.txtTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTitle.EditValue = "Tín hiệu 5";
+            this.txtTitle.EditValue = "";
             this.txtTitle.Location = new System.Drawing.Point(144, 6);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Properties.NullText = "Tín hiệu 5";

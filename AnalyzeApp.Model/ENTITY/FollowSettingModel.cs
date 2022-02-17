@@ -17,6 +17,7 @@ namespace AnalyzeApp.Model.ENTITY
     public class FollowSettingModeModel
     {
         public string Title { get; set; }
+        public decimal PointCondition { get; set; }
         public List<FollowSettingModeDetailModel> lFollowSettingModeDetail { get; set; }
     }
     public class FollowSettingModeDetailModel
