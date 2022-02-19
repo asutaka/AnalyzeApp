@@ -5,16 +5,22 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
 {
     public partial class userFollow_RSI : UserControl
     {
-        public userFollow_RSI(FollowSetting_RsiModel model)
+        private readonly bool _isFollow;
+        public userFollow_RSI(FollowSetting_RsiModel model, bool isFollow)
         {
             InitializeComponent();
+            _isFollow = isFollow;
+            InitControl();
             InitData(model);
             toolTip1.SetToolTip(cmbOption, "tùy chọn");
             toolTip1.SetToolTip(nmValue, "giá trị");
             toolTip1.SetToolTip(nmPoint, "điểm");
             toolTip1.SetToolTip(btnDelete, "Xóa");
         }
-
+        private void InitControl()
+        {
+            nmPoint.Visible = _isFollow;
+        }
         private void InitData(FollowSetting_RsiModel model)
         {
             if (model == null)

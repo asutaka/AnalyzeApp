@@ -15,26 +15,26 @@ namespace AnalyzeApp.API.Impl
                 connectionString :
                 throw new ArgumentNullException(nameof(connectionString));
         }
-        public async Task<UserModel> GetUser()
+        public async Task<ProfileModel> GetProfile()
         {
             try
             {
                 using (var conn = new SqliteConnection(_connString))
                 {
                     await conn.OpenAsync();
-                    var result = await conn.QueryAsync<UserModel>("select * from UserTable", commandTimeout: 5, commandType: CommandType.Text);
+                    var result = await conn.QueryAsync<ProfileModel>("select * from ProfileTable", commandTimeout: 5, commandType: CommandType.Text);
                     if (result != null && result.Any())
                         return result.First();
                 }
             }
             catch (Exception ex)
             {
-                NLogLogger.PublishException(ex, $"AnalyzeRepo:GetUser: {ex.Message}");
+                NLogLogger.PublishException(ex, $"AnalyzeRepo:GetProfile: {ex.Message}");
             }
             return new UserModel();
         }
 
-        public async Task<int> InsertUser(UserModel model)
+        public async Task<int> InsertProfile(ProfileModel model)
         {
             try
             {
@@ -44,31 +44,34 @@ namespace AnalyzeApp.API.Impl
                     var parameter = new DynamicParameters();
                     parameter.Add(name: "@Phone", dbType: DbType.String, direction: ParameterDirection.Input, value: model.Phone);
                     parameter.Add(name: "@Code", dbType: DbType.String, direction: ParameterDirection.Input, value: model.Code);
-                    var result = await conn.ExecuteAsync($"INSERT INTO UserTable(Phone, Code) VALUES (@Phone, @Code)", param: parameter, commandTimeout: 5, commandType: CommandType.Text);
+                    parameter.Add(name: "@Email", dbType: DbType.String, direction: ParameterDirection.Input, value: model.Email);
+                    parameter.Add(name: "@LinkAvatar", dbType: DbType.String, direction: ParameterDirection.Input, value: model.LinkAvatar);
+                    parameter.Add(name: "@IsNotify", dbType: DbType.Boolean, direction: ParameterDirection.Input, value: model.IsNotify);
+                    var result = await conn.ExecuteAsync($"INSERT INTO ProfileTable(Phone, Code, Email, LinkAvatar, IsNotify) VALUES (@Phone, @Code, @Email, @LinkAvatar, @IsNotify)", param: parameter, commandTimeout: 5, commandType: CommandType.Text);
                     return result;
                 }
             }
             catch (Exception ex)
             {
-                NLogLogger.PublishException(ex, $"AnalyzeRepo:InsertUser: {ex.Message}");
+                NLogLogger.PublishException(ex, $"AnalyzeRepo:InsertProfile: {ex.Message}");
             }
             return -1;
         }
 
-        public async Task<int> DeleteUser()
+        public async Task<int> DeleteProfile()
         {
             try
             {
                 using (var conn = new SqliteConnection(_connString))
                 {
                     await conn.OpenAsync();
-                    var result = await conn.ExecuteAsync($"DELETE from UserTable", commandTimeout: 5, commandType: CommandType.Text);
+                    var result = await conn.ExecuteAsync($"DELETE from ProfileTable", commandTimeout: 5, commandType: CommandType.Text);
                     return result;
                 }
             }
             catch (Exception ex)
             {
-                NLogLogger.PublishException(ex, $"AnalyzeRepo:DeleteUser: {ex.Message}");
+                NLogLogger.PublishException(ex, $"AnalyzeRepo:DeleteProfile: {ex.Message}");
             }
             return -1;
         }

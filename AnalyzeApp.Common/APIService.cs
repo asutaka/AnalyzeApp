@@ -30,16 +30,16 @@ namespace AnalyzeApp.Common
             client.BaseAddress = new Uri(ConstVal.api);
         }
 
-        public async Task<UserModel> GetUser()
+        public async Task<ProfileModel> GetProfile()
         {
             try
             {
-                var response = await client.GetAsync("Setting/GetUser");
-                return JsonConvert.DeserializeObject<UserModel>(await response.Content.ReadAsStringAsync());
+                var response = await client.GetAsync("Setting/GetProfile");
+                return JsonConvert.DeserializeObject<ProfileModel>(await response.Content.ReadAsStringAsync());
             }
             catch (Exception ex)
             {
-                NLogLogger.PublishException(ex, $"APIService|GetUser: {ex.Message}");
+                NLogLogger.PublishException(ex, $"APIService|GetProfile: {ex.Message}");
             }
             return null;
         }
@@ -86,32 +86,32 @@ namespace AnalyzeApp.Common
             return null;
         }
 
-        public async Task<long> InsertUser(UserModel model)
+        public async Task<long> InsertProfile(ProfileModel model)
         {
             try
             {
                 HttpContent c = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, "application/json");
-                await client.PostAsync("Setting/InsertUser", c);
+                await client.PostAsync("Setting/InsertProfile", c);
                 return 1;
             }
             catch (Exception ex)
             {
-                NLogLogger.PublishException(ex, $"APIService|InsertUser: {ex.Message}");
+                NLogLogger.PublishException(ex, $"APIService|InsertProfile: {ex.Message}");
             }
             return -1;
         }
 
-        public async Task<long> DeleteUser()
+        public async Task<long> DeleteProfile()
         {
             try
             {
                 HttpContent c = new StringContent(String.Empty, Encoding.UTF8, "application/json");
-                await client.PostAsync("Setting/DeleteUser", c);
+                await client.PostAsync("Setting/DeleteProfile", c);
                 return 1;
             }
             catch (Exception ex)
             {
-                NLogLogger.PublishException(ex, $"APIService|DeleteUser: {ex.Message}");
+                NLogLogger.PublishException(ex, $"APIService|DeleteProfile: {ex.Message}");
             }
             return -1;
         }

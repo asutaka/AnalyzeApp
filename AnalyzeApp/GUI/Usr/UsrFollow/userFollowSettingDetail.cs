@@ -14,19 +14,24 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
     {
         private BarManager barManager1 = null;
         private PopupMenu popupMenu1 = null;
-        private BarButtonItem btnMACD = null;
-        private BarButtonItem btnMA = null;
-        private BarButtonItem btnPrice = null;
-        private BarButtonItem btnMCDX = null;
-        private BarButtonItem btnRSI = null;
         private BarButtonItem btnADX = null;
+        private BarButtonItem btnMA = null;
+        private BarButtonItem btnMACD = null;
+        private BarButtonItem btnMCDX = null;
+        private BarButtonItem btnPrice = null;
+        private BarButtonItem btnRSI = null;
+        private BarButtonItem btnVolume1 = null;
+        private BarButtonItem btnVolume2 = null;
+       
         public FollowSettingModel _model = Config.FollowSetting;
         private FollowSettingModeModel _modelMode;
         private readonly int _num;
-        public userFollowSettingDetail(int num)
+        private readonly bool _isFollow;
+        public userFollowSettingDetail(int num, bool isFollow)
         {
             InitializeComponent();
             _num = num;
+            _isFollow = isFollow;
             InitControls();
             InitData();
         }
@@ -135,16 +140,23 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
 
         private void InitControls()
         {
+            lblPointCondition.Visible = !_isFollow;
+            nmPointCondition.Visible = !_isFollow;
+            txtTitle.Visible = _isFollow;
+
             barManager1 = new BarManager();
             barManager1.Form = this;
 
             popupMenu1 = new PopupMenu(barManager1);
-            btnMACD = new BarButtonItem(barManager1, "MACD");
-            btnMA = new BarButtonItem(barManager1, "MA / EMA");
-            btnPrice = new BarButtonItem(barManager1, "Giá");
-            btnMCDX = new BarButtonItem(barManager1, "MCDX");
-            btnRSI = new BarButtonItem(barManager1, "RSI");
             btnADX = new BarButtonItem(barManager1, "ADX");
+            btnMA = new BarButtonItem(barManager1, "MA / EMA");
+            btnMACD = new BarButtonItem(barManager1, "MACD");
+            btnMCDX = new BarButtonItem(barManager1, "MCDX");
+            btnPrice = new BarButtonItem(barManager1, "Giá");
+            btnRSI = new BarButtonItem(barManager1, "RSI");
+            btnVolume1 = new BarButtonItem(barManager1, "Volume 1");
+            btnVolume2 = new BarButtonItem(barManager1, "Volume 2");
+           
             popupMenu1.AddItem(btnMACD);
             popupMenu1.AddItem(btnMA);
             popupMenu1.AddItem(btnPrice);
@@ -156,13 +168,12 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             // 
             dropDownButton1.DropDownControl = popupMenu1;
             dropDownButton1.Click += new EventHandler(this.dropDownButton1_Click);
-
             // 
-            // btnMACD
+            // btnADX
             // 
-            btnMACD.ImageOptions.Image = Properties.Resources.green;
-            btnMACD.Tag = "MACD";
-            btnMACD.ItemClick += new ItemClickEventHandler(this.btnMACD_ItemClick);
+            btnADX.ImageOptions.Image = Properties.Resources.green;
+            btnADX.Tag = "ADX";
+            btnADX.ItemClick += new ItemClickEventHandler(this.btnADX_ItemClick);
             // 
             // btnMA
             // 
@@ -170,11 +181,11 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             btnMA.Tag = "MA";
             btnMA.ItemClick += new ItemClickEventHandler(this.btnMA_ItemClick);
             // 
-            // btnPrice
+            // btnMACD
             // 
-            btnPrice.ImageOptions.Image = Properties.Resources.green;
-            btnPrice.Tag = "Price";
-            btnPrice.ItemClick += new ItemClickEventHandler(this.btnPrice_ItemClick);
+            btnMACD.ImageOptions.Image = Properties.Resources.green;
+            btnMACD.Tag = "MACD";
+            btnMACD.ItemClick += new ItemClickEventHandler(this.btnMACD_ItemClick);
             // 
             // btnMCDX
             // 
@@ -182,17 +193,29 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             btnMCDX.Tag = "MCDX";
             btnMCDX.ItemClick += new ItemClickEventHandler(this.btnMCDX_ItemClick);
             // 
+            // btnPrice
+            // 
+            btnPrice.ImageOptions.Image = Properties.Resources.green;
+            btnPrice.Tag = "Price";
+            btnPrice.ItemClick += new ItemClickEventHandler(this.btnPrice_ItemClick);
+            // 
             // btnRSI
             // 
             btnRSI.ImageOptions.Image = Properties.Resources.green;
             btnRSI.Tag = "RSI";
             btnRSI.ItemClick += new ItemClickEventHandler(this.btnRSI_ItemClick);
             // 
-            // btnADX
+            // btnVolume1
             // 
-            btnADX.ImageOptions.Image = Properties.Resources.green;
-            btnADX.Tag = "ADX";
-            btnADX.ItemClick += new ItemClickEventHandler(this.btnADX_ItemClick);
+            btnVolume1.ImageOptions.Image = Properties.Resources.green;
+            btnVolume1.Tag = "Volume1";
+            btnVolume1.ItemClick += new ItemClickEventHandler(this.btnRSI_ItemClick);
+            // 
+            // btnVolume2
+            // 
+            btnVolume2.ImageOptions.Image = Properties.Resources.green;
+            btnVolume2.Tag = "Volume2";
+            btnVolume2.ItemClick += new ItemClickEventHandler(this.btnRSI_ItemClick);
         }
 
         private void InitData()
@@ -240,42 +263,42 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             {
                 foreach (var item in model.lFollowSetting_Adx)
                 {
-                    pnl.Controls.Add(new userFollow_ADX(item));
+                    pnl.Controls.Add(new userFollow_ADX(item, _isFollow));
                 }
             }
             if (model.lFollowSetting_Ma != null && model.lFollowSetting_Ma.Any())
             {
                 foreach (var item in model.lFollowSetting_Ma)
                 {
-                    pnl.Controls.Add(new userFollow_MA(item));
+                    pnl.Controls.Add(new userFollow_MA(item, _isFollow));
                 }
             }
             if (model.lFollowSetting_Macd != null && model.lFollowSetting_Macd.Any())
             {
                 foreach (var item in model.lFollowSetting_Macd)
                 {
-                    pnl.Controls.Add(new userFollow_MACD(item));
+                    pnl.Controls.Add(new userFollow_MACD(item, _isFollow));
                 }
             }
             if (model.lFollowSetting_Mcdx != null && model.lFollowSetting_Mcdx.Any())
             {
                 foreach (var item in model.lFollowSetting_Mcdx)
                 {
-                    pnl.Controls.Add(new userFollow_MCDX(item));
+                    pnl.Controls.Add(new userFollow_MCDX(item, _isFollow));
                 }
             }
             if (model.lFollowSetting_Price != null && model.lFollowSetting_Price.Any())
             {
                 foreach (var item in model.lFollowSetting_Price)
                 {
-                    pnl.Controls.Add(new userFollow_Price(item));
+                    pnl.Controls.Add(new userFollow_Price(item, _isFollow));
                 }
             }
             if (model.lFollowSetting_Rsi != null && model.lFollowSetting_Rsi.Any())
             {
                 foreach (var item in model.lFollowSetting_Rsi)
                 {
-                    pnl.Controls.Add(new userFollow_RSI(item));
+                    pnl.Controls.Add(new userFollow_RSI(item, _isFollow));
                 }
             }
             foreach (Control item in pnl.Controls)
@@ -327,6 +350,20 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             RSI();
         }
 
+        private void btnVolume1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UpdateDropDownButton(e.Item);
+            //...
+            Volume1();
+        }
+
+        private void btnVolume2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UpdateDropDownButton(e.Item);
+            //...
+            Volume2();
+        }
+
         private void btnADX_ItemClick(object sender, ItemClickEventArgs e)
         {
             UpdateDropDownButton(e.Item);
@@ -348,59 +385,77 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             if (tagObj == null)
                 return;
             var tag = tagObj.ToString();
-            if (tag == "MACD")
+            if (tag == "ADX")
             {
-                MACD();
+                ADX();
             }
             else if (tag == "MA")
             {
                 MA();
             }
-            else if (tag == "Price")
+            else if (tag == "MACD")
             {
-                Price();
+                MACD();
             }
             else if (tag == "MCDX")
             {
                 MCDX();
             }
+            else if (tag == "Price")
+            {
+                Price();
+            }
             else if (tag == "RSI")
             {
                 RSI();
             }
-            else if (tag == "ADX")
+            else if (tag == "Volume1")
             {
-                ADX();
+                Volume1();
+            }
+            else if (tag == "Volume2")
+            {
+                Volume2();
             }
         }
 
         private void MACD()
         {
-            ((FlowLayoutPanel)tabMain.SelectedPage.Controls[0]).Controls.Add(new userFollow_MACD(null));
+            ((FlowLayoutPanel)tabMain.SelectedPage.Controls[0]).Controls.Add(new userFollow_MACD(null, _isFollow));
         }
 
         private void MA()
         {
-            ((FlowLayoutPanel)tabMain.SelectedPage.Controls[0]).Controls.Add(new userFollow_MA(null));
+            ((FlowLayoutPanel)tabMain.SelectedPage.Controls[0]).Controls.Add(new userFollow_MA(null, _isFollow));
         }
 
         private void Price()
         {
-            ((FlowLayoutPanel)tabMain.SelectedPage.Controls[0]).Controls.Add(new userFollow_Price(null));
+            ((FlowLayoutPanel)tabMain.SelectedPage.Controls[0]).Controls.Add(new userFollow_Price(null, _isFollow));
         }
         private void MCDX()
         {
-            ((FlowLayoutPanel)tabMain.SelectedPage.Controls[0]).Controls.Add(new userFollow_MCDX(null));
+            ((FlowLayoutPanel)tabMain.SelectedPage.Controls[0]).Controls.Add(new userFollow_MCDX(null, _isFollow));
         }
 
         private void RSI()
         {
-            ((FlowLayoutPanel)tabMain.SelectedPage.Controls[0]).Controls.Add(new userFollow_RSI(null));
+            ((FlowLayoutPanel)tabMain.SelectedPage.Controls[0]).Controls.Add(new userFollow_RSI(null, _isFollow));
         }
 
         private void ADX()
         {
-            ((FlowLayoutPanel)tabMain.SelectedPage.Controls[0]).Controls.Add(new userFollow_ADX(null));
+            ((FlowLayoutPanel)tabMain.SelectedPage.Controls[0]).Controls.Add(new userFollow_ADX(null, _isFollow));
+        }
+
+        private void Volume1()
+        {
+            ((FlowLayoutPanel)tabMain.SelectedPage.Controls[0]).Controls.Add(new userFollow_Volume(null, _isFollow));
+        }
+
+        private void Volume2()
+        {
+            ((FlowLayoutPanel)tabMain.SelectedPage.Controls[0]).Controls.Add(new userFollow_Volume2(null, _isFollow));
         }
     }
 }

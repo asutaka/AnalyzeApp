@@ -4,9 +4,9 @@ namespace AnalyzeApp.API.Interface
 {
     public interface IAnalyzeService
     {
-        Task<UserModel> GetUser();
-        Task<int> InsertUser(UserModel model);
-        Task<int> DeleteUser();
+        Task<ProfileModel> GetProfile();
+        Task<int> InsertProfile(ProfileModel model);
+        Task<int> DeleteProfile();
 
         Task<List<SettingModel>> GetSettings();
         Task<int> InsertSetting(SettingModel model);

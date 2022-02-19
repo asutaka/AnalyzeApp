@@ -16,9 +16,9 @@ namespace AnalyzeApp.API.Impl
             return await _repo.GetSettings();
         }
 
-        public async Task<UserModel> GetUser()
+        public async Task<ProfileModel> GetProfile()
         {
-            return await _repo.GetUser();
+            return await _repo.GetProfile();
         }
 
         public async Task<int> InsertNotify(NotifyModel model)
@@ -48,14 +48,14 @@ namespace AnalyzeApp.API.Impl
             return await TeleClient.GenerateSession(phone, apiId, apiHash, model.VerifyCode, model.IsService);
         }
 
-        public async Task<int> InsertUser(UserModel model)
+        public async Task<int> InsertProfile(ProfileModel model)
         {
-            return await _repo.InsertUser(model);
+            return await _repo.InsertProfile(model);
         }
 
-        public async Task<int> DeleteUser()
+        public async Task<int> DeleteProfile()
         {
-            return await _repo.DeleteUser();
+            return await _repo.DeleteProfile();
         }
 
         public async Task<int> InsertSetting(SettingModel model)

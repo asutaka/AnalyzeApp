@@ -58,11 +58,11 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         private void InitData()
         {
             LoadInternalNotify();
-            user1 = new userFollowSettingDetail(1);
-            user2 = new userFollowSettingDetail(2);
-            user3 = new userFollowSettingDetail(3);
-            user4 = new userFollowSettingDetail(4);
-            user5 = new userFollowSettingDetail(5);
+            user1 = new userFollowSettingDetail(1, true);
+            user2 = new userFollowSettingDetail(2, true);
+            user3 = new userFollowSettingDetail(3, true);
+            user4 = new userFollowSettingDetail(4, true);
+            user5 = new userFollowSettingDetail(5, true);
             
             tp1.AddControl(user1);
             tp2.AddControl(user2);

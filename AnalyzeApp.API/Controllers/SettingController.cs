@@ -14,24 +14,24 @@ namespace AnalyzeApp.API.Controllers
             _service = service;
         }
 
-        [HttpGet(Name = "GetUser")]
-        public async Task<IActionResult> GetUser()
+        [HttpGet(Name = "GetProfile")]
+        public async Task<IActionResult> GetProfile()
         {
-            var result = await _service.GetUser();
+            var result = await _service.GetProfile();
             return Ok(result);
         }
 
-        [HttpPost(Name = "InsertUser")]
-        public async Task<IActionResult> InsertUser([FromBody] UserModel model)
+        [HttpPost(Name = "InsertProfile")]
+        public async Task<IActionResult> InsertProfile([FromBody] ProfileModel model)
         {
-            var result = await _service.InsertUser(model);
+            var result = await _service.InsertProfile(model);
             return Ok(result);
         }
 
-        [HttpPost(Name = "DeleteUser")]
-        public async Task<IActionResult> DeleteUser()
+        [HttpPost(Name = "DeleteProfile")]
+        public async Task<IActionResult> DeleteProfile()
         {
-            var result = await _service.DeleteUser();
+            var result = await _service.DeleteProfile();
             return Ok(result);
         }
 

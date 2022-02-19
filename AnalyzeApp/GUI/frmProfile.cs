@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -12,7 +13,7 @@ namespace AnalyzeApp.GUI
 {
     public partial class frmProfile : XtraForm
     {
-        private ProfileModel _profile = StaticVal.profile;
+        private ProfileModel _profile = null;
         private BackgroundWorker _bkgr = new BackgroundWorker();
         private WaitFunc _frmWaitForm = new WaitFunc();
         private frmProfile()
@@ -34,25 +35,31 @@ namespace AnalyzeApp.GUI
             wrkr.WorkerReportsProgress = true;
 
             wrkr.DoWork += (object sender, DoWorkEventArgs e) => {
-                var objUser = APIService.Instance().GetUser().Result;
+                _profile = APIService.Instance().GetProfile().GetAwaiter().GetResult();
                 this.Invoke((MethodInvoker)delegate
                 {
-                    if (objUser != null)
+                    if (_profile != null)
                     {
-                        StaticVal.profile.Phone = objUser.Phone;
-                        txtPhone.Text = objUser.Phone;
-                        if (!string.IsNullOrWhiteSpace(objUser.Code))
+                        StaticVal.profile = _profile;
+                        txtPhone.Text = _profile.Phone;
+                        if (!string.IsNullOrWhiteSpace(_profile.Code))
                         {
-                            StaticVal.profile.Code = objUser.Code;
-                            txtCode.Text = objUser.Code;
+                            txtCode.Text = _profile.Code;
+                        }
+                        lblEmail.Text = _profile.Email;
+                        chkNotify.Checked = _profile.IsNotify;
+                        if (!string.IsNullOrWhiteSpace(_profile.LinkAvatar))
+                        {
+                            try
+                            {
+                                picAvatar.Load($"{Directory.GetCurrentDirectory()}//{_profile.LinkAvatar}");
+                            }
+                            catch (Exception ex)
+                            {
+                                NLogLogger.PublishException(ex, $"frmProfile|Init: {ex.Message}");
+                            }
                         }
                     }
-
-                    lblUserName.Text = _profile.Name;
-                    lblEmail.Text = _profile.Email;
-                    lblLocale.Text = _profile.Locale;
-                    if (!string.IsNullOrWhiteSpace(_profile.Picture))
-                        picAvatar.Load(_profile.Picture);
                     btnOk.Focus();
                 });
                 _bkgr.DoWork += bkgrCheckStatus_DoWork;
@@ -223,6 +230,11 @@ namespace AnalyzeApp.GUI
         {
             ToolTip tt = new ToolTip();
             tt.SetToolTip(this.picSupport, "Liên hệ lấy code");
+        }
+
+        private void picAvatar_DoubleClick(object sender, EventArgs e)
+        {
+
         }
     }
 }

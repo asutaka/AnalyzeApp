@@ -5,9 +5,12 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
 {
     public partial class userFollow_Price : UserControl
     {
-        public userFollow_Price(FollowSetting_PriceModel model)
+        private readonly bool _isFollow;
+        public userFollow_Price(FollowSetting_PriceModel model, bool isFollow)
         {
             InitializeComponent();
+            _isFollow = isFollow;
+            InitControl();
             InitData(model);
             toolTip1.SetToolTip(cmbOption, "tùy chọn");
             toolTip1.SetToolTip(cmbMode, "chỉ báo");
@@ -15,6 +18,10 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             toolTip1.SetToolTip(nmRatioMax, "biên độ tối đa(%)");
             toolTip1.SetToolTip(nmPoint, "điểm");
             toolTip1.SetToolTip(btnDelete, "Xóa");
+        }
+        private void InitControl()
+        {
+            nmPoint.Visible = _isFollow;
         }
 
         private void InitData(FollowSetting_PriceModel model)
