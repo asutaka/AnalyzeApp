@@ -81,16 +81,14 @@ namespace AnalyzeApp.GUI
 
         private bool UpdateUserModel()
         {
-            var model = new UserModel
-            {
-                Phone = txtPhone.Text.Trim().PhoneFormat(),
-                Code = txtCode.Text.Trim()
-            };
+            _profile.Phone = txtPhone.Text.Trim().PhoneFormat();
+            _profile.Code = txtCode.Text.Trim();
+            _profile.Email = lblEmail.Text;
+            _profile.IsNotify = chkNotify.Checked;
 
-            APIService.Instance().DeleteUser();
-            APIService.Instance().InsertUser(model);
-            StaticVal.profile.Phone = model.Phone;
-            StaticVal.profile.Code = model.Code;
+            APIService.Instance().DeleteProfile();
+            APIService.Instance().InsertProfile(_profile);
+            StaticVal.profile = _profile;
             return true;
         }
 
@@ -234,7 +232,17 @@ namespace AnalyzeApp.GUI
 
         private void picAvatar_DoubleClick(object sender, EventArgs e)
         {
-
+            //if (!string.IsNullOrWhiteSpace(_profile.LinkAvatar))
+            //{
+            //    try
+            //    {
+            //        picAvatar.Load($"{Directory.GetCurrentDirectory()}//{_profile.LinkAvatar}");
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        NLogLogger.PublishException(ex, $"frmProfile|Init: {ex.Message}");
+            //    }
+            //}
         }
     }
 }

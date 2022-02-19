@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\DATA\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj": {}
+    "D:\\Data\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj": {}
   },
   "projects": {
-    "F:\\DATA\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj": {
+    "D:\\Data\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\DATA\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj",
+        "projectUniqueName": "D:\\Data\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj",
         "projectName": "AnalyzeApp.API",
-        "projectPath": "F:\\DATA\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj",
-        "packagesPath": "C:\\Users\\asuta\\.nuget\\packages\\",
-        "outputPath": "F:\\DATA\\AnalyzeApp\\AnalyzeApp.API\\obj\\",
+        "projectPath": "D:\\Data\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj",
+        "packagesPath": "C:\\Users\\asutaka\\.nuget\\packages\\",
+        "outputPath": "D:\\Data\\AnalyzeApp\\AnalyzeApp.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\asuta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\asutaka\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -113,7 +113,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

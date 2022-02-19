@@ -31,7 +31,7 @@ namespace AnalyzeApp.API.Impl
             {
                 NLogLogger.PublishException(ex, $"AnalyzeRepo:GetProfile: {ex.Message}");
             }
-            return new UserModel();
+            return new ProfileModel();
         }
 
         public async Task<int> InsertProfile(ProfileModel model)
