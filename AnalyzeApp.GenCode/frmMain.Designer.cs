@@ -123,6 +123,7 @@ namespace AnalyzeApp.GenCode
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(329, 20);
             this.txtEmail.TabIndex = 1;
+            this.txtEmail.Text = "nguyenphu1312@gmail.com";
             // 
             // label1
             // 

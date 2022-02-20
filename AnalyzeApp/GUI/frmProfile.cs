@@ -15,7 +15,6 @@ namespace AnalyzeApp.GUI
     public partial class frmProfile : XtraForm
     {
         private ProfileModel _profile = null;
-        private BackgroundWorker _bkgr = new BackgroundWorker();
         private WaitFunc _frmWaitForm = new WaitFunc();
         private frmProfile()
         {
@@ -67,8 +66,6 @@ namespace AnalyzeApp.GUI
                     else 
                         btnOk.Focus();
                 });
-                _bkgr.DoWork += bkgrCheckStatus_DoWork;
-                _bkgr.RunWorkerCompleted += bkgrCheckStatus_RunWorkerCompleted;
                 wrkr.Dispose();
             };
             wrkr.RunWorkerAsync();
@@ -140,58 +137,58 @@ namespace AnalyzeApp.GUI
             btnPaste.Enabled = false;
             StaticVal.IsExecCheckCodeActive = true;
             picStatus.Image = Properties.Resources.yellow;
-            _bkgr.RunWorkerAsync();
-        }
 
-        private void bkgrCheckStatus_DoWork(object sender, DoWorkEventArgs e)
-        {
-            _frmWaitForm.Show("Kiểm tra trạng thái");
-           
-            var time = CommonMethod.GetTimeAsync().GetAwaiter().GetResult();
-            var jsonModel = Security.Decrypt(txtCode.Text.Trim());
-            if (string.IsNullOrWhiteSpace(jsonModel))
-            {
-                StaticVal.IsCodeActive = false;
-            }
-            else
-            {
-                var model = JsonConvert.DeserializeObject<GenCodeModel>(jsonModel);
-                if(!txtEmail.Text.Trim().Contains(model.Email) || model.Expired <= time)
+            BackgroundWorker wrkr = new BackgroundWorker();
+            wrkr.DoWork += (object sender1, DoWorkEventArgs e1) => {
+                _profile = APIService.Instance().GetProfile().GetAwaiter().GetResult();
+                this.Invoke((MethodInvoker)delegate
                 {
-                    StaticVal.IsCodeActive = false;
-                }
-                else
-                {
-                    StaticVal.IsCodeActive = true;
-                    StaticVal.Level = model.Level;
-                }
-            }
-            Thread.Sleep(200);
-            _frmWaitForm.Close();
-        }
+                    _frmWaitForm.Show("Kiểm tra trạng thái");
+                    //var time = CommonMethod.GetTimeAsync().GetAwaiter().GetResult();
+                    var time = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
 
-        private void bkgrCheckStatus_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            picStatus.Image = StaticVal.IsCodeActive ? Properties.Resources.green : Properties.Resources.red;
-            this.Invoke((MethodInvoker)delegate
-            {
-                btnPaste.Enabled = true;
-            });
+                    var jsonModel = Security.Decrypt(txtCode.Text.Trim());
+                    if (string.IsNullOrWhiteSpace(jsonModel))
+                    {
+                        StaticVal.IsCodeActive = false;
+                    }
+                    else
+                    {
+                        var model = JsonConvert.DeserializeObject<GenCodeModel>(jsonModel);
+                        if (!txtEmail.Text.Trim().Contains(model.Email) || model.Expired <= time)
+                        {
+                            StaticVal.IsCodeActive = false;
+                        }
+                        else
+                        {
+                            StaticVal.IsCodeActive = true;
+                            StaticVal.Level = model.Level;
+                        }
+                    }
+                    //
+                    picStatus.Image = StaticVal.IsCodeActive ? Properties.Resources.green : Properties.Resources.red;
+                    btnPaste.Enabled = true;
+                    if (!StaticVal.IsCodeActive)
+                    {
+                        txtCode.Text = string.Empty;
+                    }
+                    else
+                    {
+                        UpdateUserModel();
+                        if (!StaticVal.IsAccessMain)
+                        {
+                            Hide();
+                            frmMain.Instance().Show();
+                        }
+                    }
+                    StaticVal.IsExecCheckCodeActive = false;
 
-            if (!StaticVal.IsCodeActive)
-            {
-                txtCode.Text = string.Empty;
-            }
-            else
-            {
-                UpdateUserModel();
-                if (!StaticVal.IsAccessMain)
-                {
-                    Hide();
-                    frmMain.Instance().Show();
-                }
-            }
-            StaticVal.IsExecCheckCodeActive = false;
+                    Thread.Sleep(200);
+                    _frmWaitForm.Close();
+                });
+                wrkr.Dispose();
+            };
+            wrkr.RunWorkerAsync();
         }
 
         private void frmProfile_FormClosing(object sender, FormClosingEventArgs e)
