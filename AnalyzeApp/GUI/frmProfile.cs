@@ -6,6 +6,7 @@ using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -38,29 +39,33 @@ namespace AnalyzeApp.GUI
                 _profile = APIService.Instance().GetProfile().GetAwaiter().GetResult();
                 this.Invoke((MethodInvoker)delegate
                 {
+                    this.Enabled = true;
                     if (_profile != null)
                     {
                         StaticVal.profile = _profile;
                         txtPhone.Text = _profile.Phone;
-                        if (!string.IsNullOrWhiteSpace(_profile.Code))
-                        {
-                            txtCode.Text = _profile.Code;
-                        }
-                        lblEmail.Text = _profile.Email;
+                        txtEmail.Text = _profile.Email;
                         chkNotify.Checked = _profile.IsNotify;
                         if (!string.IsNullOrWhiteSpace(_profile.LinkAvatar))
                         {
                             try
                             {
-                                picAvatar.Load($"{Directory.GetCurrentDirectory()}//{_profile.LinkAvatar}");
+                                picAvatar.Load(_profile.LinkAvatar);
                             }
                             catch (Exception ex)
                             {
                                 NLogLogger.PublishException(ex, $"frmProfile|Init: {ex.Message}");
                             }
                         }
+                        if (!string.IsNullOrWhiteSpace(_profile.Code))
+                        {
+                            txtCode.Text = _profile.Code;
+                        }
                     }
-                    btnOk.Focus();
+                    if (string.IsNullOrWhiteSpace(txtEmail.Text))
+                        txtEmail.Focus();
+                    else 
+                        btnOk.Focus();
                 });
                 _bkgr.DoWork += bkgrCheckStatus_DoWork;
                 _bkgr.RunWorkerCompleted += bkgrCheckStatus_RunWorkerCompleted;
@@ -69,22 +74,13 @@ namespace AnalyzeApp.GUI
             wrkr.RunWorkerAsync();
         }
 
-        private void StateEdit(bool isEdit)
-        {
-            btnEdit.Visible = !isEdit;
-            btnSave.Visible = isEdit;
-            btnCancel.Visible = isEdit;
-            txtPhone.Properties.ReadOnly = !isEdit;
-            if(isEdit)
-                txtPhone.Focus();
-        }
-
         private bool UpdateUserModel()
         {
             _profile.Phone = txtPhone.Text.Trim().PhoneFormat();
             _profile.Code = txtCode.Text.Trim();
-            _profile.Email = lblEmail.Text;
+            _profile.Email = txtEmail.Text;
             _profile.IsNotify = chkNotify.Checked;
+            _profile.LinkAvatar = string.IsNullOrWhiteSpace(picAvatar.ImageLocation) ? string.Empty : picAvatar.ImageLocation;
 
             APIService.Instance().DeleteProfile();
             APIService.Instance().InsertProfile(_profile);
@@ -115,11 +111,7 @@ namespace AnalyzeApp.GUI
 
         private void btnOk_Click(object sender, System.EventArgs e)
         {
-            //PHUNV
-            Hide();
-            frmMain.Instance().Show();
-            //PHUNV
-            //CloseAppCheck();
+            CloseAppCheck();
         }
 
         private void btnPaste_Click(object sender, System.EventArgs e)
@@ -137,26 +129,6 @@ namespace AnalyzeApp.GUI
             }
         }
 
-        private void btnEdit_Click(object sender, System.EventArgs e)
-        {
-            StateEdit(true);
-        }
-
-        private void btnCancel_Click(object sender, System.EventArgs e)
-        {
-            StateEdit(false);
-        }
-
-        private void btnSave_Click(object sender, System.EventArgs e)
-        {
-            StateEdit(false);
-            if (!UpdateUserModel())
-            {
-                MessageBox.Show("Cập nhật không thành công!");
-            }
-            txtPhone.Text = StaticVal.profile.Phone;
-        }
-
         private void txtCode_EditValueChanged(object sender, System.EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtCode.Text))
@@ -165,6 +137,7 @@ namespace AnalyzeApp.GUI
             }
             if (StaticVal.IsExecCheckCodeActive)
                 return;
+            btnPaste.Enabled = false;
             StaticVal.IsExecCheckCodeActive = true;
             picStatus.Image = Properties.Resources.yellow;
             _bkgr.RunWorkerAsync();
@@ -173,7 +146,6 @@ namespace AnalyzeApp.GUI
         private void bkgrCheckStatus_DoWork(object sender, DoWorkEventArgs e)
         {
             _frmWaitForm.Show("Kiểm tra trạng thái");
-            //btnPaste.Enabled = false;
            
             var time = CommonMethod.GetTimeAsync().GetAwaiter().GetResult();
             var jsonModel = Security.Decrypt(txtCode.Text.Trim());
@@ -184,7 +156,7 @@ namespace AnalyzeApp.GUI
             else
             {
                 var model = JsonConvert.DeserializeObject<GenCodeModel>(jsonModel);
-                if(!_profile.Email.Contains(model.Email) || model.Expired <= time)
+                if(!txtEmail.Text.Trim().Contains(model.Email) || model.Expired <= time)
                 {
                     StaticVal.IsCodeActive = false;
                 }
@@ -201,7 +173,10 @@ namespace AnalyzeApp.GUI
         private void bkgrCheckStatus_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             picStatus.Image = StaticVal.IsCodeActive ? Properties.Resources.green : Properties.Resources.red;
-            //btnPaste.Enabled = true;
+            this.Invoke((MethodInvoker)delegate
+            {
+                btnPaste.Enabled = true;
+            });
 
             if (!StaticVal.IsCodeActive)
             {
@@ -232,17 +207,32 @@ namespace AnalyzeApp.GUI
 
         private void picAvatar_DoubleClick(object sender, EventArgs e)
         {
-            //if (!string.IsNullOrWhiteSpace(_profile.LinkAvatar))
-            //{
-            //    try
-            //    {
-            //        picAvatar.Load($"{Directory.GetCurrentDirectory()}//{_profile.LinkAvatar}");
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        NLogLogger.PublishException(ex, $"frmProfile|Init: {ex.Message}");
-            //    }
-            //}
+            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                if (!string.IsNullOrWhiteSpace(openFileDialog1.FileName))
+                {
+                    try
+                    {
+                        var extend = openFileDialog1.SafeFileName.Split('.').Last();
+                        var fileName = $"{Guid.NewGuid().ToString().Replace('-', '_')}.{extend}";
+                        var path = $"{Directory.GetCurrentDirectory()}//avatar";
+                        var newPathFile = $"{path}//{fileName}";
+                        foreach (FileInfo file in new DirectoryInfo(path).GetFiles())
+                        {
+                            if (!string.IsNullOrWhiteSpace(_profile.LinkAvatar)
+                                && _profile.LinkAvatar.Equals(file.Name))
+                                continue;
+                            file.Delete();
+                        }
+                        File.Copy(openFileDialog1.FileName, newPathFile);
+                        picAvatar.Load(newPathFile);
+                    }
+                    catch (Exception ex)
+                    {
+                        NLogLogger.PublishException(ex, $"frmProfile|picAvatar_DoubleClick: {ex.Message}");
+                    }
+                }
+            }
         }
     }
 }

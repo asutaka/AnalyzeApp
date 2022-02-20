@@ -18,7 +18,7 @@ namespace AnalyzeApp.Job
             StaticVal.IsExecCheckCodeActive = true;
             var time = CommonMethod.GetTimeAsync().GetAwaiter().GetResult();
 
-            var objUser = new UserModel().LoadJsonFile(_fileName);
+            var objUser = new ProfileModel().LoadJsonFile(_fileName);
             var jsonModel = Security.Decrypt(objUser.Code);
             if (string.IsNullOrWhiteSpace(jsonModel))
             {

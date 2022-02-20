@@ -30,6 +30,8 @@ namespace AnalyzeApp.GUI
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtEmail = new DevExpress.XtraEditors.TextEdit();
+            this.chkNotify = new System.Windows.Forms.CheckBox();
             this.picSupport = new System.Windows.Forms.PictureBox();
             this.picStatus = new System.Windows.Forms.PictureBox();
             this.txtPhone = new DevExpress.XtraEditors.TextEdit();
@@ -40,12 +42,9 @@ namespace AnalyzeApp.GUI
             this.btnOk = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.picAvatar = new System.Windows.Forms.PictureBox();
-            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
-            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.chkNotify = new System.Windows.Forms.CheckBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSupport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhone.Properties)).BeginInit();
@@ -55,6 +54,7 @@ namespace AnalyzeApp.GUI
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.chkNotify);
             this.groupBox1.Controls.Add(this.picSupport);
             this.groupBox1.Controls.Add(this.picStatus);
@@ -66,16 +66,35 @@ namespace AnalyzeApp.GUI
             this.groupBox1.Controls.Add(this.btnOk);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.picAvatar);
-            this.groupBox1.Controls.Add(this.btnEdit);
-            this.groupBox1.Controls.Add(this.btnCancel);
-            this.groupBox1.Controls.Add(this.btnSave);
-            this.groupBox1.Controls.Add(this.lblEmail);
             this.groupBox1.Location = new System.Drawing.Point(3, -1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(416, 241);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(184, 27);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Properties.AppearanceFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtEmail.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtEmail.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.White;
+            this.txtEmail.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.txtEmail.Size = new System.Drawing.Size(179, 20);
+            this.txtEmail.TabIndex = 1;
+            // 
+            // chkNotify
+            // 
+            this.chkNotify.AutoSize = true;
+            this.chkNotify.Checked = true;
+            this.chkNotify.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkNotify.Location = new System.Drawing.Point(118, 103);
+            this.chkNotify.Name = "chkNotify";
+            this.chkNotify.Size = new System.Drawing.Size(103, 17);
+            this.chkNotify.TabIndex = 3;
+            this.chkNotify.Text = "Nhận thông báo";
+            this.chkNotify.UseVisualStyleBackColor = true;
             // 
             // picSupport
             // 
@@ -109,9 +128,8 @@ namespace AnalyzeApp.GUI
             this.txtPhone.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.txtPhone.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.White;
             this.txtPhone.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtPhone.Properties.ReadOnly = true;
-            this.txtPhone.Size = new System.Drawing.Size(131, 20);
-            this.txtPhone.TabIndex = 12;
+            this.txtPhone.Size = new System.Drawing.Size(179, 20);
+            this.txtPhone.TabIndex = 2;
             // 
             // label5
             // 
@@ -127,7 +145,7 @@ namespace AnalyzeApp.GUI
             this.btnPaste.Location = new System.Drawing.Point(363, 148);
             this.btnPaste.Name = "btnPaste";
             this.btnPaste.Size = new System.Drawing.Size(42, 20);
-            this.btnPaste.TabIndex = 10;
+            this.btnPaste.TabIndex = 5;
             this.btnPaste.Text = "paste";
             this.btnPaste.Click += new System.EventHandler(this.btnPaste_Click);
             // 
@@ -139,7 +157,7 @@ namespace AnalyzeApp.GUI
             this.txtCode.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.txtCode.Properties.ReadOnly = true;
             this.txtCode.Size = new System.Drawing.Size(278, 20);
-            this.txtCode.TabIndex = 9;
+            this.txtCode.TabIndex = 4;
             this.txtCode.EditValueChanged += new System.EventHandler(this.txtCode_EditValueChanged);
             // 
             // label4
@@ -172,63 +190,20 @@ namespace AnalyzeApp.GUI
             // 
             // picAvatar
             // 
-            this.picAvatar.BackColor = System.Drawing.Color.White;
+            this.picAvatar.BackColor = System.Drawing.Color.Gainsboro;
+            this.picAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picAvatar.Location = new System.Drawing.Point(9, 20);
             this.picAvatar.Name = "picAvatar";
             this.picAvatar.Size = new System.Drawing.Size(100, 100);
+            this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picAvatar.TabIndex = 0;
             this.picAvatar.TabStop = false;
             this.picAvatar.DoubleClick += new System.EventHandler(this.picAvatar_DoubleClick);
             // 
-            // btnEdit
+            // openFileDialog1
             // 
-            this.btnEdit.ImageOptions.Image = global::AnalyzeApp.Properties.Resources.edit;
-            this.btnEdit.Location = new System.Drawing.Point(314, 52);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(26, 20);
-            this.btnEdit.TabIndex = 13;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.ImageOptions.Image = global::AnalyzeApp.Properties.Resources.cancel;
-            this.btnCancel.Location = new System.Drawing.Point(340, 52);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(23, 20);
-            this.btnCancel.TabIndex = 15;
-            this.btnCancel.Visible = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.ImageOptions.Image = global::AnalyzeApp.Properties.Resources.check;
-            this.btnSave.Location = new System.Drawing.Point(316, 52);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(24, 20);
-            this.btnSave.TabIndex = 14;
-            this.btnSave.Visible = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(181, 24);
-            this.lblEmail.MaximumSize = new System.Drawing.Size(150, 19);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(76, 16);
-            this.lblEmail.TabIndex = 4;
-            this.lblEmail.Text = "user name";
-            // 
-            // chkNotify
-            // 
-            this.chkNotify.AutoSize = true;
-            this.chkNotify.Location = new System.Drawing.Point(118, 103);
-            this.chkNotify.Name = "chkNotify";
-            this.chkNotify.Size = new System.Drawing.Size(103, 17);
-            this.chkNotify.TabIndex = 18;
-            this.chkNotify.Text = "Nhận thông báo";
-            this.chkNotify.UseVisualStyleBackColor = true;
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "Image files|*.jpg;*.jpeg;*.png;";
             // 
             // frmProfile
             // 
@@ -238,6 +213,7 @@ namespace AnalyzeApp.GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(421, 248);
             this.Controls.Add(this.groupBox1);
+            this.Enabled = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.LookAndFeel.SkinName = "McSkin";
             this.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -248,6 +224,7 @@ namespace AnalyzeApp.GUI
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmProfile_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSupport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhone.Properties)).EndInit();
@@ -266,14 +243,12 @@ namespace AnalyzeApp.GUI
         private DevExpress.XtraEditors.TextEdit txtCode;
         private System.Windows.Forms.Label label4;
         private DevExpress.XtraEditors.SimpleButton btnPaste;
-        private DevExpress.XtraEditors.SimpleButton btnCancel;
-        private DevExpress.XtraEditors.SimpleButton btnSave;
-        private DevExpress.XtraEditors.SimpleButton btnEdit;
         private DevExpress.XtraEditors.TextEdit txtPhone;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox picStatus;
         private System.Windows.Forms.PictureBox picSupport;
         private System.Windows.Forms.CheckBox chkNotify;
-        private System.Windows.Forms.Label lblEmail;
+        private DevExpress.XtraEditors.TextEdit txtEmail;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

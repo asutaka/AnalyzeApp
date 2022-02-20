@@ -17,10 +17,10 @@ namespace AnalyzeApp.GUI
             var bkgr = new BackgroundWorker();
             bkgr.DoWork += (object sender, DoWorkEventArgs e) =>
             {
+                Config.LoadConfig().GetAwaiter().GetResult();
                 //Load ListCoin
                 StaticVal.lstCoin = DataMng.GetCoin();
                 StaticVal.lstCoinFilter = StaticVal.lstCoin.Where(x => !Config.BlackLists.Any(y => y.S == x.S)).ToList();
-                Config.LoadConfig().GetAwaiter().GetResult();
                 DataMng.StoredData().GetAwaiter().GetResult();
                 bkgr.Dispose();
             };
