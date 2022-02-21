@@ -32,8 +32,6 @@ namespace AnalyzeApp.GUI
         private void Init()
         {
             BackgroundWorker wrkr = new BackgroundWorker();
-            wrkr.WorkerReportsProgress = true;
-
             wrkr.DoWork += (object sender, DoWorkEventArgs e) => {
                 _profile = APIService.Instance().GetProfile().GetAwaiter().GetResult();
                 this.Invoke((MethodInvoker)delegate
@@ -230,6 +228,25 @@ namespace AnalyzeApp.GUI
                     }
                 }
             }
+        }
+
+        private void picSupport_Click(object sender, EventArgs e)
+        {
+            if(_profile == null)
+            {
+                MessageBox.Show("Chưa có thông tin người nhận");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(_profile.Phone)
+                && string.IsNullOrWhiteSpace(txtPhone.Text.Trim()))
+            {
+                MessageBox.Show("Chưa có thông tin SĐT liên hệ");
+                return;
+            }
+            picSupport.Enabled = false;
+            APIService.Instance().SendMessage(new NotifyModel { Content = ConstVal.strService, IsService = true });
+            Thread.Sleep(1000);
+            picSupport.Enabled = true;
         }
     }
 }

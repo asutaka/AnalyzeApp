@@ -209,16 +209,6 @@ namespace AnalyzeApp.GUI
 
         private void barBtnStart_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //var tmp = StaticValues.ScheduleMngObj.GetSchedules().ElementAt(0);
-            //if (tmp.IsStarted())
-            //{
-            //    tmp.Pause();
-            //    tmp.Resume();
-            //}
-            //else
-            //{
-            //    tmp.Start();
-            //}
             barBtnStart.Enabled = false;
             barBtnStop.Enabled = true;
 

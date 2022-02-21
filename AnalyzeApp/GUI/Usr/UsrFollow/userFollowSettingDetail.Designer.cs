@@ -70,8 +70,7 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             // 
             // txtTitle
             // 
-            this.txtTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTitle.EditValue = "";
             this.txtTitle.Location = new System.Drawing.Point(3, 29);
             this.txtTitle.Name = "txtTitle";
@@ -212,8 +211,7 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             // 
             // pnlTitle
             // 
-            this.pnlTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnlTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlTitle.Controls.Add(this.lblPointCondition);
             this.pnlTitle.Controls.Add(this.nmPointCondition);
