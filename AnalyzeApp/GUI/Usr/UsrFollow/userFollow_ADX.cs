@@ -1,4 +1,6 @@
-﻿using AnalyzeApp.Model.ENTITY;
+﻿using AnalyzeApp.Common;
+using AnalyzeApp.Model.ENTITY;
+using AnalyzeApp.Model.ENUM;
 using System.Windows.Forms;
 
 namespace AnalyzeApp.GUI.Usr.UsrFollow
@@ -25,7 +27,10 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         {
             if (model == null)
                 model = new FollowSetting_AdxModel { Value = 20 };
-            cmbOption.SelectedIndex = model.Option;
+            cmbOption.Properties.BeginUpdate();
+            cmbOption.Properties.DataSource = typeof(enumAboveBelow).EnumToData();
+            cmbOption.Properties.EndUpdate();
+            cmbOption.EditValue = model.Option;
             nmValue.Value = model.Value;
             nmPoint.Value = model.Point;
         }
@@ -34,7 +39,7 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         {
             return new FollowSetting_AdxModel
             {
-                Option = cmbOption.SelectedIndex,
+                Option = (int)cmbOption.EditValue,
                 Value = nmValue.Value,
                 Point = nmPoint.Value
             };

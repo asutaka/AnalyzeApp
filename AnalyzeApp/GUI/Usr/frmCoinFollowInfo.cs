@@ -3,7 +3,6 @@ using AnalyzeApp.Model.ENTITY;
 using AnalyzeApp.Model.ENUM;
 using DevExpress.XtraEditors;
 using System;
-using System.Data;
 
 namespace AnalyzeApp.GUI.Usr
 {
@@ -26,17 +25,14 @@ namespace AnalyzeApp.GUI.Usr
         private void LoadInternalNotify()
         {
             cmbFrequency.Properties.BeginUpdate();
-            foreach (DataRow row in typeof(enumIntervalNotify).EnumToData().Rows)
-            {
-                cmbFrequency.Properties.Items.Add(row["Name"]);
-            }
-            cmbFrequency.SelectedIndex = 0;
+            cmbFrequency.Properties.DataSource = typeof(enumIntervalNotify).EnumToData();
             cmbFrequency.Properties.EndUpdate();
+            cmbFrequency.EditValue = (int)enumIntervalNotify.OneMinute;
         }
 
         private void SetupData()
         {
-            cmbFrequency.SelectedIndex = _model.Interval;
+            cmbFrequency.EditValue = _model.Interval;
             chkState.IsOn = _model.IsNotify;
             foreach (var item in _model.Follows)
             {
@@ -56,7 +52,7 @@ namespace AnalyzeApp.GUI.Usr
 
         private void btnOkAndSave_Click(object sender, EventArgs e)
         {
-            _model.Interval = cmbFrequency.SelectedIndex;
+            _model.Interval = (int)cmbFrequency.EditValue;
             _model.IsNotify = chkState.IsOn;
             _model.Follows.Clear();
             if (pnlMain.Controls.Count > 0)

@@ -29,27 +29,19 @@ namespace AnalyzeApp.GUI.Usr
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmbOption = new System.Windows.Forms.ComboBox();
             this.nmValue = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.picOption = new System.Windows.Forms.PictureBox();
             this.lblClose = new System.Windows.Forms.LinkLabel();
+            this.cmbOption = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Name1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nmValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOption)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbOption.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cmbOption
-            // 
-            this.cmbOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbOption.FormattingEnabled = true;
-            this.cmbOption.Items.AddRange(new object[] {
-            "Giá tăng lên trên",
-            "Giá giảm dưới"});
-            this.cmbOption.Location = new System.Drawing.Point(42, 11);
-            this.cmbOption.Name = "cmbOption";
-            this.cmbOption.Size = new System.Drawing.Size(139, 21);
-            this.cmbOption.TabIndex = 6;
-            this.cmbOption.SelectedIndexChanged += new System.EventHandler(this.cmbOption_SelectedIndexChanged);
             // 
             // nmValue
             // 
@@ -89,30 +81,76 @@ namespace AnalyzeApp.GUI.Usr
             this.lblClose.Text = "Close";
             this.lblClose.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblClose_LinkClicked);
             // 
+            // cmbOption
+            // 
+            this.cmbOption.EditValue = "";
+            this.cmbOption.Location = new System.Drawing.Point(42, 12);
+            this.cmbOption.Name = "cmbOption";
+            this.cmbOption.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbOption.Properties.DisplayMember = "Name";
+            this.cmbOption.Properties.NullText = "";
+            this.cmbOption.Properties.PopupView = this.gridLookUpEdit2View;
+            this.cmbOption.Properties.ValueMember = "Id";
+            this.cmbOption.Size = new System.Drawing.Size(100, 20);
+            this.cmbOption.TabIndex = 28;
+            this.cmbOption.EditValueChanged += new System.EventHandler(this.cmbOption_EditValueChanged);
+            // 
+            // gridLookUpEdit2View
+            // 
+            this.gridLookUpEdit2View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Id,
+            this.Name1});
+            this.gridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit2View.Name = "gridLookUpEdit2View";
+            this.gridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
+            // 
+            // Id
+            // 
+            this.Id.Caption = "Id";
+            this.Id.FieldName = "Id";
+            this.Id.Name = "Id";
+            this.Id.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // Name1
+            // 
+            this.Name1.Caption = "Name";
+            this.Name1.FieldName = "Name";
+            this.Name1.Name = "Name1";
+            this.Name1.OptionsColumn.ShowCaption = false;
+            this.Name1.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Name1.Visible = true;
+            this.Name1.VisibleIndex = 0;
+            // 
             // userCoinValue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cmbOption);
             this.Controls.Add(this.lblClose);
             this.Controls.Add(this.picOption);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nmValue);
-            this.Controls.Add(this.cmbOption);
             this.Name = "userCoinValue";
             this.Size = new System.Drawing.Size(450, 42);
             ((System.ComponentModel.ISupportInitialize)(this.nmValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOption)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbOption.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        public System.Windows.Forms.ComboBox cmbOption;
         public System.Windows.Forms.NumericUpDown nmValue;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox picOption;
         private System.Windows.Forms.LinkLabel lblClose;
+        private DevExpress.XtraEditors.GridLookUpEdit cmbOption;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit2View;
+        private DevExpress.XtraGrid.Columns.GridColumn Id;
+        private DevExpress.XtraGrid.Columns.GridColumn Name1;
     }
 }

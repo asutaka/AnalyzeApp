@@ -5,32 +5,32 @@ namespace AnalyzeApp.Model.ENUM
     public enum enumTimeZone
     {
         [Display(Name = "15 Phút")]
-        FifteenMinute = 0,
+        FifteenMinute = 15,
         [Display(Name = "1 Giờ")]
-        OneHour = 1,
+        OneHour = 60,
         [Display(Name = "4 Giờ")]
-        FourHour = 2,
+        FourHour = 240,
         [Display(Name = "1 Ngày")]
-        OneDay = 3,
+        OneDay = 1440,
         [Display(Name = "1 Tuần")]
-        OneWeek = 4,
+        OneWeek = 10080,
         [Display(Name = "1 Tháng")]
-        OneMonth = 5,
+        OneMonth = 302400,
     }
     public enum enumInterval
     {
         [Display(Name = "15m")]
-        FifteenMinute = 0,
+        FifteenMinute = 15,
         [Display(Name = "1h")]
-        OneHour = 1,
+        OneHour = 60,
         [Display(Name = "4h")]
-        FourHour = 2,
+        FourHour = 240,
         [Display(Name = "1d")]
-        OneDay = 3,
+        OneDay = 1440,
         [Display(Name = "1w")]
-        OneWeek = 4,
+        OneWeek = 10080,
         [Display(Name = "1m")]
-        OneMonth = 5,
+        OneMonth = 302400,
     }
     public enum enumCandleStick
     {
@@ -129,29 +129,29 @@ namespace AnalyzeApp.Model.ENUM
     public enum enumIntervalNotify
     {
         [Display(Name = "Một phút/ lần")]
-        OneMinute = 1,
+        OneMinute = 60,
         [Display(Name = "Hai phút/ lần")]
-        TwoMinute = 2,
+        TwoMinute = 120,
         [Display(Name = "Năm phút/ lần")]
-        FiveMinute = 3,
+        FiveMinute = 300,
         [Display(Name = "Mười phút/ lần")]
-        TenMinute = 4,
+        TenMinute = 600,
         [Display(Name = "Mười năm phút/ lần")]
-        FifteenMinute = 5,
+        FifteenMinute = 900,
         [Display(Name = "Ba mươi phút/ lần")]
-        ThirtyMintue = 6,
+        ThirtyMintue = 1800,
         [Display(Name = "Một giờ/ lần")]
-        OneHour = 7,
+        OneHour = 3600,
         [Display(Name = "Hai giờ/ lần")]
-        TwoHour = 8,
+        TwoHour = 7200,
         [Display(Name = "Bốn giờ/ lần")]
-        FourHour = 9,
+        FourHour = 14400,
         [Display(Name = "Năm giờ/ lần")]
-        FiveHour = 10,
+        FiveHour = 18000,
         [Display(Name = "Mười hai giờ/ lần")]
-        TwelveHour = 11,
+        TwelveHour = 43200,
         [Display(Name = "Một ngày/ lần")]
-        OneDay = 12
+        OneDay = 86400
     }
 
     public enum enumTelegramSendMessage
@@ -169,8 +169,13 @@ namespace AnalyzeApp.Model.ENUM
     public enum enumStatusLoadData
     {
         Loading = 1,
-        Endload = 2,
-        ErrorLoad = 3,
+        Complete1H = 2,
+        Complete15M = 3,
+        Complete4H = 4,
+        Complete1D = 5,
+        Complete1W = 6,
+        Complete1M = 7,
+        ErrorLoad = 8,
     }
 
     public enum enumSetting
@@ -187,5 +192,33 @@ namespace AnalyzeApp.Model.ENUM
         BasicSetting = 5,
         [Display(Name = "Advance Setting")]
         AdvanceSetting = 6,
+    }
+
+    public enum enumAboveBelow
+    {
+        [Display(Name = "Vượt trên")]
+        Above = 1,
+        [Display(Name = "Giảm dưới")]
+        Below = 2,
+    }
+
+    public enum enumMA
+    {
+        [Display(Name = "MA")]
+        MA = 1,
+        [Display(Name = "EMA")]
+        EMA = 2
+    }
+
+    public enum enumCross
+    {
+        [Display(Name = "Cắt lên")]
+        Cross_Above = 1,
+        [Display(Name = "Cắt xuống")]
+        Cross_Below = 2,
+        [Display(Name = "Gần cắt lên")]
+        Cross_NearAbove = 3,
+        [Display(Name = "Gần cắt xuống")]
+        Cross_NearBelow = 4,
     }
 }

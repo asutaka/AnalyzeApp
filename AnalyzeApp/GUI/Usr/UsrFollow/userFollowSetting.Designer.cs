@@ -30,19 +30,23 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         private void InitializeComponent()
         {
             this.tabControl = new DevExpress.XtraTab.XtraTabControl();
-            this.tp5 = new DevExpress.XtraTab.XtraTabPage();
             this.tp1 = new DevExpress.XtraTab.XtraTabPage();
             this.tp2 = new DevExpress.XtraTab.XtraTabPage();
             this.tp3 = new DevExpress.XtraTab.XtraTabPage();
             this.tp4 = new DevExpress.XtraTab.XtraTabPage();
+            this.tp5 = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cmbFrequency = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cmbFrequency = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Name1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.chkState = new DevExpress.XtraEditors.ToggleSwitch();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl)).BeginInit();
             this.tabControl.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbFrequency.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkState.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,12 +67,6 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.tp3,
             this.tp4,
             this.tp5});
-            // 
-            // tp5
-            // 
-            this.tp5.ImageOptions.Image = global::AnalyzeApp.Properties.Resources._5;
-            this.tp5.Name = "tp5";
-            this.tp5.Size = new System.Drawing.Size(613, 347);
             // 
             // tp1
             // 
@@ -96,6 +94,12 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.tp4.Name = "tp4";
             this.tp4.Size = new System.Drawing.Size(613, 347);
             // 
+            // tp5
+            // 
+            this.tp5.ImageOptions.Image = global::AnalyzeApp.Properties.Resources._5;
+            this.tp5.Name = "tp5";
+            this.tp5.Size = new System.Drawing.Size(613, 347);
+            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -111,13 +115,44 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             // 
             // cmbFrequency
             // 
+            this.cmbFrequency.EditValue = "";
             this.cmbFrequency.Location = new System.Drawing.Point(67, 13);
             this.cmbFrequency.Name = "cmbFrequency";
             this.cmbFrequency.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbFrequency.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cmbFrequency.Size = new System.Drawing.Size(122, 20);
-            this.cmbFrequency.TabIndex = 11;
+            this.cmbFrequency.Properties.DisplayMember = "Name";
+            this.cmbFrequency.Properties.NullText = "";
+            this.cmbFrequency.Properties.PopupView = this.gridLookUpEdit2View;
+            this.cmbFrequency.Properties.ValueMember = "Id";
+            this.cmbFrequency.Size = new System.Drawing.Size(116, 20);
+            this.cmbFrequency.TabIndex = 30;
+            // 
+            // gridLookUpEdit2View
+            // 
+            this.gridLookUpEdit2View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Id,
+            this.Name1});
+            this.gridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit2View.Name = "gridLookUpEdit2View";
+            this.gridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
+            // 
+            // Id
+            // 
+            this.Id.Caption = "Id";
+            this.Id.FieldName = "Id";
+            this.Id.Name = "Id";
+            this.Id.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // Name1
+            // 
+            this.Name1.Caption = "Name";
+            this.Name1.FieldName = "Name";
+            this.Name1.Name = "Name1";
+            this.Name1.OptionsColumn.ShowCaption = false;
+            this.Name1.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Name1.Visible = true;
+            this.Name1.VisibleIndex = 0;
             // 
             // label3
             // 
@@ -150,6 +185,7 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbFrequency.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkState.Properties)).EndInit();
             this.ResumeLayout(false);
 
@@ -164,8 +200,11 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         private DevExpress.XtraTab.XtraTabPage tp4;
         private DevExpress.XtraTab.XtraTabPage tp5;
         private System.Windows.Forms.GroupBox groupBox2;
-        private DevExpress.XtraEditors.ComboBoxEdit cmbFrequency;
         private System.Windows.Forms.Label label3;
         public DevExpress.XtraEditors.ToggleSwitch chkState;
+        private DevExpress.XtraEditors.GridLookUpEdit cmbFrequency;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit2View;
+        private DevExpress.XtraGrid.Columns.GridColumn Id;
+        private DevExpress.XtraGrid.Columns.GridColumn Name1;
     }
 }

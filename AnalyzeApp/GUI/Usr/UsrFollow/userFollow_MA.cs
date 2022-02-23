@@ -1,4 +1,6 @@
-﻿using AnalyzeApp.Model.ENTITY;
+﻿using AnalyzeApp.Common;
+using AnalyzeApp.Model.ENTITY;
+using AnalyzeApp.Model.ENUM;
 using System.Windows.Forms;
 
 namespace AnalyzeApp.GUI.Usr.UsrFollow
@@ -28,8 +30,16 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         {
             if (model == null)
                 model = new FollowSetting_MaModel { Value1 = 5, Value2 = 10 };
-            cmbOption.SelectedIndex = model.Option;
-            cmbMode.SelectedIndex = model.Mode;
+            cmbOption.Properties.BeginUpdate();
+            cmbOption.Properties.DataSource = typeof(enumCross).EnumToData();
+            cmbOption.Properties.EndUpdate();
+
+            cmbMode.Properties.BeginUpdate();
+            cmbMode.Properties.DataSource = typeof(enumMA).EnumToData();
+            cmbMode.Properties.EndUpdate();
+
+            cmbOption.EditValue = model.Option;
+            cmbMode.EditValue = model.Mode;
             nmValue1.Value = model.Value1;
             nmValue2.Value = model.Value2;
             nmRatioMax.Value = model.RatioMax;
@@ -40,8 +50,8 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         {
             return new FollowSetting_MaModel
             {
-                Mode = cmbMode.SelectedIndex,
-                Option = cmbOption.SelectedIndex,
+                Mode = (int)cmbMode.EditValue,
+                Option = (int)cmbOption.EditValue,
                 Value1 = nmValue1.Value,
                 Value2 = nmValue2.Value,
                 RatioMax = nmRatioMax.Value,

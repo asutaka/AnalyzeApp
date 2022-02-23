@@ -20,6 +20,183 @@ namespace AnalyzeApp.Common
             return output;
         }
 
+        #region StoredData
+      
+        public static async Task StoredData(enumInterval interval)
+        {
+            try
+            {
+                enumStatusLoadData statusLoad = enumStatusLoadData.Loading;
+                //update flag
+                await APIService.Instance().UpdateConfigTable(new ConfigTableModel { StatusLoadData = (int)statusLoad });
+                var lDataSetting = await APIService.Instance().GetDataSettings();
+                if (lDataSetting != null)
+                {
+                    long curTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+                    foreach (var item in lDataSetting)
+                    {
+                        var div = curTime - item.UpdatedTime;
+                        if (item.Interval == (int)interval)
+                        {
+                            switch (interval)
+                            {
+                                case enumInterval.FifteenMinute:
+                                    {
+                                        statusLoad = enumStatusLoadData.Complete15M;
+                                        if (div > 900000)
+                                        {
+                                            SyncDataInterval(enumInterval.FifteenMinute);
+                                        }
+                                        break;
+                                    }
+                                case enumInterval.OneHour:
+                                    {
+                                        statusLoad = enumStatusLoadData.Complete1H;
+                                        if (div > 3600000)
+                                        {
+                                            SyncDataInterval(enumInterval.OneHour);
+                                        }
+                                        break;
+                                    }
+                                case enumInterval.FourHour:
+                                    {
+                                        statusLoad = enumStatusLoadData.Complete4H;
+                                        if (div > 14400000)
+                                        {
+                                            SyncDataInterval(enumInterval.FourHour);
+                                        }
+                                        break;
+                                    }
+                                case enumInterval.OneDay:
+                                    {
+                                        statusLoad = enumStatusLoadData.Complete1D;
+                                        if (div > 86400000)
+                                        {
+                                            SyncDataInterval(enumInterval.OneDay);
+                                        }
+                                        break;
+                                    }
+                                case enumInterval.OneWeek:
+                                    {
+                                        statusLoad = enumStatusLoadData.Complete1W;
+                                        if (div > 604800000)
+                                        {
+                                            SyncDataInterval(enumInterval.OneWeek);
+                                        }
+                                        break;
+                                    }
+                                case enumInterval.OneMonth:
+                                    {
+                                        statusLoad = enumStatusLoadData.Complete1M;
+                                        if (div > 2419200000)
+                                        {
+                                            SyncDataInterval(enumInterval.OneMonth);
+                                        }
+                                        break;
+                                    }
+                            }
+                            APIService.Instance().UpdateDataSettings(new DataSettingModel { Interval = item.Interval, UpdatedTime = curTime }).GetAwaiter().GetResult();
+                            break;
+                        }
+                    }
+                    //update flag
+                    await APIService.Instance().UpdateConfigTable(new ConfigTableModel { StatusLoadData = (int)statusLoad });
+                }
+            }
+            catch (Exception ex)
+            {
+                try
+                {
+                    await APIService.Instance().UpdateConfigTable(new ConfigTableModel { StatusLoadData = (int)enumStatusLoadData.ErrorLoad });
+                }
+                catch (Exception ex2)
+                {
+                    NLogLogger.PublishException(ex2, $"DataMng|LoadData|ErrorLoad:{ex2.Message}");
+                }
+                NLogLogger.PublishException(ex, $"DataMng|LoadData:{ex.Message}");
+            }
+        }
+        private static void SyncDataInterval(enumInterval interval)
+        {
+            try
+            {
+                var lCoin = GetCoin();
+                var lstTask = new List<Task>();
+                foreach (var item in lCoin)
+                {
+                    var task = Task.Run(() =>
+                    {
+                        SyncDataValue(item.S, interval);
+                    });
+                    lstTask.Add(task);
+                }
+                Task.WaitAll(lstTask.ToArray());
+            }
+            catch (Exception ex)
+            {
+                NLogLogger.PublishException(ex, $"DataMng|SyncDataInterval: {ex.Message}");
+            }
+        }
+        private static void SyncDataValue(string coin, enumInterval interval)
+        {
+            try
+            {
+                var pathFile = $"{Directory.GetCurrentDirectory()}\\data\\{interval.GetDisplayName()}\\{coin}.txt";
+                IEnumerable<BinanceKline> arrSource;
+                var index = 0;
+                do
+                {
+                    arrSource = GetSource(coin, interval);
+                }
+                while (index < 3 && arrSource == null);
+                if (arrSource == null || !arrSource.Any())
+                {
+                    return;
+                }
+                //
+                File.Create(pathFile).Close();
+                string json = JsonConvert.SerializeObject(arrSource);
+                //write string to file
+                File.WriteAllText(pathFile, json);
+            }
+            catch (Exception ex)
+            {
+                NLogLogger.PublishException(ex, $"DataMng|SyncDataValue: {ex.Message}");
+            }
+        }
+        private static IEnumerable<BinanceKline> GetSource(string coin, enumInterval interval, long startTime = 0, long endTime = 0)
+        {
+            try
+            {
+                string strTime = string.Empty;
+                if (startTime > 0)
+                    strTime += $"&startTime={startTime}";
+                if (endTime > 0)
+                    strTime += $"&endTime={endTime}";
+                var url = $"{ConstVal.COIN_DETAIL}symbol={coin}&interval={interval.GetDisplayName()}{strTime}";
+                var arrData = CommonMethod.DownloadJsonArray(url);
+                return arrData.Select(x => new BinanceKline
+                {
+                    OpenTime = (long)x[0],
+                    Open = decimal.Parse(x[1].ToString()),
+                    High = decimal.Parse(x[2].ToString()),
+                    Low = decimal.Parse(x[3].ToString()),
+                    Close = decimal.Parse(x[4].ToString()),
+                    BaseVolume = decimal.Parse(x[5].ToString()),
+                    CloseTime = (long)x[6],
+                    QuoteVolume = decimal.Parse(x[7].ToString()),
+                    TakerBuyBaseVolume = decimal.Parse(x[9].ToString()),
+                    TakerBuyQuoteVolume = decimal.Parse(x[10].ToString())
+                });
+            }
+            catch (Exception ex)
+            {
+                NLogLogger.PublishException(ex, $"DataMng|GetSource:{ex.Message}");
+                return null;
+            }
+        }
+        #endregion
+
         public static IEnumerable<BinanceKline> LoadSource(string coin, enumInterval interval)
         {
             try
@@ -124,177 +301,7 @@ namespace AnalyzeApp.Common
             return entity;
         }
 
-        #region StoredData
-        public static async Task StoredData()
-        {
-            try
-            {
-                //update flag
-                await APIService.Instance().UpdateConfigTable(new ConfigTableModel { StatusLoadData = (int)enumStatusLoadData.Loading });
-                //
-                var lDataSetting = await APIService.Instance().GetDataSettings();
-                if (lDataSetting != null)
-                {
-                    var lstTask = new List<Task>();
-                    long curTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
-                    foreach (var item in lDataSetting)
-                    {
-                        var task = Task.Run(() =>
-                        {
-                            var div = curTime - item.UpdatedTime;
-                            switch (item.Interval)
-                            {
-                                case (int)enumInterval.FifteenMinute:
-                                    {
-                                        if (div > 900000)
-                                        {
-                                            SyncDataInterval(enumInterval.FifteenMinute);
-                                        }
-                                        break;
-                                    }
-                                case (int)enumInterval.OneHour:
-                                    {
-                                        if (div > 3600000)
-                                        {
-                                            SyncDataInterval(enumInterval.OneHour);
-                                        }
-                                        break;
-                                    }
-                                case (int)enumInterval.FourHour:
-                                    {
-                                        if (div > 14400000)
-                                        {
-                                            SyncDataInterval(enumInterval.FourHour);
-                                        }
-                                        break;
-                                    }
-                                case (int)enumInterval.OneDay:
-                                    {
-                                        if (div > 86400000)
-                                        {
-                                            SyncDataInterval(enumInterval.OneDay);
-                                        }
-                                        break;
-                                    }
-                                case (int)enumInterval.OneWeek:
-                                    {
-                                        if (div > 604800000)
-                                        {
-                                            SyncDataInterval(enumInterval.OneWeek);
-                                        }
-                                        break;
-                                    }
-                                case (int)enumInterval.OneMonth:
-                                    {
-                                        if (div > 2419200000)
-                                        {
-                                            SyncDataInterval(enumInterval.OneMonth);
-                                        }
-                                        break;
-                                    }
-                            }
-                            APIService.Instance().UpdateDataSettings(new DataSettingModel { Interval = item.Interval, UpdatedTime = curTime }).GetAwaiter().GetResult();
-                        });
-                        lstTask.Add(task);
-                    }
-                    Task.WaitAll(lstTask.ToArray());
-                    //update flag
-                    await APIService.Instance().UpdateConfigTable(new ConfigTableModel { StatusLoadData = (int)enumStatusLoadData.Endload });
-                }
-            }
-            catch (Exception ex)
-            {
-                try
-                {
-                    await APIService.Instance().UpdateConfigTable(new ConfigTableModel { StatusLoadData = (int)enumStatusLoadData.ErrorLoad });
-                }
-                catch (Exception ex2)
-                {
-                    NLogLogger.PublishException(ex2, $"DataMng|LoadData|ErrorLoad:{ex2.Message}");
-                }
-                NLogLogger.PublishException(ex, $"DataMng|LoadData:{ex.Message}");
-            }
-        }
-        private static void SyncDataInterval(enumInterval interval)
-        {
-            try
-            {
-                var lCoin = GetCoin();
-                var lstTask = new List<Task>();
-                foreach (var item in lCoin)
-                {
-                    var task = Task.Run(() =>
-                    {
-                        SyncDataValue(item.S, interval);
-                    });
-                    lstTask.Add(task);
-                }
-                Task.WaitAll(lstTask.ToArray());
-            }
-            catch (Exception ex)
-            {
-                NLogLogger.PublishException(ex, $"DataMng|SyncDataInterval: {ex.Message}");
-            }
-        }
-        private static void SyncDataValue(string coin, enumInterval interval)
-        {
-            try
-            {
-                var pathFile = $"{Directory.GetCurrentDirectory()}\\data\\{interval.GetDisplayName()}\\{coin}.txt";
-                IEnumerable<BinanceKline> arrSource;
-                var index = 0;
-                do
-                {
-                    arrSource = GetSource(coin, interval);
-                }
-                while (index < 3 && arrSource == null);
-                if (arrSource == null || !arrSource.Any())
-                {
-                    return;
-                }
-                //
-                File.Create(pathFile).Close();
-                string json = JsonConvert.SerializeObject(arrSource);
-                //write string to file
-                File.WriteAllText(pathFile, json);
-            }
-            catch (Exception ex)
-            {
-                NLogLogger.PublishException(ex, $"DataMng|SyncDataValue: {ex.Message}");
-            }
-        }
-        private static IEnumerable<BinanceKline> GetSource(string coin, enumInterval interval, long startTime = 0, long endTime = 0)
-        {
-            try
-            {
-                string strTime = string.Empty;
-                if (startTime > 0)
-                    strTime += $"&startTime={startTime}";
-                if (endTime > 0)
-                    strTime += $"&endTime={endTime}";
-                var url = $"{ConstVal.COIN_DETAIL}symbol={coin}&interval={interval.GetDisplayName()}{strTime}";
-                var arrData = CommonMethod.DownloadJsonArray(url);
-                return arrData.Select(x => new BinanceKline
-                {
-                    OpenTime = (long)x[0],
-                    Open = decimal.Parse(x[1].ToString()),
-                    High = decimal.Parse(x[2].ToString()),
-                    Low = decimal.Parse(x[3].ToString()),
-                    Close = decimal.Parse(x[4].ToString()),
-                    BaseVolume = decimal.Parse(x[5].ToString()),
-                    CloseTime = (long)x[6],
-                    QuoteVolume = decimal.Parse(x[7].ToString()),
-                    TakerBuyBaseVolume = decimal.Parse(x[9].ToString()),
-                    TakerBuyQuoteVolume = decimal.Parse(x[10].ToString())
-                });
-            }
-            catch (Exception ex)
-            {
-                NLogLogger.PublishException(ex, $"DataMng|GetSource:{ex.Message}");
-                return null;
-            }
-        }
-        #endregion
+        
     }
 }
 //15m: 10 ngày

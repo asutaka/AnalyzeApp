@@ -189,8 +189,12 @@ namespace AnalyzeApp.GUI
                         UpdateUserModel();
                         if (!StaticVal.IsAccessMain)
                         {
-                            Hide();
-                            frmMain.Instance().Show();
+                            while (frmLogin.Instance().IsSuccess)
+                            {
+                                frmLogin.DisposeInstance();
+                                Hide();
+                                frmMain.Instance().Show();
+                            }
                         }
                     }
                     StaticVal.IsExecCheckCodeActive = false;

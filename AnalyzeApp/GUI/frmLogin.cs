@@ -10,7 +10,7 @@ namespace AnalyzeApp.GUI
 {
     public partial class frmLogin : XtraForm
     {
-        private AuthResponse access;
+        public bool IsSuccess = false;
         private frmLogin()
         {
             InitializeComponent();
@@ -21,7 +21,7 @@ namespace AnalyzeApp.GUI
                 //Load ListCoin
                 StaticVal.lstCoin = DataMng.GetCoin();
                 StaticVal.lstCoinFilter = StaticVal.lstCoin.Where(x => !Config.BlackLists.Any(y => y.S == x.S)).ToList();
-                DataMng.StoredData().GetAwaiter().GetResult();
+                IsSuccess = true;
                 bkgr.Dispose();
             };
             bkgr.RunWorkerAsync();
@@ -32,6 +32,11 @@ namespace AnalyzeApp.GUI
         {
             _instance = _instance ?? new frmLogin();
             return _instance;
+        }
+
+        public static void DisposeInstance()
+        {
+            _instance = null;
         }
 
         private void picGoogleSignIn_Click(object sender, EventArgs e)

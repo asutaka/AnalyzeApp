@@ -30,7 +30,10 @@ namespace AnalyzeApp.GUI.Usr
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbFrequency = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cmbFrequency = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Name1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.chkState = new DevExpress.XtraEditors.ToggleSwitch();
             this.btnAddSignal = new DevExpress.XtraEditors.SimpleButton();
@@ -40,6 +43,7 @@ namespace AnalyzeApp.GUI.Usr
             this.btnOkAndSave = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbFrequency.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkState.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -60,13 +64,44 @@ namespace AnalyzeApp.GUI.Usr
             // cmbFrequency
             // 
             this.cmbFrequency.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbFrequency.Location = new System.Drawing.Point(542, 21);
+            this.cmbFrequency.EditValue = "";
+            this.cmbFrequency.Location = new System.Drawing.Point(537, 21);
             this.cmbFrequency.Name = "cmbFrequency";
             this.cmbFrequency.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbFrequency.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cmbFrequency.Size = new System.Drawing.Size(119, 20);
-            this.cmbFrequency.TabIndex = 8;
+            this.cmbFrequency.Properties.DisplayMember = "Name";
+            this.cmbFrequency.Properties.NullText = "";
+            this.cmbFrequency.Properties.PopupView = this.gridLookUpEdit2View;
+            this.cmbFrequency.Properties.ValueMember = "Id";
+            this.cmbFrequency.Size = new System.Drawing.Size(116, 20);
+            this.cmbFrequency.TabIndex = 29;
+            // 
+            // gridLookUpEdit2View
+            // 
+            this.gridLookUpEdit2View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Id,
+            this.Name1});
+            this.gridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit2View.Name = "gridLookUpEdit2View";
+            this.gridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
+            // 
+            // Id
+            // 
+            this.Id.Caption = "Id";
+            this.Id.FieldName = "Id";
+            this.Id.Name = "Id";
+            this.Id.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // Name1
+            // 
+            this.Name1.Caption = "Name";
+            this.Name1.FieldName = "Name";
+            this.Name1.Name = "Name1";
+            this.Name1.OptionsColumn.ShowCaption = false;
+            this.Name1.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Name1.Visible = true;
+            this.Name1.VisibleIndex = 0;
             // 
             // label3
             // 
@@ -156,6 +191,7 @@ namespace AnalyzeApp.GUI.Usr
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbFrequency.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkState.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
@@ -165,7 +201,6 @@ namespace AnalyzeApp.GUI.Usr
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevExpress.XtraEditors.ComboBoxEdit cmbFrequency;
         private System.Windows.Forms.Label label3;
         public DevExpress.XtraEditors.ToggleSwitch chkState;
         private DevExpress.XtraEditors.SimpleButton btnAddSignal;
@@ -173,5 +208,9 @@ namespace AnalyzeApp.GUI.Usr
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.SimpleButton btnOkAndSave;
+        private DevExpress.XtraEditors.GridLookUpEdit cmbFrequency;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit2View;
+        private DevExpress.XtraGrid.Columns.GridColumn Id;
+        private DevExpress.XtraGrid.Columns.GridColumn Name1;
     }
 }

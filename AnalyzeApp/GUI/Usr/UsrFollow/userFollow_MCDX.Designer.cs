@@ -33,12 +33,16 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.nmValue = new System.Windows.Forms.NumericUpDown();
-            this.cmbOption = new DevExpress.XtraEditors.ComboBoxEdit();
             this.nmPoint = new System.Windows.Forms.NumericUpDown();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.cmbOption = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Name1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nmValue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbOption.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmPoint)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbOption.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -73,19 +77,6 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             0,
             0});
             // 
-            // cmbOption
-            // 
-            this.cmbOption.Location = new System.Drawing.Point(50, 10);
-            this.cmbOption.Name = "cmbOption";
-            this.cmbOption.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbOption.Properties.Items.AddRange(new object[] {
-            "Vượt trên",
-            "Giảm dưới"});
-            this.cmbOption.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cmbOption.Size = new System.Drawing.Size(100, 20);
-            this.cmbOption.TabIndex = 20;
-            // 
             // nmPoint
             // 
             this.nmPoint.Location = new System.Drawing.Point(387, 9);
@@ -94,21 +85,63 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.nmPoint.TabIndex = 28;
             this.nmPoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // cmbOption
+            // 
+            this.cmbOption.EditValue = "";
+            this.cmbOption.Location = new System.Drawing.Point(50, 10);
+            this.cmbOption.Name = "cmbOption";
+            this.cmbOption.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbOption.Properties.DisplayMember = "Name";
+            this.cmbOption.Properties.NullText = "";
+            this.cmbOption.Properties.PopupView = this.gridLookUpEdit2View;
+            this.cmbOption.Properties.ValueMember = "Id";
+            this.cmbOption.Size = new System.Drawing.Size(100, 20);
+            this.cmbOption.TabIndex = 29;
+            // 
+            // gridLookUpEdit2View
+            // 
+            this.gridLookUpEdit2View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Id,
+            this.Name1});
+            this.gridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit2View.Name = "gridLookUpEdit2View";
+            this.gridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
+            // 
+            // Id
+            // 
+            this.Id.Caption = "Id";
+            this.Id.FieldName = "Id";
+            this.Id.Name = "Id";
+            this.Id.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // Name1
+            // 
+            this.Name1.Caption = "Name";
+            this.Name1.FieldName = "Name";
+            this.Name1.Name = "Name1";
+            this.Name1.OptionsColumn.ShowCaption = false;
+            this.Name1.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Name1.Visible = true;
+            this.Name1.VisibleIndex = 0;
+            // 
             // userFollow_MCDX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Controls.Add(this.cmbOption);
             this.Controls.Add(this.nmPoint);
             this.Controls.Add(this.nmValue);
-            this.Controls.Add(this.cmbOption);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.labelControl1);
             this.Name = "userFollow_MCDX";
             this.Size = new System.Drawing.Size(470, 42);
             ((System.ComponentModel.ISupportInitialize)(this.nmValue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbOption.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmPoint)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbOption.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,8 +152,11 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private System.Windows.Forms.NumericUpDown nmValue;
-        private DevExpress.XtraEditors.ComboBoxEdit cmbOption;
         private System.Windows.Forms.NumericUpDown nmPoint;
         private System.Windows.Forms.ToolTip toolTip1;
+        private DevExpress.XtraEditors.GridLookUpEdit cmbOption;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit2View;
+        private DevExpress.XtraGrid.Columns.GridColumn Id;
+        private DevExpress.XtraGrid.Columns.GridColumn Name1;
     }
 }

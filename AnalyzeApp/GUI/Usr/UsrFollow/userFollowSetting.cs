@@ -1,7 +1,6 @@
 ﻿using AnalyzeApp.Common;
 using AnalyzeApp.Model.ENTITY;
 using AnalyzeApp.Model.ENUM;
-using System.Data;
 using System.Windows.Forms;
 
 namespace AnalyzeApp.GUI.Usr.UsrFollow
@@ -29,7 +28,8 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             user3.ResetConfig();
             user4.ResetConfig();
             user5.ResetConfig();
-            cmbFrequency.SelectedIndex = _model.Interval;
+
+            cmbFrequency.EditValue = _model.Interval;
             chkState.IsOn = _model.IsNotify;
             tabControl.SelectedTabPage = tp1;
         }
@@ -37,17 +37,14 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         private void LoadInternalNotify()
         {
             cmbFrequency.Properties.BeginUpdate();
-            foreach (DataRow row in typeof(enumIntervalNotify).EnumToData().Rows)
-            {
-                cmbFrequency.Properties.Items.Add(row["Name"]);
-            }
-            cmbFrequency.SelectedIndex = 0;
+            cmbFrequency.Properties.DataSource = typeof(enumIntervalNotify).EnumToData();
             cmbFrequency.Properties.EndUpdate();
+            cmbFrequency.EditValue = (int)enumIntervalNotify.OneMinute;
         }
 
         public FollowSettingModel GetConfigData()
         {
-            _model.Interval = cmbFrequency.SelectedIndex;
+            _model.Interval = (int)cmbFrequency.EditValue;
             _model.IsNotify = chkState.IsOn;
             _model.FollowSettingMode1 = user1.GetData();
             _model.FollowSettingMode2 = user2.GetData();

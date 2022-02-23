@@ -33,6 +33,127 @@ namespace AnalyzeApp.Analyze
             return lstResult;
         }
 
+        public static Top30Model CalculateCryptonRank(string coin, string coinName)
+        {
+            try
+            {
+                int count = 1;
+                decimal sum = 0;
+                IEnumerable<BinanceKline> lSource = null;
+                switch ((enumInterval)Config.BasicSetting.TimeCalculate)
+                {
+                    case enumInterval.FifteenMinute:
+                        lSource = StaticVal.dic15M.First(x => x.Key == coin).Value;
+                        break;
+                    case enumInterval.OneHour:
+                        lSource = StaticVal.dic1H.First(x => x.Key == coin).Value;
+                        break;
+                    case enumInterval.FourHour:
+                        lSource = StaticVal.dic4H.First(x => x.Key == coin).Value;
+                        break;
+                    case enumInterval.OneDay:
+                        lSource = StaticVal.dic1D.First(x => x.Key == coin).Value;
+                        break;
+                    case enumInterval.OneWeek:
+                        lSource = StaticVal.dic1W.First(x => x.Key == coin).Value;
+                        break;
+                    case enumInterval.OneMonth:
+                        lSource = StaticVal.dic1Month.First(x => x.Key == coin).Value;
+                        break;
+                    default: break;
+                }
+                if (lSource == null || !lSource.Any())
+                    return new Top30Model { Coin = coin, Count = count, Rate = (double)Math.Round(sum / count, 2) };
+
+                long dtMin = 0, dtMax = 0, dtMin_Temp = 0;
+                int leftMax = 0, rightMin = 0, rightMax = 0;
+                decimal min = 0, max = 0, min_Temp = 0;
+                foreach (var item in lSource)
+                {
+                    CheckMinMax();
+                    if (rightMax >= 2)
+                    {
+                        var rate = Math.Round((max - min) * 100 / min, 0);
+                        if (leftMax >= 2 && rate >= 10)
+                        {
+                            sum += rate;
+                            count++;
+                        }
+                        min = min_Temp;
+                        dtMin = dtMin_Temp;
+                        min_Temp = 0;
+                        dtMin_Temp = 0;
+                        rightMin = 0;
+                        rightMax = 0;
+                        leftMax = 0;
+                        max = 0;
+                        dtMax = 0;
+                        CheckMinMax();
+                    }
+                    else if (rightMax > 0)
+                    {
+                        min_Temp = item.Low;
+                        dtMin_Temp = item.OpenTime;
+                    }
+
+                    void CheckMinMax()
+                    {
+                        if (min == 0)
+                        {
+                            min = item.Low;
+                            dtMin = item.OpenTime;
+                        }
+                        if (item.Low < min)
+                        {
+                            rightMin = 0;
+                            min = item.Low;
+                            dtMin = item.OpenTime;
+                        }
+                        else
+                        {
+                            rightMin++;
+                        }
+                        //reset
+                        if (rightMin == 0)
+                        {
+                            max = 0;
+                            leftMax = 0;
+                            rightMax = 0;
+                        }
+                        else
+                        {
+                            if (max < item.High)
+                            {
+                                rightMax = 0;
+                                leftMax++;
+                                max = item.High;
+                                dtMax = item.OpenTime;
+                            }
+                            else
+                            {
+                                rightMax++;
+                            }
+                        }
+                    }
+                }
+                var outputModel = new Top30Model { Coin = coin, CoinName = coinName, Count = count, Rate = (double)Math.Round(sum / count, 2) };
+                var entityBinanceTick = DataMng.GetCoinBinanceTick(coin);
+                if (entityBinanceTick != null)
+                {
+                    outputModel.RefValue = (double)entityBinanceTick.LastPrice;
+                    outputModel.PrevDayClosePrice = entityBinanceTick.PrevDayClosePrice;
+                    outputModel.PriceChangePercent = entityBinanceTick.PriceChangePercent;
+                    outputModel.WeightedAveragePrice = entityBinanceTick.WeightedAveragePrice;
+                }
+                return outputModel;
+            }
+            catch (Exception ex)
+            {
+                NLogLogger.PublishException(ex, $"CalculateMng|CalculateCryptonRank|{coin}: {ex.Message}");
+                return new Top30Model { Coin = coin, CoinName = coinName, Count = 1, Rate = 0 };
+            }
+        }
+
         public static List<MCDXModel> MCDX()
         {
             var count = 1;
@@ -325,126 +446,7 @@ namespace AnalyzeApp.Analyze
             }
             return point;
         }
-        public static Top30Model CalculateCryptonRank(string coin, string coinName)
-        {
-            try
-            {
-                int count = 1;
-                decimal sum = 0;
-                IEnumerable<BinanceKline> lSource = null;
-                switch ((enumInterval)Config.BasicSetting.RealtimeInterval)
-                {
-                    case enumInterval.FifteenMinute: 
-                        lSource = StaticVal.dic15M.First(x => x.Key == coin).Value;
-                        break;
-                    case enumInterval.OneHour:
-                        lSource = StaticVal.dic1H.First(x => x.Key == coin).Value;
-                        break;
-                    case enumInterval.FourHour:
-                        lSource = StaticVal.dic4H.First(x => x.Key == coin).Value;
-                        break;
-                    case enumInterval.OneDay:
-                        lSource = StaticVal.dic1D.First(x => x.Key == coin).Value;
-                        break;
-                    case enumInterval.OneWeek:
-                        lSource = StaticVal.dic1W.First(x => x.Key == coin).Value;
-                        break;
-                    case enumInterval.OneMonth:
-                        lSource = StaticVal.dic1Month.First(x => x.Key == coin).Value;
-                        break;
-                    default:break;
-                }
-                if (lSource == null || !lSource.Any())
-                    return new Top30Model { Coin = coin, Count = count, Rate = (double)Math.Round(sum / count, 2) };
-
-                long dtMin = 0, dtMax = 0, dtMin_Temp = 0;
-                int leftMax = 0, rightMin = 0, rightMax = 0;
-                decimal min = 0, max = 0, min_Temp = 0;
-                foreach (var item in lSource)
-                {
-                    CheckMinMax();
-                    if (rightMax >= 2)
-                    {
-                        var rate = Math.Round((max - min) * 100 / min, 0);
-                        if (leftMax >= 2 && rate >= 10)
-                        {
-                            sum += rate;
-                            count++;
-                        }
-                        min = min_Temp;
-                        dtMin = dtMin_Temp;
-                        min_Temp = 0;
-                        dtMin_Temp = 0;
-                        rightMin = 0;
-                        rightMax = 0;
-                        leftMax = 0;
-                        max = 0;
-                        dtMax = 0;
-                        CheckMinMax();
-                    }
-                    else if (rightMax > 0)
-                    {
-                        min_Temp = item.Low;
-                        dtMin_Temp = item.OpenTime;
-                    }
-
-                    void CheckMinMax()
-                    {
-                        if (min == 0)
-                        {
-                            min = item.Low;
-                            dtMin = item.OpenTime;
-                        }
-                        if (item.Low < min)
-                        {
-                            rightMin = 0;
-                            min = item.Low;
-                            dtMin = item.OpenTime;
-                        }
-                        else
-                        {
-                            rightMin++;
-                        }
-                        //reset
-                        if (rightMin == 0)
-                        {
-                            max = 0;
-                            leftMax = 0;
-                            rightMax = 0;
-                        }
-                        else
-                        {
-                            if (max < item.High)
-                            {
-                                rightMax = 0;
-                                leftMax++;
-                                max = item.High;
-                                dtMax = item.OpenTime;
-                            }
-                            else
-                            {
-                                rightMax++;
-                            }
-                        }
-                    }
-                }
-                var outputModel = new Top30Model { Coin = coin, CoinName = coinName, Count = count, Rate = (double)Math.Round(sum / count, 2) };
-                var entityBinanceTick = DataMng.GetCoinBinanceTick(coin);
-                if(entityBinanceTick != null)
-                {
-                    outputModel.RefValue = (double)entityBinanceTick.LastPrice;
-                    outputModel.PrevDayClosePrice = entityBinanceTick.PrevDayClosePrice;
-                    outputModel.PriceChangePercent = entityBinanceTick.PriceChangePercent;
-                    outputModel.WeightedAveragePrice = entityBinanceTick.WeightedAveragePrice;
-                }
-                return outputModel;
-            }
-            catch (Exception ex)
-            {
-                NLogLogger.PublishException(ex, $"CalculateMng|CalculateCryptonRank|{coin}: {ex.Message}");
-                return new Top30Model { Coin = coin, CoinName = coinName, Count = 1, Rate = 0 };
-            }
-        }
+        
         private static double ADX(double[] arrHigh, double[] arrLow, double[] arrClose, int period, int count)
         {
             try

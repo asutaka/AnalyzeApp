@@ -19,6 +19,8 @@ namespace AnalyzeApp
                     case (int)enumSetting.TradeList:
                         {
                             TradeList = JsonConvert.DeserializeObject<TradeListModel>(item.Setting);
+                            if (TradeList == null)
+                                TradeList = new TradeListModel();
                             break;
                         }
                     case (int)enumSetting.FollowList:
@@ -31,16 +33,22 @@ namespace AnalyzeApp
                     case (int)enumSetting.BlackList:
                         {
                             BlackLists = JsonConvert.DeserializeObject<List<CryptonDetailDataModel>>(item.Setting);
+                            if (BlackLists == null)
+                                BlackLists = new List<CryptonDetailDataModel>();
                             break;
                         }
                     case (int)enumSetting.RealtimeList:
                         {
                             RealTimes = JsonConvert.DeserializeObject<List<CryptonDetailDataModel>>(item.Setting);
+                            if (RealTimes == null)
+                                RealTimes = new List<CryptonDetailDataModel>();
                             break;
                         }
                     case (int)enumSetting.BasicSetting:
                         {
                             BasicSetting = JsonConvert.DeserializeObject<BasicSettingModel>(item.Setting);
+                            if (BasicSetting == null)
+                                BasicSetting = new BasicSettingModel();
                             break;
                         }
                     case (int)enumSetting.AdvanceSetting:
