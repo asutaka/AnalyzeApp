@@ -66,7 +66,7 @@ namespace AnalyzeApp.Analyze
 
         public static (bool, double) MCDX(string coin)
         {
-            var data = DataMng.GetCurrentData(coin, (enumInterval)Config.PrivateSetting.PrivateMCDX.Interval);
+            var data = DataMng.GetCurrentData(coin, (enumInterval)Config.BasicSetting.RealtimeInterval);
             if (data == null || !data.Any())
                 return (false, 0);
             var arrClose = data.Select(x => (double)x.Close).ToArray();
@@ -83,7 +83,7 @@ namespace AnalyzeApp.Analyze
                 banker_rsi = 20;
             if (banker_rsi < 0)
                 banker_rsi = 0;
-            var signal = Config.BasicSetting.ListModel.First(x => x.Indicator == (int)enumChooseData.MCDX).Signal;
+            var signal = Config.BasicSetting.MCDX_Value;
             return (banker_rsi >= signal, banker_rsi);
         }
 
@@ -332,7 +332,7 @@ namespace AnalyzeApp.Analyze
                 int count = 1;
                 decimal sum = 0;
                 IEnumerable<BinanceKline> lSource = null;
-                switch ((enumInterval)Config.PrivateSetting.PrivateTop30.Interval)
+                switch ((enumInterval)Config.BasicSetting.RealtimeInterval)
                 {
                     case enumInterval.FifteenMinute: 
                         lSource = StaticVal.dic15M.First(x => x.Key == coin).Value;

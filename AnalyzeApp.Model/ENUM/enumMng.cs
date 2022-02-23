@@ -185,17 +185,7 @@ namespace AnalyzeApp.Model.ENUM
         RealtimeList = 4,
         [Display(Name = "Basic Setting")]
         BasicSetting = 5,
-        [Display(Name = "Special Setting")]
-        SpecialSetting = 6,
-        [Display(Name = "Advance Setting 1")]
-        AdvanceSetting1 = 7,
-        [Display(Name = "Advance Setting 2")]
-        AdvanceSetting2 = 8,
-        [Display(Name = "Advance Setting 3")]
-        AdvanceSetting3 = 9,
-        [Display(Name = "Advance Setting 4")]
-        AdvanceSetting4 = 10,
-        [Display(Name = "Private Setting")]
-        PrivateSetting = 11,
+        [Display(Name = "Advance Setting")]
+        AdvanceSetting = 6,
     }
 }

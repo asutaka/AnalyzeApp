@@ -77,7 +77,6 @@ D:\Data\AnalyzeApp\AnalyzeApp.GenCode\bin\Debug\es\DevExpress.Pdf.v20.1.Core.res
 D:\Data\AnalyzeApp\AnalyzeApp.GenCode\bin\Debug\ja\DevExpress.Pdf.v20.1.Core.resources.dll
 D:\Data\AnalyzeApp\AnalyzeApp.GenCode\bin\Debug\ru\DevExpress.Pdf.v20.1.Core.resources.dll
 D:\Data\AnalyzeApp\AnalyzeApp.GenCode\obj\Debug\AnalyzeApp.GenCode.csproj.AssemblyReference.cache
-D:\Data\AnalyzeApp\AnalyzeApp.GenCode\obj\Debug\AnalyzeApp.GenCode.csproj.SuggestedBindingRedirects.cache
 D:\Data\AnalyzeApp\AnalyzeApp.GenCode\obj\Debug\AnalyzeApp.GenCode.frmMain.resources
 D:\Data\AnalyzeApp\AnalyzeApp.GenCode\obj\Debug\AnalyzeApp.GenCode.Properties.Resources.resources
 D:\Data\AnalyzeApp\AnalyzeApp.GenCode\obj\Debug\AnalyzeApp.GenCode.csproj.GenerateResource.cache

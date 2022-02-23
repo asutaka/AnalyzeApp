@@ -19,7 +19,7 @@ namespace AnalyzeApp.GUI.Child
         {
             InitializeComponent();
             usrChosen = new userFollowChooseCoin { Dock = DockStyle.Fill };
-            usrSetting = new userFollowSetting { Dock = DockStyle.Fill };
+            usrSetting = new userFollowSetting(true){ Dock = DockStyle.Fill };
             SetupData();
         }
 

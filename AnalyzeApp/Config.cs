@@ -43,50 +43,22 @@ namespace AnalyzeApp
                             BasicSetting = JsonConvert.DeserializeObject<BasicSettingModel>(item.Setting);
                             break;
                         }
-                    case (int)enumSetting.SpecialSetting:
+                    case (int)enumSetting.AdvanceSetting:
                         {
-                            SpecialSetting = JsonConvert.DeserializeObject<SpecialSettingModel>(item.Setting);
-                            break;
-                        }
-                    case (int)enumSetting.AdvanceSetting1:
-                        {
-                            AdvanceSetting1 = JsonConvert.DeserializeObject<AdvanceSettingModel>(item.Setting);
-                            break;
-                        }
-                    case (int)enumSetting.AdvanceSetting2:
-                        {
-                            AdvanceSetting2 = JsonConvert.DeserializeObject<AdvanceSettingModel>(item.Setting);
-                            break;
-                        }
-                    case (int)enumSetting.AdvanceSetting3:
-                        {
-                            AdvanceSetting3 = JsonConvert.DeserializeObject<AdvanceSettingModel>(item.Setting);
-                            break;
-                        }
-                    case (int)enumSetting.AdvanceSetting4:
-                        {
-                            AdvanceSetting4 = JsonConvert.DeserializeObject<AdvanceSettingModel>(item.Setting);
-                            break;
-                        }
-                    case (int)enumSetting.PrivateSetting:
-                        {
-                            PrivateSetting = JsonConvert.DeserializeObject<PrivateSettingModel>(item.Setting);
+                            AdvanceSetting = JsonConvert.DeserializeObject<FollowSettingModel>(item.Setting);
+                            if (AdvanceSetting == null)
+                                AdvanceSetting = new FollowSettingModel();
                             break;
                         }
                 }
             }
         }
         public static BasicSettingModel BasicSetting { get; set; }
-        public static AdvanceSettingModel AdvanceSetting1 { get; set; }
-        public static AdvanceSettingModel AdvanceSetting2 { get; set; }
-        public static AdvanceSettingModel AdvanceSetting3 { get; set; }
-        public static AdvanceSettingModel AdvanceSetting4 { get; set; }
-        public static SpecialSettingModel SpecialSetting { get; set; }
         public static List<CryptonDetailDataModel> RealTimes { get; set; }
         public static List<CryptonDetailDataModel> BlackLists { get; set; }
         public static TradeListModel TradeList { get; set; }
         public static FollowSettingModel FollowSetting { get; set; }
-        public static PrivateSettingModel PrivateSetting { get; set; }
+        public static FollowSettingModel AdvanceSetting { get; set; }
     }
 }
 

@@ -44,7 +44,6 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.pnl6 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabNavigationPage24 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.pnl2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnlTitle = new System.Windows.Forms.FlowLayoutPanel();
             this.lblPointCondition = new DevExpress.XtraEditors.LabelControl();
             this.nmPointCondition = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.txtTitle.Properties)).BeginInit();
@@ -56,26 +55,28 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.tabNavigationPage22.SuspendLayout();
             this.tabNavigationPage23.SuspendLayout();
             this.tabNavigationPage24.SuspendLayout();
-            this.pnlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmPointCondition)).BeginInit();
             this.SuspendLayout();
             // 
             // dropDownButton1
             // 
-            this.dropDownButton1.Location = new System.Drawing.Point(3, 4);
+            this.dropDownButton1.Location = new System.Drawing.Point(4, 5);
+            this.dropDownButton1.Margin = new System.Windows.Forms.Padding(4);
             this.dropDownButton1.Name = "dropDownButton1";
-            this.dropDownButton1.Size = new System.Drawing.Size(135, 23);
+            this.dropDownButton1.Size = new System.Drawing.Size(180, 28);
             this.dropDownButton1.TabIndex = 10;
             this.dropDownButton1.Text = "Tín hiệu";
             // 
             // txtTitle
             // 
-            this.txtTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTitle.EditValue = "";
-            this.txtTitle.Location = new System.Drawing.Point(3, 29);
+            this.txtTitle.Location = new System.Drawing.Point(192, 8);
+            this.txtTitle.Margin = new System.Windows.Forms.Padding(4);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Properties.NullText = "Tín hiệu 5";
-            this.txtTitle.Size = new System.Drawing.Size(472, 20);
+            this.txtTitle.Size = new System.Drawing.Size(629, 23);
             this.txtTitle.TabIndex = 12;
             // 
             // tabMain
@@ -89,7 +90,8 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.tabMain.Controls.Add(this.tabNavigationPage22);
             this.tabMain.Controls.Add(this.tabNavigationPage23);
             this.tabMain.Controls.Add(this.tabNavigationPage24);
-            this.tabMain.Location = new System.Drawing.Point(3, 29);
+            this.tabMain.Location = new System.Drawing.Point(4, 36);
+            this.tabMain.Margin = new System.Windows.Forms.Padding(4);
             this.tabMain.Name = "tabMain";
             this.tabMain.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage19,
@@ -98,9 +100,9 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.tabNavigationPage20,
             this.tabNavigationPage22,
             this.tabNavigationPage23});
-            this.tabMain.RegularSize = new System.Drawing.Size(613, 321);
+            this.tabMain.RegularSize = new System.Drawing.Size(817, 395);
             this.tabMain.SelectedPage = this.tabNavigationPage24;
-            this.tabMain.Size = new System.Drawing.Size(613, 321);
+            this.tabMain.Size = new System.Drawing.Size(817, 395);
             this.tabMain.TabIndex = 11;
             this.tabMain.Text = "tabPane1";
             this.tabMain.TransitionType = DevExpress.Utils.Animation.Transitions.Cover;
@@ -110,9 +112,10 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.tabNavigationPage19.AutoScroll = true;
             this.tabNavigationPage19.Caption = "15 phút";
             this.tabNavigationPage19.Controls.Add(this.pnl1);
+            this.tabNavigationPage19.Margin = new System.Windows.Forms.Padding(4);
             this.tabNavigationPage19.Name = "tabNavigationPage19";
             this.tabNavigationPage19.Properties.AppearanceCaption.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.tabNavigationPage19.Size = new System.Drawing.Size(613, 300);
+            this.tabNavigationPage19.Size = new System.Drawing.Size(817, 369);
             // 
             // pnl1
             // 
@@ -120,16 +123,18 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.pnl1.BackColor = System.Drawing.Color.White;
             this.pnl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl1.Location = new System.Drawing.Point(0, 0);
+            this.pnl1.Margin = new System.Windows.Forms.Padding(4);
             this.pnl1.Name = "pnl1";
-            this.pnl1.Size = new System.Drawing.Size(613, 300);
+            this.pnl1.Size = new System.Drawing.Size(817, 369);
             this.pnl1.TabIndex = 2;
             // 
             // tabNavigationPage20
             // 
             this.tabNavigationPage20.Caption = "1 ngày";
             this.tabNavigationPage20.Controls.Add(this.pnl4);
+            this.tabNavigationPage20.Margin = new System.Windows.Forms.Padding(4);
             this.tabNavigationPage20.Name = "tabNavigationPage20";
-            this.tabNavigationPage20.Size = new System.Drawing.Size(613, 300);
+            this.tabNavigationPage20.Size = new System.Drawing.Size(817, 369);
             // 
             // pnl4
             // 
@@ -137,16 +142,18 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.pnl4.BackColor = System.Drawing.Color.White;
             this.pnl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl4.Location = new System.Drawing.Point(0, 0);
+            this.pnl4.Margin = new System.Windows.Forms.Padding(4);
             this.pnl4.Name = "pnl4";
-            this.pnl4.Size = new System.Drawing.Size(613, 300);
+            this.pnl4.Size = new System.Drawing.Size(817, 369);
             this.pnl4.TabIndex = 0;
             // 
             // tabNavigationPage21
             // 
             this.tabNavigationPage21.Caption = "4 giờ";
             this.tabNavigationPage21.Controls.Add(this.pnl3);
+            this.tabNavigationPage21.Margin = new System.Windows.Forms.Padding(4);
             this.tabNavigationPage21.Name = "tabNavigationPage21";
-            this.tabNavigationPage21.Size = new System.Drawing.Size(613, 300);
+            this.tabNavigationPage21.Size = new System.Drawing.Size(817, 369);
             // 
             // pnl3
             // 
@@ -154,16 +161,18 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.pnl3.BackColor = System.Drawing.Color.White;
             this.pnl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl3.Location = new System.Drawing.Point(0, 0);
+            this.pnl3.Margin = new System.Windows.Forms.Padding(4);
             this.pnl3.Name = "pnl3";
-            this.pnl3.Size = new System.Drawing.Size(613, 300);
+            this.pnl3.Size = new System.Drawing.Size(817, 369);
             this.pnl3.TabIndex = 0;
             // 
             // tabNavigationPage22
             // 
             this.tabNavigationPage22.Caption = "1 tuần";
             this.tabNavigationPage22.Controls.Add(this.pnl5);
+            this.tabNavigationPage22.Margin = new System.Windows.Forms.Padding(4);
             this.tabNavigationPage22.Name = "tabNavigationPage22";
-            this.tabNavigationPage22.Size = new System.Drawing.Size(613, 300);
+            this.tabNavigationPage22.Size = new System.Drawing.Size(817, 369);
             // 
             // pnl5
             // 
@@ -171,16 +180,18 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.pnl5.BackColor = System.Drawing.Color.White;
             this.pnl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl5.Location = new System.Drawing.Point(0, 0);
+            this.pnl5.Margin = new System.Windows.Forms.Padding(4);
             this.pnl5.Name = "pnl5";
-            this.pnl5.Size = new System.Drawing.Size(613, 300);
+            this.pnl5.Size = new System.Drawing.Size(817, 369);
             this.pnl5.TabIndex = 0;
             // 
             // tabNavigationPage23
             // 
             this.tabNavigationPage23.Caption = "1 tháng";
             this.tabNavigationPage23.Controls.Add(this.pnl6);
+            this.tabNavigationPage23.Margin = new System.Windows.Forms.Padding(4);
             this.tabNavigationPage23.Name = "tabNavigationPage23";
-            this.tabNavigationPage23.Size = new System.Drawing.Size(613, 300);
+            this.tabNavigationPage23.Size = new System.Drawing.Size(817, 368);
             // 
             // pnl6
             // 
@@ -188,16 +199,18 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.pnl6.BackColor = System.Drawing.Color.White;
             this.pnl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl6.Location = new System.Drawing.Point(0, 0);
+            this.pnl6.Margin = new System.Windows.Forms.Padding(4);
             this.pnl6.Name = "pnl6";
-            this.pnl6.Size = new System.Drawing.Size(613, 300);
+            this.pnl6.Size = new System.Drawing.Size(817, 368);
             this.pnl6.TabIndex = 0;
             // 
             // tabNavigationPage24
             // 
             this.tabNavigationPage24.Caption = "1 giờ";
             this.tabNavigationPage24.Controls.Add(this.pnl2);
+            this.tabNavigationPage24.Margin = new System.Windows.Forms.Padding(4);
             this.tabNavigationPage24.Name = "tabNavigationPage24";
-            this.tabNavigationPage24.Size = new System.Drawing.Size(613, 300);
+            this.tabNavigationPage24.Size = new System.Drawing.Size(817, 368);
             // 
             // pnl2
             // 
@@ -205,46 +218,40 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.pnl2.BackColor = System.Drawing.Color.White;
             this.pnl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl2.Location = new System.Drawing.Point(0, 0);
+            this.pnl2.Margin = new System.Windows.Forms.Padding(4);
             this.pnl2.Name = "pnl2";
-            this.pnl2.Size = new System.Drawing.Size(613, 300);
+            this.pnl2.Size = new System.Drawing.Size(817, 368);
             this.pnl2.TabIndex = 0;
-            // 
-            // pnlTitle
-            // 
-            this.pnlTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlTitle.Controls.Add(this.lblPointCondition);
-            this.pnlTitle.Controls.Add(this.nmPointCondition);
-            this.pnlTitle.Controls.Add(this.txtTitle);
-            this.pnlTitle.Location = new System.Drawing.Point(159, 0);
-            this.pnlTitle.Name = "pnlTitle";
-            this.pnlTitle.Size = new System.Drawing.Size(457, 27);
-            this.pnlTitle.TabIndex = 0;
             // 
             // lblPointCondition
             // 
-            this.lblPointCondition.Location = new System.Drawing.Point(3, 3);
+            this.lblPointCondition.Location = new System.Drawing.Point(206, 11);
+            this.lblPointCondition.Margin = new System.Windows.Forms.Padding(4);
             this.lblPointCondition.Name = "lblPointCondition";
-            this.lblPointCondition.Size = new System.Drawing.Size(71, 13);
+            this.lblPointCondition.Size = new System.Drawing.Size(92, 17);
             this.lblPointCondition.TabIndex = 13;
             this.lblPointCondition.Text = "Điểm xác nhận";
             // 
             // nmPointCondition
             // 
-            this.nmPointCondition.Location = new System.Drawing.Point(80, 3);
+            this.nmPointCondition.Location = new System.Drawing.Point(306, 9);
+            this.nmPointCondition.Margin = new System.Windows.Forms.Padding(4);
             this.nmPointCondition.Name = "nmPointCondition";
-            this.nmPointCondition.Size = new System.Drawing.Size(55, 20);
+            this.nmPointCondition.Size = new System.Drawing.Size(73, 22);
             this.nmPointCondition.TabIndex = 14;
             // 
             // userFollowSettingDetail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pnlTitle);
+            this.Controls.Add(this.lblPointCondition);
+            this.Controls.Add(this.txtTitle);
+            this.Controls.Add(this.nmPointCondition);
             this.Controls.Add(this.dropDownButton1);
             this.Controls.Add(this.tabMain);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "userFollowSettingDetail";
-            this.Size = new System.Drawing.Size(621, 353);
+            this.Size = new System.Drawing.Size(828, 434);
             ((System.ComponentModel.ISupportInitialize)(this.txtTitle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).EndInit();
             this.tabMain.ResumeLayout(false);
@@ -254,10 +261,9 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             this.tabNavigationPage22.ResumeLayout(false);
             this.tabNavigationPage23.ResumeLayout(false);
             this.tabNavigationPage24.ResumeLayout(false);
-            this.pnlTitle.ResumeLayout(false);
-            this.pnlTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmPointCondition)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -278,7 +284,6 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         private System.Windows.Forms.FlowLayoutPanel pnl6;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage24;
         private System.Windows.Forms.FlowLayoutPanel pnl2;
-        private System.Windows.Forms.FlowLayoutPanel pnlTitle;
         private DevExpress.XtraEditors.LabelControl lblPointCondition;
         private System.Windows.Forms.NumericUpDown nmPointCondition;
     }

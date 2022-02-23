@@ -158,7 +158,7 @@ namespace AnalyzeApp.GUI
         {
             this.Invoke((MethodInvoker)delegate
             {
-                tabControl.AddTab(frmConfigFx.Instance());
+                tabControl.AddTab(frmSetting.Instance());
             });
         }
 

@@ -1,0 +1,32 @@
+ -------------- Info (2022-02-22 09:47:43.2196) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: Date: 2/22/2022 9:47:42 AM | Model Info: {"Email":"nguyenphu1312","OptionTime":2,"Level":1,"Expired":1647920862} | Code: s+4uaWSqbmkV+HlQ0Iu9lI8ktuA5MNSLwO4iyIeN5a0UUhOCHY2tnRZUSk+chTx24lweVXzMg8PvQKWV1lrUNvRfkM9JjVXf/Bk5L3RGjb8=
+
+ -------------- Info (2022-02-22 09:47:43.8382) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: Date: 2/22/2022 9:47:43 AM | Copy Code: s+4uaWSqbmkV+HlQ0Iu9lI8ktuA5MNSLwO4iyIeN5a0UUhOCHY2tnRZUSk+chTx24lweVXzMg8PvQKWV1lrUNvRfkM9JjVXf/Bk5L3RGjb8=
+
+ -------------- Info (2022-02-22 10:00:59.9206) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: Date: 2/22/2022 10:00:59 AM | Model Info: {"Email":"nguyenphu1312","OptionTime":2,"Level":1,"Expired":1647921659} | Code: s+4uaWSqbmkV+HlQ0Iu9lI8ktuA5MNSLwO4iyIeN5a0UUhOCHY2tnRZUSk+chTx24lweVXzMg8PvQKWV1lrUNoAj4nZGWA42H5KyQLDUW4g=
+
+ -------------- Info (2022-02-22 10:01:00.6190) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: Date: 2/22/2022 10:01:00 AM | Copy Code: s+4uaWSqbmkV+HlQ0Iu9lI8ktuA5MNSLwO4iyIeN5a0UUhOCHY2tnRZUSk+chTx24lweVXzMg8PvQKWV1lrUNoAj4nZGWA42H5KyQLDUW4g=
+

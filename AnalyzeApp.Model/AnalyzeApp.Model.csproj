@@ -64,9 +64,9 @@
     <Compile Include="ENTITY\GeneralModel.cs" />
     <Compile Include="ENTITY\IndicatorModel.cs" />
     <Compile Include="ENTITY\KeyValueModel.cs" />
+    <Compile Include="ENTITY\MACD_BasicSettingModel.cs" />
     <Compile Include="ENTITY\MCDXModel.cs" />
     <Compile Include="ENTITY\NotifyModel.cs" />
-    <Compile Include="ENTITY\PrivateSettingModel.cs" />
     <Compile Include="ENTITY\ProfileModel.cs" />
     <Compile Include="ENTITY\ScronModel.cs" />
     <Compile Include="ENTITY\SendNotifyModel.cs" />

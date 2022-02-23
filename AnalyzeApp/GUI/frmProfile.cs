@@ -71,14 +71,28 @@ namespace AnalyzeApp.GUI
 
         private bool UpdateUserModel()
         {
+            if (string.IsNullOrWhiteSpace(txtEmail.Text))
+                return false;
+            if (txtEmail.Text.Trim() == _profile.Email
+                && txtCode.Text.Trim() == _profile.Code
+                && txtPhone.Text.Trim().PhoneFormat() == _profile.Phone
+                && (string.IsNullOrWhiteSpace(picAvatar.ImageLocation)
+                || picAvatar.ImageLocation == _profile.LinkAvatar))
+                return false;
+
             _profile.Phone = txtPhone.Text.Trim().PhoneFormat();
             _profile.Code = txtCode.Text.Trim();
             _profile.Email = txtEmail.Text;
             _profile.IsNotify = chkNotify.Checked;
             _profile.LinkAvatar = string.IsNullOrWhiteSpace(picAvatar.ImageLocation) ? string.Empty : picAvatar.ImageLocation;
 
-            APIService.Instance().DeleteProfile();
-            APIService.Instance().InsertProfile(_profile);
+            BackgroundWorker wrkr = new BackgroundWorker();
+            wrkr.DoWork += (object sender, DoWorkEventArgs e) => {
+                APIService.Instance().DeleteProfile().GetAwaiter().GetResult();
+                APIService.Instance().InsertProfile(_profile).GetAwaiter().GetResult();
+                wrkr.Dispose();
+            };
+            wrkr.RunWorkerAsync();
             StaticVal.profile = _profile;
             return true;
         }
@@ -104,12 +118,12 @@ namespace AnalyzeApp.GUI
             }
         }
 
-        private void btnOk_Click(object sender, System.EventArgs e)
+        private void btnOk_Click(object sender, EventArgs e)
         {
             CloseAppCheck();
         }
 
-        private void btnPaste_Click(object sender, System.EventArgs e)
+        private void btnPaste_Click(object sender, EventArgs e)
         {
             btnOk.Focus();
             btnPaste.Enabled = false;

@@ -19,7 +19,7 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         }
         private void InitControl()
         {
-            nmPoint.Visible = _isFollow;
+            nmPoint.Visible = !_isFollow;
         }
         private void InitData(FollowSetting_RsiModel model)
         {

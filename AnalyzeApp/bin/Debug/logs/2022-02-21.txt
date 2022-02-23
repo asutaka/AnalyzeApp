@@ -1,0 +1,26 @@
+ -------------- Error (2022-02-21 22:02:11.6421) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	APIService|GetSettings: An error occurred while sending the request. An error occurred while sending the request.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at AnalyzeApp.Common.APIService.<GetSettings>d__6.MoveNext() in D:\Data\AnalyzeApp\AnalyzeApp.Common\APIService.cs:line 51 Line: 0
+
+ -------------- Error (2022-02-21 22:02:45.5210) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	APIService|GetSettings: An error occurred while sending the request. An error occurred while sending the request.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at AnalyzeApp.Common.APIService.<GetSettings>d__6.MoveNext() in D:\Data\AnalyzeApp\AnalyzeApp.Common\APIService.cs:line 51 Line: 0
+
