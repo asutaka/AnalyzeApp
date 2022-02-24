@@ -119,23 +119,23 @@ namespace AnalyzeApp.Common
         public static int GetFlag(BasicSettingModel model)
         {
             var div = 1;
-            if (model.TimeSet_Value == (int)enumTimeZone.OneHour)
+            if (model.TimeCalculate == (int)enumTimeZone.OneHour)
             {
                 div = div * 4;
             }
-            else if (model.TimeSet_Value == (int)enumTimeZone.FourHour)
+            else if (model.TimeCalculate == (int)enumTimeZone.FourHour)
             {
                 div = div * 4 * 4;
             }
-            else if (model.TimeSet_Value == (int)enumTimeZone.OneDay)
+            else if (model.TimeCalculate == (int)enumTimeZone.OneDay)
             {
                 div = div * 4 * 4 * 6;
             }
-            else if (model.TimeSet_Value == (int)enumTimeZone.OneWeek)
+            else if (model.TimeCalculate == (int)enumTimeZone.OneWeek)
             {
                 div = div * 4 * 4 * 6 * 7;
             }
-            else if (model.TimeSet_Value == (int)enumTimeZone.OneMonth)
+            else if (model.TimeCalculate == (int)enumTimeZone.OneMonth)
             {
                 div = div * 4 * 4 * 6 * 7 * 4;
             }

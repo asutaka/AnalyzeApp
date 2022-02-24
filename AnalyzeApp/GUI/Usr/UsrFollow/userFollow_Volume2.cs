@@ -8,6 +8,7 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
     public partial class userFollow_Volume2 : UserControl
     {
         private readonly bool _isFollow;
+        private readonly BasicSettingModel _model = Config.BasicSetting;
         public userFollow_Volume2(FollowSetting_Volume2Model model, bool isFollow)
         {
             InitializeComponent();
@@ -25,16 +26,21 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         }
         private void InitData(FollowSetting_Volume2Model model) 
         {
-            if (model == null)
-                model = new FollowSetting_Volume2Model { Value = 20 };
-
             cmbOption.Properties.BeginUpdate();
             cmbOption.Properties.DataSource = typeof(enumAboveBelow).EnumToData();
             cmbOption.Properties.EndUpdate();
 
-            cmbOption.EditValue = model.Option;
-            nmValue.Value = model.Value;
-            nmPoint.Value = model.Point;
+            if (model != null)
+            {
+                cmbOption.EditValue = model.Option;
+                nmValue.Value = model.Value;
+                nmPoint.Value = model.Point;
+            }
+            else
+            {
+                cmbOption.EditValue = (int)enumAboveBelow.Above;
+                nmValue.Value = _model.Volume_Value;
+            }
         }
 
         public FollowSetting_Volume2Model GetData()

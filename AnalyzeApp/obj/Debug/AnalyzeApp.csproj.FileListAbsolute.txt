@@ -137,16 +137,13 @@ D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\bin\Debug\es\DevExpress.Office.v20.1
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\bin\Debug\ja\DevExpress.Office.v20.1.Core.resources.dll
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\bin\Debug\ru\DevExpress.Office.v20.1.Core.resources.dll
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.csproj.AssemblyReference.cache
-D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Child.frmAdvanceSetting.resources
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Child.frmBasicSetting.resources
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Child.frmBlackList.resources
-D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Child.frmConfigFx.resources
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Child.frmConfigNotify.resources
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Child.frmDashboard.resources
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Child.frmFollow.resources
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Child.frmMCDX.resources
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Child.frmWatchList.resources
-D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Child.frmSpecialSetting.resources
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Child.frmTop30.resources
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Child.frmTradeList.resources
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.frmLogin.resources
@@ -161,7 +158,6 @@ D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Usr.userCoi
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Usr.UsrFollow.userFollowChooseCoin.resources
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Usr.UsrFollow.userFollowSetting.resources
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Usr.userMonitorSchedule.resources
-D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Usr.userSetting.resources
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Usr.UsrFollow.userFollowSettingDetail.resources
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Usr.UsrFollow.userFollow_Volume2.resources
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Usr.UsrFollow.userFollow_ADX.resources
@@ -534,3 +530,5 @@ F:\DATA\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.csproj.CoreCompileInputs.cach
 F:\DATA\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.csproj.CopyComplete
 F:\DATA\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.exe
 F:\DATA\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.pdb
+D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Child.frmSetting.resources
+D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\obj\Debug\AnalyzeApp.GUI.Usr.userConfig.resources

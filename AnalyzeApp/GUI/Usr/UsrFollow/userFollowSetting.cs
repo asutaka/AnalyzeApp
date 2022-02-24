@@ -13,11 +13,15 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         private userFollowSettingDetail user4 = null;
         private userFollowSettingDetail user5 = null;
         private readonly bool _isFollow;
-        public FollowSettingModel _model = Config.FollowSetting;
+        public FollowSettingModel _model = null;
         public userFollowSetting(bool isFollow)
         {
             InitializeComponent();
             _isFollow = isFollow;
+            if (_isFollow)
+                _model = Config.FollowSetting;
+            else
+                _model = Config.AdvanceSetting;
             InitData();
         }
 

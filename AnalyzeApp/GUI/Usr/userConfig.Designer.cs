@@ -35,8 +35,8 @@ namespace AnalyzeApp.GUI.Usr
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.cmbCandleStick = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.cmbTimeZone = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.nmMCDX = new System.Windows.Forms.NumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
             this.nmADX = new System.Windows.Forms.NumericUpDown();
@@ -54,16 +54,17 @@ namespace AnalyzeApp.GUI.Usr
             this.nmLowMACD = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.nmWeight = new System.Windows.Forms.NumericUpDown();
+            this.nmVolume = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabNavigationPage20 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.pnl2 = new System.Windows.Forms.Panel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.cmbTime = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.chkPriceAction = new DevExpress.XtraEditors.ToggleSwitch();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -71,12 +72,6 @@ namespace AnalyzeApp.GUI.Usr
             this.label14 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
             this.tabMain.SuspendLayout();
             this.tabNavigationPage19.SuspendLayout();
@@ -85,8 +80,6 @@ namespace AnalyzeApp.GUI.Usr
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCandleStick.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTimeZone.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmMCDX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmADX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmRSI)).BeginInit();
@@ -95,7 +88,7 @@ namespace AnalyzeApp.GUI.Usr
             ((System.ComponentModel.ISupportInitialize)(this.nmMA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmHighMACD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmLowMACD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmWeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmVolume)).BeginInit();
             this.tabNavigationPage20.SuspendLayout();
             this.pnl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -148,7 +141,6 @@ namespace AnalyzeApp.GUI.Usr
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl1.Controls.Add(this.cmbCandleStick);
-            this.groupControl1.Controls.Add(this.cmbTimeZone);
             this.groupControl1.Controls.Add(this.nmMCDX);
             this.groupControl1.Controls.Add(this.label13);
             this.groupControl1.Controls.Add(this.nmADX);
@@ -166,11 +158,10 @@ namespace AnalyzeApp.GUI.Usr
             this.groupControl1.Controls.Add(this.nmLowMACD);
             this.groupControl1.Controls.Add(this.label5);
             this.groupControl1.Controls.Add(this.label9);
-            this.groupControl1.Controls.Add(this.nmWeight);
+            this.groupControl1.Controls.Add(this.nmVolume);
             this.groupControl1.Controls.Add(this.label4);
             this.groupControl1.Controls.Add(this.label3);
             this.groupControl1.Controls.Add(this.label2);
-            this.groupControl1.Controls.Add(this.label1);
             this.groupControl1.Location = new System.Drawing.Point(2, 3);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupControl1.Name = "groupControl1";
@@ -201,28 +192,22 @@ namespace AnalyzeApp.GUI.Usr
             this.gridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
             // 
-            // cmbTimeZone
+            // gridColumn5
             // 
-            this.cmbTimeZone.Location = new System.Drawing.Point(105, 39);
-            this.cmbTimeZone.Name = "cmbTimeZone";
-            this.cmbTimeZone.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbTimeZone.Properties.DisplayMember = "Name";
-            this.cmbTimeZone.Properties.NullText = "";
-            this.cmbTimeZone.Properties.PopupView = this.gridLookUpEdit1View;
-            this.cmbTimeZone.Properties.ValueMember = "Id";
-            this.cmbTimeZone.Size = new System.Drawing.Size(105, 20);
-            this.cmbTimeZone.TabIndex = 26;
+            this.gridColumn5.Caption = "Id";
+            this.gridColumn5.FieldName = "Id";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             // 
-            // gridLookUpEdit1View
+            // gridColumn6
             // 
-            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn3,
-            this.gridColumn4});
-            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
-            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            this.gridColumn6.Caption = "Name";
+            this.gridColumn6.FieldName = "Name";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.ShowCaption = false;
+            this.gridColumn6.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 0;
             // 
             // nmMCDX
             // 
@@ -426,15 +411,15 @@ namespace AnalyzeApp.GUI.Usr
             this.label9.TabIndex = 16;
             this.label9.Text = "Low";
             // 
-            // nmWeight
+            // nmVolume
             // 
-            this.nmWeight.Location = new System.Drawing.Point(106, 108);
-            this.nmWeight.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.nmWeight.Name = "nmWeight";
-            this.nmWeight.Size = new System.Drawing.Size(105, 21);
-            this.nmWeight.TabIndex = 8;
-            this.nmWeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.nmWeight.Value = new decimal(new int[] {
+            this.nmVolume.Location = new System.Drawing.Point(106, 108);
+            this.nmVolume.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.nmVolume.Name = "nmVolume";
+            this.nmVolume.Size = new System.Drawing.Size(105, 21);
+            this.nmVolume.TabIndex = 8;
+            this.nmVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nmVolume.Value = new decimal(new int[] {
             20,
             0,
             0,
@@ -469,16 +454,6 @@ namespace AnalyzeApp.GUI.Usr
             this.label2.Size = new System.Drawing.Size(26, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nến";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 42);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Khung thời gian";
             // 
             // tabNavigationPage20
             // 
@@ -539,6 +514,23 @@ namespace AnalyzeApp.GUI.Usr
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Id";
+            this.gridColumn1.FieldName = "Id";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Name";
+            this.gridColumn2.FieldName = "Name";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.ShowCaption = false;
+            this.gridColumn2.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
             // 
             // chkPriceAction
             // 
@@ -616,57 +608,6 @@ namespace AnalyzeApp.GUI.Usr
             this.label28.TabIndex = 0;
             this.label28.Text = "Khung thời gian";
             // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Id";
-            this.gridColumn1.FieldName = "Id";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Name";
-            this.gridColumn2.FieldName = "Name";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.ShowCaption = false;
-            this.gridColumn2.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Id";
-            this.gridColumn3.FieldName = "Id";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Name";
-            this.gridColumn4.FieldName = "Name";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.OptionsColumn.ShowCaption = false;
-            this.gridColumn4.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 0;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "Id";
-            this.gridColumn5.FieldName = "Id";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "Name";
-            this.gridColumn6.FieldName = "Name";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.OptionsColumn.ShowCaption = false;
-            this.gridColumn6.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 0;
-            // 
             // userConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -684,8 +625,6 @@ namespace AnalyzeApp.GUI.Usr
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCandleStick.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTimeZone.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmMCDX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmADX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmRSI)).EndInit();
@@ -694,7 +633,7 @@ namespace AnalyzeApp.GUI.Usr
             ((System.ComponentModel.ISupportInitialize)(this.nmMA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmHighMACD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmLowMACD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmWeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmVolume)).EndInit();
             this.tabNavigationPage20.ResumeLayout(false);
             this.pnl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
@@ -733,11 +672,10 @@ namespace AnalyzeApp.GUI.Usr
         private System.Windows.Forms.NumericUpDown nmLowMACD;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.NumericUpDown nmWeight;
+        private System.Windows.Forms.NumericUpDown nmVolume;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.NumericUpDown nmRealtime;
@@ -748,15 +686,11 @@ namespace AnalyzeApp.GUI.Usr
         private DevExpress.XtraEditors.ToggleSwitch chkPriceAction;
         private DevExpress.XtraEditors.GridLookUpEdit cmbCandleStick;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit2View;
-        private DevExpress.XtraEditors.GridLookUpEdit cmbTimeZone;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
         private DevExpress.XtraEditors.GridLookUpEdit cmbTime;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
     }
 }

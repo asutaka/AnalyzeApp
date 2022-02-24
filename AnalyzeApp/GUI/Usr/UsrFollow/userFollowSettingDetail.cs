@@ -23,7 +23,7 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         private BarButtonItem btnVolume1 = null;
         private BarButtonItem btnVolume2 = null;
        
-        public FollowSettingModel _model = Config.FollowSetting;
+        public FollowSettingModel _model = null;
         private FollowSettingModeModel _modelMode;
         private readonly int _num;
         private readonly bool _isFollow;
@@ -32,6 +32,10 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             InitializeComponent();
             _num = num;
             _isFollow = isFollow;
+            if (_isFollow)
+                _model = Config.FollowSetting;
+            else
+                _model = Config.AdvanceSetting;
             InitControls();
             InitData();
         }
@@ -54,6 +58,7 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             if (string.IsNullOrWhiteSpace(txtTitle.Text))
                 title = $"Chỉ báo { _num }";
             result.Title = title;
+            result.PointCondition = nmPointCondition.Value;
             result.lFollowSettingModeDetail = new List<FollowSettingModeDetailModel>();
             if(pnl1.Controls.Count > 0)
             {
