@@ -208,10 +208,9 @@ namespace AnalyzeApp.Analyze
             return (banker_rsi >= signal, banker_rsi);
         }
 
-        public static (bool, double) SPecial(string coin)
-        {
-            return (true, 0);
-        }
+
+
+
 
         public static (bool, double) ConfigData(string coin, AdvanceSettingModel model)
         {
