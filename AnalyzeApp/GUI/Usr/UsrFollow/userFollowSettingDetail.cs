@@ -252,14 +252,14 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         private void InitDataTab(FollowSettingModeDetailModel model)
         {
             FlowLayoutPanel pnl = null;
-            switch (model.Interval)
+            switch ((enumInterval)model.Interval)
             {
-                case 0: pnl = pnl1;break;
-                case 1: pnl = pnl2;break;
-                case 2: pnl = pnl3;break;
-                case 3: pnl = pnl4;break;
-                case 4: pnl = pnl5;break;
-                case 5: pnl = pnl6;break;
+                case enumInterval.FifteenMinute: pnl = pnl1;break;
+                case enumInterval.OneHour: pnl = pnl2;break;
+                case enumInterval.FourHour: pnl = pnl3;break;
+                case enumInterval.OneDay: pnl = pnl4;break;
+                case enumInterval.OneWeek: pnl = pnl5;break;
+                case enumInterval.OneMonth: pnl = pnl6;break;
                 default: break;
             }
             if (pnl == null)
@@ -308,14 +308,14 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             }
             foreach (Control item in pnl.Controls)
             {
-                switch (model.Interval)
+                switch ((enumInterval)model.Interval)
                 {
-                    case 0: pnl1.Controls.Add(item);break;
-                    case 1: pnl2.Controls.Add(item);break;
-                    case 2: pnl3.Controls.Add(item);break;
-                    case 3: pnl4.Controls.Add(item);break;
-                    case 4: pnl5.Controls.Add(item);break;
-                    case 5: pnl6.Controls.Add(item);break;
+                    case enumInterval.FifteenMinute: pnl1.Controls.Add(item);break;
+                    case enumInterval.OneHour: pnl2.Controls.Add(item);break;
+                    case enumInterval.FourHour: pnl3.Controls.Add(item);break;
+                    case enumInterval.OneDay: pnl4.Controls.Add(item);break;
+                    case enumInterval.OneWeek: pnl5.Controls.Add(item);break;
+                    case enumInterval.OneMonth: pnl6.Controls.Add(item);break;
                 }
             }
         }

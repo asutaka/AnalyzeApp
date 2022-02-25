@@ -1,6 +1,7 @@
 ﻿using AnalyzeApp.Analyze;
 using AnalyzeApp.Common;
 using AnalyzeApp.Model.ENTITY;
+using AnalyzeApp.Model.ENUM;
 using Quartz;
 using System;
 using System.Collections.Generic;
@@ -12,97 +13,106 @@ namespace AnalyzeApp.Job
     [DisallowConcurrentExecution]
     public class FollowListJob : IJob
     {
-        //private FollowModel followList = null;//Config.Follow;
+        private readonly FollowSettingModel followList = Config.FollowSetting;
+        private readonly BasicSettingModel _model = Config.BasicSetting;
         public void Execute(IJobExecutionContext context)
         {
-            //try
-            //{
-            //    if (!followList.IsNotify 
-            //        || !followList.Coins.Any() 
-            //        || !followList.Follows.Any())
-            //        return;
+            if (followList == null 
+                || !followList.IsNotify
+                || followList.Coins == null
+                || !followList.Coins.Any()
+                || _model == null)
+                return;
+            foreach (var item in followList.Coins)
+            {
+                SubFunction(item);
+            }
+        }
 
-            //    var lstTask = new List<Task>();
-            //    foreach (var coin in followList.Coins)
-            //    {
-            //        var task = Task.Run(() =>
-            //        {
-            //            foreach (var item in followList.Follows)
-            //            {
-            //                //Top30
-            //                var isTop30 = false;
-            //                if (item.IsTop30)
-            //                {
-            //                    isTop30 = StaticVal.lstCryptonRank.Any(x => x.Coin == coin);
-            //                }
-            //                else
-            //                {
-            //                    isTop30 = true;
-            //                }
-            //                //MCDX
-            //                var isMCDX = false;
-            //                if (item.IsMCDX)
-            //                {
-            //                    isMCDX = CalculateMng.MCDX(coin).Item1;
-            //                }
-            //                else
-            //                {
-            //                    isTop30 = true;
-            //                }
-            //                //Thiết lập 2
-            //                var isConfig2 = false;
-            //                if (item.IsConfig2)
-            //                {
-            //                    isConfig2 = CalculateMng.ConfigData(coin, Config.AdvanceSetting1).Item1;
-            //                }
-            //                else
-            //                {
-            //                    isConfig2 = true;
-            //                }
-            //                //Thiết lập 3
-            //                var isConfig3 = false;
-            //                if (item.IsConfig3)
-            //                {
-            //                    isConfig3 = CalculateMng.ConfigData(coin, Config.AdvanceSetting2).Item1;
-            //                }
-            //                else
-            //                {
-            //                    isConfig3 = true;
-            //                }
-            //                //Thiết lập 4
-            //                var isConfig4 = false;
-            //                if (item.IsConfig4)
-            //                {
-            //                    isConfig4 = CalculateMng.ConfigData(coin, Config.AdvanceSetting3).Item1;
-            //                }
-            //                else
-            //                {
-            //                    isConfig4 = true;
-            //                }
-            //                //Thiết lập 5
-            //                var isConfig5 = false;
-            //                if (item.IsConfig5)
-            //                {
-            //                    isConfig5 = CalculateMng.ConfigData(coin, Config.AdvanceSetting4).Item1;
-            //                }
-            //                else
-            //                {
-            //                    isConfig5 = true;
-            //                }
-            //                if (isTop30 && isMCDX && isConfig2 && isConfig3 && isConfig4 && isConfig5)
-            //                {
-            //                    //StaticValues.lNotify.Enqueue($"{coin}: Follow cho tín hiệu: {item.Title}");
-            //                }
-            //            }
-            //        });
-            //        lstTask.Add(task);
-            //    }
-            //    Task.WaitAll(lstTask.ToArray());
-            //}
-            //catch(Exception ex)
-            //{
-            //    NLogLogger.PublishException(ex, $"FollowListJob:Execute: {ex.Message}");
-            //}
+        private void SubFunction(string coin)
+        {
+            var lstTask = new List<Task>();
+            lstTask.Add(Task.Run(() =>
+            {
+                SubFunction2(coin, followList.FollowSettingMode1);
+            }));
+            lstTask.Add(Task.Run(() =>
+            {
+                SubFunction2(coin, followList.FollowSettingMode2);
+            }));
+            lstTask.Add(Task.Run(() =>
+            {
+                SubFunction2(coin, followList.FollowSettingMode3);
+            }));
+            lstTask.Add(Task.Run(() =>
+            {
+                SubFunction2(coin, followList.FollowSettingMode4);
+            }));
+            lstTask.Add(Task.Run(() =>
+            {
+                SubFunction2(coin, followList.FollowSettingMode5);
+            }));
+            Task.WaitAll(lstTask.ToArray());
+        }
+
+        private void SubFunction2(string coin, FollowSettingModeModel model)
+        {
+            if (model == null 
+                || model.lFollowSettingModeDetail == null
+                || !model.lFollowSettingModeDetail.Any())
+                return;
+            foreach (var item in model.lFollowSettingModeDetail)
+            {
+                SubFunction3(coin, item);
+            }
+        }
+
+        private void SubFunction3(string coin, FollowSettingModeDetailModel model)
+        {
+            var lData = GetDictionaryData(coin, (enumInterval)model.Interval);
+            if (lData == null || !lData.Any())
+                return;
+            var count = lData.Count();
+            if(model.lFollowSetting_Macd != null && model.lFollowSetting_Macd.Any())
+            {
+                var macdInput = model.lFollowSetting_Macd.First();
+                var max = CalculateMng.Max(_model.MACD_Value.High, _model.MACD_Value.Low, _model.MACD_Value.Signal);
+                if (count < max)
+                    return;
+                var macdOutput = CalculateMng.MACD(lData.Select(x => (double)x.Close).ToArray(), _model.MACD_Value.High, _model.MACD_Value.Low, _model.MACD_Value.Signal, count);
+            }
+        }
+
+        private IEnumerable<BinanceKline> GetDictionaryData(string coin, enumInterval interval)
+        {
+            switch (interval)
+            {
+                case enumInterval.FifteenMinute:
+                    {
+                        return StaticVal.dic15M.FirstOrDefault(x => x.Key == coin).Value;
+                    }
+                case enumInterval.OneHour:
+                    {
+                        return StaticVal.dic1H.FirstOrDefault(x => x.Key == coin).Value;
+                    }
+                case enumInterval.FourHour:
+                    {
+                        return StaticVal.dic4H.FirstOrDefault(x => x.Key == coin).Value;
+                    }
+                case enumInterval.OneDay:
+                    {
+                        return StaticVal.dic1D.FirstOrDefault(x => x.Key == coin).Value;
+                    }
+                case enumInterval.OneWeek:
+                    {
+                        return StaticVal.dic1W.FirstOrDefault(x => x.Key == coin).Value;
+                    }
+                case enumInterval.OneMonth:
+                    {
+                        return StaticVal.dic1Month.FirstOrDefault(x => x.Key == coin).Value;
+                    }
+            }
+            return null;
         }
     }
 }

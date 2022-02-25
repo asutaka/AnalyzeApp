@@ -451,8 +451,8 @@ namespace AnalyzeApp.Analyze
             }
             return point;
         }
-        
-        private static double ADX(double[] arrHigh, double[] arrLow, double[] arrClose, int period, int count)
+
+        public static double ADX(double[] arrHigh, double[] arrLow, double[] arrClose, int period, int count)
         {
             try
             {
@@ -466,7 +466,7 @@ namespace AnalyzeApp.Analyze
             }
             return 0;
         }
-        private static double MA(double[] arrInput, Core.MAType type, int period, int count)
+        public static double MA(double[] arrInput, Core.MAType type, int period, int count)
         {
             try
             {
@@ -480,7 +480,7 @@ namespace AnalyzeApp.Analyze
             }
             return 0;
         }
-        private static double MACD(double[] arrInput, int high, int low, int signal, int count)
+        public static double MACD(double[] arrInput, int high, int low, int signal, int count)
         {
             try
             {
@@ -494,7 +494,7 @@ namespace AnalyzeApp.Analyze
             }
             return 0;
         }
-        private static (double, double) MCDX(double[] arrInput, int count)
+        public static (double, double) MCDX(double[] arrInput, int count)
         {
             try
             {
@@ -522,7 +522,7 @@ namespace AnalyzeApp.Analyze
             return (0, 0);
 
         }
-        private static double RSI(double[] arrInput, int period, int count)
+        public static double RSI(double[] arrInput, int period, int count)
         {
             try
             {
@@ -535,6 +535,14 @@ namespace AnalyzeApp.Analyze
                 NLogLogger.PublishException(ex, $"CalculateMng:RSI: {ex.Message}");
             }
             return 0;
+        }
+
+        public static decimal Max(decimal x, decimal y, decimal z = 0, decimal t = 0)
+        {
+            var max = x < y ? x : y;
+            max = max < z ? z : max;
+            max = max < t ? t : max;
+            return max;
         }
 
         private class OutputIndicatorModel

@@ -61,6 +61,9 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         private void InitData()
         {
             LoadInternalNotify();
+            cmbFrequency.EditValue = _model.Interval;
+            chkState.IsOn = _model.IsNotify;
+
             user1 = new userFollowSettingDetail(1, _isFollow);
             user2 = new userFollowSettingDetail(2, _isFollow);
             user3 = new userFollowSettingDetail(3, _isFollow);

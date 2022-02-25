@@ -86,3 +86,63 @@
  Stack Trace: 
  Additional Info: 25/02/2022 11:45:00 AM: Data15MJob Start!
 
+ -------------- Error (2022-02-25 13:27:11.8939) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	CalculateMng|CalculateCryptonRank|SANDUSDT: Sequence contains no matching element Sequence contains no matching element
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at AnalyzeApp.Analyze.CalculateMng.GetSource(String coin) in D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\Analyze\CalculateMng.cs:line 200
+   at AnalyzeApp.Analyze.CalculateMng.CalculateCryptonRank(String coin, String coinName) in D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\Analyze\CalculateMng.cs:line 42 Line: 0
+
+ -------------- Error (2022-02-25 13:33:07.6539) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	CalculateMng|CalculateCryptonRank|CVCUSDT: Sequence contains no matching element Sequence contains no matching element
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at AnalyzeApp.Analyze.CalculateMng.GetSource(String coin) in D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\Analyze\CalculateMng.cs:line 200
+   at AnalyzeApp.Analyze.CalculateMng.CalculateCryptonRank(String coin, String coinName) in D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\Analyze\CalculateMng.cs:line 42 Line: 0
+
+ -------------- Error (2022-02-25 14:10:27.9036) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	CalculateMng|CalculateCryptonRank|BTCSTUSDT: Sequence contains no matching element Sequence contains no matching element
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at AnalyzeApp.Analyze.CalculateMng.GetSource(String coin) in D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\Analyze\CalculateMng.cs:line 200
+   at AnalyzeApp.Analyze.CalculateMng.CalculateCryptonRank(String coin, String coinName) in D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\Analyze\CalculateMng.cs:line 42 Line: 0
+
+ -------------- Error (2022-02-25 14:10:27.9036) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	CalculateMng|CalculateCryptonRank|LPTUSDT: Sequence contains no matching element Sequence contains no matching element
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at AnalyzeApp.Analyze.CalculateMng.GetSource(String coin) in D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\Analyze\CalculateMng.cs:line 200
+   at AnalyzeApp.Analyze.CalculateMng.CalculateCryptonRank(String coin, String coinName) in D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\Analyze\CalculateMng.cs:line 42 Line: 0
+
+ -------------- Error (2022-02-25 14:11:01.1362) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	CalculateMng|CalculateCryptonRank|WTCUSDT: Sequence contains no matching element Sequence contains no matching element
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at AnalyzeApp.Analyze.CalculateMng.GetSource(String coin) in D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\Analyze\CalculateMng.cs:line 200
+   at AnalyzeApp.Analyze.CalculateMng.CalculateCryptonRank(String coin, String coinName) in D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\Analyze\CalculateMng.cs:line 42 Line: 0
+
