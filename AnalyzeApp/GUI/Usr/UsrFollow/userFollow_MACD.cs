@@ -25,15 +25,20 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         }
         private void InitData(FollowSetting_MacdModel model)
         {
-            if (model == null)
-                model = new FollowSetting_MacdModel();
             cmbOption.Properties.BeginUpdate();
             cmbOption.Properties.DataSource = typeof(enumCross).EnumToData();
             cmbOption.Properties.EndUpdate();
 
-            cmbOption.EditValue = model.Option;
-            nmRatioMax.Value = model.RatioMax;
-            nmPoint.Value = model.Point;
+            if (model != null)
+            {
+                cmbOption.EditValue = model.Option;
+                nmRatioMax.Value = model.RatioMax;
+                nmPoint.Value = model.Point;
+            }
+            else
+            {
+                cmbOption.EditValue = (int)enumCross.Cross_Above;
+            }
         }
         public FollowSetting_MacdModel GetData()
         {

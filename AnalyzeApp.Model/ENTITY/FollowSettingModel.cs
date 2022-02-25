@@ -27,6 +27,7 @@ namespace AnalyzeApp.Model.ENTITY
         public List<FollowSetting_MaModel> lFollowSetting_Ma { get; set; }
         public List<FollowSetting_PriceModel> lFollowSetting_Price { get; set; }
         public List<FollowSetting_VolumeModel> lFollowSetting_Volume { get; set; }
+        public List<FollowSetting_Volume2Model> lFollowSetting_Volume2 { get; set; }
         public List<FollowSetting_McdxModel> lFollowSetting_Mcdx { get; set; }
         public List<FollowSetting_RsiModel> lFollowSetting_Rsi { get; set; }
         public List<FollowSetting_AdxModel> lFollowSetting_Adx { get; set; }

@@ -23,7 +23,7 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         private BarButtonItem btnVolume1 = null;
         private BarButtonItem btnVolume2 = null;
        
-        public FollowSettingModel _model = Config.FollowSetting;
+        public FollowSettingModel _model = null;
         private FollowSettingModeModel _modelMode;
         private readonly int _num;
         private readonly bool _isFollow;
@@ -32,6 +32,10 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             InitializeComponent();
             _num = num;
             _isFollow = isFollow;
+            if (_isFollow)
+                _model = Config.FollowSetting;
+            else
+                _model = Config.AdvanceSetting;
             InitControls();
             InitData();
         }
@@ -54,6 +58,7 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             if (string.IsNullOrWhiteSpace(txtTitle.Text))
                 title = $"Chỉ báo { _num }";
             result.Title = title;
+            result.PointCondition = nmPointCondition.Value;
             result.lFollowSettingModeDetail = new List<FollowSettingModeDetailModel>();
             if(pnl1.Controls.Count > 0)
             {
@@ -134,6 +139,20 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
                         modelDetail.lFollowSetting_Rsi = new List<FollowSetting_RsiModel>();
                     modelDetail.lFollowSetting_Rsi.Add(userModel.GetData());
                 }
+                else if (item.GetType() == typeof(userFollow_Volume))
+                {
+                    var userModel = item as userFollow_Volume;
+                    if (modelDetail.lFollowSetting_Volume == null)
+                        modelDetail.lFollowSetting_Volume = new List<FollowSetting_VolumeModel>();
+                    modelDetail.lFollowSetting_Volume.Add(userModel.GetData());
+                }
+                else if (item.GetType() == typeof(userFollow_Volume2))
+                {
+                    var userModel = item as userFollow_Volume2;
+                    if (modelDetail.lFollowSetting_Volume2 == null)
+                        modelDetail.lFollowSetting_Volume2 = new List<FollowSetting_Volume2Model>();
+                    modelDetail.lFollowSetting_Volume2.Add(userModel.GetData());
+                }
             }
             return modelDetail;
         }
@@ -163,6 +182,8 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             popupMenu1.AddItem(btnMCDX);
             popupMenu1.AddItem(btnRSI);
             popupMenu1.AddItem(btnADX);
+            popupMenu1.AddItem(btnVolume1);
+            popupMenu1.AddItem(btnVolume2);
             // 
             // dropDownButton1
             // 
@@ -209,13 +230,13 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             // 
             btnVolume1.ImageOptions.Image = Properties.Resources.green;
             btnVolume1.Tag = "Volume1";
-            btnVolume1.ItemClick += new ItemClickEventHandler(this.btnRSI_ItemClick);
+            btnVolume1.ItemClick += new ItemClickEventHandler(this.btnVolume1_ItemClick);
             // 
             // btnVolume2
             // 
             btnVolume2.ImageOptions.Image = Properties.Resources.green;
             btnVolume2.Tag = "Volume2";
-            btnVolume2.ItemClick += new ItemClickEventHandler(this.btnRSI_ItemClick);
+            btnVolume2.ItemClick += new ItemClickEventHandler(this.btnVolume2_ItemClick);
         }
 
         private void InitData()
@@ -247,14 +268,14 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         private void InitDataTab(FollowSettingModeDetailModel model)
         {
             FlowLayoutPanel pnl = null;
-            switch (model.Interval)
+            switch ((enumInterval)model.Interval)
             {
-                case 0: pnl = pnl1;break;
-                case 1: pnl = pnl2;break;
-                case 2: pnl = pnl3;break;
-                case 3: pnl = pnl4;break;
-                case 4: pnl = pnl5;break;
-                case 5: pnl = pnl6;break;
+                case enumInterval.FifteenMinute: pnl = pnl1;break;
+                case enumInterval.OneHour: pnl = pnl2;break;
+                case enumInterval.FourHour: pnl = pnl3;break;
+                case enumInterval.OneDay: pnl = pnl4;break;
+                case enumInterval.OneWeek: pnl = pnl5;break;
+                case enumInterval.OneMonth: pnl = pnl6;break;
                 default: break;
             }
             if (pnl == null)
@@ -303,14 +324,14 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             }
             foreach (Control item in pnl.Controls)
             {
-                switch (model.Interval)
+                switch ((enumInterval)model.Interval)
                 {
-                    case 0: pnl1.Controls.Add(item);break;
-                    case 1: pnl2.Controls.Add(item);break;
-                    case 2: pnl3.Controls.Add(item);break;
-                    case 3: pnl4.Controls.Add(item);break;
-                    case 4: pnl5.Controls.Add(item);break;
-                    case 5: pnl6.Controls.Add(item);break;
+                    case enumInterval.FifteenMinute: pnl1.Controls.Add(item);break;
+                    case enumInterval.OneHour: pnl2.Controls.Add(item);break;
+                    case enumInterval.FourHour: pnl3.Controls.Add(item);break;
+                    case enumInterval.OneDay: pnl4.Controls.Add(item);break;
+                    case enumInterval.OneWeek: pnl5.Controls.Add(item);break;
+                    case enumInterval.OneMonth: pnl6.Controls.Add(item);break;
                 }
             }
         }

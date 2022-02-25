@@ -73,6 +73,3 @@ namespace AnalyzeApp.Job
         }
     }
 }
-//public string Phone { get; set; }
-//public string Content { get; set; }
-//public bool IsService { get; set; }

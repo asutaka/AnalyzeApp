@@ -8,6 +8,7 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
     public partial class userFollow_Price : UserControl
     {
         private readonly bool _isFollow;
+        private readonly BasicSettingModel _model = Config.BasicSetting;
         public userFollow_Price(FollowSetting_PriceModel model, bool isFollow)
         {
             InitializeComponent();
@@ -28,9 +29,6 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
 
         private void InitData(FollowSetting_PriceModel model)
         {
-            if (model == null)
-                model = new FollowSetting_PriceModel { Value = 5 };
-
             cmbOption.Properties.BeginUpdate();
             cmbOption.Properties.DataSource = typeof(enumCross).EnumToData();
             cmbOption.Properties.EndUpdate();
@@ -39,11 +37,20 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
             cmbMode.Properties.DataSource = typeof(enumMA).EnumToData();
             cmbMode.Properties.EndUpdate();
 
-            cmbOption.EditValue = model.Option;
-            cmbMode.EditValue = model.Mode;
-            nmValue.Value = model.Value;
-            nmRatioMax.Value = model.RatioMax;
-            nmPoint.Value = model.Point;
+            if (model != null)
+            {
+                cmbOption.EditValue = model.Option;
+                cmbMode.EditValue = model.Mode;
+                nmValue.Value = model.Value;
+                nmRatioMax.Value = model.RatioMax;
+                nmPoint.Value = model.Point;
+            }
+            else
+            {
+                cmbOption.EditValue = (int)enumCross.Cross_Above;
+                cmbMode.EditValue = (int)enumMA.MA;
+                nmValue.Value = _model.MA_Value;
+            }
         }
 
         public FollowSetting_PriceModel GetData()

@@ -8,32 +8,39 @@ using System.Windows.Forms;
 
 namespace AnalyzeApp.Job
 {
+    [DisallowConcurrentExecution]
     public class CheckStatusJob : IJob
     {
-        private const string _fileName = "user.json";
         public void Execute(IJobExecutionContext context)
         {
             if (StaticVal.IsExecCheckCodeActive)
                 return;
             StaticVal.IsExecCheckCodeActive = true;
-            var time = CommonMethod.GetTimeAsync().GetAwaiter().GetResult();
-
-            var objUser = new ProfileModel().LoadJsonFile(_fileName);
-            var jsonModel = Security.Decrypt(objUser.Code);
-            if (string.IsNullOrWhiteSpace(jsonModel))
+            //var time = CommonMethod.GetTimeAsync().GetAwaiter().GetResult();
+            var time = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+            var profile = APIService.Instance().GetProfile().GetAwaiter().GetResult();
+            if(profile == null)
             {
                 StaticVal.IsCodeActive = false;
             }
             else
             {
-                var model = JsonConvert.DeserializeObject<GenCodeModel>(jsonModel);
-                if (!StaticVal.profile.Email.Contains(model.Email) || model.Expired <= time)
+                var jsonModel = Security.Decrypt(profile.Code);
+                if (string.IsNullOrWhiteSpace(jsonModel))
                 {
                     StaticVal.IsCodeActive = false;
                 }
                 else
                 {
-                    StaticVal.IsCodeActive = true;
+                    var model = JsonConvert.DeserializeObject<GenCodeModel>(jsonModel);
+                    if (!StaticVal.profile.Email.Contains(model.Email) || model.Expired <= time)
+                    {
+                        StaticVal.IsCodeActive = false;
+                    }
+                    else
+                    {
+                        StaticVal.IsCodeActive = true;
+                    }
                 }
             }
 

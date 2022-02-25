@@ -1,0 +1,27 @@
+ -------------- Info (2022-02-24 11:30:00.4520) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 24/02/2022 11:30:00 AM: Data15MJob Start!
+
+ -------------- Info (2022-02-24 11:35:22.7070) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 24/02/2022 11:35:22 AM: Data15MJob End!
+
+ -------------- Error (2022-02-24 13:25:53.5806) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	CalculateMng|CalculateCryptonRank|ELFUSDT: Sequence contains no matching element Sequence contains no matching element
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at AnalyzeApp.Analyze.CalculateMng.CalculateCryptonRank(String coin, String coinName) in D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp\Analyze\CalculateMng.cs:line 49 Line: 0
+

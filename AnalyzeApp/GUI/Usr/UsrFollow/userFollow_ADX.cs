@@ -8,6 +8,7 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
     public partial class userFollow_ADX : UserControl
     {
         private readonly bool _isFollow;
+        private readonly BasicSettingModel _model = Config.BasicSetting;
         public userFollow_ADX(FollowSetting_AdxModel model, bool isFollow)
         {
             InitializeComponent();
@@ -25,14 +26,20 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         }
         private void InitData(FollowSetting_AdxModel model)
         {
-            if (model == null)
-                model = new FollowSetting_AdxModel { Value = 20 };
             cmbOption.Properties.BeginUpdate();
             cmbOption.Properties.DataSource = typeof(enumAboveBelow).EnumToData();
             cmbOption.Properties.EndUpdate();
-            cmbOption.EditValue = model.Option;
-            nmValue.Value = model.Value;
-            nmPoint.Value = model.Point;
+            if(model != null)
+            {
+                cmbOption.EditValue = model.Option;
+                nmValue.Value = model.Value;
+                nmPoint.Value = model.Point;
+            }
+            else 
+            {
+                cmbOption.EditValue = (int)enumAboveBelow.Above;
+                nmValue.Value = _model.ADX_Value;
+            }
         }
 
         public FollowSetting_AdxModel GetData()

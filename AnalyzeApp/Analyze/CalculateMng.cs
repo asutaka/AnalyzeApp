@@ -39,29 +39,7 @@ namespace AnalyzeApp.Analyze
             {
                 int count = 1;
                 decimal sum = 0;
-                IEnumerable<BinanceKline> lSource = null;
-                switch ((enumInterval)Config.BasicSetting.TimeCalculate)
-                {
-                    case enumInterval.FifteenMinute:
-                        lSource = StaticVal.dic15M.First(x => x.Key == coin).Value;
-                        break;
-                    case enumInterval.OneHour:
-                        lSource = StaticVal.dic1H.First(x => x.Key == coin).Value;
-                        break;
-                    case enumInterval.FourHour:
-                        lSource = StaticVal.dic4H.First(x => x.Key == coin).Value;
-                        break;
-                    case enumInterval.OneDay:
-                        lSource = StaticVal.dic1D.First(x => x.Key == coin).Value;
-                        break;
-                    case enumInterval.OneWeek:
-                        lSource = StaticVal.dic1W.First(x => x.Key == coin).Value;
-                        break;
-                    case enumInterval.OneMonth:
-                        lSource = StaticVal.dic1Month.First(x => x.Key == coin).Value;
-                        break;
-                    default: break;
-                }
+                IEnumerable<BinanceKline> lSource = GetSource(coin);
                 if (lSource == null || !lSource.Any())
                     return new Top30Model { Coin = coin, Count = count, Rate = (double)Math.Round(sum / count, 2) };
 
@@ -187,11 +165,13 @@ namespace AnalyzeApp.Analyze
 
         public static (bool, double) MCDX(string coin)
         {
-            var data = DataMng.GetCurrentData(coin, (enumInterval)Config.BasicSetting.RealtimeInterval);
+            var data = DataMng.GetCurrentData(coin, (enumInterval)Config.BasicSetting.TimeCalculate);
             if (data == null || !data.Any())
                 return (false, 0);
             var arrClose = data.Select(x => (double)x.Close).ToArray();
             var count = arrClose.Count();
+            if(count < 50)
+                return (false, 0);
 
             double[] output1 = new double[1000];
             double[] output2 = new double[1000];
@@ -208,10 +188,35 @@ namespace AnalyzeApp.Analyze
             return (banker_rsi >= signal, banker_rsi);
         }
 
-        public static (bool, double) SPecial(string coin)
+        public static IEnumerable<BinanceKline> GetSource(string coin)
         {
-            return (true, 0);
+            IEnumerable<BinanceKline> lSource = null;
+            switch ((enumInterval)Config.BasicSetting.TimeCalculate)
+            {
+                case enumInterval.FifteenMinute:
+                    lSource = StaticVal.dic15M.First(x => x.Key == coin).Value;
+                    break;
+                case enumInterval.OneHour:
+                    lSource = StaticVal.dic1H.First(x => x.Key == coin).Value;
+                    break;
+                case enumInterval.FourHour:
+                    lSource = StaticVal.dic4H.First(x => x.Key == coin).Value;
+                    break;
+                case enumInterval.OneDay:
+                    lSource = StaticVal.dic1D.First(x => x.Key == coin).Value;
+                    break;
+                case enumInterval.OneWeek:
+                    lSource = StaticVal.dic1W.First(x => x.Key == coin).Value;
+                    break;
+                case enumInterval.OneMonth:
+                    lSource = StaticVal.dic1Month.First(x => x.Key == coin).Value;
+                    break;
+                default: break;
+            }
+            return lSource;
         }
+
+
 
         public static (bool, double) ConfigData(string coin, AdvanceSettingModel model)
         {
@@ -446,8 +451,8 @@ namespace AnalyzeApp.Analyze
             }
             return point;
         }
-        
-        private static double ADX(double[] arrHigh, double[] arrLow, double[] arrClose, int period, int count)
+
+        public static double ADX(double[] arrHigh, double[] arrLow, double[] arrClose, int period, int count)
         {
             try
             {
@@ -461,7 +466,7 @@ namespace AnalyzeApp.Analyze
             }
             return 0;
         }
-        private static double MA(double[] arrInput, Core.MAType type, int period, int count)
+        public static double MA(double[] arrInput, Core.MAType type, int period, int count)
         {
             try
             {
@@ -475,12 +480,12 @@ namespace AnalyzeApp.Analyze
             }
             return 0;
         }
-        private static double MACD(double[] arrInput, int high, int low, int signal, int count)
+        public static double MACD(double[] arrInput, int high, int low, int signal, int count)
         {
             try
             {
                 var output = new double[1000];
-                Core.Macd(0, count - 1, arrInput, low, high, signal, out var outBegIdx, out var outNbElement, output, new double[1000], new double[1000]);
+                Core.Macd(0, count - 1, arrInput, low, high, signal, out var outBegIdx, out var outNbElement, new double[1000], new double[1000], output);
                 return output[count - 1];
             }
             catch (Exception ex)
@@ -489,7 +494,21 @@ namespace AnalyzeApp.Analyze
             }
             return 0;
         }
-        private static (double, double) MCDX(double[] arrInput, int count)
+        public static IEnumerable<double> MACD(double[] arrInput, int high, int low, int signal, int count, int take)
+        {
+            try
+            {
+                var output = new double[1000];
+                Core.Macd(0, count - 1, arrInput, low, high, signal, out var outBegIdx, out var outNbElement, new double[1000], new double[1000], output);
+                return output.Skip(count - (take + 1)).Take(take);
+            }
+            catch (Exception ex)
+            {
+                NLogLogger.PublishException(ex, $"CalculateMng:MACD: {ex.Message}");
+            }
+            return null;
+        }
+        public static (double, double) MCDX(double[] arrInput, int count)
         {
             try
             {
@@ -517,7 +536,7 @@ namespace AnalyzeApp.Analyze
             return (0, 0);
 
         }
-        private static double RSI(double[] arrInput, int period, int count)
+        public static double RSI(double[] arrInput, int period, int count)
         {
             try
             {
@@ -530,6 +549,14 @@ namespace AnalyzeApp.Analyze
                 NLogLogger.PublishException(ex, $"CalculateMng:RSI: {ex.Message}");
             }
             return 0;
+        }
+
+        public static decimal Max(decimal x, decimal y, decimal z = 0, decimal t = 0)
+        {
+            var max = x < y ? x : y;
+            max = max < z ? z : max;
+            max = max < t ? t : max;
+            return max;
         }
 
         private class OutputIndicatorModel

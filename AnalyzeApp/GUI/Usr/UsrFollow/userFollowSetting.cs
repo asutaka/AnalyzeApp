@@ -13,11 +13,15 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         private userFollowSettingDetail user4 = null;
         private userFollowSettingDetail user5 = null;
         private readonly bool _isFollow;
-        public FollowSettingModel _model = Config.FollowSetting;
+        public FollowSettingModel _model = null;
         public userFollowSetting(bool isFollow)
         {
             InitializeComponent();
             _isFollow = isFollow;
+            if (_isFollow)
+                _model = Config.FollowSetting;
+            else
+                _model = Config.AdvanceSetting;
             InitData();
         }
 
@@ -57,6 +61,9 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
         private void InitData()
         {
             LoadInternalNotify();
+            cmbFrequency.EditValue = _model.Interval;
+            chkState.IsOn = _model.IsNotify;
+
             user1 = new userFollowSettingDetail(1, _isFollow);
             user2 = new userFollowSettingDetail(2, _isFollow);
             user3 = new userFollowSettingDetail(3, _isFollow);
