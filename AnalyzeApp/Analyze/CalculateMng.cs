@@ -39,29 +39,7 @@ namespace AnalyzeApp.Analyze
             {
                 int count = 1;
                 decimal sum = 0;
-                IEnumerable<BinanceKline> lSource = null;
-                switch ((enumInterval)Config.BasicSetting.TimeCalculate)
-                {
-                    case enumInterval.FifteenMinute:
-                        lSource = StaticVal.dic15M.First(x => x.Key == coin).Value;
-                        break;
-                    case enumInterval.OneHour:
-                        lSource = StaticVal.dic1H.First(x => x.Key == coin).Value;
-                        break;
-                    case enumInterval.FourHour:
-                        lSource = StaticVal.dic4H.First(x => x.Key == coin).Value;
-                        break;
-                    case enumInterval.OneDay:
-                        lSource = StaticVal.dic1D.First(x => x.Key == coin).Value;
-                        break;
-                    case enumInterval.OneWeek:
-                        lSource = StaticVal.dic1W.First(x => x.Key == coin).Value;
-                        break;
-                    case enumInterval.OneMonth:
-                        lSource = StaticVal.dic1Month.First(x => x.Key == coin).Value;
-                        break;
-                    default: break;
-                }
+                IEnumerable<BinanceKline> lSource = GetSource(coin);
                 if (lSource == null || !lSource.Any())
                     return new Top30Model { Coin = coin, Count = count, Rate = (double)Math.Round(sum / count, 2) };
 
@@ -187,11 +165,13 @@ namespace AnalyzeApp.Analyze
 
         public static (bool, double) MCDX(string coin)
         {
-            var data = DataMng.GetCurrentData(coin, (enumInterval)Config.BasicSetting.RealtimeInterval);
+            var data = DataMng.GetCurrentData(coin, (enumInterval)Config.BasicSetting.TimeCalculate);
             if (data == null || !data.Any())
                 return (false, 0);
             var arrClose = data.Select(x => (double)x.Close).ToArray();
             var count = arrClose.Count();
+            if(count < 50)
+                return (false, 0);
 
             double[] output1 = new double[1000];
             double[] output2 = new double[1000];
@@ -208,7 +188,33 @@ namespace AnalyzeApp.Analyze
             return (banker_rsi >= signal, banker_rsi);
         }
 
-
+        public static IEnumerable<BinanceKline> GetSource(string coin)
+        {
+            IEnumerable<BinanceKline> lSource = null;
+            switch ((enumInterval)Config.BasicSetting.TimeCalculate)
+            {
+                case enumInterval.FifteenMinute:
+                    lSource = StaticVal.dic15M.First(x => x.Key == coin).Value;
+                    break;
+                case enumInterval.OneHour:
+                    lSource = StaticVal.dic1H.First(x => x.Key == coin).Value;
+                    break;
+                case enumInterval.FourHour:
+                    lSource = StaticVal.dic4H.First(x => x.Key == coin).Value;
+                    break;
+                case enumInterval.OneDay:
+                    lSource = StaticVal.dic1D.First(x => x.Key == coin).Value;
+                    break;
+                case enumInterval.OneWeek:
+                    lSource = StaticVal.dic1W.First(x => x.Key == coin).Value;
+                    break;
+                case enumInterval.OneMonth:
+                    lSource = StaticVal.dic1Month.First(x => x.Key == coin).Value;
+                    break;
+                default: break;
+            }
+            return lSource;
+        }
 
 
 

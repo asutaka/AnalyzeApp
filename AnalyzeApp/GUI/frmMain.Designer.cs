@@ -46,6 +46,7 @@ namespace AnalyzeApp.GUI
             this.barBtnStart = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnStop = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnVersion = new DevExpress.XtraBars.BarButtonItem();
+            this.lblStatus = new DevExpress.XtraBars.BarHeaderItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -56,7 +57,6 @@ namespace AnalyzeApp.GUI
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.tabControl = new DevExpress.XtraTab.XtraTabControl();
-            this.lblStatus = new DevExpress.XtraBars.BarHeaderItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl)).BeginInit();
             this.SuspendLayout();
@@ -105,6 +105,7 @@ namespace AnalyzeApp.GUI
             this.barBtnSupport.Id = 2;
             this.barBtnSupport.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barBtnSupport.ImageOptions.SvgImage")));
             this.barBtnSupport.Name = "barBtnSupport";
+            this.barBtnSupport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnSupport_ItemClick);
             // 
             // barBtnInfo
             // 
@@ -193,6 +194,12 @@ namespace AnalyzeApp.GUI
             this.barBtnVersion.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barBtnVersion.ImageOptions.SvgImage")));
             this.barBtnVersion.Name = "barBtnVersion";
             // 
+            // lblStatus
+            // 
+            this.lblStatus.Caption = "Loading...";
+            this.lblStatus.Id = 14;
+            this.lblStatus.Name = "lblStatus";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -273,12 +280,6 @@ namespace AnalyzeApp.GUI
             this.tabControl.Size = new System.Drawing.Size(1022, 607);
             this.tabControl.TabIndex = 2;
             this.tabControl.CloseButtonClick += new System.EventHandler(this.tabControl_CloseButtonClick);
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.Caption = "Loading...";
-            this.lblStatus.Id = 14;
-            this.lblStatus.Name = "lblStatus";
             // 
             // frmMain
             // 

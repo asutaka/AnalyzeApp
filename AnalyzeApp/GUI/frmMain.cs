@@ -19,6 +19,7 @@ namespace AnalyzeApp.GUI
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        private ProfileModel _profile = null;
         private WaitFunc _frmWaitForm = new WaitFunc();
         private BackgroundWorker _bkgr;
         private frmMain()
@@ -48,6 +49,7 @@ namespace AnalyzeApp.GUI
         private void bkgrConfig_DoWork(object sender, DoWorkEventArgs e)
         {
             _frmWaitForm.Show("Thiết lập ban đầu");
+            _profile = APIService.Instance().GetProfile().GetAwaiter().GetResult();
             DataMng.StoredData(enumInterval.OneHour).GetAwaiter().GetResult();
             this.Invoke((MethodInvoker)delegate
             {
@@ -74,6 +76,8 @@ namespace AnalyzeApp.GUI
             {
                 var task = Task.Run(() =>
                 {
+                    if (string.IsNullOrWhiteSpace(item.S))
+                        return;
                     dic1H.Add(item.S, DataMng.LoadSource(item.S, enumInterval.OneHour));
                 });
                 lstTask.Add(task);
@@ -113,6 +117,7 @@ namespace AnalyzeApp.GUI
         {
             var lstTask = new List<Task>();
             #region 15M
+            lstTask.Clear();
             DataMng.StoredData(enumInterval.FifteenMinute).GetAwaiter().GetResult();
             this.Invoke((MethodInvoker)delegate
             {
@@ -128,24 +133,29 @@ namespace AnalyzeApp.GUI
                     this.Close();
                 });
             }
-            lstTask.Clear();
-            Dictionary<string, IEnumerable<BinanceKline>> dic15M = new Dictionary<string, IEnumerable<BinanceKline>>();
-            foreach (var item in StaticVal.lstCoinFilter)
+            else
             {
-                var task = Task.Run(() =>
+                Dictionary<string, IEnumerable<BinanceKline>> dic15M = new Dictionary<string, IEnumerable<BinanceKline>>();
+                foreach (var item in StaticVal.lstCoinFilter)
                 {
-                    dic15M.Add(item.S, DataMng.LoadSource(item.S, enumInterval.FifteenMinute));
+                    var task = Task.Run(() =>
+                    {
+                        if (string.IsNullOrWhiteSpace(item.S))
+                            return;
+                        dic15M.Add(item.S, DataMng.LoadSource(item.S, enumInterval.FifteenMinute));
+                    });
+                    lstTask.Add(task);
+                }
+                Task.WaitAll(lstTask.ToArray());
+                StaticVal.dic15M = dic15M;
+                this.Invoke((MethodInvoker)delegate
+                {
+                    lblStatus.Caption = "Load data 15M complete";
                 });
-                lstTask.Add(task);
             }
-            Task.WaitAll(lstTask.ToArray());
-            StaticVal.dic15M = dic15M;
-            this.Invoke((MethodInvoker)delegate
-            {
-                lblStatus.Caption = "Load data 15M complete";
-            });
             #endregion
             #region 4H
+            lstTask.Clear();
             DataMng.StoredData(enumInterval.FourHour).GetAwaiter().GetResult();
             this.Invoke((MethodInvoker)delegate
             {
@@ -161,24 +171,29 @@ namespace AnalyzeApp.GUI
                     this.Close();
                 });
             }
-            lstTask.Clear();
-            Dictionary<string, IEnumerable<BinanceKline>> dic4H = new Dictionary<string, IEnumerable<BinanceKline>>();
-            foreach (var item in StaticVal.lstCoinFilter)
+            else
             {
-                var task = Task.Run(() =>
+                Dictionary<string, IEnumerable<BinanceKline>> dic4H = new Dictionary<string, IEnumerable<BinanceKline>>();
+                foreach (var item in StaticVal.lstCoinFilter)
                 {
-                    dic4H.Add(item.S, DataMng.LoadSource(item.S, enumInterval.FourHour));
+                    var task = Task.Run(() =>
+                    {
+                        if (string.IsNullOrWhiteSpace(item.S))
+                            return;
+                        dic4H.Add(item.S, DataMng.LoadSource(item.S, enumInterval.FourHour));
+                    });
+                    lstTask.Add(task);
+                }
+                Task.WaitAll(lstTask.ToArray());
+                StaticVal.dic4H = dic4H;
+                this.Invoke((MethodInvoker)delegate
+                {
+                    lblStatus.Caption = "Load data 4H complete";
                 });
-                lstTask.Add(task);
             }
-            Task.WaitAll(lstTask.ToArray());
-            StaticVal.dic4H = dic4H;
-            this.Invoke((MethodInvoker)delegate
-            {
-                lblStatus.Caption = "Load data 4H complete";
-            });
             #endregion
             #region 1D
+            lstTask.Clear();
             DataMng.StoredData(enumInterval.OneDay).GetAwaiter().GetResult();
             this.Invoke((MethodInvoker)delegate
             {
@@ -194,24 +209,29 @@ namespace AnalyzeApp.GUI
                     this.Close();
                 });
             }
-            lstTask.Clear();
-            Dictionary<string, IEnumerable<BinanceKline>> dic1D = new Dictionary<string, IEnumerable<BinanceKline>>();
-            foreach (var item in StaticVal.lstCoinFilter)
+            else
             {
-                var task = Task.Run(() =>
+                Dictionary<string, IEnumerable<BinanceKline>> dic1D = new Dictionary<string, IEnumerable<BinanceKline>>();
+                foreach (var item in StaticVal.lstCoinFilter)
                 {
-                    dic1D.Add(item.S, DataMng.LoadSource(item.S, enumInterval.OneDay));
+                    var task = Task.Run(() =>
+                    {
+                        if (string.IsNullOrWhiteSpace(item.S))
+                            return;
+                        dic1D.Add(item.S, DataMng.LoadSource(item.S, enumInterval.OneDay));
+                    });
+                    lstTask.Add(task);
+                }
+                Task.WaitAll(lstTask.ToArray());
+                StaticVal.dic1D = dic1D;
+                this.Invoke((MethodInvoker)delegate
+                {
+                    lblStatus.Caption = "Load data 1D complete";
                 });
-                lstTask.Add(task);
             }
-            Task.WaitAll(lstTask.ToArray());
-            StaticVal.dic1D = dic1D;
-            this.Invoke((MethodInvoker)delegate
-            {
-                lblStatus.Caption = "Load data 1D complete";
-            });
             #endregion
             #region 1W
+            lstTask.Clear();
             DataMng.StoredData(enumInterval.OneWeek).GetAwaiter().GetResult();
             this.Invoke((MethodInvoker)delegate
             {
@@ -223,24 +243,29 @@ namespace AnalyzeApp.GUI
             {
                 MessageBox.Show("Lỗi load dữ liệu 1 tuần không thành công!");
             }
-            lstTask.Clear();
-            Dictionary<string, IEnumerable<BinanceKline>> dic1W = new Dictionary<string, IEnumerable<BinanceKline>>();
-            foreach (var item in StaticVal.lstCoinFilter)
+            else
             {
-                var task = Task.Run(() =>
+                Dictionary<string, IEnumerable<BinanceKline>> dic1W = new Dictionary<string, IEnumerable<BinanceKline>>();
+                foreach (var item in StaticVal.lstCoinFilter)
                 {
-                    dic1W.Add(item.S, DataMng.LoadSource(item.S, enumInterval.OneWeek));
+                    var task = Task.Run(() =>
+                    {
+                        if (string.IsNullOrWhiteSpace(item.S))
+                            return;
+                        dic1W.Add(item.S, DataMng.LoadSource(item.S, enumInterval.OneWeek));
+                    });
+                    lstTask.Add(task);
+                }
+                Task.WaitAll(lstTask.ToArray());
+                StaticVal.dic1W = dic1W;
+                this.Invoke((MethodInvoker)delegate
+                {
+                    lblStatus.Caption = "Load data 1W complete";
                 });
-                lstTask.Add(task);
             }
-            Task.WaitAll(lstTask.ToArray());
-            StaticVal.dic1W = dic1W;
-            this.Invoke((MethodInvoker)delegate
-            {
-                lblStatus.Caption = "Load data 1W complete";
-            });
             #endregion
             #region 1W
+            lstTask.Clear();
             DataMng.StoredData(enumInterval.OneMonth).GetAwaiter().GetResult();
             this.Invoke((MethodInvoker)delegate
             {
@@ -252,22 +277,26 @@ namespace AnalyzeApp.GUI
             {
                 MessageBox.Show("Lỗi load dữ liệu 1 tháng không thành công!");
             }
-            lstTask.Clear();
-            Dictionary<string, IEnumerable<BinanceKline>> dic1M = new Dictionary<string, IEnumerable<BinanceKline>>();
-            foreach (var item in StaticVal.lstCoinFilter)
+            else
             {
-                var task = Task.Run(() =>
+                Dictionary<string, IEnumerable<BinanceKline>> dic1M = new Dictionary<string, IEnumerable<BinanceKline>>();
+                foreach (var item in StaticVal.lstCoinFilter)
                 {
-                    dic1M.Add(item.S, DataMng.LoadSource(item.S, enumInterval.OneMonth));
+                    var task = Task.Run(() =>
+                    {
+                        if (string.IsNullOrWhiteSpace(item.S))
+                            return;
+                        dic1M.Add(item.S, DataMng.LoadSource(item.S, enumInterval.OneMonth));
+                    });
+                    lstTask.Add(task);
+                }
+                Task.WaitAll(lstTask.ToArray());
+                StaticVal.dic1Month = dic1M;
+                this.Invoke((MethodInvoker)delegate
+                {
+                    lblStatus.Caption = "Load data 1M complete";
                 });
-                lstTask.Add(task);
             }
-            Task.WaitAll(lstTask.ToArray());
-            StaticVal.dic1Month = dic1M;
-            this.Invoke((MethodInvoker)delegate
-            {
-                lblStatus.Caption = "Load data 1M complete";
-            });
             #endregion
             lblStatus.Caption = "Load all data complete";
         }
@@ -390,6 +419,24 @@ namespace AnalyzeApp.GUI
             {
                 tabControl.AddTab(frmMCDX.Instance());
             });
+        }
+
+        private void barBtnSupport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (_profile == null)
+            {
+                MessageBox.Show("Chưa có thông tin người nhận");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(_profile.Phone))
+            {
+                MessageBox.Show("Chưa có thông tin SĐT liên hệ");
+                return;
+            }
+            barBtnSupport.Enabled = false;
+            APIService.Instance().SendMessage(new NotifyModel { Content = ConstVal.strSupport, IsService = true });
+            Thread.Sleep(1000);
+            barBtnSupport.Enabled = true;
         }
     }
 }
