@@ -1,0 +1,396 @@
+ -------------- Error (2022-02-27 22:30:22.9879) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_190 FLOOD_WAIT_190
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:24.0848) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_189 FLOOD_WAIT_189
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:25.1882) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_188 FLOOD_WAIT_188
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:26.2722) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_187 FLOOD_WAIT_187
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:27.3523) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_186 FLOOD_WAIT_186
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:28.4156) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_185 FLOOD_WAIT_185
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:29.4820) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_184 FLOOD_WAIT_184
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:30.5494) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_182 FLOOD_WAIT_182
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:31.6464) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_181 FLOOD_WAIT_181
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:32.7223) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_180 FLOOD_WAIT_180
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:33.9500) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_179 FLOOD_WAIT_179
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:35.0611) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_178 FLOOD_WAIT_178
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:36.1601) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_177 FLOOD_WAIT_177
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:37.3029) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_176 FLOOD_WAIT_176
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:38.4186) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_175 FLOOD_WAIT_175
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:39.5067) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_174 FLOOD_WAIT_174
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:40.5750) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_172 FLOOD_WAIT_172
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:41.7259) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_171 FLOOD_WAIT_171
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:42.8595) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_170 FLOOD_WAIT_170
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:43.9788) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_169 FLOOD_WAIT_169
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:45.0557) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_168 FLOOD_WAIT_168
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:46.2349) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_167 FLOOD_WAIT_167
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:47.2996) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_166 FLOOD_WAIT_166
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:48.3689) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_165 FLOOD_WAIT_165
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:49.4992) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_164 FLOOD_WAIT_164
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:50.5666) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_162 FLOOD_WAIT_162
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:51.6667) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_161 FLOOD_WAIT_161
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:52.7848) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_160 FLOOD_WAIT_160
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:53.8742) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_159 FLOOD_WAIT_159
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:54.9608) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_158 FLOOD_WAIT_158
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:56.1360) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_157 FLOOD_WAIT_157
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:57.2683) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_156 FLOOD_WAIT_156
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:58.3574) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_155 FLOOD_WAIT_155
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:30:59.4440) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_154 FLOOD_WAIT_154
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:31:00.5258) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_153 FLOOD_WAIT_153
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+
+ -------------- Error (2022-02-27 22:31:01.6918) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	TeleClient:SendMessage:  FLOOD_WAIT_151 FLOOD_WAIT_151
+   at WTelegram.Client.Invoke[X](IMethod`1 query)
+   at AnalyzeApp.API.TeleClient.SendMessage(String phone, String content, Boolean isService) in D:\Data\AnalyzeApp\AnalyzeApp.API\TeleClient.cs:line 80 Line: 0
+

@@ -322,6 +322,20 @@ namespace AnalyzeApp.GUI.Usr.UsrFollow
                     pnl.Controls.Add(new userFollow_RSI(item, _isFollow));
                 }
             }
+            if (model.lFollowSetting_Volume != null && model.lFollowSetting_Volume.Any())
+            {
+                foreach (var item in model.lFollowSetting_Volume)
+                {
+                    pnl.Controls.Add(new userFollow_Volume(item, _isFollow));
+                }
+            }
+            if (model.lFollowSetting_Volume2 != null && model.lFollowSetting_Volume2.Any())
+            {
+                foreach (var item in model.lFollowSetting_Volume2)
+                {
+                    pnl.Controls.Add(new userFollow_Volume2(item, _isFollow));
+                }
+            }
             foreach (Control item in pnl.Controls)
             {
                 switch ((enumInterval)model.Interval)
