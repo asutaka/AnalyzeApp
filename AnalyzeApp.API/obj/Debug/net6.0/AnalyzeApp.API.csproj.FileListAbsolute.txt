@@ -87,12 +87,6 @@ D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\ref\AnalyzeApp.API.dll
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.pdb
 D:\SourceCode\Analyze\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.genruntimeconfig.cache
-D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.GeneratedMSBuildEditorConfig.editorconfig
-D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.AssemblyInfoInputs.cache
-D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.AssemblyInfo.cs
-D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.csproj.CoreCompileInputs.cache
-D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.MvcApplicationPartsAssemblyInfo.cs
-D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.MvcApplicationPartsAssemblyInfo.cache
 D:\Data\AnalyzeApp\AnalyzeApp.API\bin\Debug\net6.0\NLog.config
 D:\Data\AnalyzeApp\AnalyzeApp.API\bin\Debug\net6.0\appsettings.Development.json
 D:\Data\AnalyzeApp\AnalyzeApp.API\bin\Debug\net6.0\appsettings.json
@@ -161,6 +155,13 @@ D:\Data\AnalyzeApp\AnalyzeApp.API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3
 D:\Data\AnalyzeApp\AnalyzeApp.API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\Data\AnalyzeApp\AnalyzeApp.API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\Data\AnalyzeApp\AnalyzeApp.API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.csproj.AssemblyReference.cache
+D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.AssemblyInfoInputs.cache
+D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.AssemblyInfo.cs
+D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.csproj.CoreCompileInputs.cache
+D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.MvcApplicationPartsAssemblyInfo.cs
+D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\AnalyzeApp.API.MvcApplicationPartsAssemblyInfo.cache
 D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\staticwebassets.build.json
 D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\staticwebassets.development.json
 D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Debug\net6.0\scopedcss\bundle\AnalyzeApp.API.styles.css
