@@ -158,7 +158,6 @@ namespace AnalyzeApp.GUI
                     _frmWaitForm.Show("Kiểm tra trạng thái");
                     //var time = CommonMethod.GetTimeAsync().GetAwaiter().GetResult();
                     var time = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-
                     var jsonModel = Security.Decrypt(txtCode.Text.Trim());
                     if (string.IsNullOrWhiteSpace(jsonModel))
                     {
@@ -189,12 +188,15 @@ namespace AnalyzeApp.GUI
                         UpdateUserModel();
                         if (!StaticVal.IsAccessMain)
                         {
-                            while (frmLogin.Instance().IsSuccess)
+                            do
                             {
-                                frmLogin.DisposeInstance();
-                                Hide();
-                                frmMain.Instance().Show();
+                                if (!frmLogin.Instance().IsSuccess)
+                                    Thread.Sleep(1000);
                             }
+                            while (!frmLogin.Instance().IsSuccess);
+
+                            Hide();
+                            frmMain.Instance().Show();
                         }
                     }
                     StaticVal.IsExecCheckCodeActive = false;
