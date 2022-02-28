@@ -19,7 +19,7 @@ namespace AnalyzeApp.GUI
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        private ProfileModel _profile = null;
+        private ProfileModel _profile = StaticVal.profile;
         private WaitFunc _frmWaitForm = new WaitFunc();
         private BackgroundWorker _bkgr;
         private frmMain()
@@ -49,7 +49,6 @@ namespace AnalyzeApp.GUI
         private void bkgrConfig_DoWork(object sender, DoWorkEventArgs e)
         {
             _frmWaitForm.Show("Thiết lập ban đầu");
-            _profile = APIService.Instance().GetProfile().GetAwaiter().GetResult();
             DataMng.StoredData(enumInterval.OneHour).GetAwaiter().GetResult();
             this.Invoke((MethodInvoker)delegate
             {
@@ -264,7 +263,7 @@ namespace AnalyzeApp.GUI
                 });
             }
             #endregion
-            #region 1W
+            #region 1M
             lstTask.Clear();
             DataMng.StoredData(enumInterval.OneMonth).GetAwaiter().GetResult();
             this.Invoke((MethodInvoker)delegate
@@ -273,7 +272,7 @@ namespace AnalyzeApp.GUI
             });
             var config1M = APIService.Instance().GetConfigTable().GetAwaiter().GetResult();
             if (config1M == null
-                || config1M.StatusLoadData != (int)enumStatusLoadData.Complete1W)
+                || config1M.StatusLoadData != (int)enumStatusLoadData.Complete1M)
             {
                 MessageBox.Show("Lỗi load dữ liệu 1 tháng không thành công!");
             }

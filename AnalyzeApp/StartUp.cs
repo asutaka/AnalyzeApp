@@ -1,9 +1,12 @@
 ﻿using AnalyzeApp.Common;
 using AnalyzeApp.Job;
 using AnalyzeApp.Job.ScheduleJob;
+using Newtonsoft.Json;
 using Quartz;
 using System;
+using System.ComponentModel;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AnalyzeApp
@@ -34,6 +37,39 @@ namespace AnalyzeApp
                     binanceTick.AddRange(data.Data);
                     StaticVal.binanceTicks = binanceTick;
                 });
+
+                var dt1 = DateTime.Now;
+                BackgroundWorker wrkr = new BackgroundWorker();
+                wrkr.DoWork += (object sender, DoWorkEventArgs e) =>
+                {
+                    while (true)
+                    {
+                        if(StaticVal.binanceSocketClient.IncomingKbps == 0)
+                        {
+                            var dt2 = DateTime.Now;
+                            var div = dt2 - dt1;
+                            if(div.TotalSeconds > 60)
+                            {
+                                StaticVal.binanceSocketClient.UnsubscribeAllAsync();
+                                Thread.Sleep(2000);
+                                dt1 = DateTime.Now;
+                                var subscribe = StaticVal.binanceSocketClient.Spot.SubscribeToAllSymbolTickerUpdatesAsync(data => {
+                                    // Handle data when it is received
+                                    var lExists = binanceTick.Where(x => data.Data.Any(y => y.Symbol == x.Symbol));
+                                    if (lExists != null && lExists.Any())
+                                    {
+                                        binanceTick = binanceTick.Except(lExists).ToList();
+                                    }
+                                    binanceTick.AddRange(data.Data);
+                                    StaticVal.binanceTicks = binanceTick;
+                                });
+                                Console.WriteLine($"END: {dt2}");
+                            }
+                        }
+                        Thread.Sleep(1000);
+                    }
+                };
+                wrkr.RunWorkerAsync();
             }
             catch(Exception ex)
             {
