@@ -320,6 +320,7 @@
     <Compile Include="Job\MCDXCalculateJob.cs" />
     <Compile Include="Job\MCDXValueScheduleJob.cs" />
     <Compile Include="Job\RealTimeJob.cs" />
+    <Compile Include="Job\SubcribeJob.cs" />
     <Compile Include="Job\WatchListScheduleJob.cs" />
     <Compile Include="Job\ScheduleUiContainer.cs" />
     <Compile Include="Job\Top30ScheduleJob.cs" />

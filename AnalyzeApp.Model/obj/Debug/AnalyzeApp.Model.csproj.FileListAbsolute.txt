@@ -24,3 +24,11 @@ F:\DATA\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.csproj.CoreCompil
 F:\DATA\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.csproj.CopyComplete
 F:\DATA\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.dll
 F:\DATA\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.pdb
+D:\SourceCode\AnalyzeApp\AnalyzeApp\AnalyzeApp.Model\bin\Debug\AnalyzeApp.Model.dll
+D:\SourceCode\AnalyzeApp\AnalyzeApp\AnalyzeApp.Model\bin\Debug\AnalyzeApp.Model.pdb
+D:\SourceCode\AnalyzeApp\AnalyzeApp\AnalyzeApp.Model\bin\Debug\Newtonsoft.Json.dll
+D:\SourceCode\AnalyzeApp\AnalyzeApp\AnalyzeApp.Model\bin\Debug\Newtonsoft.Json.xml
+D:\SourceCode\AnalyzeApp\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.csproj.CoreCompileInputs.cache
+D:\SourceCode\AnalyzeApp\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.csproj.CopyComplete
+D:\SourceCode\AnalyzeApp\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.dll
+D:\SourceCode\AnalyzeApp\AnalyzeApp\AnalyzeApp.Model\obj\Debug\AnalyzeApp.Model.pdb
