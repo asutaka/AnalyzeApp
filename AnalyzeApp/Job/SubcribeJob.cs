@@ -9,14 +9,18 @@ namespace AnalyzeApp.Job
     [DisallowConcurrentExecution]
     public class SubcribeJob : IJob
     {
+        int tmp = 0;
         public void Execute(IJobExecutionContext context)
         {
+            if (tmp > 0)
+                return;
+            tmp = 1;
             Console.WriteLine($"access Job: {StaticVal.binanceSocketClient.IncomingKbps}; Time: {DateTime.Now}");
-            if(StaticVal.binanceSocketClient.IncomingKbps == 0)
-            {
+            //if(StaticVal.binanceSocketClient.IncomingKbps == 0)
+            //{
                 Console.WriteLine($"retry Job: {DateTime.Now}");
-                StaticVal.binanceSocketClient.UnsubscribeAllAsync();
-                Thread.Sleep(2000);
+                //StaticVal.binanceSocketClient.UnsubscribeAllAsync();
+                //Thread.Sleep(2000);
                 var binanceTick = StaticVal.binanceTicks;
                 var isLock = false;
                 var subscribeResult = StaticVal.binanceSocketClient.Spot.SubscribeToAllSymbolTickerUpdatesAsync(data => {
@@ -37,7 +41,7 @@ namespace AnalyzeApp.Job
 
                 subscribeResult.Data.ConnectionLost += () => Console.WriteLine("Connection lost");
                 subscribeResult.Data.ConnectionRestored += (t) => Console.WriteLine("Connection restored");
-            }
+            //}
         }
     }
 }

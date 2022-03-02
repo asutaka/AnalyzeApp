@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SourceCode\\AnalyzeApp\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj": {}
+    "F:\\DATA\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj": {}
   },
   "projects": {
-    "D:\\SourceCode\\AnalyzeApp\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj": {
+    "F:\\DATA\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SourceCode\\AnalyzeApp\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj",
+        "projectUniqueName": "F:\\DATA\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj",
         "projectName": "AnalyzeApp.API",
-        "projectPath": "D:\\SourceCode\\AnalyzeApp\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj",
+        "projectPath": "F:\\DATA\\AnalyzeApp\\AnalyzeApp.API\\AnalyzeApp.API.csproj",
         "packagesPath": "C:\\Users\\asuta\\.nuget\\packages\\",
-        "outputPath": "D:\\SourceCode\\AnalyzeApp\\AnalyzeApp\\AnalyzeApp.API\\obj\\",
+        "outputPath": "F:\\DATA\\AnalyzeApp\\AnalyzeApp.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\asuta\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -113,7 +113,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
