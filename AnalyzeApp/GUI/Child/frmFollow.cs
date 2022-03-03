@@ -47,6 +47,7 @@ namespace AnalyzeApp.GUI.Child
         private void btnOkAndSave_Click(object sender, EventArgs e)
         {
             var model = usrSetting.GetConfigData();
+            model.Cron = GetCron();
             model.Coins = usrChosen.GetCoins();
             if (model.Coins == null)
                 model.Coins = new List<string>();
@@ -59,6 +60,26 @@ namespace AnalyzeApp.GUI.Child
                 bkgr.Dispose();
             };
             bkgr.RunWorkerAsync();
+
+            string GetCron()
+            {
+                switch ((enumIntervalNotify)model.Interval)
+                {
+                    case enumIntervalNotify.OneMinute: return "0 * * * * ?";
+                    case enumIntervalNotify.TwoMinute: return "0 0/2 * * * ?";
+                    case enumIntervalNotify.FiveMinute: return "0 0/5 * * * ?";
+                    case enumIntervalNotify.TenMinute: return "0 0/10 * * * ?";
+                    case enumIntervalNotify.FifteenMinute: return "0 0/15 * * * ?";
+                    case enumIntervalNotify.ThirtyMintue: return "0 0/30 * * * ?";
+                    case enumIntervalNotify.OneHour: return "0 0 * * * ?";
+                    case enumIntervalNotify.TwoHour: return "0 0 0/2 * * ?";
+                    case enumIntervalNotify.FourHour: return "0 0 0/4 * * ?";
+                    case enumIntervalNotify.FiveHour: return "0 0 0/5 * * ?";
+                    case enumIntervalNotify.TwelveHour: return "0 0 0/12 * * ?";
+                    case enumIntervalNotify.OneDay: return "0 0 0 * * ?";
+                    default: return "0 * * * * ?";
+                }
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

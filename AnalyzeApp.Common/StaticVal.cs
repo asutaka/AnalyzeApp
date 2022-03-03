@@ -10,8 +10,7 @@ namespace AnalyzeApp.Common
     public static class StaticVal
     {
         //Variables
-        public static BinanceClient binanceClient = new BinanceClient(new BinanceClientOptions { 
-        });
+        public static BinanceClient binanceClient = new BinanceClient(new BinanceClientOptions {});
         public static BinanceSocketClient binanceSocketClient = new BinanceSocketClient(new BinanceSocketClientOptions() { AutoReconnect = true});//, SocketNoDataTimeout = System.TimeSpan.FromSeconds(10)
         public static ScheduleMng scheduleMng = ScheduleMng.Instance();
 
@@ -22,6 +21,7 @@ namespace AnalyzeApp.Common
         public static bool IsExecCheckCodeActive = false;
         public static bool IsCodeActive = false;
         public static bool IsTradeListChange = false;
+        public static bool IsSyncData = false;
         //Level
         public static int Level { get; set; }
         //Data Coin

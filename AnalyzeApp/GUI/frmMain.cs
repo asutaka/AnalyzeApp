@@ -34,9 +34,7 @@ namespace AnalyzeApp.GUI
             _bkgr.RunWorkerAsync();
             StaticVal.scheduleMng.AddSchedule(new ScheduleMember(StaticVal.scheduleMng.GetScheduler(), JobBuilder.Create<CheckStatusJob>(), StaticVal.Scron_CheckStatus, nameof(CheckStatusJob)));
             StaticVal.scheduleMng.AddSchedule(new ScheduleMember(StaticVal.scheduleMng.GetScheduler(), JobBuilder.Create<TradeListNotifyJob>(), StaticVal.Scron_TradeList_Noti, nameof(TradeListNotifyJob)));
-
-
-            //StaticValues.ScheduleMngObj.AddSchedule(new ScheduleMember(StaticValues.ScheduleMngObj.GetScheduler(), JobBuilder.Create<FollowListJob>(), StaticValues.followList.Cron, nameof(FollowListJob)));
+            StaticVal.scheduleMng.AddSchedule(new ScheduleMember(StaticVal.scheduleMng.GetScheduler(), JobBuilder.Create<FollowListJob>(), Config.FollowSetting.Cron, nameof(FollowListJob)));
         }
 
         private static frmMain _instance = null;

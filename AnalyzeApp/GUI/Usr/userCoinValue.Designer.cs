@@ -47,6 +47,11 @@ namespace AnalyzeApp.GUI.Usr
             // 
             this.nmValue.DecimalPlaces = 8;
             this.nmValue.Location = new System.Drawing.Point(297, 12);
+            this.nmValue.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.nmValue.Name = "nmValue";
             this.nmValue.Size = new System.Drawing.Size(95, 20);
             this.nmValue.TabIndex = 10;

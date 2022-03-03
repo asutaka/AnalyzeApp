@@ -12,7 +12,7 @@ namespace AnalyzeApp.GUI.Child
 {
     public partial class frmTradeList : XtraForm
     {
-        private readonly TradeListModel _model = Config.TradeList;
+        private TradeListModel _model = Config.TradeList.Clone();
         private frmTradeList()
         {
             InitializeComponent();

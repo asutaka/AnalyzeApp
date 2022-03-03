@@ -1,0 +1,17 @@
+ -------------- Error (2022-03-03 20:22:44.8007) --------------
+ 
+ Call Site: AnalyzeApp.API.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	AnalyzeRepo:InsertNotify: SQLite Error 19: 'UNIQUE constraint failed: NotifyTable.TimeCreate'. SQLite Error 19: 'UNIQUE constraint failed: NotifyTable.TimeCreate'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteNonQuery()
+   at System.Data.Common.DbCommand.ExecuteNonQueryAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 654
+   at AnalyzeApp.API.Impl.AnalyzeRepo.InsertNotify(NotifyModel model) in D:\Data\AnalyzeApp\AnalyzeApp.API\Impl\AnalyzeRepo.cs:line 192 Line: 0
+

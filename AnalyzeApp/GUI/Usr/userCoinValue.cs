@@ -34,14 +34,13 @@ namespace AnalyzeApp.GUI.Usr
             cmbOption.Properties.EndUpdate();
         }
 
-        public bool IsAbove()
+        public TradeDetailModel GetData()
         {
-            return cmbOption.SelectionStart == 0;
-        }
-
-        public decimal GetValue()
-        {
-            return nmValue.Value;
+            return new TradeDetailModel
+            {
+                IsAbove = (int)cmbOption.EditValue == 1,
+                Value = nmValue.Value
+            };
         }
 
         private void lblClose_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

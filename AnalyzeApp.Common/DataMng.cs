@@ -116,6 +116,7 @@ namespace AnalyzeApp.Common
                 NLogLogger.PublishException(ex, $"DataMng|LoadData:{ex.Message}");
             }
         }
+        
         private static void SyncDataInterval(enumInterval interval)
         {
             try
@@ -301,7 +302,22 @@ namespace AnalyzeApp.Common
             return entity;
         }
 
-        
+        public static Dictionary<string, IEnumerable<BinanceKline>> SyncData(enumInterval interval)
+        {
+            Dictionary<string, IEnumerable<BinanceKline>> dicResult = new Dictionary<string, IEnumerable<BinanceKline>>();
+            try
+            {
+                foreach (var item in StaticVal.lstCoin)
+                {
+                    dicResult.Add(item.S, GetSource(item.S, interval));
+                }
+            }
+            catch (Exception ex)
+            {
+                NLogLogger.PublishException(ex, $"DataMng|SyncData: {ex.Message}");
+            }
+            return dicResult;
+        }
     }
 }
 //15m: 10 ngày

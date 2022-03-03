@@ -48,7 +48,7 @@ namespace AnalyzeApp.Job
                         if (entityBelow != null)
                         {
                             var sendTime = new DateTimeOffset().ToUnixTimeSeconds();
-                            var entityNotiTrade = StaticVal.lstNotiTrade.FirstOrDefault(x => x.Coin == item.Coin && x.Value == entityAbove.Value && !x.IsAbove && (sendTime - x.SendTime < 120));
+                            var entityNotiTrade = StaticVal.lstNotiTrade.FirstOrDefault(x => x.Coin == item.Coin && x.Value == entityBelow.Value && !x.IsAbove && (sendTime - x.SendTime < 120));
                             if (entityNotiTrade == null)
                             {
                                 StaticVal.lstNotiTrade.Add(new SendNotifyModel
@@ -56,9 +56,9 @@ namespace AnalyzeApp.Job
                                     Coin = item.Coin,
                                     SendTime = sendTime,
                                     IsAbove = false,
-                                    Value = entityAbove.Value
+                                    Value = entityBelow.Value
                                 });
-                                APIService.Instance().SendMessage(new NotifyModel { Content = $"Giá {item.Coin} giảm xuống dưới {entityAbove.Value}", IsService = false });
+                                APIService.Instance().SendMessage(new NotifyModel { Content = $"Giá {item.Coin} giảm xuống dưới {entityBelow.Value}", IsService = false });
                             }
                         }
                     });

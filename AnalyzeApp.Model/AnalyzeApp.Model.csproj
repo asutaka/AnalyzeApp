@@ -56,6 +56,7 @@
     <Compile Include="ENTITY\ConfigTableModel.cs" />
     <Compile Include="ENTITY\CryptonDataModel.cs" />
     <Compile Include="ENTITY\CryptonRankModel.cs" />
+    <Compile Include="ENTITY\DataInputModel.cs" />
     <Compile Include="ENTITY\DataSettingModel.cs" />
     <Compile Include="ENTITY\ElementModel.cs" />
     <Compile Include="ENTITY\FollowModel.cs" />

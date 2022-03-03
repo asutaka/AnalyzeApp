@@ -242,5 +242,20 @@ namespace AnalyzeApp.Common
             }
             return -1;
         }
+
+        public async Task<Dictionary<string, IEnumerable<BinanceKline>>> GetData(DataInputModel model)
+        {
+            try
+            {
+                HttpContent c = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, "application/json");
+                var result = await client.PostAsync("Setting/GetData", c);
+                return JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<BinanceKline>>>(await result.Content.ReadAsStringAsync());
+            }
+            catch (Exception ex)
+            {
+                NLogLogger.PublishException(ex, $"APIService|GetData: {ex.Message}");
+            }
+            return null;
+        }
     }
 }

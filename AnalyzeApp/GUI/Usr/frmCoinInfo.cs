@@ -60,9 +60,10 @@ namespace AnalyzeApp.GUI.Usr
                 foreach (var item in pnlMain.Controls)
                 {
                     var user = item as userCoinValue;
-                    if (user.GetValue() > 0)
+                    var model = user.GetData();
+                    if(model.Value > 0)
                     {
-                        _frm.tradeModel.Config.Add(new TradeDetailModel { IsAbove = user.IsAbove(), Value = user.GetValue() });
+                        _frm.tradeModel.Config.Add(model);
                     }
                 }
             }
