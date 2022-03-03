@@ -1,0 +1,84 @@
+ -------------- Info (2022-03-03 00:00:00.0226) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 3/3/2022 12:00:00 AM: Data15MJob Start!
+
+ -------------- Info (2022-03-03 00:00:00.0226) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 3/3/2022 12:00:00 AM: Data1DJob Start!
+
+ -------------- Info (2022-03-03 00:00:00.0675) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 3/3/2022 12:00:00 AM: Data4HJob Start!
+
+ -------------- Info (2022-03-03 00:00:00.0675) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 3/3/2022 12:00:00 AM: Data1HJob Start!
+
+ -------------- Info (2022-03-03 00:15:00.0074) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 3/3/2022 12:15:00 AM: Data15MJob Start!
+
+ -------------- Info (2022-03-03 00:30:00.2171) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 3/3/2022 12:30:00 AM: Data15MJob Start!
+
+ -------------- Error (2022-03-03 00:34:02.9459) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.ErrorMessage
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: :	
+	CalculateMng|CalculateCryptonRank|ACHUSDT: Sequence contains no matching element Sequence contains no matching element
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at AnalyzeApp.Analyze.CalculateMng.GetSource(String coin) in F:\DATA\AnalyzeApp\AnalyzeApp\Analyze\CalculateMng.cs:line 200
+   at AnalyzeApp.Analyze.CalculateMng.CalculateCryptonRank(String coin, String coinName) in F:\DATA\AnalyzeApp\AnalyzeApp\Analyze\CalculateMng.cs:line 42 Line: 0
+
+ -------------- Info (2022-03-03 00:45:00.0139) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 3/3/2022 12:45:00 AM: Data15MJob Start!
+
+ -------------- Info (2022-03-03 10:00:00.7326) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 3/3/2022 10:00:00 AM: Data15MJob Start!
+
+ -------------- Info (2022-03-03 10:00:05.0124) --------------
+ 
+ Call Site: AnalyzeApp.Common.NLogLogger.Info
+ Exception Type: 
+ Exception Message: 
+ Stack Trace: 
+ Additional Info: 3/3/2022 10:00:05 AM: Data1HJob Start!
+

@@ -293,7 +293,7 @@ namespace AnalyzeApp.Analyze
             var arrClose = data.Select(x => (double)x.Close).ToArray();
             var arrHigh = data.Select(x => (double)x.High).ToArray();
             var arrLow = data.Select(x => (double)x.Low).ToArray();
-            var arrVolumne = data.Select(x => (double)x.BaseVolume).ToArray();
+            var arrVolumne = data.Select(x => (double)x.Volume).ToArray();
             var count = arrClose.Count();
 
             var lstTask = new List<Task>();

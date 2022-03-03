@@ -3,7 +3,6 @@ using AnalyzeApp.Common;
 using AnalyzeApp.Model.ENTITY;
 using AnalyzeApp.Model.ENUM;
 using Quartz;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,9 +15,11 @@ namespace AnalyzeApp.Job
     {
         private readonly FollowSettingModel followList = Config.FollowSetting;
         private readonly BasicSettingModel _model = Config.BasicSetting;
+        private readonly ProfileModel _profile = StaticVal.profile;
         public void Execute(IJobExecutionContext context)
         {
-            if (followList == null 
+            if (!_profile.IsNotify 
+                || followList == null 
                 || !followList.IsNotify
                 || followList.Coins == null
                 || !followList.Coins.Any()
@@ -75,7 +76,7 @@ namespace AnalyzeApp.Job
                 return;
             var count = lData.Count();
             var lClose = lData.Select(x => (double)x.Close).ToArray();
-            var lVolume = lData.Select(x => (double)x.BaseVolume).ToArray();
+            var lVolume = lData.Select(x => (double)x.Volume).ToArray();
             #region MACD
             if (model.lFollowSetting_Macd != null && model.lFollowSetting_Macd.Any())
             {

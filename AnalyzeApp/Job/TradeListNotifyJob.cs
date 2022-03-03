@@ -11,12 +11,13 @@ namespace AnalyzeApp.Job
     [DisallowConcurrentExecution]
     public class TradeListNotifyJob : IJob
     {
+        private readonly ProfileModel _profile = StaticVal.profile;
         public void Execute(IJobExecutionContext context)
         {
             try
             {
                 var model = Config.TradeList;
-                if (!model.IsNotify || StaticVal.IsTradeListChange)
+                if (!_profile.IsNotify || !model.IsNotify || StaticVal.IsTradeListChange)
                     return;
 
                 var lstTask = new List<Task>();
@@ -26,44 +27,47 @@ namespace AnalyzeApp.Job
                     var task = Task.Run(() =>
                     {
                         var currentVal = (double)DataMng.GetCurrentVal(item.Coin);
-                        var entity = StaticVal.lstNotiTrade.FirstOrDefault(x => x.Coin == item.Coin);
-                        if(entity == null)
+                        var entityAbove = item.Config.Where(x => x.IsAbove && currentVal > (double)x.Value).OrderByDescending(x => x.Value).FirstOrDefault();
+                        if (entityAbove != null)
                         {
-                            entity = new SendNotifyModel { Coin = item.Coin, Value = 0 };
-                            StaticVal.lstNotiTrade.Add(entity);
-                        }
-
-                        var lAbove = item.Config.Where(x => x.IsAbove && currentVal > (double)x.Value && (x.Value > entity.Value || entity.Value == 0)).OrderBy(x => x.Value);
-                        if (lAbove != null)
-                        {
-                            foreach (var itemAbove in lAbove)
+                            var sendTime = new DateTimeOffset().ToUnixTimeSeconds();
+                            var entityNotiTrade = StaticVal.lstNotiTrade.FirstOrDefault(x => x.Coin == item.Coin && x.Value == entityAbove.Value && x.IsAbove && (sendTime - x.SendTime < 120));
+                            if(entityNotiTrade == null)
                             {
-                                var strNoti = $"{item.Coin} vượt lên trên { itemAbove.Value }";
-                                lstNotify.Add(strNoti);
-                                entity.Value = itemAbove.Value;
+                                StaticVal.lstNotiTrade.Add(new SendNotifyModel { 
+                                    Coin = item.Coin,
+                                    SendTime = sendTime,
+                                    IsAbove = true,
+                                    Value = entityAbove.Value
+                                });
+                                APIService.Instance().SendMessage(new NotifyModel { Content = $"Giá {item.Coin} vượt lên trên {entityAbove.Value}", IsService = false });
                             }
                         }
 
-                        var lBelow = item.Config.Where(x => !x.IsAbove && currentVal < (double)x.Value && (x.Value <= entity.Value || entity.Value == 0)).OrderByDescending(x => x.Value);
-                        if (lBelow != null)
+                        var entityBelow = item.Config.Where(x => !x.IsAbove && currentVal < (double)x.Value).OrderBy(x => x.Value).FirstOrDefault();
+                        if (entityBelow != null)
                         {
-                            foreach (var itemBelow in lBelow)
+                            var sendTime = new DateTimeOffset().ToUnixTimeSeconds();
+                            var entityNotiTrade = StaticVal.lstNotiTrade.FirstOrDefault(x => x.Coin == item.Coin && x.Value == entityAbove.Value && !x.IsAbove && (sendTime - x.SendTime < 120));
+                            if (entityNotiTrade == null)
                             {
-                                var strNoti = $"{item.Coin} giảm xuống dưới { itemBelow.Value }";
-                                lstNotify.Add(strNoti);
-                                entity.Value = itemBelow.Value;
+                                StaticVal.lstNotiTrade.Add(new SendNotifyModel
+                                {
+                                    Coin = item.Coin,
+                                    SendTime = sendTime,
+                                    IsAbove = false,
+                                    Value = entityAbove.Value
+                                });
+                                APIService.Instance().SendMessage(new NotifyModel { Content = $"Giá {item.Coin} giảm xuống dưới {entityAbove.Value}", IsService = false });
                             }
                         }
                     });
                     lstTask.Add(task);
                 }
                 Task.WaitAll(lstTask.ToArray());
-                if (lstNotify.Any())
+                if(StaticVal.lstNotiTrade.Count() > 500)
                 {
-                    var strNotify = string.Join("\n", lstNotify.ToArray());
-                    if (strNotify.Length > 500)
-                        strNotify = strNotify.Substring(0, 500);
-                    APIService.Instance().SendMessage(new NotifyModel { Content = strNotify, IsService = false });
+                    StaticVal.lstNotiTrade.RemoveRange(0, 100);
                 }
             }
             catch(Exception ex)

@@ -1,6 +1,6 @@
 ﻿using AnalyzeApp.Job.ScheduleJob;
 using AnalyzeApp.Model.ENTITY;
-using Binance.Net;
+using Binance.Net.Clients;
 using Binance.Net.Interfaces;
 using Binance.Net.Objects;
 using System.Collections.Generic;
@@ -10,8 +10,9 @@ namespace AnalyzeApp.Common
     public static class StaticVal
     {
         //Variables
-        public static BinanceClient binanceClient = new BinanceClient(new BinanceClientOptions() { });
-        public static BinanceSocketClient binanceSocketClient = new BinanceSocketClient(new BinanceSocketClientOptions() { });
+        public static BinanceClient binanceClient = new BinanceClient(new BinanceClientOptions { 
+        });
+        public static BinanceSocketClient binanceSocketClient = new BinanceSocketClient(new BinanceSocketClientOptions() { AutoReconnect = true});//, SocketNoDataTimeout = System.TimeSpan.FromSeconds(10)
         public static ScheduleMng scheduleMng = ScheduleMng.Instance();
 
         //Flag

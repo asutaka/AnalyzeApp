@@ -182,7 +182,7 @@ namespace AnalyzeApp.Common
                     High = decimal.Parse(x[2].ToString()),
                     Low = decimal.Parse(x[3].ToString()),
                     Close = decimal.Parse(x[4].ToString()),
-                    BaseVolume = decimal.Parse(x[5].ToString()),
+                    Volume = decimal.Parse(x[5].ToString()),
                     CloseTime = (long)x[6],
                     QuoteVolume = decimal.Parse(x[7].ToString()),
                     TakerBuyBaseVolume = decimal.Parse(x[9].ToString()),
