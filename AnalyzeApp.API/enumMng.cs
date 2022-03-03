@@ -17,17 +17,17 @@ namespace AnalyzeApp.API
     public enum enumInterval
     {
         [Display(Name = "15m")]
-        FifteenMinute = 0,
+        FifteenMinute = 15,
         [Display(Name = "1h")]
-        OneHour = 1,
+        OneHour = 60,
         [Display(Name = "4h")]
-        FourHour = 2,
+        FourHour = 240,
         [Display(Name = "1d")]
-        OneDay = 3,
+        OneDay = 1440,
         [Display(Name = "1w")]
-        OneWeek = 4,
+        OneWeek = 10080,
         [Display(Name = "1m")]
-        OneMonth = 5,
+        OneMonth = 302400,
     }
 
     public enum enumSetting

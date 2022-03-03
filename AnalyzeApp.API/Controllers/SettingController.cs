@@ -104,5 +104,11 @@ namespace AnalyzeApp.API.Controllers
             var result = await _service.UpdateConfigTable(model);
             return Ok(result);
         }
+        [HttpPost(Name = "LoadData")]
+        public IActionResult GetData(DataInputModel model)
+        {
+            var result = _service.GetData(model);
+            return Ok(result);
+        }
     }
 }

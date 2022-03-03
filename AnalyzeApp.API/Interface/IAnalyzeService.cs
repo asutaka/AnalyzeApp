@@ -23,5 +23,6 @@ namespace AnalyzeApp.API.Interface
         Task<bool> Verify(VerifyModel model);
         Task<ConfigTableModel> GetConfigTable();
         Task<int> UpdateConfigTable(ConfigTableModel model);
+        Dictionary<string, IEnumerable<BinanceKlineModel>> GetData(DataInputModel model);
     }
 }

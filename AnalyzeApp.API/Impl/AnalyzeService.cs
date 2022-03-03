@@ -1,5 +1,7 @@
 ﻿using AnalyzeApp.API.Interface;
 using AnalyzeApp.API.Model;
+using Binance.Net.Clients;
+using Binance.Net.Enums;
 
 namespace AnalyzeApp.API.Impl
 {
@@ -101,6 +103,68 @@ namespace AnalyzeApp.API.Impl
         public async Task<int> UpdateConfigTable(ConfigTableModel model)
         {
             return await _repo.UpdateConfigTable(model);
+        }
+
+        public Dictionary<string, IEnumerable<BinanceKlineModel>> GetData(DataInputModel model)
+        {
+            Dictionary<string, IEnumerable<BinanceKlineModel>> dicResult = new Dictionary<string, IEnumerable<BinanceKlineModel>>();
+            try
+            {
+                var option = GetKlineInterval();
+                var lTask = new List<Task>();
+                var binanceClient = new BinanceClient();
+                foreach (var item in model.Coins)
+                {
+                    var task = Task.Run(() =>
+                    {
+                        var lData = binanceClient.SpotApi.ExchangeData.GetKlinesAsync(item, option).GetAwaiter().GetResult().Data;
+                        if (lData == null)
+                        {
+                            dicResult.Add(item, new List<BinanceKlineModel>());
+                            return;
+                        }
+
+                        var lResult = lData.Select(x => new BinanceKlineModel
+                        {
+                            Volume = x.Volume,
+                            Close = x.ClosePrice,
+                            CloseTime = ((DateTimeOffset)x.CloseTime).ToUnixTimeMilliseconds(),
+                            High = x.HighPrice,
+                            Low = x.LowPrice,
+                            Open = x.OpenPrice,
+                            OpenTime = ((DateTimeOffset)x.OpenTime).ToUnixTimeMilliseconds(),
+                            QuoteVolume = x.QuoteVolume,
+                            TakerBuyBaseVolume = x.TakerBuyBaseVolume,
+                            TakerBuyQuoteVolume = x.TakerBuyQuoteVolume,
+                        });
+                        dicResult.Add(item, lResult);
+                    });
+                    lTask.Add(task);
+                }
+                Task.WaitAll(lTask.ToArray());
+            }
+            catch (Exception ex)
+            {
+                NLogLogger.PublishException(ex, ex.Message);
+            }
+
+            return dicResult;
+
+            KlineInterval GetKlineInterval()
+            {
+                switch ((enumInterval)model.Interval)
+                {
+                    case enumInterval.FifteenMinute: return KlineInterval.FifteenMinutes;
+                    case enumInterval.OneHour: return KlineInterval.OneHour;
+                    case enumInterval.FourHour: return KlineInterval.FourHour;
+                    case enumInterval.OneDay: return KlineInterval.OneDay;
+                    case enumInterval.OneWeek: return KlineInterval.OneWeek;
+                    case enumInterval.OneMonth: return KlineInterval.OneMonth;
+                    default:
+                        break;
+                }
+                return KlineInterval.FifteenMinutes;
+            }
         }
     }
 }

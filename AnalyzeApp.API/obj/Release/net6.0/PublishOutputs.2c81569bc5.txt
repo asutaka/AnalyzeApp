@@ -6,6 +6,8 @@ D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Release\net6.0\PubTmp\Out\AnalyzeApp.API.d
 D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Release\net6.0\PubTmp\Out\AnalyzeApp.API.deps.json
 D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Release\net6.0\PubTmp\Out\AnalyzeApp.API.runtimeconfig.json
 D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Release\net6.0\PubTmp\Out\AnalyzeApp.API.pdb
+D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Release\net6.0\PubTmp\Out\Binance.Net.dll
+D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Release\net6.0\PubTmp\Out\CryptoExchange.Net.dll
 D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Release\net6.0\PubTmp\Out\Dapper.dll
 D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Release\net6.0\PubTmp\Out\EntityFramework.SqlServer.dll
 D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Release\net6.0\PubTmp\Out\EntityFramework.dll
@@ -13,6 +15,7 @@ D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Release\net6.0\PubTmp\Out\PhoneNumbers.dll
 D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Release\net6.0\PubTmp\Out\Microsoft.Data.Sqlite.dll
 D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Release\net6.0\PubTmp\Out\Microsoft.OpenApi.dll
 D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Release\net6.0\PubTmp\Out\Microsoft.Win32.SystemEvents.dll
+D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Release\net6.0\PubTmp\Out\Newtonsoft.Json.dll
 D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Release\net6.0\PubTmp\Out\NLog.dll
 D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Release\net6.0\PubTmp\Out\NLog.Extensions.Logging.dll
 D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Release\net6.0\PubTmp\Out\NLog.Web.AspNetCore.dll

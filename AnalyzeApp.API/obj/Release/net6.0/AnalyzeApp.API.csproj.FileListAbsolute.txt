@@ -81,3 +81,6 @@ D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Release\net6.0\AnalyzeApp.API.dll
 D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Release\net6.0\ref\AnalyzeApp.API.dll
 D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Release\net6.0\AnalyzeApp.API.pdb
 D:\Data\AnalyzeApp\AnalyzeApp.API\obj\Release\net6.0\AnalyzeApp.API.genruntimeconfig.cache
+D:\Data\AnalyzeApp\AnalyzeApp.API\bin\Release\net6.0\Binance.Net.dll
+D:\Data\AnalyzeApp\AnalyzeApp.API\bin\Release\net6.0\CryptoExchange.Net.dll
+D:\Data\AnalyzeApp\AnalyzeApp.API\bin\Release\net6.0\Newtonsoft.Json.dll
